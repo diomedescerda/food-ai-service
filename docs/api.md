@@ -1,34 +1,41 @@
 # API — Food AI
 
-## Estado FASE 1 — Image Ingestion
+## Estado FASE 2 — Food Detection
 
 | Método | Ruta | Descripción | Auth |
 |---|---|---|---|
 | GET | `/api/v1/foodai/health` (backend) | Probe backend → FoodAI Service: `{backend, foodAI, detail}` | pública |
-| POST | `/api/v1/foodai/analyze` (backend) | Ingesta de imagen: multipart `image` → `{analysisId, status}` | pública |
-| GET | `/health` (food-ai-service, puerto 8010) | Salud del servicio Python | pública |
+| POST | `/api/v1/foodai/analyze` (backend) | Ingesta + detección: multipart `image` → `{analysisId, status, modelVersion, inferenceTimeMs, foods[]}` | pública |
+| GET | `/health` (food-ai-service, puerto 8010) | Salud del servicio + estado del modelo | pública |
 | POST | `/analyze` (food-ai-service, puerto 8010) | Contrato interno backend → Python (multipart `image` + `analysis_id`) | canal interno futuro |
 
 ### Respuestas
-
-`GET /api/v1/foodai/health`:
-```json
-{
-  "backend": "healthy",
-  "foodAI": "healthy",
-  "detail": "food-ai-service"
-}
-```
 
 `POST /api/v1/foodai/analyze` (multipart `image=<archivo>`):
 ```json
 {
   "analysisId": "61b98e10-6215-4d02-9216-0da8728c943c",
-  "status": "received"
+  "status": "completed",
+  "modelVersion": "food-detector-v1",
+  "inferenceTimeMs": 182,
+  "foods": [
+    { "name": "pizza", "confidence": 0.94, "boundingBox": { "x": 120, "y": 80, "width": 300, "height": 180 } }
+  ]
 }
 ```
 
-Errores (400): `{"error":{"code":"EMPTY_FILE"|"IMAGE_TOO_LARGE"|"INVALID_IMAGE"|"CORRUPT_FILE","message":"..."}}`
+`GET /health` (food-ai-service):
+```json
+{
+  "status": "healthy",
+  "service": "food-ai-service",
+  "version": "0.1.0",
+  "timestamp_utc": "...",
+  "model": { "loaded": true, "version": "food-detector-v1" }
+}
+```
+
+Errores backend (400): `{"error":{"code":"EMPTY_FILE"|"IMAGE_TOO_LARGE"|"INVALID_IMAGE"|"CORRUPT_FILE","message":"..."}}`
 502: `{"error":{"code":"AI_SERVICE_UNAVAILABLE","message":"..."}}`
 
 ### Validación de imágenes (backend, `ImageFileValidator`)
@@ -47,7 +54,7 @@ Errores (400): `{"error":{"code":"EMPTY_FILE"|"IMAGE_TOO_LARGE"|"INVALID_IMAGE"|
 
 El backend es el único que habla con el Food AI Service. Los schemas internos del servicio NO se exponen al frontend.
 
-### Contrato de análisis (FASE 1, implementado)
+### Contrato de análisis (FASE 2, implementado)
 
 Request (backend → Python, multipart):
 ```
@@ -59,13 +66,18 @@ Response:
 ```json
 {
   "analysis_id": "uuid",
-  "status": "received"
+  "status": "completed",
+  "model_version": "food-detector-v1",
+  "inference_time_ms": 182,
+  "foods": [
+    { "name": "pizza", "confidence": 0.94, "bounding_box": { "x": 120, "y": 80, "width": 300, "height": 180 } }
+  ]
 }
 ```
 
-Errores Python (400): `{"detail": {"success": false, "error": {"code": "INVALID_ANALYSIS_ID"|"EMPTY_FILE"|"IMAGE_TOO_LARGE"|"INVALID_IMAGE"|"CORRUPT_FILE", "message": "..."}}}`
+Errores Python (400): `{"detail": {"success": false, "error": {"code": "INVALID_ANALYSIS_ID"|"EMPTY_FILE"|"IMAGE_TOO_LARGE"|"INVALID_IMAGE"|"CORRUPT_FILE", "message": "..."}}}` · 503 `MODEL_NOT_READY`
 
-### Contrato futuro (FASE 2+)
+### Contrato futuro (FASE 3+)
 
 Response con detección:
 ```json

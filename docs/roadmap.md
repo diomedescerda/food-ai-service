@@ -21,6 +21,18 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Tests: 198 unit backend ✓ (19 nuevos), 9 pytest ✓
 - [x] Sin tablas nuevas (persistencia síncrona; análisis persistidos en FASE 16 con correcciones)
 
+## FASE 2 — Food Detection ✅ (2026-08-27)
+- [x] Selección de modelo documentada (`docs/model-selection.md`): YOLO11n (Ultralytics, COCO, AGPL-3.0)
+- [x] `IFoodDetector` + `YoloFoodDetector` (carga única en startup, filtro a 10 clases food COCO)
+- [x] `POST /analyze` → `{status:"completed", model_version, inference_time_ms, foods[]}` con bbox en píxeles
+- [x] Threshold configurable (0.35), imgsz 640, device, max_det — sin hardcode
+- [x] Debug visual: `utils/debug.py` overlay bbox+labels+confidence
+- [x] Model versioning: `food-detector-v1` en cada respuesta
+- [x] Backend: DTOs `DetectedFood/BoundingBox`, cliente parsea `foods`, tests actualizados
+- [x] Tests: 17 pytest (incl. 4 YOLO real: carga única, sin falsos positivos), 198 unit backend
+- [x] Dockerfile: ultralytics + modelo en build (cache), volumen futuro
+- [x] E2E real: backend → food-ai → YOLO → detecciones
+
 ## Pendiente (orden)
 
 1. **FASE 1 — Image ingestion**: `POST /api/food/analyze` — validación MIME/tamaño, id, almacenamiento temporal, reenvío al AI Service, respuesta asíncrona.

@@ -1,5 +1,11 @@
-from pydantic import BaseModel
 from datetime import datetime
+
+from pydantic import BaseModel
+
+
+class HealthModel(BaseModel):
+    loaded: bool
+    version: str
 
 
 class HealthResponse(BaseModel):
@@ -7,3 +13,4 @@ class HealthResponse(BaseModel):
     service: str
     version: str
     timestamp_utc: datetime
+    model: HealthModel | None = None

@@ -12,6 +12,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import uvicorn  # noqa: E402
+from app.core.config import settings  # noqa: E402
 
 if __name__ == "__main__":
     if sys.platform == "win32":
@@ -19,6 +20,6 @@ if __name__ == "__main__":
     uvicorn.run(
         "app.main:app",
         host="0.0.0.0",
-        port=int(os.environ.get("FOOD_AI_SERVICE_PORT", "8010")),
+        port=settings.service_port,
         reload=True,
     )

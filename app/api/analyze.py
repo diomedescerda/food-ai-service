@@ -1,9 +1,17 @@
 import os
+import time
+from io import BytesIO
 from uuid import UUID
 
-from fastapi import APIRouter, File, Form, HTTPException, UploadFile
+from fastapi import APIRouter, File, Form, HTTPException, Request, UploadFile
+from PIL import Image
 
-from app.schemas.analyze import AnalyzeResponse
+from app.models.base import IFoodDetector
+from app.schemas.analyze import (
+    AnalyzeResponse,
+    BoundingBox,
+    DetectedFood,
+)
 
 router = APIRouter()
 
@@ -33,14 +41,26 @@ def _has_valid_magic(content_type: str, head: bytes) -> bool:
     return head.startswith(expected)
 
 
+def _get_detector(request: Request) -> IFoodDetector:
+    detector = request.app.state.detector
+    if detector is None or not detector.is_loaded:
+        raise HTTPException(
+            status_code=503,
+            detail={
+                "success": False,
+                "error": {"code": "MODEL_NOT_READY", "message": "El modelo no está cargado."},
+            },
+        )
+    return detector
+
+
 @router.post("/analyze", response_model=AnalyzeResponse, tags=["analyze"])
 async def analyze(
+    request: Request,
     analysis_id: str = Form(...),
     image: UploadFile = File(...),
 ) -> AnalyzeResponse:
-    """Recibe una imagen de comida (ingesta). Sin análisis todavía: responde
-    status "received". La validación de contenido ocurre en el backend .NET;
-    aquí solo se re-verifica el contrato mínimo."""
+    """Detecta alimentos en la imagen: clase + confidence + bounding box (píxeles)."""
     try:
         UUID(analysis_id)
     except ValueError:
@@ -66,4 +86,44 @@ async def analyze(
     if not _has_valid_magic(content_type, head):
         raise _error("CORRUPT_FILE", "El archivo no es una imagen válida.")
 
-    return AnalyzeResponse(analysis_id=analysis_id, status="received")
+    try:
+        pil_image = Image.open(BytesIO(await image.read())).convert("RGB")
+    except Exception:
+        raise _error("CORRUPT_FILE", "No fue posible decodificar la imagen.")
+
+    detector = _get_detector(request)
+
+    start = time.perf_counter()
+    detections = detector.detect(pil_image)
+    inference_ms = round((time.perf_counter() - start) * 1000)
+
+    from app.utils.debug import save_debug_image
+
+    debug_path = save_debug_image(
+        request.app.state.settings.debug_images_dir,
+        analysis_id,
+        pil_image,
+        detections,
+    )
+    if debug_path:
+        request.app.state.logger.debug("Debug image guardada: %s", debug_path)
+
+    return AnalyzeResponse(
+        analysis_id=analysis_id,
+        status="completed",
+        model_version=detector.model_version,
+        inference_time_ms=inference_ms,
+        foods=[
+            DetectedFood(
+                name=d.name,
+                confidence=d.confidence,
+                bounding_box=BoundingBox(
+                    x=d.bounding_box.x,
+                    y=d.bounding_box.y,
+                    width=d.bounding_box.width,
+                    height=d.bounding_box.height,
+                ),
+            )
+            for d in detections
+        ],
+    )

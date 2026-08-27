@@ -26,4 +26,5 @@ training/experiments/*.json
 
 # === Misc ===
 *.log
-.DS_Store
+.DS_Storeweights/
+debug-out/
