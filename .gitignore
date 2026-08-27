@@ -1,0 +1,29 @@
+# === ENV ===
+.env
+.env.local
+!.env.example
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# === Modelos y datasets (NUNCA en git) ===
+models/
+*.pt
+*.pth
+*.onnx
+datasets/images/
+datasets/annotations/
+training/checkpoints/
+training/logs/
+training/experiments/*.json
+
+# === Misc ===
+*.log
+.DS_Store
