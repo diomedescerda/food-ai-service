@@ -11,6 +11,7 @@ from app.schemas.analyze import (
     AnalyzeResponse,
     BoundingBox,
     DetectedFood,
+    Segmentation,
 )
 
 router = APIRouter()
@@ -92,10 +93,17 @@ async def analyze(
         raise _error("CORRUPT_FILE", "No fue posible decodificar la imagen.")
 
     detector = _get_detector(request)
+    segmenter = getattr(request.app.state, "segmenter", None)
 
     start = time.perf_counter()
     detections = detector.detect(pil_image)
     inference_ms = round((time.perf_counter() - start) * 1000)
+
+    seg_start = time.perf_counter()
+    segmentations: list = [None] * len(detections)
+    if segmenter is not None and segmenter.is_loaded and detections:
+        segmentations = segmenter.segment(pil_image, detections)
+    seg_ms = round((time.perf_counter() - seg_start) * 1000)
 
     from app.utils.debug import save_debug_image
 
@@ -104,6 +112,7 @@ async def analyze(
         analysis_id,
         pil_image,
         detections,
+        segmentations,
     )
     if debug_path:
         request.app.state.logger.debug("Debug image guardada: %s", debug_path)
@@ -112,7 +121,10 @@ async def analyze(
         analysis_id=analysis_id,
         status="completed",
         model_version=detector.model_version,
-        inference_time_ms=inference_ms,
+        seg_model_version=(
+            segmenter.model_version if segmenter is not None and segmenter.is_loaded else "none"
+        ),
+        inference_time_ms=inference_ms + seg_ms,
         foods=[
             DetectedFood(
                 name=d.name,
@@ -123,7 +135,12 @@ async def analyze(
                     width=d.bounding_box.width,
                     height=d.bounding_box.height,
                 ),
+                segmentation=(
+                    Segmentation(mask=s.mask, area_pixels=s.area_pixels)
+                    if s is not None
+                    else None
+                ),
             )
-            for d in detections
+            for d, s in zip(detections, segmentations)
         ],
     )

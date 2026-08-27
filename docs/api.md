@@ -1,6 +1,6 @@
 # API — Food AI
 
-## Estado FASE 2 — Food Detection
+## Estado FASE 3 — Segmentation
 
 | Método | Ruta | Descripción | Auth |
 |---|---|---|---|
@@ -14,12 +14,18 @@
 `POST /api/v1/foodai/analyze` (multipart `image=<archivo>`):
 ```json
 {
-  "analysisId": "61b98e10-6215-4d02-9216-0da8728c943c",
+  "analysisId": "d7637c16-80a0-4947-b63e-833de226012b",
   "status": "completed",
   "modelVersion": "food-detector-v1",
-  "inferenceTimeMs": 182,
+  "segModelVersion": "food-segmenter-v1",
+  "inferenceTimeMs": 5185,
   "foods": [
-    { "name": "pizza", "confidence": 0.94, "boundingBox": { "x": 120, "y": 80, "width": 300, "height": 180 } }
+    {
+      "name": "pizza",
+      "confidence": 0.9253,
+      "boundingBox": { "x": 7, "y": 14, "width": 318, "height": 216 },
+      "segmentation": { "mask": "<base64 PNG>", "areaPixels": 44970 }
+    }
   ]
 }
 ```
@@ -31,7 +37,8 @@
   "service": "food-ai-service",
   "version": "0.1.0",
   "timestamp_utc": "...",
-  "model": { "loaded": true, "version": "food-detector-v1" }
+  "model": { "loaded": true, "version": "food-detector-v1" },
+  "segmentation_model": { "loaded": true, "version": "food-segmenter-v1" }
 }
 ```
 
@@ -54,7 +61,7 @@ Errores backend (400): `{"error":{"code":"EMPTY_FILE"|"IMAGE_TOO_LARGE"|"INVALID
 
 El backend es el único que habla con el Food AI Service. Los schemas internos del servicio NO se exponen al frontend.
 
-### Contrato de análisis (FASE 2, implementado)
+### Contrato de análisis (FASE 3, implementado)
 
 Request (backend → Python, multipart):
 ```
@@ -68,9 +75,15 @@ Response:
   "analysis_id": "uuid",
   "status": "completed",
   "model_version": "food-detector-v1",
-  "inference_time_ms": 182,
+  "seg_model_version": "food-segmenter-v1",
+  "inference_time_ms": 5185,
   "foods": [
-    { "name": "pizza", "confidence": 0.94, "bounding_box": { "x": 120, "y": 80, "width": 300, "height": 180 } }
+    {
+      "name": "pizza",
+      "confidence": 0.9253,
+      "bounding_box": { "x": 7, "y": 14, "width": 318, "height": 216 },
+      "segmentation": { "mask": "<base64 PNG>", "area_pixels": 44970 }
+    }
   ]
 }
 ```

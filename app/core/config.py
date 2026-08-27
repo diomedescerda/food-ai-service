@@ -21,6 +21,10 @@ class Settings(BaseSettings):
     device: str = "cpu"
     max_detections: int = 20
 
+    # === Modelo de segmentación ===
+    seg_model_path: str = "weights/yolo11n-seg.pt"
+    seg_model_version: str = "food-segmenter-v1"
+
     # Directorio para guardar imágenes de debug (bbox + labels). Vacío = off.
     debug_images_dir: str = ""
 

@@ -1,4 +1,4 @@
-"""Contrato de detección: fixture de imagen y builder de la app con detector fake."""
+"""Contrato de detección/segmentación: fixture de imagen y app con fakes."""
 
 import sys
 from io import BytesIO
@@ -9,7 +9,7 @@ from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from fakes import FakeFoodDetector  # noqa: E402
+from fakes import FakeFoodDetector, FakeFoodSegmenter  # noqa: E402
 
 PNG_1X1 = bytes.fromhex(
     "89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c489"
@@ -26,7 +26,7 @@ def make_png_image(width: int = 64, height: int = 64) -> bytes:
 
 @pytest.fixture
 def app_with_detector():
-    """App FastAPI con detector fake en app.state (sin cargar YOLO)."""
+    """App FastAPI con detector + segmentador fake (sin cargar YOLO)."""
     from fastapi import FastAPI
 
     from app.api.analyze import router as analyze_router
@@ -35,20 +35,23 @@ def app_with_detector():
 
     detector = FakeFoodDetector()
     detector.load()
+    segmenter = FakeFoodSegmenter()
+    segmenter.load()
 
     app = FastAPI()
     app.state.detector = detector
+    app.state.segmenter = segmenter
     app.state.settings = Settings(debug_images_dir="")
     app.state.logger = None
     app.include_router(health_router)
     app.include_router(analyze_router)
-    return app, detector
+    return app, detector, segmenter
 
 
 @pytest.fixture
 def client(app_with_detector):
     from fastapi.testclient import TestClient
 
-    app, detector = app_with_detector
+    app, detector, segmenter = app_with_detector
     with TestClient(app) as test_client:
-        yield test_client, detector
+        yield test_client, detector, segmenter

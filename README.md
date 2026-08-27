@@ -2,7 +2,7 @@
 
 Servicio de IA de análisis de alimentos del ecosistema CoppAddresd: detección, segmentación, clasificación, estimación de porción y nutrición. Python 3.12+ / FastAPI.
 
-**Estado actual: FASE 2 — Food Detection.** `POST /analyze` detecta alimentos (clase + confidence + bounding box en píxeles) con YOLO11n (COCO). Detalle: `docs/model-selection.md`, `docs/detection.md`.
+**Estado actual: FASE 3 — Segmentation.** `POST /analyze` detecta y segmenta alimentos: clase + confidence + bounding box + máscara (PNG base64) + área en píxeles. YOLO11n + YOLO11n-seg (COCO). Detalle: `docs/model-selection.md`, `docs/detection.md`.
 
 ## Comandos
 
@@ -13,10 +13,11 @@ python -m venv .venv
 .\.venv\Scripts\python run_dev.py       # dev server puerto 8010 (Windows: selector loop)
 ```
 
-**Modelo** (primera vez):
+**Modelos** (primera vez):
 ```bash
 mkdir weights
 curl -L -o weights/yolo11n.pt https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt
+curl -L -o weights/yolo11n-seg.pt https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-seg.pt
 ```
 
 **Puerto 8010**: el 8000 lo ocupa el `ai-service/` de CoppAddresd (agente IA). No usar 8000.

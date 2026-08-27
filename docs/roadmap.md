@@ -33,6 +33,16 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Dockerfile: ultralytics + modelo en build (cache), volumen futuro
 - [x] E2E real: backend → food-ai → YOLO → detecciones
 
+## FASE 3 — Segmentation ✅ (2026-08-27)
+- [x] `IFoodSegmenter` + `YoloFoodSegmenter` (yolo11n-seg.pt) — interfaces separadas del detector
+- [x] `/analyze` → `segmentation` por alimento (PNG b64 recortado al bbox + area_pixels) + `seg_model_version`
+- [x] Emparejamiento máscara↔detección por IoU ≥ 0.5
+- [x] Debug overlay: máscara semi-transparente + bbox + label + confidence
+- [x] Health: `segmentation_model` con loaded/version
+- [x] Backend .NET: `SegmentationDto` + cliente parsea máscara
+- [x] Tests: 22 pytest (incl. 3 segmentación real pizza/banana/apple: dims=bbox, área>0, área<bbox), 198 unit backend
+- [x] E2E real por backend: pizza 0.9253/44970px, banana 0.8932/24629px
+
 ## Pendiente (orden)
 
 1. **FASE 1 — Image ingestion**: `POST /api/food/analyze` — validación MIME/tamaño, id, almacenamiento temporal, reenvío al AI Service, respuesta asíncrona.

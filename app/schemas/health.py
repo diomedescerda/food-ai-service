@@ -14,3 +14,4 @@ class HealthResponse(BaseModel):
     version: str
     timestamp_utc: datetime
     model: HealthModel | None = None
+    segmentation_model: HealthModel | None = None

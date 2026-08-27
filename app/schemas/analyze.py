@@ -8,16 +8,23 @@ class BoundingBox(BaseModel):
     height: int
 
 
+class Segmentation(BaseModel):
+    mask: str
+    area_pixels: int
+
+
 class DetectedFood(BaseModel):
     name: str
     confidence: float
     bounding_box: BoundingBox
+    segmentation: Segmentation | None = None
 
 
 class AnalyzeResponse(BaseModel):
     analysis_id: str
     status: str
     model_version: str
+    seg_model_version: str
     inference_time_ms: int
     foods: list[DetectedFood]
 
