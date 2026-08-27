@@ -2,7 +2,7 @@
 
 Servicio de IA de análisis de alimentos del ecosistema CoppAddresd: detección, segmentación, clasificación, estimación de porción y nutrición. Python 3.12+ / FastAPI.
 
-**Estado actual: FASE 0 — infraestructura base.** Solo `/health`. Sin modelos, sin ML todavía.
+**Estado actual: FASE 1 — Image Ingestion.** `/health` + `POST /analyze` (recibe imagen, valida, responde `received`). Sin modelos, sin ML todavía.
 
 ## Comandos
 

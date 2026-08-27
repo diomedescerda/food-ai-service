@@ -9,6 +9,18 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Backend → AI Service probe real verificado
 - [x] Tests: 179 unit backend ✓, 2 pytest ✓
 
+## FASE 1 — Image Ingestion ✅ (2026-08-27)
+- [x] `POST /api/v1/foodai/analyze` (multipart) — MediatR command `AnalyzeFoodImageCommand`
+- [x] Validación: extensión, MIME, tamaño máx (10 MB), vacío, firma mágica (`ImageFileValidator`)
+- [x] `AnalysisId` UUID por análisis
+- [x] `IImageStorage` → `LocalImageStorage` (delega en `IObjectStorageService` Local/S3 existente, clave `foodai/<id>.<ext>`)
+- [x] Contrato backend → Python: `POST /analyze` multipart (`image` + `analysis_id`) → `{analysis_id, status: "received"}`
+- [x] `FoodAiClient.SendImageAsync` (multipart, snake_case, errores → `FoodAiException` 502)
+- [x] Correlación: `CorrelationIdDelegatingHandler` existente
+- [x] E2E real verificado: validación + storage + respuesta received
+- [x] Tests: 198 unit backend ✓ (19 nuevos), 9 pytest ✓
+- [x] Sin tablas nuevas (persistencia síncrona; análisis persistidos en FASE 16 con correcciones)
+
 ## Pendiente (orden)
 
 1. **FASE 1 — Image ingestion**: `POST /api/food/analyze` — validación MIME/tamaño, id, almacenamiento temporal, reenvío al AI Service, respuesta asíncrona.
