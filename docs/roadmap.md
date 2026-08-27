@@ -43,6 +43,16 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Tests: 22 pytest (incl. 3 segmentación real pizza/banana/apple: dims=bbox, área>0, área<bbox), 198 unit backend
 - [x] E2E real por backend: pizza 0.9253/44970px, banana 0.8932/24629px
 
+## FASE 4 — Classification ✅ (2026-08-27)
+- [x] Decisión: clasificación del detector suficiente (YOLO = detector+clasificador integrado); SIN segundo modelo
+- [x] `IFoodClassifier` + `DetectorBasedClassifier` (delega en detector, costo 0 ms) — pipeline contra interfaces
+- [x] `/analyze` → `classifier_version` (retrocompatible)
+- [x] Health: `classifier_model` {loaded, version}
+- [x] Backend .NET: `ClassifierVersion` en DTO/cliente
+- [x] Tests: 27 pytest (5 nuevos: fake + clasificación real pizza/banana/apple), 198 unit backend
+- [x] E2E real: pizza 0.9253, banana 0.8932, apple 0.8613 — coherentes
+- [x] docs/classification.md: decisión, límites, plan comida colombiana
+
 ## Pendiente (orden)
 
 1. **FASE 1 — Image ingestion**: `POST /api/food/analyze` — validación MIME/tamaño, id, almacenamiento temporal, reenvío al AI Service, respuesta asíncrona.

@@ -15,3 +15,4 @@ class HealthResponse(BaseModel):
     timestamp_utc: datetime
     model: HealthModel | None = None
     segmentation_model: HealthModel | None = None
+    classifier_model: HealthModel | None = None

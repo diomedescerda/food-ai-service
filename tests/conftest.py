@@ -26,32 +26,35 @@ def make_png_image(width: int = 64, height: int = 64) -> bytes:
 
 @pytest.fixture
 def app_with_detector():
-    """App FastAPI con detector + segmentador fake (sin cargar YOLO)."""
+    """App FastAPI con detector + segmentador + clasificador fake (sin YOLO)."""
     from fastapi import FastAPI
 
     from app.api.analyze import router as analyze_router
     from app.api.health import router as health_router
     from app.core.config import Settings
+    from app.models.detector_based_classifier import DetectorBasedClassifier
 
     detector = FakeFoodDetector()
     detector.load()
     segmenter = FakeFoodSegmenter()
     segmenter.load()
+    classifier = DetectorBasedClassifier(detector)
 
     app = FastAPI()
     app.state.detector = detector
     app.state.segmenter = segmenter
+    app.state.classifier = classifier
     app.state.settings = Settings(debug_images_dir="")
     app.state.logger = None
     app.include_router(health_router)
     app.include_router(analyze_router)
-    return app, detector, segmenter
+    return app, detector, segmenter, classifier
 
 
 @pytest.fixture
 def client(app_with_detector):
     from fastapi.testclient import TestClient
 
-    app, detector, segmenter = app_with_detector
+    app, detector, segmenter, classifier = app_with_detector
     with TestClient(app) as test_client:
-        yield test_client, detector, segmenter
+        yield test_client, detector, segmenter, classifier

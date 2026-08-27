@@ -6,13 +6,14 @@ from fastapi import FastAPI
 from app.api.analyze import router as analyze_router
 from app.api.health import router as health_router
 from app.core.config import settings
+from app.models.detector_based_classifier import DetectorBasedClassifier
 from app.models.yolo_food_detector import YoloFoodDetector
 from app.models.yolo_food_segmenter import YoloFoodSegmenter
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Ciclo de vida: carga detector y segmentador UNA vez al arrancar."""
+    """Ciclo de vida: carga detector, segmentador y clasificador UNA vez al arrancar."""
     detector = YoloFoodDetector(settings)
     detector.load()
     app.state.detector = detector
@@ -32,6 +33,11 @@ async def lifespan(app: FastAPI):
         segmenter.model_version,
         settings.seg_model_path,
     )
+
+    # Clasificador sin modelo propio: la clase/confianza vienen del detector.
+    classifier = DetectorBasedClassifier(detector)
+    app.state.classifier = classifier
+    app.state.logger.info("Clasificador cargado: version=%s", classifier.model_version)
 
     app.state.settings = settings
     yield

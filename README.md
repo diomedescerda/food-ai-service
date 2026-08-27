@@ -2,7 +2,7 @@
 
 Servicio de IA de análisis de alimentos del ecosistema CoppAddresd: detección, segmentación, clasificación, estimación de porción y nutrición. Python 3.12+ / FastAPI.
 
-**Estado actual: FASE 3 — Segmentation.** `POST /analyze` detecta y segmenta alimentos: clase + confidence + bounding box + máscara (PNG base64) + área en píxeles. YOLO11n + YOLO11n-seg (COCO). Detalle: `docs/model-selection.md`, `docs/detection.md`.
+**Estado actual: FASE 4 — Classification.** `POST /analyze` detecta, segmenta y clasifica alimentos (clase + confidence + bbox + máscara PNG base64 + área). YOLO11n + YOLO11n-seg (COCO); clasificación sin modelo extra (la del detector). Detalle: `docs/model-selection.md`, `docs/detection.md`, `docs/classification.md`.
 
 ## Comandos
 

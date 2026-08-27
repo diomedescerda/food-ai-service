@@ -94,6 +94,7 @@ async def analyze(
 
     detector = _get_detector(request)
     segmenter = getattr(request.app.state, "segmenter", None)
+    classifier = getattr(request.app.state, "classifier", None)
 
     start = time.perf_counter()
     detections = detector.detect(pil_image)
@@ -104,6 +105,18 @@ async def analyze(
     if segmenter is not None and segmenter.is_loaded and detections:
         segmentations = segmenter.segment(pil_image, detections)
     seg_ms = round((time.perf_counter() - seg_start) * 1000)
+
+    # Clasificación final: con DetectorBasedClassifier no hay inferencia extra
+    # (la clase/confianza vienen del detector); el pipeline habla contra
+    # IFoodClassifier para poder sustituirlo por un clasificador dedicado.
+    if classifier is not None and classifier.is_loaded:
+        classifications = classifier.classify(pil_image, detections)
+        final_names = [c.name if c is not None else d.name for c, d in zip(classifications, detections)]
+        final_confidences = [c.confidence if c is not None else d.confidence for c, d in zip(classifications, detections)]
+    else:
+        final_names = [d.name for d in detections]
+        final_confidences = [d.confidence for d in detections]
+        classifier = None
 
     from app.utils.debug import save_debug_image
 
@@ -124,11 +137,14 @@ async def analyze(
         seg_model_version=(
             segmenter.model_version if segmenter is not None and segmenter.is_loaded else "none"
         ),
+        classifier_version=(
+            classifier.model_version if classifier is not None and classifier.is_loaded else "none"
+        ),
         inference_time_ms=inference_ms + seg_ms,
         foods=[
             DetectedFood(
-                name=d.name,
-                confidence=d.confidence,
+                name=name,
+                confidence=confidence,
                 bounding_box=BoundingBox(
                     x=d.bounding_box.x,
                     y=d.bounding_box.y,
@@ -141,6 +157,6 @@ async def analyze(
                     else None
                 ),
             )
-            for d, s in zip(detections, segmentations)
+            for d, s, name, confidence in zip(detections, segmentations, final_names, final_confidences)
         ],
     )

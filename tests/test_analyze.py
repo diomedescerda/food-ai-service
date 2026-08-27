@@ -17,7 +17,7 @@ def _multipart(data, filename="plato.png", content_type="image/png", analysis_id
 
 
 def test_analyze_imagen_valida_devuelve_detecciones_y_mascara(client):
-    c, detector, segmenter = client
+    c, detector, segmenter, classifier = client
     files, form = _multipart(make_png_image())
 
     response = c.post("/analyze", files=files, data=form)
@@ -27,6 +27,7 @@ def test_analyze_imagen_valida_devuelve_detecciones_y_mascara(client):
     assert body["status"] == "completed"
     assert body["model_version"] == detector.model_version
     assert body["seg_model_version"] == segmenter.model_version
+    assert body["classifier_version"] == "detector-based-v1"
     assert isinstance(body["inference_time_ms"], int)
     assert len(body["foods"]) == 1
     food = body["foods"][0]
@@ -41,7 +42,7 @@ def test_analyze_imagen_valida_devuelve_detecciones_y_mascara(client):
 
 
 def test_analyze_sin_segmentador_mascara_nula(client):
-    c, _, segmenter = client
+    c, _, segmenter, _ = client
     segmenter._loaded = False
     files, form = _multipart(make_png_image())
 
@@ -54,7 +55,7 @@ def test_analyze_sin_segmentador_mascara_nula(client):
 
 
 def test_analyze_imagen_sin_comida_devuelve_foods_vacio(client):
-    c, detector, _ = client
+    c, detector, _, _ = client
     detector._detections = []
     files, form = _multipart(make_png_image())
 
@@ -67,7 +68,7 @@ def test_analyze_imagen_sin_comida_devuelve_foods_vacio(client):
 
 
 def test_analyze_multiples_detecciones(client):
-    c, detector, _ = client
+    c, detector, _, _ = client
     detector._detections = [
         Detection("rice", 0.94, BoundingBox(120, 80, 300, 180)),
         Detection("chicken", 0.91, BoundingBox(450, 120, 180, 220)),
@@ -84,7 +85,7 @@ def test_analyze_multiples_detecciones(client):
 
 
 def test_analyze_archivo_corrupto_responde_400(client):
-    c, _, _ = client
+    c, _, _, _ = client
     files, form = _multipart(b"no soy una imagen")
 
     response = c.post("/analyze", files=files, data=form)
@@ -94,7 +95,7 @@ def test_analyze_archivo_corrupto_responde_400(client):
 
 
 def test_analyze_archivo_vacio_responde_400(client):
-    c, _, _ = client
+    c, _, _, _ = client
     files, form = _multipart(b"")
 
     response = c.post("/analyze", files=files, data=form)
@@ -104,7 +105,7 @@ def test_analyze_archivo_vacio_responde_400(client):
 
 
 def test_analyze_archivo_demasiado_grande_responde_400(client):
-    c, _, _ = client
+    c, _, _, _ = client
     files, form = _multipart(b"x" * (10 * 1024 * 1024 + 1))
 
     response = c.post("/analyze", files=files, data=form)
@@ -114,7 +115,7 @@ def test_analyze_archivo_demasiado_grande_responde_400(client):
 
 
 def test_analyze_mime_invalido_responde_400(client):
-    c, _, _ = client
+    c, _, _, _ = client
     files, form = _multipart(make_png_image(), content_type="application/pdf")
 
     response = c.post("/analyze", files=files, data=form)
@@ -124,7 +125,7 @@ def test_analyze_mime_invalido_responde_400(client):
 
 
 def test_analyze_extension_invalida_responde_400(client):
-    c, _, _ = client
+    c, _, _, _ = client
     files, form = _multipart(make_png_image(), filename="plato.exe")
 
     response = c.post("/analyze", files=files, data=form)
@@ -134,7 +135,7 @@ def test_analyze_extension_invalida_responde_400(client):
 
 
 def test_analyze_analysis_id_invalido_responde_400(client):
-    c, _, _ = client
+    c, _, _, _ = client
     files, form = _multipart(make_png_image(), analysis_id="no-uuid")
 
     response = c.post("/analyze", files=files, data=form)
@@ -144,7 +145,7 @@ def test_analyze_analysis_id_invalido_responde_400(client):
 
 
 def test_analyze_detector_no_cargado_responde_503(client):
-    c, detector, _ = client
+    c, detector, _, _ = client
     detector._loaded = False
     files, form = _multipart(make_png_image())
 
@@ -155,7 +156,7 @@ def test_analyze_detector_no_cargado_responde_503(client):
 
 
 def test_health_incluye_estado_del_modelo(client):
-    c, detector, segmenter = client
+    c, detector, segmenter, classifier = client
 
     response = c.get("/health")
 
@@ -163,11 +164,13 @@ def test_health_incluye_estado_del_modelo(client):
     body = response.json()
     assert body["status"] == "healthy"
     assert body["model"] == {"loaded": True, "version": detector.model_version}
+    assert body["segmentation_model"] == {"loaded": True, "version": segmenter.model_version}
+    assert body["classifier_model"] == {"loaded": True, "version": classifier.model_version}
 
 
 def test_detector_se_carga_una_sola_vez_en_startup(app_with_detector):
     """El detector fake confirma ciclo de vida: load() en startup, detect() por request."""
-    app, detector, _ = app_with_detector
+    app, detector, _, _ = app_with_detector
 
     assert detector.is_loaded
     assert detector.detect_calls == 0

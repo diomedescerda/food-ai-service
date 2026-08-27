@@ -1,6 +1,6 @@
 # API — Food AI
 
-## Estado FASE 3 — Segmentation
+## Estado FASE 4 — Classification
 
 | Método | Ruta | Descripción | Auth |
 |---|---|---|---|
@@ -18,6 +18,7 @@
   "status": "completed",
   "modelVersion": "food-detector-v1",
   "segModelVersion": "food-segmenter-v1",
+  "classifierVersion": "detector-based-v1",
   "inferenceTimeMs": 5185,
   "foods": [
     {
@@ -38,7 +39,8 @@
   "version": "0.1.0",
   "timestamp_utc": "...",
   "model": { "loaded": true, "version": "food-detector-v1" },
-  "segmentation_model": { "loaded": true, "version": "food-segmenter-v1" }
+  "segmentation_model": { "loaded": true, "version": "food-segmenter-v1" },
+  "classifier_model": { "loaded": true, "version": "detector-based-v1" }
 }
 ```
 

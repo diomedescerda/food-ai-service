@@ -1,0 +1,81 @@
+# Clasificación de alimentos (FASE 4)
+
+## Decisión: clasificación del detector es suficiente — sin segundo modelo
+
+YOLO11n/11n-seg (Ultralytics) es un detector **+ clasificador integrado**: cada
+detección ya incluye clase y confidence. Para las 10 clases de comida de COCO
+(pizza, banana, apple, ...) un clasificador separado (p. ej. sobre crops) no
+aportaría precisión medible y añadiría latencia, memoria y un modelo más que
+mantener. **No se agregó un segundo modelo.**
+
+## Detección vs Clasificación
+
+| Etapa | Pregunta | Fuente actual |
+|---|---|---|
+| Detection | ¿Dónde hay un objeto? ¿Qué clase parece? ¿Confianza? | YOLO11n |
+| Segmentation | ¿Cuál es la forma exacta del objeto? | YOLO11n-seg |
+| Classification | ¿Qué alimento es EXACTAMENTE este objeto? | clase+confidence de YOLO (`DetectorBasedClassifier`) |
+
+Cuando el catálogo crezca a comida colombiana (arroz blanco vs arroz con coco,
+arepa, patacón, frijoles...), YOLO-COCO no distinguirá: ahí entra un
+clasificador dedicado.
+
+## Arquitectura
+
+```
+IFoodClassifier (app/models/classifier_base.py)
+    │
+    └── DetectorBasedClassifier (app/models/detector_based_classifier.py)
+            └── IFoodDetector (delega: clase+confidence, SIN inferencia extra)
+```
+
+- El pipeline (`analyze.py`) trabaja contra `IFoodClassifier` — nunca contra un
+  modelo concreto.
+- `DetectorBasedClassifier.classify()` es O(1) por detección: no llama al
+  modelo. El costo de clasificación es 0 ms.
+- Para el futuro: `ColombianFoodClassifier` implementa `IFoodClassifier`
+  (fine-tuning de cropped masks/bboxes) y se reemplaza en `main.py` sin tocar
+  `analyze.py`.
+
+## Contrato
+
+`/analyze` añade `classifier_version` (opcional, retrocompatible):
+
+```json
+{
+  "analysis_id": "uuid",
+  "status": "completed",
+  "model_version": "food-detector-v1",
+  "seg_model_version": "food-segmenter-v1",
+  "classifier_version": "detector-based-v1",
+  "inference_time_ms": 5185,
+  "foods": [{ "name": "pizza", "confidence": 0.9253, "bounding_box": {...}, "segmentation": {...} }]
+}
+```
+
+El `name`/`confidence` finales del alimento provienen de la clasificación
+(actualmente idénticos a la detección).
+
+## Evaluación real (imágenes de prueba)
+
+| Imagen | Clase | Confidence |
+|---|---|---|
+| pizza.jpg | pizza | 0.9253 |
+| banana.jpg | banana | 0.8932 |
+| apple.jpg | apple | 0.8613 |
+
+Todas coherentes con las clases soportadas; confianza > threshold 0.35.
+
+## Limitaciones
+
+- 10 clases COCO: sin comida colombiana (arroz, arepa, frijoles, sancocho...).
+- Platos compuestos (bandeja paisa) → múltiples detecciones sin relación
+  semántica entre ellas (requiere LLM auxiliar — FASE 9).
+- `DetectorBasedClassifier` no distingue variedades (arroz blanco vs coco).
+- Evaluación formal (accuracy por clase, matriz de confusión) → FASE 19.
+
+## Qué será necesario para comida colombiana
+
+1. Dataset de 30-50 clases (FASE 10-11).
+2. `ColombianFoodClassifier` con fine-tuning de YOLO sobre crops/masks (FASE 12).
+3. Sustituir `DetectorBasedClassifier` en DI/lifespan — sin cambios en analyze.

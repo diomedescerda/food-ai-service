@@ -25,6 +25,7 @@ class AnalyzeResponse(BaseModel):
     status: str
     model_version: str
     seg_model_version: str
+    classifier_version: str = "detector-based-v1"
     inference_time_ms: int
     foods: list[DetectedFood]
 
