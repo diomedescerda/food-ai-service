@@ -96,6 +96,17 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] API /analyze retrocompatible + nutrition/summary (controller mapea presentación)
 - [x] Tests: 211 unit backend (11 calculator nuevos) · E2E real: pizza 340.48 kcal, banana 105.02, apple 113.36
 
+## FASE 9 — Food Analysis / User Feedback ✅ (2026-08-28)
+- [x] Persistencia en schema foodai: food_analyses + food_analysis_items + food_analysis_feedback (migración AddFoodAiAnalysis + GRANT)
+- [x] Snapshot nutricional + model versions por análisis (reconstruible aunque cambie el modelo/DB)
+- [x] Máscaras a object storage (maskKey), nunca base64 en PG
+- [x] Idempotencia por analysisId (AddAsync no duplica)
+- [x] GET /analyses/{id} [Authorize] + ownership (404 análisis ajenos; 401 sin token)
+- [x] POST feedback: FOOD_WRONG/PORTION_WRONG/DETECTION_WRONG/MISSING_FOOD/OTHER — conserva original + corregido
+- [x] E2E real: analyze autenticado → GET → feedback (128→200) → GET (original intacto) → 401 sin token
+- [x] Tests: 213 unit + 14 integration (4 persistencia nuevos)
+- [x] Causa raíz login: admin solo con app "erp" (auth.user_applications) → login con application="erp" (sin tocar código)
+
 ## Pendiente (orden)
 
 1. **FASE 1 — Image ingestion**: `POST /api/food/analyze` — validación MIME/tamaño, id, almacenamiento temporal, reenvío al AI Service, respuesta asíncrona.

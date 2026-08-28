@@ -1,6 +1,14 @@
 # API — Food AI
 
-## Estado FASE 8 — Nutrition Engine
+## Estado FASE 9 — Food Analysis / User Feedback
+
+| Método | Ruta | Descripción | Auth |
+|---|---|---|---|
+| GET | `/api/v1/foodai/health` (backend) | Probe backend → FoodAI Service | pública |
+| POST | `/api/v1/foodai/analyze` (backend) | Ingesta + pipeline completo + nutrición + persistencia del análisis | pública (persiste userId si hay JWT) |
+| GET | `/api/v1/foodai/nutrition/{foodKey}` (backend) | Nutrición por 100 g | pública |
+| GET | `/api/v1/foodai/analyses/{analysisId}` (backend) | Recupera análisis persistido (items + snapshot + feedbacks) | [Authorize] + ownership |
+| POST | `/api/v1/foodai/analyses/{analysisId}/feedback` (backend) | Corrección del usuario (FOOD_WRONG/PORTION_WRONG/DETECTION_WRONG/MISSING_FOOD/OTHER) | [Authorize] + ownership |
 
 | Método | Ruta | Descripción | Auth |
 |---|---|---|---|
@@ -43,6 +51,21 @@
 ⚠️ `estimatedGrams` y la nutrición derivada son ESTIMACIONES, no mediciones.
 
 `nutritionStatus`: `available` | `unavailable` (sin entrada en la DB, ej. sandwich) | `portion_unavailable` (sin gramos). Alimentos sin nutrición no rompen el análisis y quedan visibles; los totales solo suman los disponibles.
+
+## Persistencia y feedback
+
+`POST /analyze` persiste el análisis (schema `foodai.`): items con snapshot nutricional + versiones de modelo + máscara en object storage (`maskKey`), nunca base64 en PG. Idempotente por analysisId.
+
+`POST /api/v1/foodai/analyses/{id}/feedback`:
+```json
+{
+  "itemIndex": 0,
+  "type": "PORTION_WRONG",
+  "correctedGrams": 200,
+  "note": "era más"
+}
+```
+→ `201` con `originalGrams: 128, correctedGrams: 200` (el original nunca se sobrescribe). `401` sin token; `404` para análisis ajenos (ownership).
 
 `GET /health` (food-ai-service):
 ```json
