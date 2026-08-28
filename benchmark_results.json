@@ -1,0 +1,41 @@
+{
+  "benchmark": {
+    "n_images": 108,
+    "classes": ["french_fries", "fried_chicken", "hamburger", "hot_dog", "pizza", "sandwich"],
+    "source": "wikimedia_commons (FASE 10 dataset MVP, licencias CC)",
+    "date": "2026-08-28"
+  },
+  "yolo11n_coco": {
+    "top1": 0.37,
+    "top1_coco_only": 0.667,
+    "unknown_rate": 0.333,
+    "coverage": 0.556,
+    "avg_latency_ms": 112.0,
+    "note": "Solo 10 clases COCO: pizza/hot_dog/sandwich cubiertas; french_fries/fried_chicken/hamburger = unknown"
+  },
+  "clip_vit_b32_zero_shot": {
+    "top1": 0.685,
+    "top3": 0.843,
+    "top5": 0.88,
+    "avg_latency_ms": 91.6,
+    "first_inference_ms": 1080,
+    "load_seconds": 4.0,
+    "catalog_size": 34,
+    "license": "MIT",
+    "ram_estimate_gb": 1.3,
+    "model_size_mb": 605
+  },
+  "siglip_base_zero_shot": {
+    "top1": 0.046,
+    "top3": 0.148,
+    "top5": 0.231,
+    "avg_latency_ms": 211.3,
+    "note": "Sin ajuste de prompt/formato: ranking ~azar. REQUIERE tuning de prompts/umbrales (no concluyente, marcado NOT TESTED further)",
+    "license": "Apache-2.0"
+  },
+  "multi_food_test": {
+    "case": "combo sintético pizza+french_fries (side-by-side)",
+    "clip_top5": ["eggs", "pizza", "pancakes", "mashed potatoes", "sandwich"],
+    "finding": "french fries NO aparece en top5: el embedding global de imagen completa predice 1 clase dominante y pierde el segundo alimento. Embedding global NO sirve para multi-food; se requieren crops por detección/segmentación."
+  }
+}
