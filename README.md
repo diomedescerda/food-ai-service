@@ -2,7 +2,7 @@
 
 Servicio de IA de análisis de alimentos del ecosistema CoppAddresd: detección, segmentación, clasificación, estimación de porción y nutrición. Python 3.12+ / FastAPI.
 
-**Estado actual: FASE 6 — Basic Portion Estimation.** `POST /analyze` detecta, segmenta, clasifica y estima porción (small/medium/large + gramos de referencia USDA FDC, estimación — no medición). Detalle: `docs/model-selection.md`, `docs/detection.md`, `docs/classification.md`, `docs/portion-estimation.md`.
+**Estado actual: FASE 8 — Nutrition Engine.** `POST /analyze` (vía backend) detecta, segmenta, clasifica, estima porción y calcula nutrición por alimento + totales (Nutrition DB en PostgreSQL, única fuente; cálculo decimal en .NET). Detalle: `docs/nutrition.md`, `docs/portion-estimation.md`.
 
 ## Comandos
 

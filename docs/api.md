@@ -1,6 +1,6 @@
 # API — Food AI
 
-## Estado FASE 6 — Basic Portion Estimation
+## Estado FASE 8 — Nutrition Engine
 
 | Método | Ruta | Descripción | Auth |
 |---|---|---|---|
@@ -27,13 +27,22 @@
       "confidence": 0.9253,
       "boundingBox": { "x": 7, "y": 14, "width": 318, "height": 216 },
       "segmentation": { "mask": "<base64 PNG>", "areaPixels": 44970 },
-      "portion": { "portionSize": "large", "estimatedGrams": 128, "minGrams": 118, "maxGrams": 160, "confidence": 0.55, "method": "basic_reference" }
+      "portion": { "portionSize": "large", "estimatedGrams": 128, "minGrams": 118, "maxGrams": 160, "confidence": 0.55, "method": "basic_reference" },
+      "nutrition": { "calories": 340.48, "protein": 14.58, "carbohydrates": 42.66, "fat": 13.31, "fiber": 2.94, "sugar": 4.61, "sodium": 765.44 },
+      "nutritionRange": { "min": { "calories": 313.88 }, "max": { "calories": 425.60 } },
+      "nutritionStatus": "available",
+      "source": "USDA FoodData Central",
+      "sourceVersion": "2026-08-27"
     }
-  ]
+  ],
+  "summary": { "calories": 340.48, "protein": 14.58, "carbohydrates": 42.66, "fat": 13.31, "fiber": 2.94, "sugar": 4.61, "sodium": 765.44 },
+  "summaryRange": { "min": { "calories": 313.88 }, "max": { "calories": 425.60 } }
 }
 ```
 
-⚠️ `estimatedGrams` es una ESTIMACIÓN (reference serving), no un peso medido.
+⚠️ `estimatedGrams` y la nutrición derivada son ESTIMACIONES, no mediciones.
+
+`nutritionStatus`: `available` | `unavailable` (sin entrada en la DB, ej. sandwich) | `portion_unavailable` (sin gramos). Alimentos sin nutrición no rompen el análisis y quedan visibles; los totales solo suman los disponibles.
 
 `GET /health` (food-ai-service):
 ```json

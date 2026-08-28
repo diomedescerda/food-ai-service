@@ -85,6 +85,17 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Conclusión: profundidad relativa NO mejora gramos sin escala → no recomendado para masa; feature geométrica para futuro
 - [x] Tests: 49 pytest (9 nuevos depth/geometry/advanced), 200 unit backend (sin cambios de contrato — retrocompatible)
 
+## FASE 8 — Nutrition Engine ✅ (2026-08-28)
+- [x] Decisión: cálculo en .NET (la Nutrition DB vive en PostgreSQL — única fuente; sin duplicar en Python)
+- [x] `INutritionCalculator` + `NutritionCalculator`: nutrient × grams / 100, decimal, redondeo display 2
+- [x] Integración handler: por alimento → provider (100 g) → calculadora → nutrition + nutritionRange (min/max gramos)
+- [x] summary + summaryRange (totales; alimentos sin nutrición excluidos, visibles individualmente)
+- [x] food not found → nutritionStatus "unavailable"; sin gramos → "portion_unavailable" (no inventa, no rompe análisis)
+- [x] source/sourceVersion en la respuesta
+- [x] Sin doble contabilización (una entrada por detección del pipeline)
+- [x] API /analyze retrocompatible + nutrition/summary (controller mapea presentación)
+- [x] Tests: 211 unit backend (11 calculator nuevos) · E2E real: pizza 340.48 kcal, banana 105.02, apple 113.36
+
 ## Pendiente (orden)
 
 1. **FASE 1 — Image ingestion**: `POST /api/food/analyze` — validación MIME/tamaño, id, almacenamiento temporal, reenvío al AI Service, respuesta asíncrona.
