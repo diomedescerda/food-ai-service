@@ -1,0 +1,12 @@
+{
+  "n": 108,
+  "top1": 0.491,
+  "top3": 0.556,
+  "top5": 0.593,
+  "crops_evaluated": 72,
+  "latency_ms": {
+    "detection": 88.1,
+    "crop": 0.9,
+    "clip_per_crop": 86.3
+  }
+}

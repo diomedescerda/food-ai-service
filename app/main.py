@@ -12,6 +12,7 @@ from app.models.depth_anything_estimator import DepthAnythingEstimator
 from app.models.detector_based_classifier import DetectorBasedClassifier
 from app.models.yolo_food_detector import YoloFoodDetector
 from app.models.yolo_food_segmenter import YoloFoodSegmenter
+from app.models.zero_shot_classifier import ZeroShotFoodClassifier
 from app.services.portion_geometry import PortionGeometryEstimator
 
 
@@ -38,10 +39,25 @@ async def lifespan(app: FastAPI):
         settings.seg_model_path,
     )
 
-    # Clasificador sin modelo propio: la clase/confianza vienen del detector.
-    classifier = DetectorBasedClassifier(detector)
+    # Clasificador: detector_based (clase de YOLO) o zero_shot (CLIP, catálogo
+    # amplio). A/B configurable con FOOD_AI_CLASSIFIER_TYPE.
+    if settings.classifier_type == "zero_shot":
+        classifier = ZeroShotFoodClassifier(
+            model_name=settings.clip_model,
+            device=settings.clip_device,
+            threshold=settings.clip_threshold,
+            prompt_template=settings.clip_prompt_template,
+            crop_padding=settings.clip_crop_padding,
+        )
+        classifier.load()
+        app.state.logger.info(
+            "Clasificador zero-shot cargado: version=%s, threshold=%s, catálogo=%d candidatos",
+            classifier.model_version, settings.clip_threshold, len(classifier._candidates),
+        )
+    else:
+        classifier = DetectorBasedClassifier(detector)
+        app.state.logger.info("Clasificador cargado: version=%s", classifier.model_version)
     app.state.classifier = classifier
-    app.state.logger.info("Clasificador cargado: version=%s", classifier.model_version)
 
     # Estimador de porción: basic (referencia) o advanced (depth).
     app.state.depth_estimator = None

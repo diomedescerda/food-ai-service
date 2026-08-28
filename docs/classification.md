@@ -79,3 +79,12 @@ Todas coherentes con las clases soportadas; confianza > threshold 0.35.
 1. Dataset de 30-50 clases (FASE 10-11).
 2. `ColombianFoodClassifier` con fine-tuning de YOLO sobre crops/masks (FASE 12).
 3. Sustituir `DetectorBasedClassifier` en DI/lifespan — sin cambios en analyze.
+## CLIP zero-shot (FASE 10B)
+
+- Modelo: openai/clip-vit-base-patch32 (MIT), version clip-zero-shot-v1, CPU, carga única (~13 s)
+- CLIP clasifica CROPS de las detecciones de YOLO (bbox + padding configurable), no la imagen completa (el embedding global pierde alimentos en multi-food — verificado en benchmark).
+- Catálogo: 39 entradas en app/models/food_catalog.py (canonical_name + clip_candidates + category + nutrition_key). Agregar alimento = agregar entrada (sin reentrenar).
+- Prompt: 'a photo of {food}' (configurable). Features de texto precomputadas en load.
+- Threshold: clip_threshold=0.22 (scores por crop típicos 0.2-0.45; por debajo → UNKNOWN, nunca se fuerza clase).
+- A/B: FOOD_AI_CLASSIFIER_TYPE=detector_based|zero_shot (config, sin código).
+- Esto es zero-shot CLASSIFICATION (matching texto-imagen contra catálogo fijo); NO es vector search/RAG (sin BD vectorial).

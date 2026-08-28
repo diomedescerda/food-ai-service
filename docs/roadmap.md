@@ -136,3 +136,10 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - Versión de modelo en cada análisis (`modelVersion`).
 - LLM nunca calcula macros directo.
 - Fase nueva solo tras autorización del usuario.
+## FASE 10B — Zero-shot classification (CLIP) ✅ (2026-08-28)
+- [x] ZeroShotFoodClassifier (IFoodClassifier): crops de YOLO → CLIP ViT-B/32 → catálogo 39 entradas → top-k + threshold UNKNOWN
+- [x] A/B configurable: FOOD_AI_CLASSIFIER_TYPE detector_based|zero_shot
+- [x] Health: classifier_model clip-zero-shot-v1 · E2E: pizza 0.30, banana 0.34
+- [x] Benchmark A/B (108 img): hybrid 0.491 global / 73.6% top-1 sobre crops vs YOLO 0.37; det 88ms + clip 86ms
+- [x] Limitación: 36/108 sin crop (detección YOLO limita recall del pipeline)
+- [x] Tests: 65 pytest (12 unit zeroshot + 4 real CLIP)

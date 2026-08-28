@@ -28,6 +28,14 @@ class Settings(BaseSettings):
     # === Clasificador (sin modelo propio; usa la clase del detector) ===
     classifier_version: str = "detector-based-v1"
 
+    # === Clasificador zero-shot (CLIP) — A/B: detector_based | zero_shot ===
+    classifier_type: str = "detector_based"
+    clip_model: str = "openai/clip-vit-base-patch32"
+    clip_device: str = "cpu"
+    clip_threshold: float = 0.22
+    clip_prompt_template: str = "a photo of {food}"
+    clip_crop_padding: float = 0.0
+
     # === Estimador de porción ===
     # method: "basic" | "advanced" (depth). Con "advanced" y sin escala física
     # el resultado es relativo (gramos nulos) — ver docs/portion-estimation.md.
