@@ -7,9 +7,11 @@ from app.api.analyze import router as analyze_router
 from app.api.health import router as health_router
 from app.core.config import settings
 from app.models.advanced_portion_estimator import AdvancedPortionEstimator
+from app.models.base import IFoodDetector
 from app.models.basic_portion_estimator import BasicPortionEstimator
 from app.models.depth_anything_estimator import DepthAnythingEstimator
 from app.models.detector_based_classifier import DetectorBasedClassifier
+from app.models.hybrid_detector import GroundingDinoDetector, HybridFoodDetector
 from app.models.yolo_food_detector import YoloFoodDetector
 from app.models.yolo_food_segmenter import YoloFoodSegmenter
 from app.models.zero_shot_classifier import ZeroShotFoodClassifier
@@ -18,11 +20,23 @@ from app.services.portion_geometry import PortionGeometryEstimator
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Ciclo de vida: carga detector, segmentador y clasificador UNA vez al arrancar."""
-    detector = YoloFoodDetector(settings)
+    """Ciclo de vida: carga detector, segmentador, clasificador y estimadores
+    UNA vez al arrancar (nunca por request)."""
+    app.state.logger = logging.getLogger("uvicorn.error")
+    detector: IFoodDetector
+    if settings.detector_type == "hybrid":
+        detector = HybridFoodDetector(
+            yolo=YoloFoodDetector(settings),
+            dino=GroundingDinoDetector(settings.dino_model, settings.dino_prompt, settings.dino_threshold),
+        )
+        app.state.logger.info("Detector híbrido: YOLO + DINO (fallback open-vocabulary)")
+    elif settings.detector_type == "dino":
+        detector = GroundingDinoDetector(settings.dino_model, settings.dino_prompt, settings.dino_threshold)
+        app.state.logger.info("Detector DINO (open-vocabulary)")
+    else:
+        detector = YoloFoodDetector(settings)
     detector.load()
     app.state.detector = detector
-    app.state.logger = logging.getLogger("uvicorn.error")
     app.state.logger.info(
         "Food detector cargado: version=%s, path=%s, classes=%s",
         detector.model_version,

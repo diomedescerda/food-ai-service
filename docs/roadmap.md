@@ -143,3 +143,12 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Benchmark A/B (108 img): hybrid 0.491 global / 73.6% top-1 sobre crops vs YOLO 0.37; det 88ms + clip 86ms
 - [x] Limitación: 36/108 sin crop (detección YOLO limita recall del pipeline)
 - [x] Tests: 65 pytest (12 unit zeroshot + 4 real CLIP)
+
+## FASE 11 — Food Region Detection ✅ (2026-08-28)
+- [x] GroundingDinoDetector (open-vocabulary, prompt 'food on a plate') + HybridFoodDetector (YOLO → DINO fallback)
+- [x] Config: FOOD_AI_DETECTOR_TYPE yolo|dino|hybrid
+- [x] Region recall (108 img): YOLO 66.7% (72/108) vs DINO 100% (108/108)
+- [x] E2E CLIP: YOLO+crops 0.491 vs DINO+crops 0.694 Top-1 (108/108 crops)
+- [x] Latencia: YOLO 114ms · DINO 10.3s · híbrido ~3.4s media (fallback solo sin YOLO)
+- [x] E2E real: pizza (yolo) 0.30; hamburger_000 (dino fallback) genera regiones → CLIP
+- [x] Tests: 65 pytest sin regresión

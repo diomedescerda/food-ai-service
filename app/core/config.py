@@ -21,6 +21,12 @@ class Settings(BaseSettings):
     device: str = "cpu"
     max_detections: int = 20
 
+    # === Detector de regiones (FASE 11): yolo | dino | hybrid ===
+    detector_type: str = "yolo"
+    dino_model: str = "IDEA-Research/grounding-dino-tiny"
+    dino_prompt: str = "food on a plate"
+    dino_threshold: float = 0.15
+
     # === Modelo de segmentación ===
     seg_model_path: str = "weights/yolo11n-seg.pt"
     seg_model_version: str = "food-segmenter-v1"
