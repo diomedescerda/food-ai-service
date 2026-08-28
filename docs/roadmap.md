@@ -53,6 +53,16 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] E2E real: pizza 0.9253, banana 0.8932, apple 0.8613 — coherentes
 - [x] docs/classification.md: decisión, límites, plan comida colombiana
 
+## FASE 5 — Nutrition Database ✅ (2026-08-27)
+- [x] Fuente: USDA FoodData Central (dominio público, sin licencia restrictiva), versión 2026-08-27
+- [x] Schema `foodai.` en PostgreSQL compartido: foods + food_nutrition (numeric(10,2), por 100 g) + food_aliases
+- [x] Migración `AddFoodAiNutrition` + GRANT app_user
+- [x] Seed idempotente `FoodAiNutritionSeeder` (9 alimentos; sandwich sin entrada — documentado, no inventado)
+- [x] `INutritionProvider` → `DatabaseNutritionProvider` (alias o nombre canónico → nutrición por 100 g)
+- [x] Endpoint verificación: `GET /api/v1/foodai/nutrition/{foodKey}` (404 controlado)
+- [x] Separación estricta IA ↔ nutrición (la IA nunca escribe valores)
+- [x] Tests: 200 unit backend (2 endpoint nuevos), 3 integration (PG real: lookup, null, seed reproducible)
+
 ## Pendiente (orden)
 
 1. **FASE 1 — Image ingestion**: `POST /api/food/analyze` — validación MIME/tamaño, id, almacenamiento temporal, reenvío al AI Service, respuesta asíncrona.

@@ -1,11 +1,12 @@
 # API — Food AI
 
-## Estado FASE 4 — Classification
+## Estado FASE 5 — Nutrition Database
 
 | Método | Ruta | Descripción | Auth |
 |---|---|---|---|
 | GET | `/api/v1/foodai/health` (backend) | Probe backend → FoodAI Service: `{backend, foodAI, detail}` | pública |
-| POST | `/api/v1/foodai/analyze` (backend) | Ingesta + detección: multipart `image` → `{analysisId, status, modelVersion, inferenceTimeMs, foods[]}` | pública |
+| POST | `/api/v1/foodai/analyze` (backend) | Ingesta + detección + segmentación + clasificación: multipart `image` → `{analysisId, status, modelVersion, segModelVersion, classifierVersion, inferenceTimeMs, foods[]}` | pública |
+| GET | `/api/v1/foodai/nutrition/{foodKey}` (backend) | Nutrición por 100 g (alias YOLO o nombre canónico) — BD USDA FDC, sin IA | pública |
 | GET | `/health` (food-ai-service, puerto 8010) | Salud del servicio + estado del modelo | pública |
 | POST | `/analyze` (food-ai-service, puerto 8010) | Contrato interno backend → Python (multipart `image` + `analysis_id`) | canal interno futuro |
 
