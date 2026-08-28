@@ -152,3 +152,11 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Latencia: YOLO 114ms · DINO 10.3s · híbrido ~3.4s media (fallback solo sin YOLO)
 - [x] E2E real: pizza (yolo) 0.30; hamburger_000 (dino fallback) genera regiones → CLIP
 - [x] Tests: 65 pytest sin regresión
+
+## FASE 12 — Nutrition Catalog Expansion ✅ (2026-08-28)
+- [x] Catálogo curado food_usda_curated.json: 38 alimentos, 20 con nutrición verificada USDA (FDC IDs), 15 REVIEW_REQUIRED, 3 sin match
+- [x] Seeder v2 idempotente lee el JSON (mapping_status/confidence/source_id en foods/food_nutrition)
+- [x] Migración AddFoodAiNutritionMapping (source_id, mapping_status, mapping_confidence)
+- [x] scripts/import_usda_foods.py: modo curated + modo API (FOODAI_USDA_API_KEY) para escalar a 100+
+- [x] E2E: pizza 340.48 kcal (available), hamburger 297 kcal fdc_id=170693, steak FOOD_NOT_FOUND (review)
+- [x] Tests: 213 unit + 14 integration sin regresión
