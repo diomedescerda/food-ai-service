@@ -1,0 +1,11 @@
+{
+  "config": {
+    "prompt": "a photo of a plate of {food}"
+  },
+  "top1": 0.639,
+  "top3": 0.75,
+  "top5": 0.759,
+  "unknown_rate": 0.611,
+  "accuracy_classified": 0.81,
+  "latency_ms": 77.5
+}

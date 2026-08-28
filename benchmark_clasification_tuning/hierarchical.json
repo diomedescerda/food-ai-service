@@ -1,0 +1,11 @@
+{
+  "config": {
+    "hierarchical": true
+  },
+  "top1": 0.352,
+  "top3": 0.389,
+  "top5": 0.389,
+  "unknown_rate": 0.009,
+  "accuracy_classified": 0.346,
+  "latency_ms": 132.0
+}

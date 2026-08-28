@@ -169,3 +169,10 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Porción: +hamburger 78g (FDC 170693 verificado); fries/fried_chicken sin referencia verificada → GAP
 - [x] Multi-food estructural ✓ (hamburger_000 → 4 regiones); combo sintético falló detección (documentado)
 - [x] Sin doble conteo: hybrid YOLO→DINO (test unit) · Tests: 67 pytest (2 nuevos)
+
+## FASE 14 — CLIP Catalog Tuning ✅ (2026-08-28)
+- [x] 13 experimentos controlados (prompts, ensemble, específicos, jerárquico, padding, masked, threshold) — resultados en benchmark_clasification_tuning/
+- [x] Best: ensemble mean + padding 0.10 + thr 0.20 → Top-1 0.685 (+0.037) · E2E 30.6% (+1.9)
+- [x] Descartados con evidencia: prompts específicos, jerárquico, masked crop
+- [x] Confusion matrix + per-class + top-k analysis documentados
+- [x] Tests: 67 pytest sin regresión

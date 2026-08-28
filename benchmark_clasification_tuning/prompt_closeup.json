@@ -1,0 +1,11 @@
+{
+  "config": {
+    "prompt": "a close-up photo of {food}"
+  },
+  "top1": 0.657,
+  "top3": 0.806,
+  "top5": 0.815,
+  "unknown_rate": 0.343,
+  "accuracy_classified": 0.69,
+  "latency_ms": 81.3
+}

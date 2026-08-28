@@ -1,0 +1,11 @@
+{
+  "config": {
+    "masked": true
+  },
+  "top1": 0.648,
+  "top3": 0.759,
+  "top5": 0.806,
+  "unknown_rate": 0.361,
+  "accuracy_classified": 0.71,
+  "latency_ms": 81.1
+}

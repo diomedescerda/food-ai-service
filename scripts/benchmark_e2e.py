@@ -35,8 +35,11 @@ NUTRITION_AVAILABLE = {
 
 
 def main() -> None:
-    clip = ZeroShotFoodClassifier(model_name="openai/clip-vit-base-patch32", device="cpu",
-                                  threshold=0.22, crop_padding=0.05, top_k=5)
+    clip = ZeroShotFoodClassifier(
+        model_name="openai/clip-vit-base-patch32", device="cpu",
+        threshold=0.20, crop_padding=0.10, top_k=5,
+        prompt_templates_extra=("a picture of {food}", "a close-up photo of {food}"),
+    )
     clip.load()
 
     stats = {

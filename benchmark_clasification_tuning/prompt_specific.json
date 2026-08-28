@@ -1,0 +1,11 @@
+{
+  "config": {
+    "specific_prompts": true
+  },
+  "top1": 0.426,
+  "top3": 0.759,
+  "top5": 0.759,
+  "unknown_rate": 0.361,
+  "accuracy_classified": 0.478,
+  "latency_ms": 84.8
+}

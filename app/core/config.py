@@ -38,9 +38,13 @@ class Settings(BaseSettings):
     classifier_type: str = "detector_based"
     clip_model: str = "openai/clip-vit-base-patch32"
     clip_device: str = "cpu"
-    clip_threshold: float = 0.22
+    clip_threshold: float = 0.20
     clip_prompt_template: str = "a photo of {food}"
-    clip_crop_padding: float = 0.0
+
+    # Plantillas extra separadas por '|' → ensemble por media de scores
+    # (FASE 14: padding 0.10 + ensemble mejoró top-1 0.648 → 0.685).
+    clip_prompt_ensemble: str = ""
+    clip_crop_padding: float = 0.10
 
     # === Estimador de porción ===
     # method: "basic" | "advanced" (depth). Con "advanced" y sin escala física

@@ -1,0 +1,11 @@
+{
+  "config": {
+    "prompt": "a serving of {food}"
+  },
+  "top1": 0.611,
+  "top3": 0.731,
+  "top5": 0.806,
+  "unknown_rate": 0.556,
+  "accuracy_classified": 0.812,
+  "latency_ms": 78.7
+}

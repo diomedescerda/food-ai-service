@@ -1,0 +1,93 @@
+{
+  "baseline": {
+    "top1": 0.648,
+    "top3": 0.759,
+    "top5": 0.806,
+    "unknown_rate": 0.361,
+    "latency_ms": 84.6
+  },
+  "prompt_picture": {
+    "top1": 0.648,
+    "top3": 0.769,
+    "top5": 0.778,
+    "unknown_rate": 0.426,
+    "latency_ms": 81.1
+  },
+  "prompt_closeup": {
+    "top1": 0.657,
+    "top3": 0.806,
+    "top5": 0.815,
+    "unknown_rate": 0.343,
+    "latency_ms": 81.3
+  },
+  "prompt_plate": {
+    "top1": 0.639,
+    "top3": 0.75,
+    "top5": 0.759,
+    "unknown_rate": 0.611,
+    "latency_ms": 77.5
+  },
+  "prompt_serving": {
+    "top1": 0.611,
+    "top3": 0.731,
+    "top5": 0.806,
+    "unknown_rate": 0.556,
+    "latency_ms": 78.7
+  },
+  "prompt_ensemble_mean": {
+    "top1": 0.667,
+    "top3": 0.769,
+    "top5": 0.815,
+    "unknown_rate": 0.435,
+    "latency_ms": 78.9
+  },
+  "prompt_specific": {
+    "top1": 0.426,
+    "top3": 0.759,
+    "top5": 0.759,
+    "unknown_rate": 0.361,
+    "latency_ms": 84.8
+  },
+  "hierarchical": {
+    "top1": 0.352,
+    "top3": 0.389,
+    "top5": 0.389,
+    "unknown_rate": 0.009,
+    "latency_ms": 132.0
+  },
+  "padding_0.0": {
+    "top1": 0.593,
+    "top3": 0.741,
+    "top5": 0.796,
+    "unknown_rate": 0.417,
+    "latency_ms": 84.5
+  },
+  "padding_0.10": {
+    "top1": 0.676,
+    "top3": 0.769,
+    "top5": 0.806,
+    "unknown_rate": 0.463,
+    "latency_ms": 84.7
+  },
+  "padding_0.15": {
+    "top1": 0.667,
+    "top3": 0.759,
+    "top5": 0.806,
+    "unknown_rate": 0.472,
+    "latency_ms": 78.9
+  },
+  "padding_0.20": {
+    "top1": 0.676,
+    "top3": 0.769,
+    "top5": 0.769,
+    "unknown_rate": 0.519,
+    "latency_ms": 78.0
+  },
+  "masked_crop": {
+    "top1": 0.648,
+    "top3": 0.759,
+    "top5": 0.806,
+    "unknown_rate": 0.361,
+    "latency_ms": 81.1
+  }
+}

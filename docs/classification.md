@@ -88,3 +88,15 @@ Todas coherentes con las clases soportadas; confianza > threshold 0.35.
 - Threshold: clip_threshold=0.22 (scores por crop típicos 0.2-0.45; por debajo → UNKNOWN, nunca se fuerza clase).
 - A/B: FOOD_AI_CLASSIFIER_TYPE=detector_based|zero_shot (config, sin código).
 - Esto es zero-shot CLASSIFICATION (matching texto-imagen contra catálogo fijo); NO es vector search/RAG (sin BD vectorial).
+
+## Tuning FASE 14 — experimentos controlados (resultados medidos)
+
+- Baseline (prompt 'a photo of {food}', padding 0.05, thr 0.22): Top-1 0.648
+- GANADOR: ensemble mean (a photo/a picture/a close-up photo) + padding 0.10 + thr 0.20 → Top-1 0.685 (+0.037)
+- E2E Nutrition: 28.7% → 30.6% (pizza 16→18)
+- Fallidos: prompts específicos (0.426), jerárquico (0.352), masked crop (=baseline), padding 0.0 (0.593)
+- Threshold: 0.20 (balance accuracy-classified 0.72 / unknown 0.20) vs 0.22 (0.71 / 0.36)
+- Confusiones dominantes: fries→rice (7), fried_chicken→rice (4), pizza→lasagna (3), sandwich→grilled_chicken (3)
+- Top-K: solo 31.6% de los fallos top-1 tienen el correcto en top-3 → problema de representación/prompts, no de re-rank
+- Trade-off: el ensemble degradó hot_dog (13/20 rank simple → fuera de top-1 con ensemble) — aceptado por la ganancia global
+- Config: FOOD_AI_CLIP_PROMPT_ENSEMBLE='a picture of {food}|a close-up photo of {food}'

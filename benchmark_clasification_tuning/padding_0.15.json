@@ -1,0 +1,11 @@
+{
+  "config": {
+    "padding": 0.15
+  },
+  "top1": 0.667,
+  "top3": 0.759,
+  "top5": 0.806,
+  "unknown_rate": 0.472,
+  "accuracy_classified": 0.772,
+  "latency_ms": 78.9
+}

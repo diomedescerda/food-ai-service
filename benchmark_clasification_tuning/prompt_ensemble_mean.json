@@ -1,0 +1,15 @@
+{
+  "config": {
+    "ensemble": [
+      "a photo of {food}",
+      "a picture of {food}",
+      "a close-up photo of {food}"
+    ],
+    "agg": "mean"
+  },
+  "top1": 0.667,
+  "top3": 0.769,
+  "top5": 0.815,
+  "unknown_rate": 0.435,
+  "latency_ms": 78.9
+}

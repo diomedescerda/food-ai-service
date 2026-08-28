@@ -56,11 +56,15 @@ async def lifespan(app: FastAPI):
     # Clasificador: detector_based (clase de YOLO) o zero_shot (CLIP, catálogo
     # amplio). A/B configurable con FOOD_AI_CLASSIFIER_TYPE.
     if settings.classifier_type == "zero_shot":
+        ensemble = tuple(
+            t.strip() for t in settings.clip_prompt_ensemble.split("|") if t.strip()
+        )
         classifier = ZeroShotFoodClassifier(
             model_name=settings.clip_model,
             device=settings.clip_device,
             threshold=settings.clip_threshold,
             prompt_template=settings.clip_prompt_template,
+            prompt_templates_extra=ensemble,
             crop_padding=settings.clip_crop_padding,
         )
         classifier.load()
