@@ -39,6 +39,11 @@ def test_analyze_imagen_valida_devuelve_detecciones_y_mascara(client):
     assert food["segmentation"] is not None
     assert food["segmentation"]["area_pixels"] > 0
     assert food["segmentation"]["mask"]
+    assert food["portion"] is not None
+    assert food["portion"]["portion_size"] in ("small", "medium", "large", "unknown")
+    assert food["portion"]["estimated_grams"] is None or food["portion"]["estimated_grams"] > 0
+    assert food["portion"]["confidence"] == 0.55
+    assert food["portion"]["method"] == "basic_reference"
 
 
 def test_analyze_sin_segmentador_mascara_nula(client):

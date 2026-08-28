@@ -1,6 +1,6 @@
 # API — Food AI
 
-## Estado FASE 5 — Nutrition Database
+## Estado FASE 6 — Basic Portion Estimation
 
 | Método | Ruta | Descripción | Auth |
 |---|---|---|---|
@@ -26,11 +26,14 @@
       "name": "pizza",
       "confidence": 0.9253,
       "boundingBox": { "x": 7, "y": 14, "width": 318, "height": 216 },
-      "segmentation": { "mask": "<base64 PNG>", "areaPixels": 44970 }
+      "segmentation": { "mask": "<base64 PNG>", "areaPixels": 44970 },
+      "portion": { "portionSize": "large", "estimatedGrams": 128, "minGrams": 118, "maxGrams": 160, "confidence": 0.55, "method": "basic_reference" }
     }
   ]
 }
 ```
+
+⚠️ `estimatedGrams` es una ESTIMACIÓN (reference serving), no un peso medido.
 
 `GET /health` (food-ai-service):
 ```json

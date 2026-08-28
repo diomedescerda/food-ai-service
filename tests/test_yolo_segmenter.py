@@ -81,3 +81,29 @@ def test_segmentacion_real_de_alimento(models, name):
             assert seg.area_pixels == int((np.asarray(mask_img) > 0).sum())
 
         assert any(s is not None for s in segmentations), f"{name}: sin máscara válida"
+
+
+@pytest.mark.parametrize("name", ["pizza", "banana", "apple"])
+def test_porcion_real_con_referencia_documentada(models, name):
+    """E2E real: detección → segmentación → porción básica (referencia FDC).
+    Los gramos provienen de REFERENCE_GRAMS (docs/portion-estimation.md),
+    no de valores inventados."""
+    from app.models.basic_portion_estimator import BasicPortionEstimator
+
+    detector, segmenter = models
+    asset = Path(ASSETS[name])
+    if not asset.exists():
+        pytest.skip(f"asset {asset} no disponible")
+
+    with Image.open(asset) as img:
+        image = img.convert("RGB")
+        detections = detector.detect(image)
+        assert len(detections) >= 1
+        segmentations = segmenter.segment(image, detections)
+
+        estimates = BasicPortionEstimator().estimate(image, detections, segmentations)
+        est = estimates[0]
+        assert est is not None
+        assert est.portion_size in ("small", "medium", "large", "unknown")
+        assert est.estimated_grams is None or est.min_grams <= est.estimated_grams <= est.max_grams
+        assert 0.0 <= est.confidence <= 1.0

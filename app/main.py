@@ -6,6 +6,7 @@ from fastapi import FastAPI
 from app.api.analyze import router as analyze_router
 from app.api.health import router as health_router
 from app.core.config import settings
+from app.models.basic_portion_estimator import BasicPortionEstimator
 from app.models.detector_based_classifier import DetectorBasedClassifier
 from app.models.yolo_food_detector import YoloFoodDetector
 from app.models.yolo_food_segmenter import YoloFoodSegmenter
@@ -38,6 +39,10 @@ async def lifespan(app: FastAPI):
     classifier = DetectorBasedClassifier(detector)
     app.state.classifier = classifier
     app.state.logger.info("Clasificador cargado: version=%s", classifier.model_version)
+
+    # Estimador de porción básico (referencia + heurística visual; sin modelo).
+    app.state.portion_estimator = BasicPortionEstimator()
+    app.state.logger.info("Estimador de porción cargado: basic_reference")
 
     app.state.settings = settings
     yield

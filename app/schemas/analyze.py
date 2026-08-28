@@ -13,11 +13,21 @@ class Segmentation(BaseModel):
     area_pixels: int
 
 
+class PortionEstimate(BaseModel):
+    portion_size: str
+    estimated_grams: int | None
+    min_grams: int | None
+    max_grams: int | None
+    confidence: float
+    method: str
+
+
 class DetectedFood(BaseModel):
     name: str
     confidence: float
     bounding_box: BoundingBox
     segmentation: Segmentation | None = None
+    portion: PortionEstimate | None = None
 
 
 class AnalyzeResponse(BaseModel):

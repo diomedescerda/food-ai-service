@@ -32,6 +32,7 @@ def app_with_detector():
     from app.api.analyze import router as analyze_router
     from app.api.health import router as health_router
     from app.core.config import Settings
+    from app.models.basic_portion_estimator import BasicPortionEstimator
     from app.models.detector_based_classifier import DetectorBasedClassifier
 
     detector = FakeFoodDetector()
@@ -44,6 +45,7 @@ def app_with_detector():
     app.state.detector = detector
     app.state.segmenter = segmenter
     app.state.classifier = classifier
+    app.state.portion_estimator = BasicPortionEstimator()
     app.state.settings = Settings(debug_images_dir="")
     app.state.logger = None
     app.include_router(health_router)

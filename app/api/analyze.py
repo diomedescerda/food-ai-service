@@ -11,6 +11,7 @@ from app.schemas.analyze import (
     AnalyzeResponse,
     BoundingBox,
     DetectedFood,
+    PortionEstimate,
     Segmentation,
 )
 
@@ -118,6 +119,15 @@ async def analyze(
         final_confidences = [d.confidence for d in detections]
         classifier = None
 
+    # Estimación de porción (básica): referencia + tamaño visual relativo.
+    # estimatedGrams != measuredGrams — aproximación, nunca peso medido.
+    portion_estimator = getattr(request.app.state, "portion_estimator", None)
+    portion_start = time.perf_counter()
+    portions: list = [None] * len(detections)
+    if portion_estimator is not None and detections:
+        portions = portion_estimator.estimate(pil_image, detections, segmentations)
+    portion_ms = round((time.perf_counter() - portion_start) * 1000)
+
     from app.utils.debug import save_debug_image
 
     debug_path = save_debug_image(
@@ -140,7 +150,7 @@ async def analyze(
         classifier_version=(
             classifier.model_version if classifier is not None and classifier.is_loaded else "none"
         ),
-        inference_time_ms=inference_ms + seg_ms,
+        inference_time_ms=inference_ms + seg_ms + portion_ms,
         foods=[
             DetectedFood(
                 name=name,
@@ -156,7 +166,19 @@ async def analyze(
                     if s is not None
                     else None
                 ),
+                portion=(
+                    PortionEstimate(
+                        portion_size=p.portion_size,
+                        estimated_grams=p.estimated_grams,
+                        min_grams=p.min_grams,
+                        max_grams=p.max_grams,
+                        confidence=p.confidence,
+                        method=p.method,
+                    )
+                    if p is not None
+                    else None
+                ),
             )
-            for d, s, name, confidence in zip(detections, segmentations, final_names, final_confidences)
+            for d, s, p, name, confidence in zip(detections, segmentations, portions, final_names, final_confidences)
         ],
     )

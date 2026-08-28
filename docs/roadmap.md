@@ -63,6 +63,16 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Separación estricta IA ↔ nutrición (la IA nunca escribe valores)
 - [x] Tests: 200 unit backend (2 endpoint nuevos), 3 integration (PG real: lookup, null, seed reproducible)
 
+## FASE 6 — Basic Portion Estimation ✅ (2026-08-27)
+- [x] `IPortionEstimator` + `BasicPortionEstimator` (referencia FDC + heurística visual; separado del pipeline)
+- [x] small/medium/large/unknown con min/estimated/max grams + confidence 0.55 (separada de detección) + method
+- [x] Referencias documentadas (docs/portion-estimation.md): medidas domésticas USDA FDC
+- [x] UNKNOWN sin inventar: sandwich (sin referencia) → null + confidence 0
+- [x] Sin depth/volumen/densidad (FASE 7 pendiente)
+- [x] Backend .NET: PortionDto + cliente parsea porción
+- [x] Tests: 40 pytest (10 estimator + 3 real), 200 unit backend
+- [x] E2E real: pizza 128 g (large), banana 118 g (medium), apple 218 g (large)
+
 ## Pendiente (orden)
 
 1. **FASE 1 — Image ingestion**: `POST /api/food/analyze` — validación MIME/tamaño, id, almacenamiento temporal, reenvío al AI Service, respuesta asíncrona.
