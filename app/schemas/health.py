@@ -16,3 +16,4 @@ class HealthResponse(BaseModel):
     model: HealthModel | None = None
     segmentation_model: HealthModel | None = None
     classifier_model: HealthModel | None = None
+    depth_model: HealthModel | None = None

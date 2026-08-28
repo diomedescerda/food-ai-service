@@ -1,8 +1,37 @@
-# Estimación de porción (FASE 6 — básica)
+# Estimación de porción (FASE 6-7)
 
-**Advertencia**: `estimatedGrams != measuredGrams`. Sin cámara calibrada ni depth, una foto NO proporciona el peso real. El resultado es una estimación aproximada, explícitamente comunicada como tal.
+**Advertencia**: `estimatedGrams != measuredGrams`. Sin cámara calibrada ni
+escala física, una foto NO proporciona el peso real. El resultado es una
+estimación aproximada, explícitamente comunicada como tal.
 
-## Algoritmo (`BasicPortionEstimator`)
+## FASE 7 — Advanced (depth): veredicto experimental
+
+**¿La profundidad mejora de forma medible la estimación de porciones?**
+
+**Evidencia insuficiente / NO recomendado actualmente para gramos:**
+
+| Métrica | Valor |
+|---|---|
+| Depth load (única vez) | 13.2 s |
+| Depth inference (por imagen) | 756–863 ms |
+| Basic portion | ~0 ms |
+| Señal del depth (contraste alimento vs fondo) | banana 0.770 · apple 0.747 · pizza 0.119 |
+| Gramos producidos por Advanced | NINGUNO (sin escala física) |
+
+El depth map funciona y discrimina profundidad relativa real (banana/apple
+significativamente más cercanos que el fondo), pero **la profundidad monocular
+es relativa**: sin una referencia de tamaño conocido (plato/vaso/cubierto) o
+calibración, volumen relativo ≠ masa. El AdvancedPortionEstimator devuelve
+`method="advanced_depth_relative"` con gramos nulos (confidence 0) — nunca
+finge masa.
+
+**Comparación Basic vs Advanced**: Basic produce gramos (referencia FDC ±20 %);
+Advanced no produce gramos sin escala → no existe MAE/RMSE comparable y no se
+puede afirmar mejora. La geometría (mediana, percentiles, contraste) queda
+disponible como característica para futuras fases con escala física o dataset
+con ground truth.
+
+## Algoritmo básico (`BasicPortionEstimator`)
 
 ```
 1. Referencia: gramos de UNA porción doméstica típica del alimento (USDA FDC)

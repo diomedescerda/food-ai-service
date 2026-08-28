@@ -73,6 +73,18 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Tests: 40 pytest (10 estimator + 3 real), 200 unit backend
 - [x] E2E real: pizza 128 g (large), banana 118 g (medium), apple 218 g (large)
 
+## FASE 7 — Advanced Portion Estimation ✅ (2026-08-28) — veredicto: sin escala física
+- [x] Selección: Depth Anything V2 Small (Apache-2.0) — docs/depth-model-selection.md
+- [x] `IDepthEstimator` + `DepthAnythingEstimator` (carga única, ~13 s; 0.76-0.86 s/img)
+- [x] Depth map real + debug visual (jet) en 3 imágenes (6 archivos debug)
+- [x] `PortionGeometryEstimator`: min/max/mean/median/p25/p75 + contraste máscara vs fondo
+- [x] `AdvancedPortionEstimator`: sin escala física → method advanced_depth_relative, gramos NULOS (nunca masa inventada)
+- [x] Health: depth_model {loaded, version}
+- [x] Config: FOOD_AI_PORTION_METHOD basic|advanced + FOOD_AI_DEPTH_* — comparación sin tocar código
+- [x] Señal real: contraste banana 0.770, apple 0.747, pizza 0.119
+- [x] Conclusión: profundidad relativa NO mejora gramos sin escala → no recomendado para masa; feature geométrica para futuro
+- [x] Tests: 49 pytest (9 nuevos depth/geometry/advanced), 200 unit backend (sin cambios de contrato — retrocompatible)
+
 ## Pendiente (orden)
 
 1. **FASE 1 — Image ingestion**: `POST /api/food/analyze` — validación MIME/tamaño, id, almacenamiento temporal, reenvío al AI Service, respuesta asíncrona.

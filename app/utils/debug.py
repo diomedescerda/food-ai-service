@@ -1,9 +1,10 @@
-"""Imágenes de debug para desarrollo: overlay de máscaras + bounding boxes + labels."""
+"""Imágenes de debug para desarrollo: overlay de máscaras + bounding boxes + labels + depth."""
 
 import base64
 from io import BytesIO
 from pathlib import Path
 
+import numpy as np
 from PIL import Image, ImageDraw
 
 from app.models.detection import Detection
@@ -74,4 +75,28 @@ def save_debug_image(
     directory.mkdir(parents=True, exist_ok=True)
     path = directory / f"{analysis_id}.jpg"
     draw_detections(image, detections, segmentations).save(path, "JPEG", quality=90)
+    return str(path)
+
+
+def save_depth_image(output_dir: str, analysis_id: str, depth) -> str | None:
+    """Guarda el depth map (jet) en {output_dir}/{analysis_id}_depth.jpg."""
+    if not output_dir or depth is None:
+        return None
+    directory = Path(output_dir)
+    directory.mkdir(parents=True, exist_ok=True)
+    path = directory / f"{analysis_id}_depth.jpg"
+
+    data = depth.data
+    if data.max() > data.min():
+        normalized = (data - data.min()) / (data.max() - data.min())
+    else:
+        normalized = data
+    colored = np.zeros((*normalized.shape, 3), dtype=np.uint8)
+    cmap = np.array(
+        [[0, 0, 131], [0, 60, 170], [5, 113, 176], [89, 161, 79], [156, 187, 26], [251, 232, 0], [252, 141, 89], [219, 64, 53], [150, 0, 24]],
+        dtype=np.uint8,
+    )
+    indices = np.clip((normalized * (len(cmap) - 1)).astype(int), 0, len(cmap) - 1)
+    colored[:] = cmap[indices]
+    Image.fromarray(colored, "RGB").save(path, "JPEG", quality=90)
     return str(path)

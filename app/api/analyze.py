@@ -128,7 +128,8 @@ async def analyze(
         portions = portion_estimator.estimate(pil_image, detections, segmentations)
     portion_ms = round((time.perf_counter() - portion_start) * 1000)
 
-    from app.utils.debug import save_debug_image
+    # Debug visual: overlay + depth map (herramienta de desarrollo).
+    from app.utils.debug import save_debug_image, save_depth_image
 
     debug_path = save_debug_image(
         request.app.state.settings.debug_images_dir,
@@ -139,6 +140,21 @@ async def analyze(
     )
     if debug_path:
         request.app.state.logger.debug("Debug image guardada: %s", debug_path)
+
+    depth_estimator = getattr(request.app.state, "depth_estimator", None)
+    if depth_estimator is not None and depth_estimator.is_loaded:
+        depth_start = time.perf_counter()
+        depth_map = depth_estimator.estimate(pil_image)
+        depth_ms = round((time.perf_counter() - depth_start) * 1000)
+        request.app.state.logger.debug(
+            "Depth map: %sx%s, stats=%s (%d ms)",
+            depth_map.width, depth_map.height, depth_map.stats(), depth_ms,
+        )
+        save_depth_image(
+            request.app.state.settings.debug_images_dir,
+            analysis_id,
+            depth_map,
+        )
 
     return AnalyzeResponse(
         analysis_id=analysis_id,

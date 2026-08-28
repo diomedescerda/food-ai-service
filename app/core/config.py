@@ -25,8 +25,19 @@ class Settings(BaseSettings):
     seg_model_path: str = "weights/yolo11n-seg.pt"
     seg_model_version: str = "food-segmenter-v1"
 
-    # === Clasificador (sin inferencia adicional: usa la clase del detector) ===
+    # === Clasificador (sin modelo propio; usa la clase del detector) ===
     classifier_version: str = "detector-based-v1"
+
+    # === Estimador de porción ===
+    # method: "basic" | "advanced" (depth). Con "advanced" y sin escala física
+    # el resultado es relativo (gramos nulos) — ver docs/portion-estimation.md.
+    portion_method: str = "basic"
+
+    # === Modelo de profundidad (solo si portion_method=advanced) ===
+    depth_enabled: bool = True
+    depth_model_path: str = "depth-anything/Depth-Anything-V2-Small-hf"
+    depth_model_version: str = "depth-anything-v2-small"
+    depth_device: str = "cpu"
 
     # Directorio para guardar imágenes de debug (bbox + labels). Vacío = off.
     debug_images_dir: str = ""
