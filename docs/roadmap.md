@@ -160,3 +160,12 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] scripts/import_usda_foods.py: modo curated + modo API (FOODAI_USDA_API_KEY) para escalar a 100+
 - [x] E2E: pizza 340.48 kcal (available), hamburger 297 kcal fdc_id=170693, steak FOOD_NOT_FOUND (review)
 - [x] Tests: 213 unit + 14 integration sin regresión
+
+## FASE 13 — End-to-End Nutrition Coverage ✅ (2026-08-28)
+- [x] Métrica de producto medida: E2E Success Rate = 28.7% (31/108)
+- [x] Desglose: detection 100% · classification 64.8% · mapping 38.9% · porción 28.7%
+- [x] Error taxonomy: CLASSIFICATION_WRONG 38 · NUTRITION_MAPPING_MISSING 28 · PORTION_UNAVAILABLE 11
+- [x] Cuello de botella: clasificación (CLIP) en hot_dog/fries/fried_chicken/sandwich; intento de prompt mejora falló (63%) → revertido (decisión por datos)
+- [x] Porción: +hamburger 78g (FDC 170693 verificado); fries/fried_chicken sin referencia verificada → GAP
+- [x] Multi-food estructural ✓ (hamburger_000 → 4 regiones); combo sintético falló detección (documentado)
+- [x] Sin doble conteo: hybrid YOLO→DINO (test unit) · Tests: 67 pytest (2 nuevos)
