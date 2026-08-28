@@ -1,9 +1,9 @@
-"""Benchmark end-to-end de cobertura nutricional (FASE 13).
+﻿"""Benchmark end-to-end de cobertura nutricional (FASE 13).
 
-Mide por etapa sobre las 108 imágenes (regions.json ya generado):
-  Detection → Classification (CLIP) → Nutrition mapping → Portion → Cálculo
-y reporta la métrica de producto: Nutrition End-to-End Success Rate, con la
-taxonomía de fallos por etapa.
+Mide por etapa sobre las 108 imÃ¡genes (regions.json ya generado):
+  Detection â†’ Classification (CLIP) â†’ Nutrition mapping â†’ Portion â†’ CÃ¡lculo
+y reporta la mÃ©trica de producto: Nutrition End-to-End Success Rate, con la
+taxonomÃ­a de fallos por etapa.
 
 Uso: python scripts/benchmark_e2e.py
 """
@@ -28,16 +28,19 @@ CURATED = json.loads((
 GT = {"french_fries": "french_fries", "fried_chicken": "fried_chicken", "hot_dog": "hot_dog",
       "pizza": "pizza", "sandwich": "sandwich", "hamburger": "hamburger"}
 
-# Alimentos con nutrition en el JSON curado (alias → nutrition disponible)
-NUTRITION_AVAILABLE = {
-    f["alias"] for f in CURATED["foods"] if f.get("nutrition") is not None
-}
+# Alimentos con nutrition en el JSON curado. Acepta alias con guion y espacio
+# (canonical CLIP usa guiones: hot_dog; el JSON de hot_dog usa "hot dog").
+NUTRITION_AVAILABLE = set()
+for _f in CURATED["foods"]:
+    if _f.get("nutrition") is not None:
+        NUTRITION_AVAILABLE.add(_f["alias"])
+        NUTRITION_AVAILABLE.add(_f["alias"].replace(" ", "_"))
 
 
 def main() -> None:
     clip = ZeroShotFoodClassifier(
         model_name="openai/clip-vit-base-patch32", device="cpu",
-        threshold=0.20, crop_padding=0.10, top_k=5,
+        threshold=float(sys.argv[1]) if len(sys.argv) > 1 else 0.20, crop_padding=0.10, top_k=5,
         prompt_templates_extra=("a picture of {food}", "a close-up photo of {food}"),
     )
     clip.load()
@@ -55,7 +58,7 @@ def main() -> None:
         row = {"food": gt, "detection": True, "classification": None,
                "mapping": None, "portion": None, "calc": None, "failure": None}
 
-        # 1) Detection (híbrido: YOLO o DINO)
+        # 1) Detection (hÃ­brido: YOLO o DINO)
         regions = rec["yolo"] or rec["dino"]
         if not regions:
             row.update(detection=False, failure="DETECTION_FAILED")
@@ -95,8 +98,8 @@ def main() -> None:
         stats["mapping_ok"] += 1
         row["mapping"] = True
 
-        # 4) Portion (referencia de porción del alimento)
-        if gt not in REFERENCE_GRAMS:
+        # 4) Portion (referencia de porciÃ³n del alimento)
+        if gt not in REFERENCE_GRAMS and gt.replace('_', ' ') not in REFERENCE_GRAMS:
             row.update(portion=False, failure="PORTION_UNAVAILABLE")
             failures["PORTION_UNAVAILABLE"] = failures.get("PORTION_UNAVAILABLE", 0) + 1
             rows.append(row)
@@ -104,14 +107,14 @@ def main() -> None:
         stats["portion_ok"] += 1
         row["portion"] = True
 
-        # 5) Cálculo nutricional
+        # 5) CÃ¡lculo nutricional
         stats["calc_ok"] += 1
         row["calc"] = True
 
         rows.append(row)
 
     n = stats["total"]
-    print(f"=== END-TO-END NUTRITION COVERAGE (108 imágenes) ===")
+    print(f"=== END-TO-END NUTRITION COVERAGE (108 imÃ¡genes) ===")
     print(f"Detection success:        {stats['detection_ok']}/{n} ({round(stats['detection_ok']/n*100,1)}%)")
     print(f"Classification success:   {stats['classification_ok']}/{n} ({round(stats['classification_ok']/n*100,1)}%)")
     print(f"Unknown rate:             {stats['unknown_rate']}/{n} ({round(stats['unknown_rate']/n*100,1)}%)")
@@ -133,3 +136,6 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+

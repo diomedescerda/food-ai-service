@@ -100,3 +100,7 @@ Todas coherentes con las clases soportadas; confianza > threshold 0.35.
 - Top-K: solo 31.6% de los fallos top-1 tienen el correcto en top-3 → problema de representación/prompts, no de re-rank
 - Trade-off: el ensemble degradó hot_dog (13/20 rank simple → fuera de top-1 con ensemble) — aceptado por la ganancia global
 - Config: FOOD_AI_CLIP_PROMPT_ENSEMBLE='a picture of {food}|a close-up photo of {food}'
+
+## FASE 16 — scoring por clase
+
+El ranking global de candidatos perdía clases con scores medios (hot_dog: 0/20 con ensemble global). FIX: score(clase) = max de los candidatos de la clase → hot_dog 13/20 sin degradar el global (68.5%). Implementado en ZeroShotFoodClassifier (score_by_class=True).

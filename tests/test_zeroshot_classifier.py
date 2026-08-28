@@ -146,3 +146,16 @@ def test_confianza_redondeada_4_decimales():
 
     assert result is not None
     assert result.confidence == 0.3457
+
+
+def test_score_por_clase_usa_max_del_candidato():
+    """FASE 16: scoring por clase = max de candidatos (hamburger vs cheeseburger)."""
+    classifier = FakeScorerClassifier({"hamburger": 0.30, "cheeseburger": 0.28, "salad": 0.25})
+    classifier._threshold = 0.2
+    classifier._score_by_class = True
+
+    results = classifier.classify(IMAGE, [_detection()])
+
+    assert results[0] is not None
+    assert results[0].name == "hamburger"
+    assert results[0].confidence == 0.30

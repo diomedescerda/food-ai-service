@@ -7,6 +7,7 @@ from fastapi import APIRouter, File, Form, HTTPException, Request, UploadFile
 from PIL import Image
 
 from app.models.base import IFoodDetector
+from app.models.detection import Detection
 from app.schemas.analyze import (
     AnalyzeResponse,
     BoundingBox,
@@ -121,11 +122,17 @@ async def analyze(
 
     # Estimación de porción (básica): referencia + tamaño visual relativo.
     # estimatedGrams != measuredGrams — aproximación, nunca peso medido.
+    # La porción usa la IDENTIDAD CLASIFICADA (CLIP), no el nombre del
+    # detector ("unknown" en fallback DINO) — FASE 16.
     portion_estimator = getattr(request.app.state, "portion_estimator", None)
     portion_start = time.perf_counter()
     portions: list = [None] * len(detections)
     if portion_estimator is not None and detections:
-        portions = portion_estimator.estimate(pil_image, detections, segmentations)
+        classified_detections = [
+            Detection(name=name, confidence=conf, bounding_box=d.bounding_box)
+            for d, name, conf in zip(detections, final_names, final_confidences)
+        ]
+        portions = portion_estimator.estimate(pil_image, classified_detections, segmentations)
     portion_ms = round((time.perf_counter() - portion_start) * 1000)
 
     # Debug visual: overlay + depth map (herramienta de desarrollo).
@@ -140,6 +147,16 @@ async def analyze(
     )
     if debug_path:
         request.app.state.logger.debug("Debug image guardada: %s", debug_path)
+
+    # Observabilidad (FASE 16): tiempos por etapa y resultado — sin datos de
+    # usuario ni imágenes en el log.
+    if request.app.state.logger:
+        request.app.state.logger.info(
+            "análisis_completo analysis_id=%s foods=%d segmentation_ms=%d "
+            "portion_ms=%d inference_ms=%d status=%s",
+            analysis_id, len(detections), seg_ms, portion_ms,
+            inference_ms + seg_ms + portion_ms, "completed",
+        )
 
     depth_estimator = getattr(request.app.state, "depth_estimator", None)
     if depth_estimator is not None and depth_estimator.is_loaded:

@@ -185,3 +185,12 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] food_coverage_report.json: 38 clases, 19 con e2e_supported (50%)
 - [x] USDA API KEY NOT AVAILABLE → 15 mappings pendientes sin inventar
 - [x] Tests: 67 pytest sin regresión
+
+## FASE 16 — Production Hardening ✅ (2026-08-28)
+- [x] Fix cadena de aliases: provider .NET normaliza _→espacio (hot_dog→'hot dog'), estimator normaliza, porción usa identidad CLIP → hot_dog 0→13/20
+- [x] E2E: 40.7% → 52.8% (57/108) — 3 bugs de alias encontrados y corregidos
+- [x] Scoring por clase (max candidato): hot_dog recuperado (13/20) sin perder global (68.5%)
+- [x] Threshold sweep E2E 0.15-0.25: insensible (52.8%) → se mantiene 0.20
+- [x] Observabilidad: logs estructurados por análisis (tiempos, foods, nutricion_ok, fallos) sin datos de usuario
+- [x] E2E real: hot_dog_001 → hot_dog 0.2387, porción 68g, 197.20 kcal available (USDA)
+- [x] Tests: 69 pytest (2 nuevos normalización/score-clase), 213 .NET, 14 integration

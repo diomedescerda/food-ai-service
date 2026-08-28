@@ -98,3 +98,11 @@ def test_porcion_es_estimacion_no_medicion():
     assert est.method == "basic_reference"
     assert est.estimated_grams is not None
     # estimatedGrams != measuredGrams: documentado en la clase y docs.
+
+
+def test_normalizacion_alias_guion_a_espacio():
+    """FASE 16: CLIP devuelve canonical con guiones (hot_dog); REFERENCE_GRAMS usa espacios."""
+    detections = [_detection("hot_dog", BoundingBox(100, 100, 200, 200))]
+    estimates = ESTIMATOR.estimate(IMAGE_1000, detections, [_segmentation(200_000)])
+    assert estimates[0].portion_size == "medium"
+    assert estimates[0].estimated_grams == 57  # FDC: 1 frankfurter
