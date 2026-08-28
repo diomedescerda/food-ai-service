@@ -176,3 +176,12 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Descartados con evidencia: prompts específicos, jerárquico, masked crop
 - [x] Confusion matrix + per-class + top-k analysis documentados
 - [x] Tests: 67 pytest sin regresión
+
+## FASE 15 — Product Gaps ✅ (2026-08-28)
+- [x] Porciones fast food verificadas USDA (20 referencias nuevas: fries 117g FDC 170698, fried_chicken 203g 170756, taco 69g, burrito 185g, quesadilla 157g, nachos 80g, nuggets 87g, eggs 61g, bacon 12g, pancakes 77g, toast 22g, bagel 105g, waffles 75g, oatmeal 234g, rice 158g, pasta 124g, salad 35g, steak 85g, salmon 170g, ice_cream 66g)
+- [x] E2E 108: 30.6% → 40.7% (+10.1 — fries/fried_chicken completan el pipeline)
+- [x] Benchmark multi-food real: 16 imágenes de platos compuestos (Wikimedia, GT manual por nombre), dataset multi-food/
+- [x] DEDUP: NMS IoU 0.5 en regiones DINO + máx 1 predicción por clase → duplicados 24→0, precisión 27.7%→54.5%
+- [x] food_coverage_report.json: 38 clases, 19 con e2e_supported (50%)
+- [x] USDA API KEY NOT AVAILABLE → 15 mappings pendientes sin inventar
+- [x] Tests: 67 pytest sin regresión

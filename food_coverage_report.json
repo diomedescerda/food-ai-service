@@ -1,0 +1,347 @@
+{
+  "generated": "2026-08-28",
+  "foods": [
+    {
+      "food": "pizza",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "DIRECT_MATCH",
+      "mapping_confidence": 0.95,
+      "portion_reference": true,
+      "e2e_supported": true
+    },
+    {
+      "food": "hamburger",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "DIRECT_MATCH",
+      "mapping_confidence": 0.96,
+      "portion_reference": true,
+      "e2e_supported": true
+    },
+    {
+      "food": "french_fries",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "GOOD_EQUIVALENCE",
+      "mapping_confidence": 0.9,
+      "portion_reference": true,
+      "e2e_supported": true
+    },
+    {
+      "food": "hot_dog",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "NO_RELIABLE_MATCH",
+      "mapping_confidence": null,
+      "portion_reference": true,
+      "e2e_supported": false
+    },
+    {
+      "food": "sandwich",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "NO_RELIABLE_MATCH",
+      "mapping_confidence": 0.0,
+      "portion_reference": false,
+      "e2e_supported": false
+    },
+    {
+      "food": "fried_chicken",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "GOOD_EQUIVALENCE",
+      "mapping_confidence": 0.85,
+      "portion_reference": true,
+      "e2e_supported": true
+    },
+    {
+      "food": "chicken_nuggets",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "REVIEW_REQUIRED",
+      "mapping_confidence": 0.0,
+      "portion_reference": true,
+      "e2e_supported": false
+    },
+    {
+      "food": "taco",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "DIRECT_MATCH",
+      "mapping_confidence": 0.9,
+      "portion_reference": true,
+      "e2e_supported": true
+    },
+    {
+      "food": "burrito",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "DIRECT_MATCH",
+      "mapping_confidence": 0.88,
+      "portion_reference": true,
+      "e2e_supported": true
+    },
+    {
+      "food": "quesadilla",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "REVIEW_REQUIRED",
+      "mapping_confidence": 0.0,
+      "portion_reference": true,
+      "e2e_supported": false
+    },
+    {
+      "food": "nachos",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "REVIEW_REQUIRED",
+      "mapping_confidence": 0.0,
+      "portion_reference": true,
+      "e2e_supported": false
+    },
+    {
+      "food": "steak",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "REVIEW_REQUIRED",
+      "mapping_confidence": 0.0,
+      "portion_reference": true,
+      "e2e_supported": false
+    },
+    {
+      "food": "grilled_chicken",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "REVIEW_REQUIRED",
+      "mapping_confidence": 0.0,
+      "portion_reference": false,
+      "e2e_supported": false
+    },
+    {
+      "food": "salmon",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "REVIEW_REQUIRED",
+      "mapping_confidence": 0.0,
+      "portion_reference": true,
+      "e2e_supported": false
+    },
+    {
+      "food": "rice",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "DIRECT_MATCH",
+      "mapping_confidence": 0.97,
+      "portion_reference": true,
+      "e2e_supported": true
+    },
+    {
+      "food": "pasta",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "DIRECT_MATCH",
+      "mapping_confidence": 0.95,
+      "portion_reference": true,
+      "e2e_supported": true
+    },
+    {
+      "food": "lasagna",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "REVIEW_REQUIRED",
+      "mapping_confidence": 0.0,
+      "portion_reference": false,
+      "e2e_supported": false
+    },
+    {
+      "food": "mac_and_cheese",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "REVIEW_REQUIRED",
+      "mapping_confidence": 0.0,
+      "portion_reference": false,
+      "e2e_supported": false
+    },
+    {
+      "food": "salad",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "GOOD_EQUIVALENCE",
+      "mapping_confidence": 0.85,
+      "portion_reference": true,
+      "e2e_supported": true
+    },
+    {
+      "food": "soup",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "NO_RELIABLE_MATCH",
+      "mapping_confidence": 0.0,
+      "portion_reference": false,
+      "e2e_supported": false
+    },
+    {
+      "food": "eggs",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "DIRECT_MATCH",
+      "mapping_confidence": 0.95,
+      "portion_reference": true,
+      "e2e_supported": true
+    },
+    {
+      "food": "bacon",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "DIRECT_MATCH",
+      "mapping_confidence": 0.95,
+      "portion_reference": true,
+      "e2e_supported": true
+    },
+    {
+      "food": "toast",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "REVIEW_REQUIRED",
+      "mapping_confidence": 0.0,
+      "portion_reference": true,
+      "e2e_supported": false
+    },
+    {
+      "food": "bagel",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "REVIEW_REQUIRED",
+      "mapping_confidence": 0.0,
+      "portion_reference": true,
+      "e2e_supported": false
+    },
+    {
+      "food": "pancakes",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "DIRECT_MATCH",
+      "mapping_confidence": 0.94,
+      "portion_reference": true,
+      "e2e_supported": true
+    },
+    {
+      "food": "waffles",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "REVIEW_REQUIRED",
+      "mapping_confidence": 0.0,
+      "portion_reference": true,
+      "e2e_supported": false
+    },
+    {
+      "food": "cereal",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "NO_RELIABLE_MATCH",
+      "mapping_confidence": 0.0,
+      "portion_reference": false,
+      "e2e_supported": false
+    },
+    {
+      "food": "oatmeal",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "REVIEW_REQUIRED",
+      "mapping_confidence": 0.0,
+      "portion_reference": true,
+      "e2e_supported": false
+    },
+    {
+      "food": "donut",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "DIRECT_MATCH",
+      "mapping_confidence": 0.94,
+      "portion_reference": true,
+      "e2e_supported": true
+    },
+    {
+      "food": "cake",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "DIRECT_MATCH",
+      "mapping_confidence": 0.94,
+      "portion_reference": true,
+      "e2e_supported": true
+    },
+    {
+      "food": "cookie",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "REVIEW_REQUIRED",
+      "mapping_confidence": 0.0,
+      "portion_reference": false,
+      "e2e_supported": false
+    },
+    {
+      "food": "brownie",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "REVIEW_REQUIRED",
+      "mapping_confidence": 0.0,
+      "portion_reference": false,
+      "e2e_supported": false
+    },
+    {
+      "food": "ice_cream",
+      "classification_supported": true,
+      "nutrition_mapping": false,
+      "nutrition_status": "REVIEW_REQUIRED",
+      "mapping_confidence": 0.0,
+      "portion_reference": true,
+      "e2e_supported": false
+    },
+    {
+      "food": "apple",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "DIRECT_MATCH",
+      "mapping_confidence": 0.98,
+      "portion_reference": true,
+      "e2e_supported": true
+    },
+    {
+      "food": "banana",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "DIRECT_MATCH",
+      "mapping_confidence": 0.98,
+      "portion_reference": true,
+      "e2e_supported": true
+    },
+    {
+      "food": "orange",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "DIRECT_MATCH",
+      "mapping_confidence": 0.98,
+      "portion_reference": true,
+      "e2e_supported": true
+    },
+    {
+      "food": "broccoli",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "DIRECT_MATCH",
+      "mapping_confidence": 0.98,
+      "portion_reference": true,
+      "e2e_supported": true
+    },
+    {
+      "food": "carrot",
+      "classification_supported": true,
+      "nutrition_mapping": true,
+      "nutrition_status": "DIRECT_MATCH",
+      "mapping_confidence": 0.98,
+      "portion_reference": true,
+      "e2e_supported": true
+    }
+  ]
+}
