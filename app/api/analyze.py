@@ -100,7 +100,8 @@ async def analyze(
 
     start = time.perf_counter()
     detections = detector.detect(pil_image)
-    inference_ms = round((time.perf_counter() - start) * 1000)
+    det_ms = round((time.perf_counter() - start) * 1000)
+    used_dino = bool(getattr(detector, "used_dino_fallback", False))
 
     seg_start = time.perf_counter()
     segmentations: list = [None] * len(detections)
@@ -112,13 +113,16 @@ async def analyze(
     # (la clase/confianza vienen del detector); el pipeline habla contra
     # IFoodClassifier para poder sustituirlo por un clasificador dedicado.
     if classifier is not None and classifier.is_loaded:
+        cls_start = time.perf_counter()
         classifications = classifier.classify(pil_image, detections)
+        cls_ms = round((time.perf_counter() - cls_start) * 1000)
         final_names = [c.name if c is not None else d.name for c, d in zip(classifications, detections)]
         final_confidences = [c.confidence if c is not None else d.confidence for c, d in zip(classifications, detections)]
     else:
         final_names = [d.name for d in detections]
         final_confidences = [d.confidence for d in detections]
         classifier = None
+        cls_ms = 0
 
     # Estimación de porción (básica): referencia + tamaño visual relativo.
     # estimatedGrams != measuredGrams — aproximación, nunca peso medido.
@@ -148,14 +152,16 @@ async def analyze(
     if debug_path:
         request.app.state.logger.debug("Debug image guardada: %s", debug_path)
 
-    # Observabilidad (FASE 16): tiempos por etapa y resultado — sin datos de
-    # usuario ni imágenes en el log.
+    inference_ms = det_ms + seg_ms + portion_ms + cls_ms
+
+    # Observabilidad (FASE 17): telemetría por análisis — tiempos por etapa,
+    # fallback DINO y resultado. Sin datos de usuario ni imágenes.
     if request.app.state.logger:
         request.app.state.logger.info(
-            "análisis_completo analysis_id=%s foods=%d segmentation_ms=%d "
-            "portion_ms=%d inference_ms=%d status=%s",
-            analysis_id, len(detections), seg_ms, portion_ms,
-            inference_ms + seg_ms + portion_ms, "completed",
+            "análisis_completo analysis_id=%s foods=%d detector_ms=%d segmentation_ms=%d "
+            "classification_ms=%d portion_ms=%d total_ms=%d used_dino_fallback=%s status=%s",
+            analysis_id, len(detections), det_ms, seg_ms, cls_ms, portion_ms,
+            inference_ms, used_dino, "completed",
         )
 
     depth_estimator = getattr(request.app.state, "depth_estimator", None)

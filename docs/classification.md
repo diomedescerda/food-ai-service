@@ -104,3 +104,11 @@ Todas coherentes con las clases soportadas; confianza > threshold 0.35.
 ## FASE 16 — scoring por clase
 
 El ranking global de candidatos perdía clases con scores medios (hot_dog: 0/20 con ensemble global). FIX: score(clase) = max de los candidatos de la clase → hot_dog 13/20 sin degradar el global (68.5%). Implementado en ZeroShotFoodClassifier (score_by_class=True).
+
+## FASE 17 — experimentos de representación y multi-instancia
+
+- **Crop (fries/fried_chicken, regiones hybrid)**: padding 0.0→fries 6/20, 0.10→7/20, 0.20→7/20, masked 0.10→3/20 (PEOR). El crop no es el cuello de botella: la confusión fries→rice es estructural (CLIP ve masa granulada dorada). Se mantiene padding 0.10; masked descartado de nuevo.
+- **Candidate groups específicos** (fries/fried_chicken): candidatos descriptivos extra → top1 sin cambio (39.3%→39.3%): fries→rice bajó 7→4 pero fried_chicken subió 3→6. NET ZERO → rechazado (regla: solo mejoras en ground-truth accuracy).
+- **Benchmark ampliado food-bench-v1** (31 clases × 8, Wikimedia Commons, licencias CC0/CC BY/CC BY-SA/PD): top1 16.1% con YOLO-only + threshold 0.20, 55.6% unknown. La detección YOLO falla 13/16 en fries/fried_chicken de Commons (fondos complejos) → el DINO fallback es esencial en fotos reales.
+- **Dedup espacial (FASE 17)**: cap 1/clase reemplazado por IoU>0.3 + contención>70%: instancias separadas de la misma clase sobreviven (2 cookies ✓); cajas envolventes de DINO (plato) se colapsan. Multi-food: dup 0→4/16 (2 son instancias reales que el GT por clase cuenta como dup), recall 57.1% igual, precisión 54.5%→46.2% (métrica por clase subestima multi-instancia).
+- **Threshold**: 0.20 mantenido (insensible 0.15-0.25 en food-us; en food-bench-v1 los crops YOLO dan scores binarios).

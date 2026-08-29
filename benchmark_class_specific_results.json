@@ -1,0 +1,109 @@
+{
+  "base": {
+    "total": 28,
+    "top1": 0.39285714285714285,
+    "per_class": {
+      "french_fries": {
+        "french_fries": 7,
+        "rice": 7,
+        "hot_dog": 3,
+        "fried_chicken": 3
+      },
+      "fried_chicken": {
+        "rice": 4,
+        "fried_chicken": 4
+      }
+    },
+    "confusion": [
+      {
+        "gt": "french_fries",
+        "pred": "french_fries",
+        "count": 7
+      },
+      {
+        "gt": "french_fries",
+        "pred": "rice",
+        "count": 7
+      },
+      {
+        "gt": "fried_chicken",
+        "pred": "rice",
+        "count": 4
+      },
+      {
+        "gt": "fried_chicken",
+        "pred": "fried_chicken",
+        "count": 4
+      },
+      {
+        "gt": "french_fries",
+        "pred": "hot_dog",
+        "count": 3
+      },
+      {
+        "gt": "french_fries",
+        "pred": "fried_chicken",
+        "count": 3
+      }
+    ]
+  },
+  "extended": {
+    "total": 28,
+    "top1": 0.39285714285714285,
+    "per_class": {
+      "french_fries": {
+        "french_fries": 7,
+        "rice": 4,
+        "hot_dog": 3,
+        "fried_chicken": 6
+      },
+      "fried_chicken": {
+        "rice": 4,
+        "fried_chicken": 4
+      }
+    },
+    "confusion": [
+      {
+        "gt": "french_fries",
+        "pred": "french_fries",
+        "count": 7
+      },
+      {
+        "gt": "french_fries",
+        "pred": "fried_chicken",
+        "count": 6
+      },
+      {
+        "gt": "french_fries",
+        "pred": "rice",
+        "count": 4
+      },
+      {
+        "gt": "fried_chicken",
+        "pred": "rice",
+        "count": 4
+      },
+      {
+        "gt": "fried_chicken",
+        "pred": "fried_chicken",
+        "count": 4
+      },
+      {
+        "gt": "french_fries",
+        "pred": "hot_dog",
+        "count": 3
+      }
+    ]
+  },
+  "extra_candidates": {
+    "french_fries": [
+      "golden fried potato sticks",
+      "fried potatoes in a cup",
+      "fast food french fries"
+    ],
+    "fried_chicken": [
+      "crispy breaded fried chicken pieces",
+      "fast food fried chicken"
+    ]
+  }
+}

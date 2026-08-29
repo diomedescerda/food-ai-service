@@ -1,0 +1,56 @@
+{
+  "strategy": {
+    "padding": 0.0,
+    "masked": false
+  },
+  "total": 28,
+  "top1": 0.35714285714285715,
+  "top3": 0.35714285714285715,
+  "top5": 0.35714285714285715,
+  "unknown": 0,
+  "per_class": {
+    "french_fries": {
+      "fried_chicken": 4,
+      "unknown": 7,
+      "french_fries": 6,
+      "rice": 3
+    },
+    "fried_chicken": {
+      "rice": 4,
+      "fried_chicken": 4
+    }
+  },
+  "confusion": [
+    {
+      "gt": "french_fries",
+      "pred": "unknown",
+      "count": 7
+    },
+    {
+      "gt": "french_fries",
+      "pred": "french_fries",
+      "count": 6
+    },
+    {
+      "gt": "french_fries",
+      "pred": "fried_chicken",
+      "count": 4
+    },
+    {
+      "gt": "fried_chicken",
+      "pred": "rice",
+      "count": 4
+    },
+    {
+      "gt": "fried_chicken",
+      "pred": "fried_chicken",
+      "count": 4
+    },
+    {
+      "gt": "french_fries",
+      "pred": "rice",
+      "count": 3
+    }
+  ],
+  "elapsed_s": 2.247623299999759
+}

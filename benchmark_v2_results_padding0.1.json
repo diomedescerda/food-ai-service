@@ -1,0 +1,79 @@
+{
+  "strategy": {
+    "padding": 0.1,
+    "masked": false
+  },
+  "total": 24,
+  "top1": 0.4583333333333333,
+  "top3": 0.4583333333333333,
+  "top5": 0.4583333333333333,
+  "unknown": 5,
+  "per_class": {
+    "pizza": {
+      "unknown_detection": 1,
+      "pizza": 6,
+      "toast": 1
+    },
+    "hamburger": {
+      "unknown_detection": 3,
+      "hamburger": 2,
+      "grilled_chicken": 1,
+      "unknown": 1,
+      "sandwich": 1
+    },
+    "hot_dog": {
+      "hot_dog": 3,
+      "unknown_detection": 1,
+      "sandwich": 2,
+      "unknown": 2
+    }
+  },
+  "confusion": [
+    {
+      "gt": "pizza",
+      "pred": "pizza",
+      "count": 6
+    },
+    {
+      "gt": "hot_dog",
+      "pred": "hot_dog",
+      "count": 3
+    },
+    {
+      "gt": "hamburger",
+      "pred": "hamburger",
+      "count": 2
+    },
+    {
+      "gt": "hot_dog",
+      "pred": "sandwich",
+      "count": 2
+    },
+    {
+      "gt": "hot_dog",
+      "pred": "unknown",
+      "count": 2
+    },
+    {
+      "gt": "pizza",
+      "pred": "toast",
+      "count": 1
+    },
+    {
+      "gt": "hamburger",
+      "pred": "grilled_chicken",
+      "count": 1
+    },
+    {
+      "gt": "hamburger",
+      "pred": "unknown",
+      "count": 1
+    },
+    {
+      "gt": "hamburger",
+      "pred": "sandwich",
+      "count": 1
+    }
+  ],
+  "elapsed_s": 3.5024087999991025
+}

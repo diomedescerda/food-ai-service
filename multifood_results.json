@@ -3,11 +3,11 @@
   "images_with_food_gt": 12,
   "images_fully_recovered": 4,
   "food_recall": 0.571,
-  "food_precision": 0.545,
+  "food_precision": 0.462,
   "missed_foods": 9,
   "false_positives": 10,
-  "duplicate_detections": 0,
-  "avg_latency_ms": 6921.6,
+  "duplicate_detections": 4,
+  "avg_latency_ms": 5723.0,
   "per_image": [
     {
       "image": "mf_000",
@@ -15,9 +15,11 @@
         "hamburger"
       ],
       "preds": [
+        "hamburger",
+        "hamburger",
         "hamburger"
       ],
-      "duplicates": 0,
+      "duplicates": 2,
       "missed": [],
       "fp": []
     },
@@ -57,9 +59,10 @@
         "hamburger"
       ],
       "preds": [
+        "hamburger",
         "hamburger"
       ],
-      "duplicates": 0,
+      "duplicates": 1,
       "missed": [],
       "fp": []
     },
@@ -97,9 +100,10 @@
         "eggs"
       ],
       "preds": [
+        "eggs",
         "eggs"
       ],
-      "duplicates": 0,
+      "duplicates": 1,
       "missed": [
         "bacon"
       ],

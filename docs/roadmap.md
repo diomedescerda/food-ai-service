@@ -194,3 +194,17 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Observabilidad: logs estructurados por análisis (tiempos, foods, nutricion_ok, fallos) sin datos de usuario
 - [x] E2E real: hot_dog_001 → hot_dog 0.2387, porción 68g, 197.20 kcal available (USDA)
 - [x] Tests: 69 pytest (2 nuevos normalización/score-clase), 213 .NET, 14 integration
+
+## FASE 17 — Production Telemetry & Expanded Catalog ✅ (2026-08-28)
+- [x] USDA API key NO disponible → 15 mappings siguen REVIEW_REQUIRED (no inventar)
+- [x] Audit catálogo completo: 38 alimentos, 20 nutrition (52.6%), 30 portion (78.9%), 20 e2e_supported (52.6%) — scripts/audit_catalog.py
+- [x] Benchmark ampliado food-bench-v1: 248 imágenes, 31 clases, Wikimedia Commons con licencias CC0/CC BY/CC BY-SA/PD + metadata.json completo
+- [x] Classification v2: top1 16.1% (YOLO-only, fotos reales); la detección es el cuello en fotos variadas (DINO esencial)
+- [x] Crop experiments fries/fried_chicken: padding y masked NO ayudan → confusión estructural CLIP
+- [x] Candidate groups específicos: NET ZERO → rechazados
+- [x] Telemetry: tiempos por etapa + used_dino_fallback en logs; DINO fallback rate real = 33.3%
+- [x] Latencia: YOLO p50 78ms/p95 115ms; DINO p50 11.8s/p95 13.8s
+- [x] Memoria real: WorkingSet 0.61GB / Private 2.12GB (modelos cargados)
+- [x] Multi-instancia: dedup espacial (IoU 0.3 + contención 70%) — 2 cookies separadas ✓
+- [x] Regresión protegida: E2E 52.8% sin cambio, hot_dog 13/20, fries 7/20
+- [x] Tests: 72 pytest, 213 .NET, 14 integration

@@ -159,3 +159,52 @@ def test_score_por_clase_usa_max_del_candidato():
     assert results[0] is not None
     assert results[0].name == "hamburger"
     assert results[0].confidence == 0.30
+
+
+def test_dedup_espacial_colapsa_regiones_solapadas_de_la_misma_clase():
+    """FASE 17: misma clase + regiones casi idénticas (IoU alto) = un alimento."""
+    classifier = FakeScorerClassifier({"pizza": 0.30})
+    classifier._threshold = 0.2
+    detections = [
+        Detection("pizza", 0.9, BoundingBox(10, 10, 100, 100)),
+        Detection("pizza", 0.8, BoundingBox(12, 12, 98, 98)),
+    ]
+
+    results = classifier.classify(IMAGE, detections)
+
+    assert results[0] is not None
+    assert results[1] is not None
+    assert [r.name for r in results if r is not None].count("pizza") == 1
+
+
+def test_dedup_espacial_mantiene_instancias_separadas_de_la_misma_clase():
+    """FASE 17: misma clase + regiones separadas = instancias distintas (2 cookies)."""
+    classifier = FakeScorerClassifier({"cookie": 0.30})
+    classifier._threshold = 0.2
+    detections = [
+        Detection("cookie", 0.9, BoundingBox(10, 10, 50, 50)),
+        Detection("cookie", 0.8, BoundingBox(140, 140, 50, 50)),
+    ]
+
+    results = classifier.classify(IMAGE, detections)
+
+    assert results[0] is not None
+    assert results[1] is not None
+    assert [r.name for r in results if r is not None].count("cookie") == 2
+
+
+def test_dedup_espacial_elimina_caja_envolvente_del_plato():
+    """FASE 17: DINO genera caja grande (plato) + caja interna (item): colapsar."""
+    classifier = FakeScorerClassifier({"eggs": 0.30})
+    classifier._threshold = 0.2
+    detections = [
+        Detection("eggs", 0.9, BoundingBox(10, 10, 190, 190)),  # envolvente
+        Detection("eggs", 0.8, BoundingBox(50, 50, 80, 80)),    # item interno
+    ]
+
+    results = classifier.classify(IMAGE, detections)
+
+    assert results[0] is not None
+    assert results[1] is not None
+    kept = [r.name for r in results if r is not None and r.name != "unknown"]
+    assert kept == ["eggs"]
