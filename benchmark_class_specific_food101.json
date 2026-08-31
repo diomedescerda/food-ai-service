@@ -1,0 +1,109 @@
+{
+  "base": {
+    "total": 750,
+    "top1": 0.45066666666666666,
+    "per_class": {
+      "taco": {
+        "salmon": 4,
+        "grilled_chicken": 6,
+        "nachos": 33,
+        "taco": 89,
+        "quesadilla": 77,
+        "burrito": 27,
+        "salad": 10,
+        "steak": 2,
+        "rice": 1,
+        "eggs": 1
+      },
+      "waffles": {
+        "pancakes": 165,
+        "eggs": 7,
+        "waffles": 19,
+        "bacon": 3,
+        "ice_cream": 15,
+        "cake": 14,
+        "salad": 1,
+        "banana": 2,
+        "donut": 1,
+        "quesadilla": 2,
+        "toast": 13,
+        "grilled_chicken": 1,
+        "nachos": 1,
+        "sandwich": 2,
+        "steak": 1,
+        "cookie": 1,
+        "hamburger": 1,
+        "brownie": 1
+      },
+      "pancakes": {
+        "pancakes": 230,
+        "toast": 2,
+        "eggs": 4,
+        "quesadilla": 2,
+        "cake": 4,
+        "hamburger": 1,
+        "nachos": 1,
+        "sandwich": 1,
+        "apple": 1,
+        "bacon": 1,
+        "lasagna": 1,
+        "fried_chicken": 1,
+        "ice_cream": 1
+      }
+    }
+  },
+  "extended": {
+    "total": 750,
+    "top1": 0.904,
+    "per_class": {
+      "taco": {
+        "taco": 209,
+        "grilled_chicken": 4,
+        "quesadilla": 22,
+        "salmon": 1,
+        "nachos": 9,
+        "salad": 3,
+        "burrito": 2
+      },
+      "waffles": {
+        "waffles": 230,
+        "pancakes": 11,
+        "ice_cream": 3,
+        "nachos": 1,
+        "cake": 3,
+        "steak": 1,
+        "hamburger": 1
+      },
+      "pancakes": {
+        "pancakes": 239,
+        "eggs": 1,
+        "quesadilla": 1,
+        "waffles": 3,
+        "hamburger": 1,
+        "apple": 1,
+        "bacon": 1,
+        "lasagna": 1,
+        "taco": 1,
+        "ice_cream": 1
+      }
+    }
+  },
+  "extra": {
+    "taco": [
+      "crispy corn taco shell with meat and lettuce",
+      "taco al pastor with cilantro"
+    ],
+    "quesadilla": [
+      "folded grilled tortilla with melted cheese inside",
+      "quesadilla cut in triangles"
+    ],
+    "waffles": [
+      "waffle with square grid pattern",
+      "waffles with syrup in the squares"
+    ],
+    "pancakes": [
+      "pancake stack with butter and syrup",
+      "flat round pancakes stacked"
+    ]
+  }
+}

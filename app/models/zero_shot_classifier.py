@@ -54,6 +54,23 @@ def _contains(a: Detection, b: Detection) -> bool:
     return area_b > 0 and inter >= 0.7 * area_b
 
 
+def _center_inside_most(a: Detection, b: Detection) -> bool:
+    """FASE 21: el centro de la caja menor está dentro de la mayor Y >=30% del
+    área de la menor está dentro de la mayor → mismo objeto fragmentado
+    (patrón DINO/YOLO de mf_000: pan+bollo del mismo burger)."""
+    bigger, smaller = (a, b) if a.bounding_box.width * a.bounding_box.height >= b.bounding_box.width * b.bounding_box.height else (b, a)
+    bx, by = smaller.bounding_box.x + smaller.bounding_box.width / 2, smaller.bounding_box.y + smaller.bounding_box.height / 2
+    cx1, cy1 = bigger.bounding_box.x, bigger.bounding_box.y
+    cx2, cy2 = bigger.bounding_box.x + bigger.bounding_box.width, bigger.bounding_box.y + bigger.bounding_box.height
+    if not (cx1 <= bx <= cx2 and cy1 <= by <= cy2):
+        return False
+    inter_w = max(0, min(cx2, smaller.bounding_box.x + smaller.bounding_box.width) - max(cx1, smaller.bounding_box.x))
+    inter_h = max(0, min(cy2, smaller.bounding_box.y + smaller.bounding_box.height) - max(cy1, smaller.bounding_box.y))
+    inter = inter_w * inter_h
+    area_s = smaller.bounding_box.width * smaller.bounding_box.height
+    return area_s > 0 and inter >= 0.3 * area_s
+
+
 @dataclass(frozen=True)
 class ClipTopCandidate:
     name: str
@@ -168,6 +185,15 @@ class ZeroShotFoodClassifier(IFoodClassifier):
                     break
                 if _contains(detections[j], detections[i]):
                     results[j] = ClassificationResult("unknown", 0.0)
+                    break
+                if _center_inside_most(detections[i], detections[j]):
+                    # Mismo objeto fragmentado (pan+bollo): eliminar la mayor.
+                    results[i if detections[i].bounding_box.width * detections[i].bounding_box.height
+                            >= detections[j].bounding_box.width * detections[j].bounding_box.height else j] = ClassificationResult("unknown", 0.0)
+                    break
+                if _center_inside_most(detections[j], detections[i]):
+                    results[j if detections[j].bounding_box.width * detections[j].bounding_box.height
+                            >= detections[i].bounding_box.width * detections[i].bounding_box.height else i] = ClassificationResult("unknown", 0.0)
                     break
 
         return results

@@ -55,9 +55,16 @@ def label_to_canonical(label: str) -> str | None:
 
 def load_model(name: str):
     if name == "clip":
-        from app.models.zero_shot_classifier import ZeroShotFoodClassifier
+        from app.core.config import Settings  # noqa: PLC0415
+        from app.models.zero_shot_classifier import ZeroShotFoodClassifier  # noqa: PLC0415
 
-        classifier = ZeroShotFoodClassifier("openai/clip-vit-base-patch32", threshold=0.20)
+        settings = Settings()
+        classifier = ZeroShotFoodClassifier(
+            "openai/clip-vit-base-patch32", threshold=settings.clip_threshold,
+            crop_padding=settings.clip_crop_padding,
+            prompt_template=settings.clip_prompt_template,
+            prompt_templates_extra=tuple(settings.clip_prompt_ensemble.split("|")),
+        )
         classifier.load()
         return classifier, None, None
     import torch  # noqa: PLC0415

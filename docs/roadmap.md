@@ -242,3 +242,14 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Licencias: DINOv3 apache-2.0, BEiT MIT (ambas comerciales OK); modelos evaluados con medición propia (no model card: DINOv3 publica 90.6% en TSOTSA-Img, en nuestros benchmarks 55.6%)
 - [x] Decisión: mantener CLIP (ningún modelo supera); documentado qué falta para el siguiente salto
 - [x] Tests: 72/72, 213/213, 14/14
+
+## FASE 21 — Production Food Identity + Dataset Integration ✅ (2026-08-31)
+- [x] Branch feature/production-food-identity (checkpoint bee2b6e/58b9b41) — datasets KEEP: food-us, v1, multi-food
+- [x] Food-101 estudiado (101 clases × 250 test, NON-COMMERCIAL → evaluación interna) — subset 3500 imágenes / 14 clases del catálogo
+- [x] Nutrition5k estudiado (CC BY 4.0 ✓ comercial, RGB-D + masa por ingrediente): documentado como futura mejora de porción (requiere gsutil/GCS; no es mejora rápida demostrable esta fase)
+- [x] Identidad CLIP Food-101: top1 79.7% → 89.7% (con catálogo + ensemble) — fallos sistemáticos detectados: taco 11.6% (→quesadilla), waffles 3.6% (→pancakes)
+- [x] A/B dirigido (Food-101): candidates descriptivos taco/quesadilla/waffles/pancakes: waffles +88.8 pts, taco +53.6 (sin 'taco al pastor' que rompía hot_dog E2E)
+- [x] v1 (fotos reales): top1 43.3% → 47.0% (+3.7); food-us E2E 52.8% protegido (hot_dog 13/20)
+- [x] Dedup centro-contención (FASE 21): mf_000 mismo objeto fragmentado colapsa (dups 2→1, precision 48.1→50.0) sin romper instancias reales (mf_003 2 burgers, mf_006 2 eggs ✓)
+- [x] E2E reales 14: pizza/hot_dog/salmon/nachos/lasagna/mac_and_cheese ✓ con nutrición; multi-food 2 instancias ✓
+- [x] Benchmarks no regresionados: pytest 72/72, .NET 213/213, integration 14/14
