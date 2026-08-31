@@ -219,3 +219,14 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Telemetría: nutrition_items_* en log del backend (total/available/unavailable/mapping_missing/ambiguous/calc_failed)
 - [x] E2E real: pizza 228.76, hot_dog 197.20, banana 105.02, mf_003 368.28 (2 instancias); pancakes→steak (clasificación)
 - [x] Benchmarks sin regresión: food-us 52.8%, v1 16.1%, tests 72/72, .NET 213/213, integration 14/14
+
+## FASE 19 — USDA Nutrition Completion + Real Benchmark Validation ✅ (2026-08-31)
+- [x] USDA key NO disponible → mappings bloqueados 🔒; importador --sync validado
+- [x] FOOD-BENCH-V1 HYBRID (248, 31 clases): top1 31.9% (vs 16.1% YOLO-only); DETECTION FAILURE 0%, CLASSIFICATION FAILURE 68.1%
+- [x] Separación con datos: el 16.1% de F17/18 era DETECCIÓN (YOLO falla en fotos reales), no clasificación
+- [x] Fallback rate real benchmark: 55.6% (138/248) — YOLO 44.4%
+- [x] Latencia: YOLO puro ~94-131ms, DINO ~10-11.6s, CLIP ~70-99ms por crop
+- [x] Tabla por clase (21 clases): pizza 87.5%, fried_chicken 75%, rice 75%, cake 75%, nachos 62.5%...
+- [x] Casos A-G: A (1 burger → 3 regiones: triple conteo mf_000 599.94 kcal — limitación 2D documentada); B (mf_003 2×184.14 ✓); C/E sintéticos fallan por clasificación (honesto)
+- [x] E2E reales 7: pizza/hot_dog/banana/apple ✓ rangos OK; hamburger_000 → sandwich (clasificación); fries_000 → fried_chicken+apple
+- [x] Tests: 72/72, 213/213, 14/14; food-us 52.8%; v1 YOLO-only 16.1%; v1 hybrid 31.9%; multifood 56.5%/48.1% F1 52.0%
