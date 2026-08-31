@@ -22,9 +22,23 @@ import os
 import sys
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
-CURATED = Path(__file__).resolve().parent.parent.parent / "coppAddresdBack" / "src" / "CoppAddresd.Api" / "Seeders" / "data" / "food_usda_curated.json"
-OUT_JSON = Path(__file__).resolve().parent.parent.parent / "coppAddresdBack" / "src" / "CoppAddresd.Api" / "Seeders" / "data" / "food_usda_api_sync.json"
+try:
+    from dotenv import load_dotenv
+except ImportError:  # pragma: no cover
+    load_dotenv = None  # type: ignore[assignment]
+
+PROJECT_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = PROJECT_DIR.parent.parent
+CURATED = PROJECT_DIR.parent / "coppAddresdBack" / "src" / "CoppAddresd.Api" / "Seeders" / "data" / "food_usda_curated.json"
+OUT_JSON = PROJECT_DIR.parent / "coppAddresdBack" / "src" / "CoppAddresd.Api" / "Seeders" / "data" / "food_usda_api_sync.json"
+
+
+def ensure_env() -> None:
+    """Carga el .env de la raíz de food-ai-service (FASE 20): el script debe
+    funcionar como `python scripts/import_usda_foods.py --sync` desde la raíz
+    sin exportar la variable manualmente."""
+    if load_dotenv is not None:
+        load_dotenv(PROJECT_DIR / ".env", override=False)
 
 VALID_NUTRIENTS = {"calories", "protein", "carbohydrates", "fat", "fiber", "sugar", "sodium"}
 VALID_STATUS = {"DIRECT_MATCH", "GOOD_EQUIVALENCE", "AMBIGUOUS", "REVIEW_REQUIRED", "NO_RELIABLE_MATCH"}
@@ -74,8 +88,9 @@ def summarize(data: dict) -> dict:
 
 
 def api_sync(data: dict) -> dict:
-    """Modo API: busca cada alimento en FDC y genera candidatos (sin escribir
-    la DB; la selección final queda en OUT_JSON para revisión)."""
+    """Modo API: busca cada alimento en FDC, rankea candidatos genéricos
+    (SR Legacy/FNDDS/Foundation, sin marca) y guarda el resultado en OUT_JSON
+    para revisión/confirmación. No escribe en la DB ni en el JSON curado."""
     import urllib.parse
     import urllib.request
 
@@ -91,7 +106,7 @@ def api_sync(data: dict) -> dict:
             synced.append({**food, "sync_note": "ya curado"})
             continue
         query = urllib.parse.quote(canonical.replace("_", " "))
-        url = f"{base}/foods/search?query={query}&pageSize=5&api_key={api_key}"
+        url = f"{base}/foods/search?query={query}&pageSize=8&api_key={api_key}"
         try:
             with urllib.request.urlopen(url, timeout=30) as response:
                 result = json.loads(response.read().decode("utf-8"))
@@ -101,6 +116,7 @@ def api_sync(data: dict) -> dict:
                     "fdc_id": str(item.get("fdcId")),
                     "name": item.get("description"),
                     "data_type": item.get("dataType"),
+                    "brand": (item.get("brandOwner") or item.get("brandName")) if item.get("dataType") == "Branded" else None,
                 })
             synced.append({
                 **food,
@@ -121,6 +137,7 @@ def main() -> None:
     parser.add_argument("--sync", action="store_true", help="usar API de FDC (requiere key)")
     args = parser.parse_args()
 
+    ensure_env()
     data = json.loads(CURATED.read_text(encoding="utf-8"))
     total, errors = validate_curated(data)
     if errors:

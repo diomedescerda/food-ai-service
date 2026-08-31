@@ -1,0 +1,525 @@
+{
+  "dinov3": {
+    "startup_s": 12.6,
+    "foodus": {
+      "dataset": "food-us",
+      "total": 108,
+      "top1": 60,
+      "top3": 61,
+      "top5": 61,
+      "unknown": 21,
+      "lat_ms_mean": 736.4406472215369,
+      "per_class": {
+        "french_fries": {
+          "french_fries": 7,
+          "unknown": 7,
+          "hot_dog": 3,
+          "fried_chicken": 3
+        },
+        "fried_chicken": {
+          "unknown": 4,
+          "fried_chicken": 4
+        },
+        "hamburger": {
+          "unknown": 2,
+          "fried_chicken": 1,
+          "hamburger": 15,
+          "rice": 1,
+          "bagel": 1
+        },
+        "hot_dog": {
+          "donut": 1,
+          "hot_dog": 15,
+          "unknown": 1,
+          "ice_cream": 1,
+          "french_fries": 1,
+          "bagel": 1
+        },
+        "pizza": {
+          "pizza": 19,
+          "toast": 1
+        },
+        "sandwich": {
+          "unknown": 7,
+          "bagel": 5,
+          "hamburger": 2,
+          "hot_dog": 6
+        }
+      }
+    },
+    "v1": {
+      "dataset": "v1",
+      "total": 247,
+      "top1": 81,
+      "top3": 84,
+      "top5": 85,
+      "unknown": 103,
+      "lat_ms_mean": 711.1948874482351,
+      "per_class": {
+        "bacon": {
+          "unknown": 4,
+          "bagel": 1,
+          "ice_cream": 1,
+          "lasagna": 1,
+          "pasta": 1
+        },
+        "bagel": {
+          "bagel": 6,
+          "unknown": 1
+        },
+        "brownie": {
+          "brownie": 2,
+          "toast": 1,
+          "rice": 2,
+          "unknown": 3
+        },
+        "burrito": {
+          "unknown": 8
+        },
+        "cake": {
+          "unknown": 5,
+          "brownie": 1,
+          "waffles": 1,
+          "bagel": 1
+        },
+        "chicken_nuggets": {
+          "unknown": 1,
+          "french_fries": 1,
+          "fried_chicken": 2,
+          "donut": 1,
+          "brownie": 2,
+          "ice_cream": 1
+        },
+        "cookie": {
+          "oatmeal": 2,
+          "unknown": 1,
+          "ice_cream": 2,
+          "rice": 1,
+          "toast": 1,
+          "brownie": 1
+        },
+        "donut": {
+          "donut": 4,
+          "fried_chicken": 1,
+          "unknown": 3
+        },
+        "eggs": {
+          "toast": 4,
+          "unknown": 4
+        },
+        "french_fries": {
+          "french_fries": 4,
+          "hamburger": 1,
+          "unknown": 2,
+          "pizza": 1
+        },
+        "fried_chicken": {
+          "unknown": 3,
+          "fried_chicken": 5
+        },
+        "grilled_chicken": {
+          "unknown": 8
+        },
+        "hamburger": {
+          "ice_cream": 1,
+          "hamburger": 4,
+          "unknown": 2,
+          "toast": 1
+        },
+        "hot_dog": {
+          "hot_dog": 4,
+          "toast": 1,
+          "hamburger": 1,
+          "bagel": 1,
+          "unknown": 1
+        },
+        "ice_cream": {
+          "unknown": 2,
+          "hot_dog": 1,
+          "ice_cream": 5
+        },
+        "lasagna": {
+          "lasagna": 6,
+          "pasta": 1,
+          "rice": 1
+        },
+        "mac_and_cheese": {
+          "unknown": 4,
+          "toast": 2,
+          "brownie": 1,
+          "pasta": 1
+        },
+        "nachos": {
+          "nachos": 7,
+          "unknown": 1
+        },
+        "oatmeal": {
+          "oatmeal": 7,
+          "unknown": 1
+        },
+        "pancakes": {
+          "unknown": 2,
+          "pancakes": 3,
+          "toast": 3
+        },
+        "pasta": {
+          "pasta": 2,
+          "unknown": 6
+        },
+        "pizza": {
+          "pizza": 8
+        },
+        "quesadilla": {
+          "pizza": 1,
+          "nachos": 1,
+          "unknown": 6
+        },
+        "rice": {
+          "rice": 2,
+          "unknown": 6
+        },
+        "salad": {
+          "unknown": 6,
+          "ice_cream": 1,
+          "rice": 1
+        },
+        "salmon": {
+          "unknown": 6,
+          "ice_cream": 2
+        },
+        "sandwich": {
+          "pizza": 6,
+          "rice": 1,
+          "unknown": 1
+        },
+        "steak": {
+          "steak": 3,
+          "hamburger": 1,
+          "unknown": 4
+        },
+        "taco": {
+          "toast": 1,
+          "unknown": 7
+        },
+        "toast": {
+          "unknown": 3,
+          "toast": 4,
+          "lasagna": 1
+        },
+        "waffles": {
+          "fried_chicken": 1,
+          "unknown": 2,
+          "waffles": 5
+        }
+      }
+    }
+  },
+  "beit": {
+    "startup_s": 20.3,
+    "foodus": {
+      "dataset": "food-us",
+      "total": 108,
+      "top1": 35,
+      "top3": 35,
+      "top5": 35,
+      "unknown": 49,
+      "lat_ms_mean": 898.1994277775003,
+      "per_class": {
+        "french_fries": {
+          "ice_cream": 4,
+          "unknown": 10,
+          "bagel": 3,
+          "french_fries": 3
+        },
+        "fried_chicken": {
+          "unknown": 8
+        },
+        "hamburger": {
+          "brownie": 1,
+          "toast": 1,
+          "bagel": 2,
+          "pancakes": 1,
+          "hamburger": 9,
+          "steak": 1,
+          "unknown": 4,
+          "hot_dog": 1
+        },
+        "hot_dog": {
+          "unknown": 6,
+          "rice": 1,
+          "ice_cream": 1,
+          "hot_dog": 11,
+          "french_fries": 1
+        },
+        "pizza": {
+          "unknown": 7,
+          "pizza": 12,
+          "waffles": 1
+        },
+        "sandwich": {
+          "unknown": 14,
+          "bagel": 2,
+          "brownie": 2,
+          "toast": 2
+        }
+      }
+    }
+  },
+  "clip": {
+    "startup_s": 24.1,
+    "foodus": {
+      "dataset": "food-us",
+      "total": 108,
+      "top1": 63,
+      "top3": 83,
+      "top5": 89,
+      "unknown": 0,
+      "lat_ms_mean": 120.05930185168162,
+      "per_class": {
+        "french_fries": {
+          "fried_chicken": 4,
+          "cereal": 4,
+          "hot_dog": 3,
+          "french_fries": 3,
+          "rice": 3,
+          "sandwich": 3
+        },
+        "fried_chicken": {
+          "rice": 4,
+          "fried_chicken": 4
+        },
+        "hamburger": {
+          "sandwich": 3,
+          "toast": 1,
+          "hamburger": 13,
+          "french_fries": 1,
+          "steak": 2
+        },
+        "hot_dog": {
+          "sandwich": 1,
+          "hot_dog": 12,
+          "ice_cream": 1,
+          "soup": 1,
+          "rice": 1,
+          "french_fries": 1,
+          "hamburger": 1,
+          "banana": 1,
+          "fried_chicken": 1
+        },
+        "pizza": {
+          "pizza": 16,
+          "lasagna": 3,
+          "cake": 1
+        },
+        "sandwich": {
+          "grilled_chicken": 3,
+          "sandwich": 15,
+          "steak": 2
+        }
+      }
+    },
+    "v1": {
+      "dataset": "v1",
+      "total": 247,
+      "top1": 107,
+      "top3": 147,
+      "top5": 172,
+      "unknown": 0,
+      "lat_ms_mean": 107.36419392812353,
+      "per_class": {
+        "bacon": {
+          "toast": 1,
+          "sandwich": 1,
+          "apple": 2,
+          "burrito": 1,
+          "soup": 1,
+          "steak": 2
+        },
+        "bagel": {
+          "salmon": 1,
+          "bagel": 5,
+          "brownie": 1
+        },
+        "brownie": {
+          "cookie": 2,
+          "toast": 4,
+          "donut": 1,
+          "eggs": 1
+        },
+        "burrito": {
+          "burrito": 3,
+          "fried_chicken": 1,
+          "brownie": 1,
+          "salad": 2,
+          "nachos": 1
+        },
+        "cake": {
+          "cake": 6,
+          "pancakes": 1,
+          "toast": 1
+        },
+        "chicken_nuggets": {
+          "grilled_chicken": 1,
+          "chicken_nuggets": 2,
+          "fried_chicken": 2,
+          "cookie": 2,
+          "soup": 1
+        },
+        "cookie": {
+          "cookie": 3,
+          "cake": 2,
+          "ice_cream": 3
+        },
+        "donut": {
+          "donut": 3,
+          "chicken_nuggets": 1,
+          "brownie": 1,
+          "bacon": 1,
+          "cookie": 1,
+          "rice": 1
+        },
+        "eggs": {
+          "eggs": 4,
+          "salmon": 2,
+          "orange": 1,
+          "rice": 1
+        },
+        "french_fries": {
+          "french_fries": 4,
+          "sandwich": 1,
+          "broccoli": 1,
+          "eggs": 1,
+          "quesadilla": 1
+        },
+        "fried_chicken": {
+          "rice": 1,
+          "fried_chicken": 7
+        },
+        "grilled_chicken": {
+          "grilled_chicken": 4,
+          "broccoli": 2,
+          "bagel": 1,
+          "salmon": 1
+        },
+        "hamburger": {
+          "orange": 1,
+          "grilled_chicken": 2,
+          "hamburger": 2,
+          "rice": 1,
+          "donut": 1,
+          "mac_and_cheese": 1
+        },
+        "hot_dog": {
+          "hot_dog": 6,
+          "sandwich": 2
+        },
+        "ice_cream": {
+          "cake": 1,
+          "ice_cream": 6,
+          "pancakes": 1
+        },
+        "lasagna": {
+          "lasagna": 4,
+          "pasta": 3,
+          "mac_and_cheese": 1
+        },
+        "mac_and_cheese": {
+          "mac_and_cheese": 4,
+          "fried_chicken": 1,
+          "cake": 1,
+          "quesadilla": 1,
+          "french_fries": 1
+        },
+        "nachos": {
+          "salad": 1,
+          "nachos": 6,
+          "orange": 1
+        },
+        "oatmeal": {
+          "cookie": 3,
+          "oatmeal": 4,
+          "french_fries": 1
+        },
+        "pancakes": {
+          "steak": 1,
+          "pancakes": 3,
+          "quesadilla": 1,
+          "rice": 1,
+          "toast": 2
+        },
+        "pasta": {
+          "pasta": 4,
+          "salad": 1,
+          "carrot": 1,
+          "eggs": 1,
+          "soup": 1
+        },
+        "pizza": {
+          "pizza": 7,
+          "hot_dog": 1
+        },
+        "quesadilla": {
+          "pizza": 1,
+          "quesadilla": 4,
+          "salad": 1,
+          "chicken_nuggets": 1,
+          "grilled_chicken": 1
+        },
+        "rice": {
+          "oatmeal": 1,
+          "rice": 6,
+          "pasta": 1
+        },
+        "salad": {
+          "salad": 2,
+          "grilled_chicken": 1,
+          "banana": 1,
+          "salmon": 1,
+          "carrot": 1,
+          "cereal": 1,
+          "ice_cream": 1
+        },
+        "salmon": {
+          "salmon": 3,
+          "apple": 2,
+          "salad": 1,
+          "lasagna": 1,
+          "steak": 1
+        },
+        "sandwich": {
+          "broccoli": 5,
+          "ice_cream": 2,
+          "toast": 1
+        },
+        "steak": {
+          "hot_dog": 1,
+          "salmon": 1,
+          "pasta": 1,
+          "steak": 3,
+          "hamburger": 1,
+          "broccoli": 1
+        },
+        "taco": {
+          "pasta": 1,
+          "cake": 1,
+          "quesadilla": 6
+        },
+        "toast": {
+          "cereal": 1,
+          "toast": 2,
+          "eggs": 2,
+          "mac_and_cheese": 1,
+          "rice": 1,
+          "banana": 1
+        },
+        "waffles": {
+          "french_fries": 1,
+          "ice_cream": 3,
+          "mac_and_cheese": 1,
+          "cake": 2,
+          "lasagna": 1
+        }
+      }
+    }
+  }
+}

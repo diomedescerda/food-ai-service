@@ -1,0 +1,271 @@
+[
+  {
+    "canonical": "steak",
+    "fdc_id": "2705825",
+    "fdc_name": "Beef, steak, chuck",
+    "data_type": "Survey (FNDDS)",
+    "mapping_status": "GOOD_EQUIVALENCE",
+    "mapping_confidence": 0.8,
+    "nutrition": {
+      "protein": 26.0,
+      "fat": 13.4,
+      "carbohydrates": 0.21,
+      "calories": 225,
+      "sugar": 0.0,
+      "fiber": 0.0,
+      "sodium": 380
+    },
+    "notes": "Beef, steak, chuck (FNDDS)"
+  },
+  {
+    "canonical": "grilled_chicken",
+    "fdc_id": "2705968",
+    "fdc_name": "Chicken breast, grilled without sauce, skin not eaten",
+    "data_type": "Survey (FNDDS)",
+    "mapping_status": "GOOD_EQUIVALENCE",
+    "mapping_confidence": 0.9,
+    "nutrition": {
+      "protein": 29.6,
+      "fat": 5.45,
+      "carbohydrates": 0.0,
+      "calories": 176,
+      "sugar": 0.0,
+      "fiber": 0.0,
+      "sodium": 353
+    },
+    "notes": "Chicken breast, grilled without sauce, skin not eaten (FNDDS)"
+  },
+  {
+    "canonical": "salmon",
+    "fdc_id": "172000",
+    "fdc_name": "Fish, salmon, chum, cooked, dry heat",
+    "data_type": "SR Legacy",
+    "mapping_status": "GOOD_EQUIVALENCE",
+    "mapping_confidence": 0.85,
+    "nutrition": {
+      "calories": 154.0,
+      "protein": 25.82,
+      "fat": 4.83,
+      "carbohydrates": 0.0,
+      "fiber": 0.0,
+      "sodium": 64.0
+    },
+    "notes": "Fish, salmon, chum, cooked, dry heat (SR Legacy)"
+  },
+  {
+    "canonical": "lasagna",
+    "fdc_id": "2708750",
+    "fdc_name": "Lasagna with meat",
+    "data_type": "Survey (FNDDS)",
+    "mapping_status": "DIRECT_MATCH",
+    "mapping_confidence": 0.9,
+    "nutrition": {
+      "protein": 7.45,
+      "fat": 4.97,
+      "carbohydrates": 16.2,
+      "calories": 139,
+      "sugar": 3.33,
+      "fiber": 1.6,
+      "sodium": 390
+    },
+    "notes": "Lasagna with meat (FNDDS)"
+  },
+  {
+    "canonical": "mac_and_cheese",
+    "fdc_id": "169770",
+    "fdc_name": "Macaroni and cheese, box mix with cheese sauce, prepared",
+    "data_type": "SR Legacy",
+    "mapping_status": "GOOD_EQUIVALENCE",
+    "mapping_confidence": 0.85,
+    "nutrition": {
+      "calories": 164.0,
+      "protein": 6.68,
+      "fat": 4.99,
+      "carbohydrates": 23.1,
+      "fiber": 1.2,
+      "sugar": 1.57,
+      "sodium": 460.0
+    },
+    "notes": "Macaroni and cheese, box mix with cheese sauce, prepared (SR Legacy)"
+  },
+  {
+    "canonical": "toast",
+    "fdc_id": "2707599",
+    "fdc_name": "Bread, white, toasted",
+    "data_type": "Survey (FNDDS)",
+    "mapping_status": "GOOD_EQUIVALENCE",
+    "mapping_confidence": 0.95,
+    "nutrition": {
+      "protein": 10.4,
+      "fat": 3.94,
+      "carbohydrates": 54.1,
+      "calories": 293,
+      "sugar": 5.87,
+      "fiber": 2.5,
+      "sodium": 495
+    },
+    "notes": "Bread, white, toasted (FNDDS)"
+  },
+  {
+    "canonical": "bagel",
+    "fdc_id": "2707684",
+    "fdc_name": "Bagel",
+    "data_type": "Survey (FNDDS)",
+    "mapping_status": "DIRECT_MATCH",
+    "mapping_confidence": 0.95,
+    "nutrition": {
+      "protein": 10.6,
+      "fat": 1.32,
+      "carbohydrates": 52.4,
+      "calories": 264,
+      "sugar": 8.43,
+      "fiber": 1.6,
+      "sodium": 422
+    },
+    "notes": "Bagel (FNDDS)"
+  },
+  {
+    "canonical": "waffles",
+    "fdc_id": "2708325",
+    "fdc_name": "Waffle, plain",
+    "data_type": "Survey (FNDDS)",
+    "mapping_status": "DIRECT_MATCH",
+    "mapping_confidence": 0.9,
+    "nutrition": {
+      "protein": 8.7,
+      "fat": 18.8,
+      "carbohydrates": 41.5,
+      "calories": 373,
+      "sugar": 8.28,
+      "fiber": 2.5,
+      "sodium": 597
+    },
+    "notes": "Waffle, plain (FNDDS)"
+  },
+  {
+    "canonical": "oatmeal",
+    "fdc_id": "2708380",
+    "fdc_name": "Oatmeal, NFS",
+    "data_type": "Survey (FNDDS)",
+    "mapping_status": "GOOD_EQUIVALENCE",
+    "mapping_confidence": 0.85,
+    "nutrition": {
+      "protein": 2.18,
+      "fat": 2.63,
+      "carbohydrates": 11.2,
+      "calories": 76.0,
+      "sugar": 0.17,
+      "fiber": 1.7,
+      "sodium": 81.0
+    },
+    "notes": "Oatmeal, NFS (FNDDS)"
+  },
+  {
+    "canonical": "cookie",
+    "fdc_id": "2707909",
+    "fdc_name": "Cookie, chocolate chip",
+    "data_type": "Survey (FNDDS)",
+    "mapping_status": "GOOD_EQUIVALENCE",
+    "mapping_confidence": 0.9,
+    "nutrition": {
+      "protein": 5.1,
+      "fat": 24.7,
+      "carbohydrates": 65.4,
+      "calories": 492,
+      "sugar": 32.9,
+      "fiber": 2.0,
+      "sodium": 311
+    },
+    "notes": "Cookie, chocolate chip (FNDDS)"
+  },
+  {
+    "canonical": "brownie",
+    "fdc_id": "2707904",
+    "fdc_name": "Cookie, brownie, without icing",
+    "data_type": "Survey (FNDDS)",
+    "mapping_status": "GOOD_EQUIVALENCE",
+    "mapping_confidence": 0.85,
+    "nutrition": {
+      "protein": 4.8,
+      "fat": 16.3,
+      "carbohydrates": 63.9,
+      "calories": 405,
+      "sugar": 36.6,
+      "fiber": 2.1,
+      "sodium": 286
+    },
+    "notes": "Cookie, brownie, without icing (FNDDS)"
+  },
+  {
+    "canonical": "ice_cream",
+    "fdc_id": "2705630",
+    "fdc_name": "Ice cream, vanilla",
+    "data_type": "Survey (FNDDS)",
+    "mapping_status": "GOOD_EQUIVALENCE",
+    "mapping_confidence": 0.9,
+    "nutrition": {
+      "protein": 3.5,
+      "fat": 11.0,
+      "carbohydrates": 23.6,
+      "calories": 207,
+      "sugar": 21.2,
+      "fiber": 0.7,
+      "sodium": 80.0
+    },
+    "notes": "Ice cream, vanilla (FNDDS)"
+  },
+  {
+    "canonical": "chicken_nuggets",
+    "fdc_id": "2706092",
+    "fdc_name": "Chicken nuggets, NFS",
+    "data_type": "Survey (FNDDS)",
+    "mapping_status": "DIRECT_MATCH",
+    "mapping_confidence": 0.9,
+    "nutrition": {
+      "protein": 15.9,
+      "fat": 20.4,
+      "carbohydrates": 14.9,
+      "calories": 307,
+      "sugar": 0.08,
+      "fiber": 0.9,
+      "sodium": 594
+    },
+    "notes": "Chicken nuggets, NFS (FNDDS)"
+  },
+  {
+    "canonical": "quesadilla",
+    "fdc_id": "2708590",
+    "fdc_name": "Quesadilla, NFS",
+    "data_type": "Survey (FNDDS)",
+    "mapping_status": "GOOD_EQUIVALENCE",
+    "mapping_confidence": 0.85,
+    "nutrition": {
+      "protein": 13.4,
+      "fat": 16.2,
+      "carbohydrates": 28.6,
+      "calories": 316,
+      "sugar": 2.41,
+      "fiber": 2.0,
+      "sodium": 676
+    },
+    "notes": "Quesadilla, NFS (FNDDS)"
+  },
+  {
+    "canonical": "nachos",
+    "fdc_id": "2708577",
+    "fdc_name": "Nachos, cheese only",
+    "data_type": "Survey (FNDDS)",
+    "mapping_status": "GOOD_EQUIVALENCE",
+    "mapping_confidence": 0.85,
+    "nutrition": {
+      "protein": 4.46,
+      "fat": 15.7,
+      "carbohydrates": 27.8,
+      "calories": 266,
+      "sugar": 0.45,
+      "fiber": 2.0,
+      "sodium": 547
+    },
+    "notes": "Nachos, cheese only (FNDDS)"
+  }
+]

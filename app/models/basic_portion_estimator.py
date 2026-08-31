@@ -56,9 +56,15 @@ REFERENCE_GRAMS: dict[str, int] = {
     "rice": 158,              # FDC 169753: 1 cup cocido = 158 g
     "pasta": 124,             # FDC 168928: 1 cup sin compactar = 124 g
     "salad": 35,              # FDC 787801: 1 cup loosely packed = 35 g
-    "steak": 85,              # FDC 169506: 3 oz = 85 g
+"steak": 85,              # FDC 169506: 3 oz = 85 g
     "salmon": 170,            # FDC 175168: 1 filete 6 oz = 170 g
-    "ice_cream": 66,          # FDC 167575: ½ cup = 66 g
+    "ice_cream": 66,          # FDC 167575: 1/2 cup = 66 g
+    # === FASE 20 (verificados via API FDC 2026-08-31) ===
+    "lasagna": 206,           # FDC 2708750 (FNDDS): 1 piece (1/6 de 8" square) = 206 g
+    "mac_and_cheese": 189,    # FDC 169770: 1 cup preparado = 189 g
+    "grilled_chicken": 120,   # FDC 2705968 (FNDDS): 1 pechuga mediana = 120 g
+    "cookie": 16,             # FDC 2707909 (FNDDS): 1 galleta comercial = 16 g
+    "brownie": 50,            # FDC 2707904 (FNDDS): 1 brownie mediano = 50 g
 }
 
 # Umbrales de área relativa máscara/imagen (heurística visual, documentada).

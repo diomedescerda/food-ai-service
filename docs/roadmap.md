@@ -230,3 +230,15 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Casos A-G: A (1 burger → 3 regiones: triple conteo mf_000 599.94 kcal — limitación 2D documentada); B (mf_003 2×184.14 ✓); C/E sintéticos fallan por clasificación (honesto)
 - [x] E2E reales 7: pizza/hot_dog/banana/apple ✓ rangos OK; hamburger_000 → sandwich (clasificación); fries_000 → fried_chicken+apple
 - [x] Tests: 72/72, 213/213, 14/14; food-us 52.8%; v1 YOLO-only 16.1%; v1 hybrid 31.9%; multifood 56.5%/48.1% F1 52.0%
+
+## FASE 20 — USDA Unblock + Pretrained Food Model Evaluation ✅ (2026-08-31)
+- [x] USDA KEY: DISPONIBLE en .env — el script no cargaba .env (os.environ sin dotenv) → fix load_dotenv en import_usda_foods.py
+- [x] --sync OK: candidatos FDC reales; selección manual de 15 mappings genéricos (FNDDS/SR Legacy, sin marca) con nutrientes verificados vía API
+- [x] Nutrition Coverage: 20/38 (52.6%) → 35/38 (92.1%): 21 DIRECT_MATCH + 14 GOOD_EQUIVALENCE; REVIEW_REQUIRED 15→0; NO_RELIABLE 3
+- [x] Idempotencia ✓ (2º import idéntico); audit sin duplicados; seeder '15 nuevos de 38' ✓
+- [x] Porciones nuevas (API foodPortions): lasagna 206g, mac_and_cheese 189g, grilled_chicken 120g, cookie 16g, brownie 50g → 35/38 con porción
+- [x] E2E real nuevos: nachos 170.24 kcal, chicken_nuggets 267.09, salmon 261.80 ✓
+- [x] A/B/C clasificadores (crops idénticos 355): CLIP food-us 58.3%/v1 43.3% top1, unknown 0%; DINOv3 55.6%/32.8% (19-42% unknown); BEiT 32.4%/25.9% (45-50% unknown) → CLIP GANA (también latencia 120ms vs 700-900ms)
+- [x] Licencias: DINOv3 apache-2.0, BEiT MIT (ambas comerciales OK); modelos evaluados con medición propia (no model card: DINOv3 publica 90.6% en TSOTSA-Img, en nuestros benchmarks 55.6%)
+- [x] Decisión: mantener CLIP (ningún modelo supera); documentado qué falta para el siguiente salto
+- [x] Tests: 72/72, 213/213, 14/14
