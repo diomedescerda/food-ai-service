@@ -152,8 +152,7 @@
   "mf_009": {
     "ground_truth_foods": [],
     "predicted_foods": [
-      "steak",
-      "grilled_chicken"
+      "steak"
     ],
     "food_count": 0,
     "multi_food": false
@@ -228,7 +227,7 @@
     "ground_truth_foods": [],
     "predicted_foods": [
       "rice",
-      "taco"
+      "lasagna"
     ],
     "food_count": 0,
     "multi_food": false

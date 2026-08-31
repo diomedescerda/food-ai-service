@@ -1,64 +1,14 @@
 {
   "clip": {
-    "startup_s": 12.8,
-    "foodus": {
-      "dataset": "food-us",
-      "total": 108,
-      "top1": 65,
-      "top3": 80,
-      "top5": 88,
-      "unknown": 0,
-      "lat_ms_mean": 74.48569444602106,
-      "per_class": {
-        "french_fries": {
-          "fried_chicken": 4,
-          "cereal": 4,
-          "taco": 3,
-          "french_fries": 3,
-          "rice": 3,
-          "sandwich": 3
-        },
-        "fried_chicken": {
-          "rice": 4,
-          "fried_chicken": 4
-        },
-        "hamburger": {
-          "pancakes": 3,
-          "hamburger": 13,
-          "waffles": 1,
-          "steak": 1,
-          "sandwich": 2
-        },
-        "hot_dog": {
-          "sandwich": 1,
-          "hot_dog": 12,
-          "ice_cream": 1,
-          "soup": 1,
-          "rice": 1,
-          "french_fries": 1,
-          "hamburger": 1,
-          "banana": 1,
-          "fried_chicken": 1
-        },
-        "pizza": {
-          "pizza": 16,
-          "lasagna": 3,
-          "cake": 1
-        },
-        "sandwich": {
-          "taco": 3,
-          "sandwich": 17
-        }
-      }
-    },
+    "startup_s": 16.3,
     "v1": {
       "dataset": "v1",
       "total": 247,
       "top1": 116,
-      "top3": 153,
-      "top5": 184,
+      "top3": 151,
+      "top5": 182,
       "unknown": 0,
-      "lat_ms_mean": 74.76265263165864,
+      "lat_ms_mean": 133.11692996142406,
       "per_class": {
         "bacon": {
           "toast": 1,
@@ -70,8 +20,9 @@
         },
         "bagel": {
           "salmon": 1,
-          "bagel": 5,
-          "bacon": 1
+          "bagel": 4,
+          "bacon": 1,
+          "hamburger": 1
         },
         "brownie": {
           "cookie": 2,
@@ -96,7 +47,7 @@
           "chicken_nuggets": 2,
           "fried_chicken": 2,
           "cookie": 2,
-          "soup": 1
+          "hot_dog": 1
         },
         "cookie": {
           "cookie": 3,
@@ -130,20 +81,19 @@
         "grilled_chicken": {
           "grilled_chicken": 4,
           "broccoli": 2,
-          "bagel": 1,
+          "hamburger": 1,
           "salmon": 1
         },
         "hamburger": {
           "orange": 1,
-          "grilled_chicken": 2,
-          "hamburger": 2,
+          "fried_chicken": 1,
+          "hamburger": 4,
           "rice": 1,
-          "sandwich": 1,
           "quesadilla": 1
         },
         "hot_dog": {
-          "hot_dog": 6,
-          "sandwich": 2
+          "hot_dog": 7,
+          "sandwich": 1
         },
         "ice_cream": {
           "cake": 1,
@@ -171,7 +121,7 @@
         "oatmeal": {
           "cookie": 3,
           "oatmeal": 4,
-          "toast": 1
+          "sandwich": 1
         },
         "pancakes": {
           "steak": 1,
@@ -180,10 +130,11 @@
           "toast": 2
         },
         "pasta": {
-          "pasta": 4,
+          "pasta": 3,
           "salad": 1,
           "carrot": 1,
           "eggs": 1,
+          "grilled_chicken": 1,
           "soup": 1
         },
         "pizza": {
@@ -213,11 +164,11 @@
           "ice_cream": 1
         },
         "salmon": {
-          "salmon": 3,
+          "salmon": 4,
           "brownie": 1,
           "salad": 1,
           "cereal": 1,
-          "waffles": 2
+          "waffles": 1
         },
         "sandwich": {
           "broccoli": 4,
@@ -241,14 +192,14 @@
         },
         "toast": {
           "cereal": 1,
-          "toast": 2,
+          "sandwich": 2,
           "eggs": 2,
           "mac_and_cheese": 1,
           "rice": 1,
           "banana": 1
         },
         "waffles": {
-          "french_fries": 1,
+          "fried_chicken": 1,
           "ice_cream": 1,
           "waffles": 3,
           "cake": 2,

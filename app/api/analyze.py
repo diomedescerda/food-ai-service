@@ -154,14 +154,18 @@ async def analyze(
 
     inference_ms = det_ms + seg_ms + portion_ms + cls_ms
 
-    # Observabilidad (FASE 17): telemetría por análisis — tiempos por etapa,
-    # fallback DINO y resultado. Sin datos de usuario ni imágenes.
+    # Observabilidad (FASE 22): telemetría por análisis — conteos por etapa,
+    # fallback DINO y tiempos. Sin datos de usuario ni imágenes.
+    foods_unknown = sum(1 for n in final_names if n == "unknown")
     if request.app.state.logger:
         request.app.state.logger.info(
-            "análisis_completo analysis_id=%s foods=%d detector_ms=%d segmentation_ms=%d "
-            "classification_ms=%d portion_ms=%d total_ms=%d used_dino_fallback=%s status=%s",
-            analysis_id, len(detections), det_ms, seg_ms, cls_ms, portion_ms,
-            inference_ms, used_dino, "completed",
+            "análisis_completo analysis_id=%s foods_detected=%d foods_classified=%d "
+            "foods_unknown=%d food_instance_count=%d used_dino_fallback=%s "
+            "detector_ms=%d segmentation_ms=%d classification_ms=%d portion_ms=%d "
+            "total_ms=%d status=%s",
+            analysis_id, len(detections), len(final_names) - foods_unknown, foods_unknown,
+            len(final_names), used_dino, det_ms, seg_ms, cls_ms, portion_ms,
+            inference_ms, "completed",
         )
 
     depth_estimator = getattr(request.app.state, "depth_estimator", None)

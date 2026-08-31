@@ -253,3 +253,16 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Dedup centro-contención (FASE 21): mf_000 mismo objeto fragmentado colapsa (dups 2→1, precision 48.1→50.0) sin romper instancias reales (mf_003 2 burgers, mf_006 2 eggs ✓)
 - [x] E2E reales 14: pizza/hot_dog/salmon/nachos/lasagna/mac_and_cheese ✓ con nutrición; multi-food 2 instancias ✓
 - [x] Benchmarks no regresionados: pytest 72/72, .NET 213/213, integration 14/14
+
+## FASE 22 — Final Food Identity Optimization + Production Readiness ✅ (2026-08-31)
+- [x] Branch feature/final-food-identity (checkpoint 4198d1b); datasets KEEP (food-us, v1, multi-food, food101-subset)
+- [x] P1 fries/fried_chicken: crop inset A/B (0.0-0.15) NO mejora (fries 3/20 vs 7/20) — confusión rice es representacional; candidates 'thin fried potato strips'/'long golden potato sticks' SÍ (food-us E2E fries 7→13)
+- [x] P2-P4 candidates descriptivos: hot_dog 'in a long bun', hamburger 'round sesame bun', sandwich 'between two slices', nachos 'melted cheese on tortilla chips', salmon 'pink flesh', steak 'grilled beef steak on a plate', grilled_chicken 'breast pieces'
+- [x] E2E food-us: 52.8% → 59.3% (+6.5): fries 13/20 (+6), hot_dog 14/20 (+1), hamburger 16/20 (+1), pizza 17/20, fried_chicken 4/8
+- [x] v1: 47.0% mantenido (clases objetivo mejoran per-clase); Food-101 89.4% (sin regresión)
+- [x] Multi-food: precision 52.0% (+2), dups 1, doble conteo 2/2; mf_000 3→2 instancias (dedup centro-contención E2E: 599.94→415.80)
+- [x] Telemetría completa en log: foods_detected/classified/unknown/instance_count + fallback + tiempos
+- [x] Bug encontrado: backend se cuelga tras ~7-10 análisis consecutivos (sin log de error) — documentado para producción
+- [x] E2E reales 21: pizza/banana/apple/hot_dog/fries/salmon/nachos/lasagna/mac/mf_003/mf_006/mf_010/mf_011 ✓ con nutrición y rangos; fallos de clasificación honestos (steak/taco/quesadilla img_0001, fried_chicken→rice)
+- [x] Recomendación sandwich/soup/cereal: mantener con nutritionStatus=unavailable (respuesta honesta, sin inventar)
+- [x] Tests: pytest 72/72, .NET 213/213, integration 14/14 — configuración de despliegue documentada
