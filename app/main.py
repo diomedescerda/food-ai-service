@@ -1,3 +1,4 @@
+import asyncio
 import logging
 from contextlib import asynccontextmanager
 
@@ -95,6 +96,8 @@ async def lifespan(app: FastAPI):
         app.state.logger.info("Estimador de porción cargado: basic_reference")
 
     app.state.settings = settings
+    # FASE 23: serializa la inferencia CPU (torch concurrente con DINO crashea).
+    app.state.inference_semaphore = asyncio.Semaphore(1)
     yield
 
 

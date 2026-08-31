@@ -266,3 +266,12 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] E2E reales 21: pizza/banana/apple/hot_dog/fries/salmon/nachos/lasagna/mac/mf_003/mf_006/mf_010/mf_011 ✓ con nutrición y rangos; fallos de clasificación honestos (steak/taco/quesadilla img_0001, fried_chicken→rice)
 - [x] Recomendación sandwich/soup/cereal: mantener con nutritionStatus=unavailable (respuesta honesta, sin inventar)
 - [x] Tests: pytest 72/72, .NET 213/213, integration 14/14 — configuración de despliegue documentada
+
+## FASE 23 — Production Stability, Load Testing & Deployment Gate ✅ (2026-08-31)
+- [x] CAUSA RAÍZ del 'hang' de F22: NO era hang — el backend era TERMINADO externamente (otra sesión de agente editaba el backend en paralelo); sin crash en stderr ni Event Log. 100/100 secuenciales OK en entorno aislado
+- [x] CONCURRENCIA: torch CPU crashea (nativo, sin traceback) con DINO bajo >=4 requests simultáneos → fix: asyncio.Semaphore(1) serializa la inferencia (app.state.inference_semaphore); conc 2: 50/50 (p50 10.9s), conc 4: 13/50 → 50/50 (p50 24.7s), conc 8: 37-50 OK con rechazos controlados del listener (p50 49s)
+- [x] Load: 100 secuenciales 100/100, p50 451ms, p95 12.9s, p99 16.3s; backend WS estable (136MB); food-ai WS oscila (611→1294MB, no lineal); PG 1 conexión estable (sin fuga); HTTP sin fuga
+- [x] DINO fallback: 33-56% según dominio; p50 11.8s; fast path p50 0.3-0.6s
+- [x] Graceful failure: imagen inválida → 400; health/readiness: /health (modelos+servicio) + /api/v1/foodai/health (probe backend+foodAI) ✓
+- [x] Regression gate: 72/72 pytest, 213/213 .NET, 14/14 integration; E2E clave sin regresión (pizza/hot_dog/salmon/nachos/fries/mf_003/mf_006/mf_011 ✓)
+- [x] DECISIÓN: PRODUCTION READY con límites documentados (concurrencia <=4 por la serialización CPU; DINO 10-17s en 33-56% de requests)

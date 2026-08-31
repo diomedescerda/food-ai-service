@@ -98,6 +98,30 @@ async def analyze(
     segmenter = getattr(request.app.state, "segmenter", None)
     classifier = getattr(request.app.state, "classifier", None)
 
+    # Serializa la inferencia CPU (FASE 23): torch en CPU NO soporta DINO
+    # concurrente (crash nativo sin traceback bajo >=4 requests simultáneos).
+    # Los requests se aceptan pero el pipeline se ejecuta de uno en uno.
+    semaphore = getattr(request.app.state, "inference_semaphore", None)
+    if semaphore is not None:
+        await semaphore.acquire()
+    try:
+        return await _run_pipeline(request, detector, segmenter, classifier, pil_image,
+                                   analysis_id, image.content_type or "", image.filename or "")
+    finally:
+        if semaphore is not None:
+            semaphore.release()
+
+
+async def _run_pipeline(
+    request: Request,
+    detector: IFoodDetector,
+    segmenter,
+    classifier,
+    pil_image: Image.Image,
+    analysis_id: str,
+    content_type: str,
+    filename: str,
+) -> AnalyzeResponse:
     start = time.perf_counter()
     detections = detector.detect(pil_image)
     det_ms = round((time.perf_counter() - start) * 1000)
