@@ -208,3 +208,14 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Multi-instancia: dedup espacial (IoU 0.3 + contención 70%) — 2 cookies separadas ✓
 - [x] Regresión protegida: E2E 52.8% sin cambio, hot_dog 13/20, fries 7/20
 - [x] Tests: 72 pytest, 213 .NET, 14 integration
+
+## FASE 18 — Nutrition Data Completion ✅ (2026-08-31)
+- [x] USDA API key NO disponible → sin mappings nuevos; 15 bloqueados documentados (audit_usda_mappings.py)
+- [x] Auditoría 20 mappings: sin duplicados, valores numéricos, trazabilidad vía seeder (source/sourceVersion/sourceId por item en BD); data_type no se usa (deuda)
+- [x] GT multi-food por instancia (metadata.json: ground_truth_foods con instance_id) — evidencia espacial F17
+- [x] Benchmark por instancia: recall 56.5% (13/23), precision 48.1%, missed 10, FP 14, dups 2
+- [x] Doble conteo VERIFICADO en E2E real: mf_003 hamburger×2 → 2×184.14 = 368.28 kcal summary (antes colapsaba a 1)
+- [x] Rangos validados: min<=estimated<=max y nutritionRange.min<=cal<=max en pizza/hot_dog/hamburger×2
+- [x] Telemetría: nutrition_items_* en log del backend (total/available/unavailable/mapping_missing/ambiguous/calc_failed)
+- [x] E2E real: pizza 228.76, hot_dog 197.20, banana 105.02, mf_003 368.28 (2 instancias); pancakes→steak (clasificación)
+- [x] Benchmarks sin regresión: food-us 52.8%, v1 16.1%, tests 72/72, .NET 213/213, integration 14/14

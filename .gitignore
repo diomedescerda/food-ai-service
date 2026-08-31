@@ -28,3 +28,6 @@ training/experiments/*.json
 .DS_Storeweights/
 debug-out/
 datasets/*/images/
+
+# Debug images dir colisionado con env var (FASE 18)
+FOOD_AI_PORTION_METHOD=basic/
