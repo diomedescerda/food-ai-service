@@ -1,10 +1,10 @@
-"""Benchmark de regiones de comida (FASE 11).
+﻿"""Benchmark de regiones de comida (FASE 11).
 
 Genera regiones por imagen con YOLO11n y Grounding DINO (fallback) sobre las
-108 imágenes del benchmark y guarda regiones.json para el E2E CLIP posterior.
+108 imÃ¡genes del benchmark y guarda regiones.json para el E2E CLIP posterior.
 
-Métricas: imágenes con >=1 región (recall de localización), regiones/imagen,
-latencia por etapa. RESUME: si el JSON parcial existe, continúa.
+MÃ©tricas: imÃ¡genes con >=1 regiÃ³n (recall de localizaciÃ³n), regiones/imagen,
+latencia por etapa. RESUME: si el JSON parcial existe, continÃºa.
 """
 
 import json
@@ -24,7 +24,7 @@ from app.models.yolo_food_detector import YoloFoodDetector  # noqa: E402
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 BENCHMARK_DIR = BASE_DIR / "datasets" / "food-us-v0.1" / "images" / "train"
-REGIONS_FILE = BASE_DIR / "regions.json"
+REGIONS_FILE = BASE_DIR / "benchmarks/detection/regions.json"
 
 BENCHMARK_CLASSES = ["french_fries", "fried_chicken", "hamburger", "hot_dog", "pizza", "sandwich"]
 DINO_PROMPT = "food on a plate"
@@ -74,8 +74,8 @@ def main() -> None:
         if detections:
             stats["yolo_crops"] += 1
 
-        # DINO fallback SOLO cuando YOLO no detectó nada (híbrido) — pero para
-        # el benchmark también se mide DINO puro sobre todas las imágenes.
+        # DINO fallback SOLO cuando YOLO no detectÃ³ nada (hÃ­brido) â€” pero para
+        # el benchmark tambiÃ©n se mide DINO puro sobre todas las imÃ¡genes.
         t0 = time.perf_counter()
         inputs = dino_processor(images=image, text=DINO_PROMPT, return_tensors="pt")
         with torch.no_grad():
@@ -107,10 +107,10 @@ def main() -> None:
     dino_regions = sum(1 for r in existing.values() if r["dino"])
     hybrid_regions = sum(1 for r in existing.values() if r["yolo"] or r["dino"])
 
-    print(f"\n=== REGION RECALL (108 imágenes, clase única por imagen) ===")
-    print(f"YOLO11n:            {yolo_regions}/{n} imágenes con región ({round(yolo_regions/n*100,1)}%)")
+    print(f"\n=== REGION RECALL (108 imÃ¡genes, clase Ãºnica por imagen) ===")
+    print(f"YOLO11n:            {yolo_regions}/{n} imÃ¡genes con regiÃ³n ({round(yolo_regions/n*100,1)}%)")
     print(f"DINO-tiny ('{DINO_PROMPT}'): {dino_regions}/{n} ({round(dino_regions/n*100,1)}%)")
-    print(f"Híbrido YOLO+DINO:  {hybrid_regions}/{n} ({round(hybrid_regions/n*100,1)}%)")
+    print(f"HÃ­brido YOLO+DINO:  {hybrid_regions}/{n} ({round(hybrid_regions/n*100,1)}%)")
     print(f"Regiones/imagen: YOLO={round(stats['total_regions_yolo']/n,1)} DINO={round(stats['total_regions_dino']/n,1)}")
     print(f"Latencia: YOLO={round(sum(latencies['yolo'])/len(latencies['yolo']),0)}ms DINO={round(sum(latencies['dino'])/len(latencies['dino']),0)}ms")
     print(f"Guardado: {REGIONS_FILE}")
@@ -118,3 +118,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

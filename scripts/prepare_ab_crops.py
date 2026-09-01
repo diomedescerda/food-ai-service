@@ -1,7 +1,7 @@
-"""FASE 20: prepara crops IDÉNTICOS por imagen para el A/B de clasificadores.
+﻿"""FASE 20: prepara crops IDÃ‰NTICOS por imagen para el A/B de clasificadores.
 
-- food-us-v0.1: regiones de regions.json (hybrid ya calculado, determinista).
-- food-bench-v1: detección hybrid en vivo con RESUME por imagen (crops .jpg).
+- food-us-v0.1: regiones de benchmarks/detection/regions.json (hybrid ya calculado, determinista).
+- food-bench-v1: detecciÃ³n hybrid en vivo con RESUME por imagen (crops .jpg).
 
 Salida: datasets/crops-foodus/{img}.jpg y datasets/crops-v1/{cls}/{img}.jpg
 """
@@ -23,7 +23,7 @@ FOOD_US = BASE / "datasets" / "food-us-v0.1" / "images" / "train"
 V1 = BASE / "datasets" / "food-bench-v1"
 OUT_US = BASE / "datasets" / "crops-foodus"
 OUT_V1 = BASE / "datasets" / "crops-v1"
-REGIONS = json.loads((BASE / "regions.json").read_text(encoding="utf-8"))
+REGIONS = json.loads((BASE / "benchmarks/detection/regions.json").read_text(encoding="utf-8"))
 
 
 def crop(image: Image.Image, box, padding: float) -> Image.Image:
@@ -81,3 +81,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

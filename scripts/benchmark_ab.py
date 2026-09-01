@@ -1,7 +1,7 @@
-"""Benchmark A/B: YOLO actual vs YOLO crops + CLIP (esta implementación).
+﻿"""Benchmark A/B: YOLO actual vs YOLO crops + CLIP (esta implementaciÃ³n).
 
-Mide sobre las 108 imágenes del benchmark: Top-1/3/5 por crop, unknown rate,
-latencia por etapa (detection, crop, clip), y la elección de threshold
+Mide sobre las 108 imÃ¡genes del benchmark: Top-1/3/5 por crop, unknown rate,
+latencia por etapa (detection, crop, clip), y la elecciÃ³n de threshold
 (accuracy vs unknown) sobre el conjunto.
 
 Uso: python scripts/benchmark_ab.py
@@ -53,7 +53,7 @@ def top_k(predictions: list[list[str]], gt: list[str], k: int) -> float:
 
 def main() -> None:
     items = load_items()
-    print(f"[benchmark A/B] {len(items)} imágenes")
+    print(f"[benchmark A/B] {len(items)} imÃ¡genes")
 
     detector = YoloFoodDetector(Settings(model_path="weights/yolo11n.pt"))
     detector.load()
@@ -61,7 +61,7 @@ def main() -> None:
     classifier = ZeroShotFoodClassifier(
         model_name="openai/clip-vit-base-patch32",
         device="cpu",
-        threshold=0.0,  # sin threshold aquí: se evalúa después por score
+        threshold=0.0,  # sin threshold aquÃ­: se evalÃºa despuÃ©s por score
         crop_padding=0.05,
         top_k=5,
     )
@@ -73,7 +73,7 @@ def main() -> None:
     crops_evaluated = 0
     scores_positive, scores_negative = [], []
 
-    # Por imagen: YOLO detect → crop → CLIP top-k
+    # Por imagen: YOLO detect â†’ crop â†’ CLIP top-k
     results_per_item = []
     for image, gt in items:
         t0 = time.perf_counter()
@@ -82,7 +82,7 @@ def main() -> None:
 
         best: list[str] = []
         if detections:
-            # Clasificar el crop de mayor área (benchmark: 1 alimento por imagen)
+            # Clasificar el crop de mayor Ã¡rea (benchmark: 1 alimento por imagen)
             largest = max(detections, key=lambda d: d.bounding_box.width * d.bounding_box.height)
             t0 = time.perf_counter()
             crop = classifier._crop(image, largest)
@@ -98,7 +98,7 @@ def main() -> None:
                     scores_positive.append(top[0].score)
             else:
                 scores_negative.append(top[0].score if top[0].name != GT_TO_CANONICAL.get(gt, gt) else 0.0)
-            # score del gt si está en top
+            # score del gt si estÃ¡ en top
             gt_canon = GT_TO_CANONICAL.get(gt, gt)
             gt_score = next((c.score for c in top if c.name == gt_canon), 0.0)
             (scores_positive if gt_canon in top[0:1] or True else scores_negative).append(gt_score) if gt == "pizza" else None
@@ -107,13 +107,13 @@ def main() -> None:
     gt_all = [g for _, g in items]
     preds_all = [p for _, p in results_per_item]
 
-    print(f"\n=== YOLO crops + CLIP (esta implementación) ===")
+    print(f"\n=== YOLO crops + CLIP (esta implementaciÃ³n) ===")
     print(f"Top-1 (sin threshold): {round(top_k(preds_all, gt_all, 1), 3)}")
     print(f"Top-3: {round(top_k(preds_all, gt_all, 3), 3)}")
     print(f"Top-5: {round(top_k(preds_all, gt_all, 5), 3)}")
     print(f"Crops evaluados: {crops_evaluated}/{len(items)}")
     print(f"Latencia por etapa: det={round(sum(det_lat)/len(det_lat),1)}ms crop={round(sum(crop_lat)/len(crop_lat),1)}ms clip={round(sum(clip_lat)/len(clip_lat),1)}ms")
-    print(f"CLIP por crop: {round(sum(clip_lat)/len(clip_lat),1)}ms (1 crop/imagen aquí; N alimentos = N inferences)")
+    print(f"CLIP por crop: {round(sum(clip_lat)/len(clip_lat),1)}ms (1 crop/imagen aquÃ­; N alimentos = N inferences)")
 
     result = {
         "n": len(items),
@@ -127,7 +127,7 @@ def main() -> None:
             "clip_per_crop": round(sum(clip_lat) / len(clip_lat), 1),
         },
     }
-    out = BASE_DIR / "benchmark_ab_results.json"
+    out = BASE_DIR / "benchmarks/history/benchmark_ab_results.json"
     out.write_text(json.dumps(result, indent=2), encoding="utf-8")
     print(f"\nGuardado en {out}")
 

@@ -1,11 +1,11 @@
-"""FASE 19: benchmark food-bench-v1 con detector HYBRID (pipeline de producción).
+﻿"""FASE 19: benchmark food-bench-v1 con detector HYBRID (pipeline de producciÃ³n).
 
-YOLO → si no detecta → DINO fallback → crop → CLIP. Separa con datos:
-- DETECTION FAILURE (ni YOLO ni DINO encuentran región)
-- CLASSIFICATION FAILURE (región encontrada pero CLIP falla)
+YOLO â†’ si no detecta â†’ DINO fallback â†’ crop â†’ CLIP. Separa con datos:
+- DETECTION FAILURE (ni YOLO ni DINO encuentran regiÃ³n)
+- CLASSIFICATION FAILURE (regiÃ³n encontrada pero CLIP falla)
 
 Mide: detection recall (yolo/dino/none), top-1/3/5, unknown, DINO fallback
-rate, latencias por etapa. RESUME: el JSON parcial se continúa.
+rate, latencias por etapa. RESUME: el JSON parcial se continÃºa.
 
 Uso: python scripts/benchmark_hybrid_v1.py [--only clase1 clase2 ...]
 """
@@ -26,7 +26,7 @@ from app.models.yolo_food_detector import YoloFoodDetector  # noqa: E402
 from app.models.zero_shot_classifier import ZeroShotFoodClassifier  # noqa: E402
 
 DATASET = Path(__file__).resolve().parents[1] / "datasets" / "food-bench-v1"
-OUT = Path(__file__).resolve().parents[1] / "benchmark_hybrid_v1_results.json"
+OUT = Path(__file__).resolve().parents[1] / "benchmarks/classification/benchmark_hybrid_v1_results.json"
 
 
 def crop(image: Image.Image, box, padding: float) -> Image.Image:
@@ -60,7 +60,7 @@ def main() -> None:
     existing = {}
     if OUT.exists():
         existing = json.loads(OUT.read_text(encoding="utf-8"))
-        print(f"[resume] {len(existing)} imágenes ya procesadas")
+        print(f"[resume] {len(existing)} imÃ¡genes ya procesadas")
 
     lat_yolo: list[float] = []
     lat_dino: list[float] = []
@@ -138,7 +138,7 @@ def main() -> None:
 
     OUT.write_text(json.dumps(existing), encoding="utf-8")
     n_dino_lat = len(lat_dino) or 1
-    print("\n=== FOOD-BENCH-V1 HYBRID (248, 31 clases, pipeline producción) ===")
+    print("\n=== FOOD-BENCH-V1 HYBRID (248, 31 clases, pipeline producciÃ³n) ===")
     print(f"total={total} top1={top1/total*100:.1f}% top3={top3/total*100:.1f}% top5={top5/total*100:.1f}% unknown={unknown} ({unknown/total*100:.1f}%)")
     print(f"detection: yolo={yolo_hits} ({yolo_hits/total*100:.1f}%) dino_fallback={dino_fallback} ({dino_fallback/total*100:.1f}%) ninguna={none} ({none/total*100:.1f}%)")
     print(f"fallback_rate = {dino_fallback}/{total} = {dino_fallback/total*100:.1f}%")

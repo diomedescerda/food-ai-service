@@ -1,8 +1,8 @@
-"""FASE 17: benchmark de clasificación sobre food-bench-v1 (248 imágenes, 31 clases).
+﻿"""FASE 17: benchmark de clasificaciÃ³n sobre food-bench-v1 (248 imÃ¡genes, 31 clases).
 
 Uso: python scripts/benchmark_classification_v2.py [--padding 0.10] [--masked] [--topk 3]
 
-Mide Top-1/Top-3/Top-5, unknown rate, per-class accuracy y matriz de confusión.
+Mide Top-1/Top-3/Top-5, unknown rate, per-class accuracy y matriz de confusiÃ³n.
 La estrategia de crop es parametrizable para el experimento de fries/fried_chicken
 (bbox, padding 0.10/0.20, masked crop).
 """
@@ -36,7 +36,7 @@ def crop(image: Image.Image, box: dict, padding: float) -> Image.Image:
 
 
 def masked_crop(image: Image.Image, box: dict, mask_img: Image.Image, padding: float) -> Image.Image:
-    """Crop con máscara (fondo eliminado): máscara binaria sobre fondo negro."""
+    """Crop con mÃ¡scara (fondo eliminado): mÃ¡scara binaria sobre fondo negro."""
     cropped = crop(image, box, padding)
     mask = mask_img.resize(cropped.size, Image.NEAREST).convert("L")
     black = Image.new("RGB", cropped.size, (0, 0, 0))
@@ -49,13 +49,13 @@ def main() -> None:
     parser.add_argument("--masked", action="store_true", help="masked crop (requiere segmentador)")
     parser.add_argument("--only", nargs="*", default=None, help="solo estas clases")
     parser.add_argument("--dataset", default="food-bench-v1", help="carpeta del dataset")
-    parser.add_argument("--regions", action="store_true", help="usar regiones hybrid (regions.json) en vez de YOLO")
+    parser.add_argument("--regions", action="store_true", help="usar regiones hybrid (benchmarks/detection/regions.json) en vez de YOLO")
     args = parser.parse_args()
 
     dataset_dir = DATASET.parent / args.dataset
     regions = {}
     if args.regions:
-        regions_file = Path(__file__).resolve().parents[1] / "regions.json"
+        regions_file = Path(__file__).resolve().parents[1] / "benchmarks/detection/regions.json"
         regions = json.loads(regions_file.read_text(encoding="utf-8"))
 
     settings = Settings(model_path="weights/yolo11n.pt")
@@ -158,9 +158,11 @@ def main() -> None:
         "elapsed_s": elapsed,
     }
     tag = f"padding{args.padding}" + ("_masked" if args.masked else "")
-    with open(Path(__file__).resolve().parents[1] / f"benchmark_v2_results_{tag}.json", "w", encoding="utf-8") as fh:
+    with open(Path(__file__).resolve().parents[1] / f"benchmarks/classification/benchmark_v2_results_{tag}.json", "w", encoding="utf-8") as fh:
         json.dump(out, fh, ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":
     main()
+
+

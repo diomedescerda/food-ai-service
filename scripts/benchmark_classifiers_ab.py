@@ -1,11 +1,11 @@
-"""FASE 20: benchmark A/B/C de clasificadores sobre crops idénticos.
+﻿"""FASE 20: benchmark A/B/C de clasificadores sobre crops idÃ©nticos.
 
 Modelos: clip (openai/clip-vit-base-patch32) | dinov3 (anonymous-eval/food-recognition)
          | beit (yvelos/beit-food-384)
 
-Mide: top-1/3/5 (canonical del catálogo), unknown, cobertura de labels mapeados,
+Mide: top-1/3/5 (canonical del catÃ¡logo), unknown, cobertura de labels mapeados,
 latencia/crop, startup, RAM. E2E nutrition = canonical top-1 con mapping (35/38)
-y porción disponible → nutrition available.
+y porciÃ³n disponible â†’ nutrition available.
 
 Uso: python scripts/benchmark_classifiers_ab.py --model clip|dinov3|beit
 """
@@ -26,7 +26,7 @@ from app.models.food_catalog import FOOD_CATALOG, candidate_to_canonical  # noqa
 BASE = Path(__file__).resolve().parents[1]
 CROPS_US = BASE / "datasets" / "crops-foodus"
 CROPS_V1 = BASE / "datasets" / "crops-v1"
-OUT = BASE / "benchmark_classifier_ab_results.json"
+OUT = BASE / "benchmarks/classification/benchmark_classifier_ab_results.json"
 
 CANONICALS = {e.canonical_name for e in FOOD_CATALOG}
 ALIASES = {}
@@ -41,8 +41,8 @@ def normalize_label(label: str) -> str:
 
 
 def label_to_canonical(label: str) -> str | None:
-    """Mapeo conservador label→canonical: match exacto normalizado contra
-    canonical y aliases. Sin equivalencia segura → None (REVIEW_REQUIRED)."""
+    """Mapeo conservador labelâ†’canonical: match exacto normalizado contra
+    canonical y aliases. Sin equivalencia segura â†’ None (REVIEW_REQUIRED)."""
     n = normalize_label(label)
     if n in CANONICALS or n.replace(" ", "_") in CANONICALS:
         return n.replace(" ", "_") if n in CANONICALS else n.replace(" ", "_")
@@ -123,7 +123,7 @@ def classify_food_model(model, processor, id2label, crop_img):
 
 
 def classify_clip(classifier, crop_img):
-    """Ranking CLIP sobre el crop ya hecho (sin re-crop: crops idénticos
+    """Ranking CLIP sobre el crop ya hecho (sin re-crop: crops idÃ©nticos
     entre modelos en el A/B)."""
     ranking = classifier._score_crop(crop_img)
     return [(r.name, r.score) for r in ranking]
@@ -219,7 +219,7 @@ def main() -> None:
     for tag, crops_dir, name in datasets:
         res = run_dataset(args.model, model, processor, id2label, crops_dir, name)
         n = res["total"]
-        print(f"\n=== {args.model} — {name} ({n}) ===", flush=True)
+        print(f"\n=== {args.model} â€” {name} ({n}) ===", flush=True)
         print(f"top1={res['top1']/n*100:.1f}% top3={res['top3']/n*100:.1f}% top5={res['top5']/n*100:.1f}% unknown={res['unknown']} ({res['unknown']/n*100:.1f}%) lat={res['lat_ms_mean']:.0f}ms", flush=True)
         results[tag] = res
     print(f"startup={startup:.1f}s")

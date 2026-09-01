@@ -1,7 +1,7 @@
-"""Benchmark multi-food (FASE 15): imágenes reales de platos compuestos.
+﻿"""Benchmark multi-food (FASE 15): imÃ¡genes reales de platos compuestos.
 
-Mide reconocimiento multi-alimento con el pipeline de producción (hybrid
-YOLO→DINO + CLIP zero-shot ensemble): recall, precisión, duplicados, missed
+Mide reconocimiento multi-alimento con el pipeline de producciÃ³n (hybrid
+YOLOâ†’DINO + CLIP zero-shot ensemble): recall, precisiÃ³n, duplicados, missed
 foods y falsos positivos vs GT manual registrado en datasets/multi-food/.
 
 Uso: python scripts/benchmark_multifood.py
@@ -25,8 +25,8 @@ from app.models.zero_shot_classifier import ZeroShotFoodClassifier  # noqa: E402
 BASE_DIR = Path(__file__).resolve().parent.parent
 MF_DIR = BASE_DIR / "datasets" / "multi-food"
 
-# GT manual mínimo por imagen (alimentos presentes, clases del catálogo).
-# Registrado por nombre/categoría del archivo en Wikimedia Commons.
+# GT manual mÃ­nimo por imagen (alimentos presentes, clases del catÃ¡logo).
+# Registrado por nombre/categorÃ­a del archivo en Wikimedia Commons.
 GT = {
     "mf_000": ["hamburger"],
     "mf_001": ["hamburger", "french_fries"],
@@ -37,13 +37,13 @@ GT = {
     "mf_006": ["bacon", "eggs"],
     "mf_007": ["bacon", "eggs"],
     "mf_008": ["french_fries"],
-    "mf_009": [],  # costillas de cerdo: fuera del catálogo
+    "mf_009": [],  # costillas de cerdo: fuera del catÃ¡logo
     "mf_010": ["french_fries", "pizza"],
     "mf_011": ["french_fries", "pizza", "hamburger"],
-    "mf_012": [],  # "chicken and company" — ambiguo sin más evidencia
+    "mf_012": [],  # "chicken and company" â€” ambiguo sin mÃ¡s evidencia
     "mf_013": ["rice", "salad"],  # curry katsu + arroz + ensalada
-    "mf_014": [],  # pollo nepalí: fuera del catálogo
-    "mf_015": [],  # "easy lunch" — sin evidencia
+    "mf_014": [],  # pollo nepalÃ­: fuera del catÃ¡logo
+    "mf_015": [],  # "easy lunch" â€” sin evidencia
 }
 
 
@@ -118,16 +118,16 @@ def main() -> None:
         "avg_latency_ms": round(sum(latencies) / len(latencies), 1),
         "per_image": per_image,
     }
-    (BASE_DIR / "multifood_results.json").write_text(
+    (BASE_DIR / "benchmarks/multifood/multifood_results.json").write_text(
         json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    print(f"\n=== MULTI-FOOD (16 imágenes, GT manual) ===")
+    print(f"\n=== MULTI-FOOD (16 imÃ¡genes, GT manual) ===")
     print(f"Food recall:     {total_hits}/{total_gt} = {round(recall*100,1)}%")
     print(f"Food precision: {total_hits}/{total_pred} = {round(precision*100,1)}%")
     print(f"Missed foods:   {missed}")
     print(f"False positives: {false_positives}")
     print(f"Duplicados:     {duplicates}")
-    print(f"Imágenes con TODO su GT recuperado: {images_ok}/{images_with_food}")
+    print(f"ImÃ¡genes con TODO su GT recuperado: {images_ok}/{images_with_food}")
     print(f"Latencia media: {result['avg_latency_ms']} ms")
 
 

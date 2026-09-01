@@ -1,6 +1,6 @@
 ﻿"""Benchmark end-to-end de cobertura nutricional (FASE 13).
 
-Mide por etapa sobre las 108 imÃ¡genes (regions.json ya generado):
+Mide por etapa sobre las 108 imÃ¡genes (benchmarks/detection/regions.json ya generado):
   Detection â†’ Classification (CLIP) â†’ Nutrition mapping â†’ Portion â†’ CÃ¡lculo
 y reporta la mÃ©trica de producto: Nutrition End-to-End Success Rate, con la
 taxonomÃ­a de fallos por etapa.
@@ -20,7 +20,7 @@ from app.models.basic_portion_estimator import REFERENCE_GRAMS  # noqa: E402
 from app.models.zero_shot_classifier import ZeroShotFoodClassifier  # noqa: E402
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-REGIONS = json.loads((BASE_DIR / "regions.json").read_text(encoding="utf-8"))
+REGIONS = json.loads((BASE_DIR / "benchmarks/detection/regions.json").read_text(encoding="utf-8"))
 CURATED = json.loads((
     BASE_DIR.parent / "coppAddresdBack" / "src" / "CoppAddresd.Api" / "Seeders" / "data" / "food_usda_curated.json"
 ).read_text(encoding="utf-8"))
@@ -136,6 +136,8 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
 
 
 

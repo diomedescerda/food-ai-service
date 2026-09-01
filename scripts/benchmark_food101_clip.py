@@ -1,8 +1,8 @@
-"""FASE 21: identidad CLIP sobre Food-101 subset (3500 imágenes, 14 clases).
+﻿"""FASE 21: identidad CLIP sobre Food-101 subset (3500 imÃ¡genes, 14 clases).
 
-Evaluación de identidad a escala: imagen completa como entrada (Food-101 son
-fotos centradas del plato). Reporta top-1/3/5 por clase + dónde falla CLIP.
-Non-commercial: evaluación interna únicamente.
+EvaluaciÃ³n de identidad a escala: imagen completa como entrada (Food-101 son
+fotos centradas del plato). Reporta top-1/3/5 por clase + dÃ³nde falla CLIP.
+Non-commercial: evaluaciÃ³n interna Ãºnicamente.
 """
 import json
 import sys
@@ -18,7 +18,7 @@ from app.models.zero_shot_classifier import ZeroShotFoodClassifier  # noqa: E402
 
 BASE = Path(__file__).resolve().parents[1]
 SUBSET = BASE / "datasets" / "food101-subset"
-OUT = BASE / "benchmark_food101_clip_results.json"
+OUT = BASE / "benchmarks/classification/benchmark_food101_clip_results.json"
 
 
 def main() -> None:

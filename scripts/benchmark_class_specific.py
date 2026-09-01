@@ -1,7 +1,7 @@
-"""FASE 17 P11: candidate groups específicos para clases problemáticas.
+﻿"""FASE 17 P11: candidate groups especÃ­ficos para clases problemÃ¡ticas.
 
 Compara el scoring global vs candidate groups extendidos para french_fries y
-fried_chicken (las clases con confusión fries/fried_chicken→rice). Regla:
+fried_chicken (las clases con confusiÃ³n fries/fried_chickenâ†’rice). Regla:
 solo se acepta una mejora en ground-truth accuracy, no en score.
 
 Uso: python scripts/benchmark_class_specific.py
@@ -21,13 +21,13 @@ from transformers import CLIPModel, CLIPProcessor  # noqa: E402
 from app.models.food_catalog import FOOD_CATALOG, candidate_to_canonical  # noqa: E402
 
 BENCH = Path(__file__).resolve().parents[1] / "datasets" / "food-us-v0.1" / "images" / "train"
-REGIONS = json.loads((Path(__file__).resolve().parents[1] / "regions.json").read_text(encoding="utf-8"))
+REGIONS = json.loads((Path(__file__).resolve().parents[1] / "benchmarks/detection/regions.json").read_text(encoding="utf-8"))
 
 CLASSES = ["french_fries", "fried_chicken", "rice"]
 TEMPLATES = ("a photo of {food}", "a picture of {food}", "a close-up photo of {food}")
 
-# Candidate groups: base (catálogo) + extras descriptivos SOLO para las
-# clases problemáticas. El mapeo extra asocia cada candidato nuevo a su clase.
+# Candidate groups: base (catÃ¡logo) + extras descriptivos SOLO para las
+# clases problemÃ¡ticas. El mapeo extra asocia cada candidato nuevo a su clase.
 EXTRA_CANDIDATES = {
     "french_fries": ("golden fried potato sticks", "fried potatoes in a cup", "fast food french fries"),
     "fried_chicken": ("crispy breaded fried chicken pieces", "fast food fried chicken"),
@@ -113,7 +113,7 @@ def main() -> None:
 
     t0 = time.perf_counter()
     base_res = run(model, processor, device, base)
-    print(f"=== BASELINE (candidatos catálogo) ===")
+    print(f"=== BASELINE (candidatos catÃ¡logo) ===")
     print(f"top1={base_res['top1']*100:.1f}% ({base_res['total']})")
     for cls in CLASSES:
         pc = base_res["per_class"].get(cls, {})
@@ -137,3 +137,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

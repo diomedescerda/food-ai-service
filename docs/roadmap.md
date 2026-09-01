@@ -275,3 +275,9 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Graceful failure: imagen inválida → 400; health/readiness: /health (modelos+servicio) + /api/v1/foodai/health (probe backend+foodAI) ✓
 - [x] Regression gate: 72/72 pytest, 213/213 .NET, 14/14 integration; E2E clave sin regresión (pizza/hot_dog/salmon/nachos/fries/mf_003/mf_006/mf_011 ✓)
 - [x] DECISIÓN: PRODUCTION READY con límites documentados (concurrencia <=4 por la serialización CPU; DINO 10-17s en 33-56% de requests)
+
+## FASE 24 - Cleanup + Documentacion OK (2026-08-31)
+- [x] Reorganizacion: JSON de resultados -> benchmarks/{classification,detection,nutrition,multifood,history}; regions.json -> benchmarks/detection/; basura eliminada (debug images, ab_progress)
+- [x] README completo (34 secciones, 7 diagramas Mermaid, glosario) - documentacion oficial del servicio
+- [x] OUTs de scripts actualizados a benchmarks/; refs de regions.json corregidas en 7 scripts
+- [x] Sin regresion: pytest 72/72, E2E food-us 59.3%

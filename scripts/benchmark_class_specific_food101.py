@@ -1,5 +1,5 @@
-"""FASE 21: A/B dirigido — candidatos descriptivos para taco/quesadilla/
-waffles/pancakes (confusiones sistemáticas detectadas en Food-101).
+﻿"""FASE 21: A/B dirigido â€” candidatos descriptivos para taco/quesadilla/
+waffles/pancakes (confusiones sistemÃ¡ticas detectadas en Food-101).
 
 Regla F17: solo se acepta mejora en ground-truth accuracy, no en score.
 """
@@ -96,7 +96,7 @@ def main() -> None:
 
     t0 = time.perf_counter()
     base_res = run(model, processor, base, {})
-    print("=== BASELINE (candidatos catálogo) ===")
+    print("=== BASELINE (candidatos catÃ¡logo) ===")
     for cls in CLASSES:
         pc = base_res["per_class"].get(cls, {})
         print(f"  {cls:<12} {pc.get(cls, 0)}/{sum(pc.values())} = {pc.get(cls, 0)/max(sum(pc.values()),1)*100:.1f}%")
@@ -109,7 +109,7 @@ def main() -> None:
         print(f"  {cls:<12} {pc.get(cls, 0)}/{n} = {pc.get(cls, 0)/max(n,1)*100:.1f}% -> {Counter(pc).most_common(3)}")
 
     print(f"tiempo={time.perf_counter()-t0:.0f}s")
-    with open(BASE / "benchmark_class_specific_food101.json", "w", encoding="utf-8") as fh:
+    with open(BASE / "benchmarks/classification/benchmark_class_specific_food101.json", "w", encoding="utf-8") as fh:
         json.dump({"base": base_res, "extended": ext_res, "extra": EXTRA}, fh, ensure_ascii=False, indent=2)
 
 

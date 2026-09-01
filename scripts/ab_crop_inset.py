@@ -1,5 +1,5 @@
-"""FASE 22 P1: A/B crop inset — recorte interior del bbox (contexto reducido)
-para fries/fried_chicken (confusión → rice). Baseline = padding 0.10.
+﻿"""FASE 22 P1: A/B crop inset â€” recorte interior del bbox (contexto reducido)
+para fries/fried_chicken (confusiÃ³n â†’ rice). Baseline = padding 0.10.
 
 Uso: python scripts/ab_crop_inset.py [0.05] [0.10] [0.15]
 """
@@ -18,7 +18,7 @@ from app.models.zero_shot_classifier import ZeroShotFoodClassifier  # noqa: E402
 
 BASE = Path(__file__).resolve().parents[1]
 TRAIN = BASE / "datasets" / "food-us-v0.1" / "images" / "train"
-REGIONS = json.loads((BASE / "regions.json").read_text(encoding="utf-8"))
+REGIONS = json.loads((BASE / "benchmarks/detection/regions.json").read_text(encoding="utf-8"))
 CLASSES = ("french_fries", "fried_chicken")
 
 
@@ -76,3 +76,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

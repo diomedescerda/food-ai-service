@@ -1,11 +1,11 @@
-"""FASE 22: A/B candidates descriptivos dirigidos por evidencia de confusión.
+﻿"""FASE 22: A/B candidates descriptivos dirigidos por evidencia de confusiÃ³n.
 
-Variante A (P1): fries/fried_chicken — distinguir FORMA (tiras vs piezas).
+Variante A (P1): fries/fried_chicken â€” distinguir FORMA (tiras vs piezas).
 Variante B (P2-P4): hot_dog/hamburger/sandwich, taco/quesadilla/nachos,
-salmon/steak/grilled_chicken — distinción visual de pan/presentación.
+salmon/steak/grilled_chicken â€” distinciÃ³n visual de pan/presentaciÃ³n.
 
-Mide sobre 3 fuentes: food-us (regions.json), v1 (crops), Food-101 (imágenes)
-con el pipeline real (score por clase, ensemble). Sin modificar el catálogo.
+Mide sobre 3 fuentes: food-us (benchmarks/detection/regions.json), v1 (crops), Food-101 (imÃ¡genes)
+con el pipeline real (score por clase, ensemble). Sin modificar el catÃ¡logo.
 
 Uso: python scripts/ab_candidates_v2.py A|B
 """
@@ -27,7 +27,7 @@ BASE = Path(__file__).resolve().parents[1]
 TRAIN = BASE / "datasets" / "food-us-v0.1" / "images" / "train"
 CROPS_V1 = BASE / "datasets" / "crops-v1"
 SUBSET = BASE / "datasets" / "food101-subset"
-REGIONS = json.loads((BASE / "regions.json").read_text(encoding="utf-8"))
+REGIONS = json.loads((BASE / "benchmarks/detection/regions.json").read_text(encoding="utf-8"))
 
 VARIANT_A = {
     "french_fries": ("thin fried potato strips", "long golden potato sticks"),
@@ -56,7 +56,7 @@ def build_classifier(extra_cands: dict):
         prompt_templates_extra=tuple(settings.clip_prompt_ensemble.split("|")),
     )
     clf.load()
-    # Extras después del load: el load() reconstruye _candidates del catálogo.
+    # Extras despuÃ©s del load: el load() reconstruye _candidates del catÃ¡logo.
     extras = [c for cands in extra_cands.values() for c in cands]
     clf._candidates = list(clf._candidates) + extras
     clf._text_features_list = []
@@ -133,15 +133,17 @@ def main() -> None:
     for source in ("food-us", "v1", "food101"):
         r = run_dataset(clf, source)
         results[source] = r
-        print(f"=== {variant} — {source} ({r['total']}) top1={r['top1']*100:.1f}% ===", flush=True)
+        print(f"=== {variant} â€” {source} ({r['total']}) top1={r['top1']*100:.1f}% ===", flush=True)
         for cls in extra:
             pc = r["per_class"].get(cls, {})
             if pc:
                 print(f"  {cls:<16} {pc.get(cls,0)}/{sum(pc.values())} = {pc.get(cls,0)/max(sum(pc.values()),1)*100:.1f}% -> {Counter(pc).most_common(2)}", flush=True)
     print(f"tiempo={time.perf_counter()-t0:.0f}s")
-    with open(BASE / f"ab_candidates_v2_{variant}.json", "w", encoding="utf-8") as fh:
+    with open(BASE / f"benchmarks/history/ab_candidates_v2_{variant}.json", "w", encoding="utf-8") as fh:
         json.dump(results, fh, ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":
     main()
+
+
