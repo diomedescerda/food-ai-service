@@ -1,8 +1,8 @@
-"""FASE 17: benchmark ampliado desde Wikimedia Commons (licencias compatibles).
+﻿"""FASE 17: benchmark ampliado desde Wikimedia Commons (licencias compatibles).
 
-Para cada clase objetivo descarga hasta N imágenes que depicten el alimento
+Para cada clase objetivo descarga hasta N imÃ¡genes que depicten el alimento
 (QID Wikidata via haswbstatement:P180) y registra metadata: source, url,
-licencia, ground_truth. No usa imágenes sin licencia identificable.
+licencia, ground_truth. No usa imÃ¡genes sin licencia identificable.
 """
 import json
 import sys
@@ -14,7 +14,8 @@ import requests
 
 API = "https://commons.wikimedia.org/w/api.php"
 HEADERS = {"User-Agent": "CoppAddresdFoodBenchmark/1.0 (research; no commercial)"}
-OUT = Path(__file__).resolve().parents[1] / "datasets" / "food-bench-v1"
+import os as _os
+OUT = Path(_os.environ.get("BENCH_OUT", str(Path(__file__).resolve().parents[1] / "datasets" / "food-bench-v1")))
 
 ALLOWED_LICENSES = ("CC0", "CC BY", "CC BY-SA", "Public domain", "PD")
 BLACKLIST = (
@@ -56,6 +57,42 @@ SEARCH_TERMS = {
     "ice_cream": "ice cream",
     "salad": "salad",
     "grilled_chicken": "grilled chicken",
+    "naan": "naan bread",
+    "cheeseburger": "cheeseburger",
+    "grilled_cheese": "grilled cheese sandwich",
+    "wrap": "wrap sandwich",
+    "pulled_pork": "pulled pork",
+    "fish_and_chips": "fish and chips",
+    "chicken_tenders": "chicken tenders",
+    "corn_dog": "corn dog",
+    "chicken_wings": "chicken wings",
+    "pie": "pie slice",
+    "cupcake": "cupcake",
+    "muffin": "muffin",
+    "croissant": "croissant",
+    "french_toast": "french toast",
+    "hash_browns": "hash browns",
+    "grits": "grits",
+    "granola": "granola",
+    "yogurt": "yogurt",
+    "churros": "churros",
+    "crepes": "crepes",
+    "paella": "paella",
+    "gnocchi": "gnocchi",
+    "ravioli": "ravioli",
+    "risotto": "risotto",
+    "chicken_tikka_masala": "chicken tikka masala",
+    "butter_chicken": "butter chicken",
+    "samosa": "samosa",
+    "spring_rolls": "spring rolls",
+    "tempura": "tempura",
+    "sashimi": "sashimi",
+    "teriyaki_chicken": "teriyaki chicken",
+    "green_curry": "green curry",
+    "fajitas": "fajitas",
+    "enchiladas": "enchiladas",
+    "tamales": "tamales",
+    "guacamole": "guacamole",
 }
 
 CLASSES = tuple(SEARCH_TERMS)
@@ -88,7 +125,7 @@ def fetch_thumbnails(term: str, limit: int) -> list[dict]:
             continue
         if (ii.get("width") or 0) < 320 or (ii.get("height") or 0) < 320:
             continue
-        # Thumb estándar de 640px vía Special:FilePath (respeta el robot
+        # Thumb estÃ¡ndar de 640px vÃ­a Special:FilePath (respeta el robot
         # policy de Wikimedia y reduce el ancho de banda).
         thumb_url = (
             "https://commons.wikimedia.org/wiki/Special:FilePath/"
@@ -176,8 +213,9 @@ def main() -> None:
         all_meta = metadata
     with open(meta_path, "w", encoding="utf-8") as fh:
         json.dump(all_meta, fh, ensure_ascii=False, indent=2)
-    print(f"[meta] total imágenes registradas: {len(all_meta)}")
+    print(f"[meta] total imÃ¡genes registradas: {len(all_meta)}")
 
 
 if __name__ == "__main__":
     main()
+

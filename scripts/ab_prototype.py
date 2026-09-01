@@ -1,7 +1,7 @@
-"""F27.3-5: visual prototype retrieval â€” A/B hybrid scoring (text + visual).
+﻿"""F27.3-5: visual prototype retrieval Ã¢â‚¬â€ A/B hybrid scoring (text + visual).
 
 Por imagen: retrieval de texto (top-N, F26) + similitud visual contra prototipos
-de las clases candidatas â†’ hybrid (1-w)*text + w*visual. Los scores se guardan
+de las clases candidatas Ã¢â€ â€™ hybrid (1-w)*text + w*visual. Los scores se guardan
 por imagen; el barrido de (w, aggregation) es post-proceso (sin re-inferencia).
 
 Baselines: legacy 38 (pipeline) y F26 (text-only 231).
@@ -31,7 +31,7 @@ REGIONS = json.loads((BASE / "benchmarks/detection/regions.json").read_text(enco
 MASTER = json.loads((BASE / "data/catalogs/food_master.json").read_text(encoding="utf-8"))
 PROTOS = json.loads((BASE / os.environ.get("PROTO_STORE", "data/prototypes/f27_prototypes.json")).read_text(encoding="utf-8"))
 
-TOP_N = 10
+TOP_N = int(os.environ.get("RETRIEVAL_TOP_N", "10"))
 WEIGHTS = (0.25, 0.50, 0.75)
 AGGREGATIONS = ("max", "mean", "topk5_mean", "medoid")
 
@@ -201,5 +201,6 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
 

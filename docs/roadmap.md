@@ -310,3 +310,8 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Cobertura: 17 → 33 clases (254 prototipos, food-bench completo + assets); 198 clases INSUFFICIENT_DATA
 - [x] RESULTADO: v1 55.1% SUPERA legacy 47.0% (+17.9 vs F27); Food-101 85.0% (94.8% del legacy); food-us 59.3% (gap −12: fries/fried→rice estructural)
 - [x] DECISIÓN: REJECT 231 (food-us no alcanza legacy); la cobertura es la dirección correcta (evidencia v1); faltan 198 clases + resolver fries→rice
+
+## FASE 29 — Prototype Scale + Rice Resolution ✅ (2026-08-31)
+- [x] Rice analysis: hybrid enfocado w=0.5 -> 21/28 (75%) vs legacy 60.7% — la confusión rice se reduce con scoring dirigido (4->rice, 3->fried restantes)
+- [x] Cobertura 33->68 (36 clases Commons nuevas): food-us 59.3 -> 38.9 DEGRADA; v1 55.1 -> 53.4 — la cobertura amplia NO escala (prototipos ruidosos compiten)
+- [x] DECISIÓN: REJECT 231 — techo arquitectónico ~60% del prototype approach; detener expansión masiva; F30 = fine-tuning/representación o legacy

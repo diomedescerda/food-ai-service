@@ -22,10 +22,10 @@ from app.core.config import Settings  # noqa: E402
 from app.models.zero_shot_classifier import ZeroShotFoodClassifier  # noqa: E402
 
 BASE = Path(__file__).resolve().parents[1]
-OUT = BASE / "data/prototypes/f28_full.json"
+OUT = BASE / "data/prototypes/f29_full.json"
 
 # Clases problemÃ¡ticas (F21/F22/F26) + las 6 del regression set food-us.
-TARGET_CLASSES = sorted({p.parent.name for p in (BASE / "datasets/food-bench-v1").rglob("*.jpg")}) + [
+TARGET_CLASSES = sorted({p.parent.name for p in (BASE / "datasets/food-bench-v1").rglob("*.jpg")} | {p.parent.name for p in (BASE / "datasets/prototype-src").rglob("*.jpg")}) + [
     "french_fries", "fried_chicken", "hot_dog", "hamburger", "taco",
     "quesadilla", "nachos", "steak", "grilled_chicken", "salmon", "pizza",
     "sandwich", "mac_and_cheese", "lasagna", "chicken_nuggets", "banana", "apple",
@@ -47,6 +47,15 @@ def collect_sources() -> dict[str, list[dict]]:
             "license": meta.get("license", "unknown"),
             "image_id": img_path.name,
         })
+    for img_path in (BASE / "datasets/prototype-src").rglob("*.jpg"):
+        cls = img_path.parent.name
+        if cls in TARGET_CLASSES:
+            sources[cls].append({
+                "path": str(img_path),
+                "source": "Wikimedia Commons (prototype-src)",
+                "license": "CC0/CC BY/CC BY-SA/PD (Commons)",
+                "image_id": img_path.name,
+            })
     for img_path in (BASE / "datasets/multi-food/images").glob("*.jpg"):
         cls_map = {"mf_003": "hamburger", "mf_010": "french_fries", "mf_011": "pizza"}
         cls = cls_map.get(img_path.stem)
@@ -116,4 +125,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 

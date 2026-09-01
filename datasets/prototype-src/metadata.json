@@ -1,0 +1,2802 @@
+{
+  "naan/img_0001.jpg": {
+    "class": "naan",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-02-22_20_57_14_Mixed_herb_and_cheese_naan_bread_at_Karma_Modern_Indian_in_Washington,_D.C.jpg",
+    "original_title": "File:2020-02-22 20 57 14 Mixed herb and cheese naan bread at Karma Modern Indian in Washington, D.C.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "naan",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "naan/img_0002.jpg": {
+    "class": "naan",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ham_and_eggs_served_with_naan_bread.jpg",
+    "original_title": "File:Ham and eggs served with naan bread.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "naan",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "naan/img_0003.jpg": {
+    "class": "naan",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Indian_naan_bread.jpg",
+    "original_title": "File:Indian naan bread.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "naan",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "naan/img_0004.jpg": {
+    "class": "naan",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Korma_chicken,_tarkha_dhaal,_saffron_rice_%26_naan_bread,_courtesy_of_Sainsbury_-_17_05_2019_(34003607278).jpg",
+    "original_title": "File:Korma chicken, tarkha dhaal, saffron rice & naan bread, courtesy of Sainsbury - 17 05 2019 (34003607278).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "naan",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "naan/img_0005.jpg": {
+    "class": "naan",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Naan_Bread.JPG",
+    "original_title": "File:Naan Bread.JPG",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "naan",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "naan/img_0006.jpg": {
+    "class": "naan",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Naan_bread_(3170160310).jpg",
+    "original_title": "File:Naan bread (3170160310).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "naan",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "naan/img_0007.jpg": {
+    "class": "naan",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Naan_bread_Vikings_Luxury_Dinner_Buffet_26_January_2025_PhilippinesC.jpg",
+    "original_title": "File:Naan bread Vikings Luxury Dinner Buffet 26 January 2025 PhilippinesC.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "naan",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "naan/img_0008.jpg": {
+    "class": "naan",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pita_Naan_bread_(5177691669).jpg",
+    "original_title": "File:Pita Naan bread (5177691669).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "naan",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "cheeseburger/img_0001.jpg": {
+    "class": "cheeseburger",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:09_Burger_King_cheeseburger_bite_in_Sweden_-_fast_food_cheeseburger_in_McDonald%27s_restaurant.jpg",
+    "original_title": "File:09 Burger King cheeseburger bite in Sweden - fast food cheeseburger in McDonald's restaurant.jpg",
+    "license": "CC BY 3.0",
+    "ground_truth": "cheeseburger",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "cheeseburger/img_0002.jpg": {
+    "class": "cheeseburger",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2017-07-12_AT_Wien_03_Landstra%C3%9Fe,_McDonald%27s_Wien_Mitte_The_Mall,_Cheeseburger_(49472555846).jpg",
+    "original_title": "File:2017-07-12 AT Wien 03 Landstraße, McDonald's Wien Mitte The Mall, Cheeseburger (49472555846).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "cheeseburger",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "cheeseburger/img_0003.jpg": {
+    "class": "cheeseburger",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-01-23_18_31_32_A_Wendy%27s_Junior_Bacon_Cheeseburger_in_Dunn_Loring,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-01-23 18 31 32 A Wendy's Junior Bacon Cheeseburger in Dunn Loring, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "cheeseburger",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "cheeseburger/img_0004.jpg": {
+    "class": "cheeseburger",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-01-29_13_21_56_A_McDonald%27s_Cheeseburger_in_Chantilly,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-01-29 13 21 56 A McDonald's Cheeseburger in Chantilly, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "cheeseburger",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "cheeseburger/img_0005.jpg": {
+    "class": "cheeseburger",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-02-28_21_43_04_A_Burger_King_cheeseburger_in_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-02-28 21 43 04 A Burger King cheeseburger in Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "cheeseburger",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "cheeseburger/img_0006.jpg": {
+    "class": "cheeseburger",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-02-28_21_43_12_A_Burger_King_cheeseburger_in_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-02-28 21 43 12 A Burger King cheeseburger in Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "cheeseburger",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "cheeseburger/img_0007.jpg": {
+    "class": "cheeseburger",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-02-28_21_44_52_A_Burger_King_cheeseburger_still_in_its_wrapper_in_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-02-28 21 44 52 A Burger King cheeseburger still in its wrapper in Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "cheeseburger",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "cheeseburger/img_0008.jpg": {
+    "class": "cheeseburger",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-02-28_21_45_05_A_Burger_King_cheeseburger_in_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-02-28 21 45 05 A Burger King cheeseburger in Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "cheeseburger",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "grilled_cheese/img_0001.jpg": {
+    "class": "grilled_cheese",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Brisket_and_grilled_cheese_sandwich_with_a_side_of_French_fries.jpg",
+    "original_title": "File:Brisket and grilled cheese sandwich with a side of French fries.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "grilled_cheese",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "grilled_cheese/img_0002.jpg": {
+    "class": "grilled_cheese",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Brisket_and_grilled_cheese_sandwich_with_a_side_of_French_fries_2.jpg",
+    "original_title": "File:Brisket and grilled cheese sandwich with a side of French fries 2.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "grilled_cheese",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "grilled_cheese/img_0003.jpg": {
+    "class": "grilled_cheese",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Broccoli_cheddar_soup_and_grilled_cheese_sandwich.jpg",
+    "original_title": "File:Broccoli cheddar soup and grilled cheese sandwich.jpg",
+    "license": "CC0",
+    "ground_truth": "grilled_cheese",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "grilled_cheese/img_0004.jpg": {
+    "class": "grilled_cheese",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Classic_Grilled_Cheese_Sandwich_(25791331763).jpg",
+    "original_title": "File:Classic Grilled Cheese Sandwich (25791331763).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "grilled_cheese",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "grilled_cheese/img_0005.jpg": {
+    "class": "grilled_cheese",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Classic_Grilled_Cheese_Sandwich_(25791331763)_(cropped).jpg",
+    "original_title": "File:Classic Grilled Cheese Sandwich (25791331763) (cropped).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "grilled_cheese",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "grilled_cheese/img_0006.jpg": {
+    "class": "grilled_cheese",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Corn_chowder_and_grilled_cheese_sandwich.jpg",
+    "original_title": "File:Corn chowder and grilled cheese sandwich.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "grilled_cheese",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "grilled_cheese/img_0007.jpg": {
+    "class": "grilled_cheese",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Grilled_Cheese_Sandwich.jpg",
+    "original_title": "File:Grilled Cheese Sandwich.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "grilled_cheese",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "grilled_cheese/img_0008.jpg": {
+    "class": "grilled_cheese",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Grilled_Cheese_Sandwich_(16938984390).jpg",
+    "original_title": "File:Grilled Cheese Sandwich (16938984390).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "grilled_cheese",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "pulled_pork/img_0001.jpg": {
+    "class": "pulled_pork",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:02019_0183_Pulled_pork.jpg",
+    "original_title": "File:02019 0183 Pulled pork.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "pulled_pork",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "pulled_pork/img_0002.jpg": {
+    "class": "pulled_pork",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_plate_of_barbecued_meats,_including_beef_brisket,_pork_ribs,_spicy_pepper_jack_sausage_and_pulled_pork_at_Truth_BBQ_in_Houston,_TX_in_July_2026.jpg",
+    "original_title": "File:A plate of barbecued meats, including beef brisket, pork ribs, spicy pepper jack sausage and pulled pork at Truth BBQ in Houston, TX in July 2026.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "pulled_pork",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "pulled_pork/img_0003.jpg": {
+    "class": "pulled_pork",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alberta_Pulled_Pork_Slider_(3181790206).jpg",
+    "original_title": "File:Alberta Pulled Pork Slider (3181790206).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "pulled_pork",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "pulled_pork/img_0004.jpg": {
+    "class": "pulled_pork",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alestine%27s_pulled_pork_poutine.jpg",
+    "original_title": "File:Alestine's pulled pork poutine.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "pulled_pork",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "pulled_pork/img_0005.jpg": {
+    "class": "pulled_pork",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Algiers_RiverFest_Pulled_Pork_Taco.JPG",
+    "original_title": "File:Algiers RiverFest Pulled Pork Taco.JPG",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "pulled_pork",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "pulled_pork/img_0006.jpg": {
+    "class": "pulled_pork",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Austin_Blues_Hardwood_Smoked_Pulled_Pork_frozen.JPG",
+    "original_title": "File:Austin Blues Hardwood Smoked Pulled Pork frozen.JPG",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "pulled_pork",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "pulled_pork/img_0007.jpg": {
+    "class": "pulled_pork",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:B.B.Q._Pulled_Pork_Sandwich.jpg",
+    "original_title": "File:B.B.Q. Pulled Pork Sandwich.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "pulled_pork",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "pulled_pork/img_0008.jpg": {
+    "class": "pulled_pork",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:BBQ_Pulled_Pork.jpg",
+    "original_title": "File:BBQ Pulled Pork.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "pulled_pork",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "fish_and_chips/img_0001.jpg": {
+    "class": "fish_and_chips",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:02021_1012_(2)_Fish_and_chips_in_Poland.jpg",
+    "original_title": "File:02021 1012 (2) Fish and chips in Poland.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "fish_and_chips",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "fish_and_chips/img_0002.jpg": {
+    "class": "fish_and_chips",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:02024_Fish_and_chips_in_Gda%C5%84sk.jpg",
+    "original_title": "File:02024 Fish and chips in Gdańsk.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "fish_and_chips",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "fish_and_chips/img_0003.jpg": {
+    "class": "fish_and_chips",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2016-02_Fish_and_chips.jpg",
+    "original_title": "File:2016-02 Fish and chips.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "fish_and_chips",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "fish_and_chips/img_0004.jpg": {
+    "class": "fish_and_chips",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2017_08_11b_Butlers_Fish_and_Chips_10_(36309929070).jpg",
+    "original_title": "File:2017 08 11b Butlers Fish and Chips 10 (36309929070).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "fish_and_chips",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "fish_and_chips/img_0005.jpg": {
+    "class": "fish_and_chips",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2017_08_11b_Butlers_Fish_and_Chips_11_(35895439443).jpg",
+    "original_title": "File:2017 08 11b Butlers Fish and Chips 11 (35895439443).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "fish_and_chips",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "fish_and_chips/img_0006.jpg": {
+    "class": "fish_and_chips",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2017_08_11b_Butlers_Fish_and_Chips_12_(36659138766).jpg",
+    "original_title": "File:2017 08 11b Butlers Fish and Chips 12 (36659138766).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "fish_and_chips",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "fish_and_chips/img_0007.jpg": {
+    "class": "fish_and_chips",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2017_08_11b_Butlers_Fish_and_Chips_13_(36659136656).jpg",
+    "original_title": "File:2017 08 11b Butlers Fish and Chips 13 (36659136656).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "fish_and_chips",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "fish_and_chips/img_0008.jpg": {
+    "class": "fish_and_chips",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2017_08_11b_Butlers_Fish_and_Chips_1_(35870279594).jpg",
+    "original_title": "File:2017 08 11b Butlers Fish and Chips 1 (35870279594).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "fish_and_chips",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_tenders/img_0001.jpg": {
+    "class": "chicken_tenders",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2026-05-06_18_15_13_Chicken_tenders,_mashed_potatoes,_Macaroni_and_cheese_and_a_brownie_at_Capital_Health_Medical_Center_-_Hopewell_in_Hopewell_Township,_Mercer_County,_New_Jersey.jpg",
+    "original_title": "File:2026-05-06 18 15 13 Chicken tenders, mashed potatoes, Macaroni and cheese and a brownie at Capital Health Medical Center - Hopewell in Hopewell Township, Mercer County, New Jersey.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "chicken_tenders",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_tenders/img_0002.jpg": {
+    "class": "chicken_tenders",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Baked_Chicken_Tenders_with_Sweet_and_Sour_Sauce.jpg",
+    "original_title": "File:Baked Chicken Tenders with Sweet and Sour Sauce.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "chicken_tenders",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_tenders/img_0003.jpg": {
+    "class": "chicken_tenders",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Burger-King-Chicken-Tenders.jpg",
+    "original_title": "File:Burger-King-Chicken-Tenders.jpg",
+    "license": "Public domain",
+    "ground_truth": "chicken_tenders",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_tenders/img_0004.jpg": {
+    "class": "chicken_tenders",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_tenders,_french_fries,_and_dipping_sauce_on_a_tray_at_Braum%27s.jpg",
+    "original_title": "File:Chicken tenders, french fries, and dipping sauce on a tray at Braum's.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "chicken_tenders",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_tenders/img_0005.jpg": {
+    "class": "chicken_tenders",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_tenders_(8884884960).jpg",
+    "original_title": "File:Chicken tenders (8884884960).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "chicken_tenders",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_tenders/img_0006.jpg": {
+    "class": "chicken_tenders",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_tenders_and_french_fries_-_June_2023_-_Sarah_Stierch.jpg",
+    "original_title": "File:Chicken tenders and french fries - June 2023 - Sarah Stierch.jpg",
+    "license": "CC BY 4.0",
+    "ground_truth": "chicken_tenders",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_tenders/img_0007.jpg": {
+    "class": "chicken_tenders",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Crispy_chicken_tenders,_Ship_and_Shovell_Pub_(September_2023).JPG",
+    "original_title": "File:Crispy chicken tenders, Ship and Shovell Pub (September 2023).JPG",
+    "license": "CC0",
+    "ground_truth": "chicken_tenders",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_tenders/img_0008.jpg": {
+    "class": "chicken_tenders",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Masy_Chicken_Tenders,_central_market-naanu_di_Meqqal.jpg",
+    "original_title": "File:Masy Chicken Tenders, central market-naanu di Meqqal.jpg",
+    "license": "CC0",
+    "ground_truth": "chicken_tenders",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "corn_dog/img_0001.jpg": {
+    "class": "corn_dog",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-11-26_22_35_39_A_State_Fair_Brand_Classic_Corn_Dog_cut_in_two_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-11-26 22 35 39 A State Fair Brand Classic Corn Dog cut in two in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "corn_dog",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "corn_dog/img_0002.jpg": {
+    "class": "corn_dog",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Classic_%22Corn_Dog%22_SWA_colors,_SJC,_dramatic_lighting_(5673897972)_(2).jpg",
+    "original_title": "File:Classic \"Corn Dog\" SWA colors, SJC, dramatic lighting (5673897972) (2).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "corn_dog",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "corn_dog/img_0003.jpg": {
+    "class": "corn_dog",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Classic_Desert_Gold_over_orange_and_red_%22Corn_Dog%22_SWA_colors,_SJC_(5673331575).jpg",
+    "original_title": "File:Classic Desert Gold over orange and red \"Corn Dog\" SWA colors, SJC (5673331575).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "corn_dog",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "corn_dog/img_0004.jpg": {
+    "class": "corn_dog",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Corn_Dog_(Taiwan).jpg",
+    "original_title": "File:Corn Dog (Taiwan).jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "corn_dog",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "corn_dog/img_0005.jpg": {
+    "class": "corn_dog",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Corn_Dog_with_Corn.jpg",
+    "original_title": "File:Corn Dog with Corn.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "corn_dog",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "corn_dog/img_0006.jpg": {
+    "class": "corn_dog",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Corn_dog,_Poznan.jpg",
+    "original_title": "File:Corn dog, Poznan.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "corn_dog",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "corn_dog/img_0007.jpg": {
+    "class": "corn_dog",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Corn_dog.jpg",
+    "original_title": "File:Corn dog.jpg",
+    "license": "CC0",
+    "ground_truth": "corn_dog",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "corn_dog/img_0008.jpg": {
+    "class": "corn_dog",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Corn_dog_001.jpg",
+    "original_title": "File:Corn dog 001.jpg",
+    "license": "CC0",
+    "ground_truth": "corn_dog",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_wings/img_0001.jpg": {
+    "class": "chicken_wings",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:02019_0909_(2)_Chicken_wings.jpg",
+    "original_title": "File:02019 0909 (2) Chicken wings.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "chicken_wings",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_wings/img_0002.jpg": {
+    "class": "chicken_wings",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:3_Chicken_Wings,_PERi-Salted_Chips,_Corn_on_the_Cob_-_Nando%27s.jpg",
+    "original_title": "File:3 Chicken Wings, PERi-Salted Chips, Corn on the Cob - Nando's.jpg",
+    "license": "CC0",
+    "ground_truth": "chicken_wings",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_wings/img_0003.jpg": {
+    "class": "chicken_wings",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_Old_Mother_style_Chicken_wings.jpg",
+    "original_title": "File:A Old Mother style Chicken wings.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "chicken_wings",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_wings/img_0004.jpg": {
+    "class": "chicken_wings",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_Pork_chop_and_Fried_Chicken_Wings_and_Sha_Ho_Fan_Soup.jpg",
+    "original_title": "File:A Pork chop and Fried Chicken Wings and Sha Ho Fan Soup.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "chicken_wings",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_wings/img_0005.jpg": {
+    "class": "chicken_wings",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_Potato_and_Chicken_Wings.jpg",
+    "original_title": "File:A Potato and Chicken Wings.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "chicken_wings",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_wings/img_0006.jpg": {
+    "class": "chicken_wings",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_box_of_chicken_wings_and_sauces_(49456308206).jpg",
+    "original_title": "File:A box of chicken wings and sauces (49456308206).jpg",
+    "license": "Public domain",
+    "ground_truth": "chicken_wings",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_wings/img_0007.jpg": {
+    "class": "chicken_wings",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:BBQ_chicken_wings.jpg",
+    "original_title": "File:BBQ chicken wings.jpg",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "chicken_wings",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_wings/img_0008.jpg": {
+    "class": "chicken_wings",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bankrueed_fried_chicken_wings.jpg",
+    "original_title": "File:Bankrueed fried chicken wings.jpg",
+    "license": "CC BY 4.0",
+    "ground_truth": "chicken_wings",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "pie/img_0001.jpg": {
+    "class": "pie",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Apple_pie_slice.jpg",
+    "original_title": "File:Apple pie slice.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "pie",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "pie/img_0002.jpg": {
+    "class": "pie",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aunty%27s_Pecan_Pie_Slice.jpg",
+    "original_title": "File:Aunty's Pecan Pie Slice.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "pie",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "pie/img_0003.jpg": {
+    "class": "pie",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Banana_cream_pie_slice,_November_2007.jpg",
+    "original_title": "File:Banana cream pie slice, November 2007.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "pie",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "pie/img_0004.jpg": {
+    "class": "pie",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Blueberry_Almond_Steusel_Pie_Slice.jpg",
+    "original_title": "File:Blueberry Almond Steusel Pie Slice.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "pie",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "pie/img_0005.jpg": {
+    "class": "pie",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cherry-Pie-Slice.jpg",
+    "original_title": "File:Cherry-Pie-Slice.jpg",
+    "license": "Public domain",
+    "ground_truth": "pie",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "pie/img_0006.jpg": {
+    "class": "pie",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Heidi%27s_Pies_Blueberry_Pie_slice_(34328523675).jpg",
+    "original_title": "File:Heidi's Pies Blueberry Pie slice (34328523675).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "pie",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "pie/img_0007.jpg": {
+    "class": "pie",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kentucky_Chocolate_walnut_pie_slice.JPG",
+    "original_title": "File:Kentucky Chocolate walnut pie slice.JPG",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "pie",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "pie/img_0008.jpg": {
+    "class": "pie",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Key_lime_pie_slice_with_birthday_candle.jpg",
+    "original_title": "File:Key lime pie slice with birthday candle.jpg",
+    "license": "CC0",
+    "ground_truth": "pie",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "cupcake/img_0001.jpg": {
+    "class": "cupcake",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22Cupcake%22_special_bear_for_D.H._(38601090545).jpg",
+    "original_title": "File:\"Cupcake\" special bear for D.H. (38601090545).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "cupcake",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "cupcake/img_0002.jpg": {
+    "class": "cupcake",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22Cupcake%22_special_bear_for_D.H._(39467410262).jpg",
+    "original_title": "File:\"Cupcake\" special bear for D.H. (39467410262).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "cupcake",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "cupcake/img_0003.jpg": {
+    "class": "cupcake",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:14_Karat_Vegan_Cupcake_with_Pinapricot_Glaze_(4271102448).jpg",
+    "original_title": "File:14 Karat Vegan Cupcake with Pinapricot Glaze (4271102448).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "cupcake",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "cupcake/img_0004.jpg": {
+    "class": "cupcake",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2009_Yelp_Cupcake_Crawl-13_(3692129258).jpg",
+    "original_title": "File:2009 Yelp Cupcake Crawl-13 (3692129258).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "cupcake",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "cupcake/img_0005.jpg": {
+    "class": "cupcake",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2009_Yelp_Cupcake_Crawl-18_(3691439101).jpg",
+    "original_title": "File:2009 Yelp Cupcake Crawl-18 (3691439101).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "cupcake",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "cupcake/img_0006.jpg": {
+    "class": "cupcake",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2009_Yelp_Cupcake_Crawl-22_(3691441187).jpg",
+    "original_title": "File:2009 Yelp Cupcake Crawl-22 (3691441187).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "cupcake",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "cupcake/img_0007.jpg": {
+    "class": "cupcake",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2009_Yelp_Cupcake_Crawl-29_(3691448415).jpg",
+    "original_title": "File:2009 Yelp Cupcake Crawl-29 (3691448415).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "cupcake",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "cupcake/img_0008.jpg": {
+    "class": "cupcake",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2009_Yelp_Cupcake_Crawl-37_(3691456145).jpg",
+    "original_title": "File:2009 Yelp Cupcake Crawl-37 (3691456145).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "cupcake",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "muffin/img_0001.jpg": {
+    "class": "muffin",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Annette_Mills_and_Muffin_the_Mule,_1947.jpg",
+    "original_title": "File:Annette Mills and Muffin the Mule, 1947.jpg",
+    "license": "Public domain",
+    "ground_truth": "muffin",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "muffin/img_0002.jpg": {
+    "class": "muffin",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Apple_%26_Cinnamon_Muffin_-_Muffin_Break_2026-05-30.jpg",
+    "original_title": "File:Apple & Cinnamon Muffin - Muffin Break 2026-05-30.jpg",
+    "license": "CC0",
+    "ground_truth": "muffin",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "muffin/img_0003.jpg": {
+    "class": "muffin",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:BLUE_MUFFIN_Arrowwood_Vibrunum_(41909221032).jpg",
+    "original_title": "File:BLUE MUFFIN Arrowwood Vibrunum (41909221032).jpg",
+    "license": "CC0",
+    "ground_truth": "muffin",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "muffin/img_0004.jpg": {
+    "class": "muffin",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bacon_tomato_cheddar_scramble,_avocado,_hash_brown,_English_muffin_-_San_Francisco,_CA.jpg",
+    "original_title": "File:Bacon tomato cheddar scramble, avocado, hash brown, English muffin - San Francisco, CA.jpg",
+    "license": "CC0",
+    "ground_truth": "muffin",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "muffin/img_0005.jpg": {
+    "class": "muffin",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bakery_Muffin_(Unsplash).jpg",
+    "original_title": "File:Bakery Muffin (Unsplash).jpg",
+    "license": "CC0",
+    "ground_truth": "muffin",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "muffin/img_0006.jpg": {
+    "class": "muffin",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Banana_muffin_(1).jpg",
+    "original_title": "File:Banana muffin (1).jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "muffin",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "muffin/img_0007.jpg": {
+    "class": "muffin",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Biscoff_Duffin_-_Muffin_Break_2026-05-30.jpg",
+    "original_title": "File:Biscoff Duffin - Muffin Break 2026-05-30.jpg",
+    "license": "CC0",
+    "ground_truth": "muffin",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "muffin/img_0008.jpg": {
+    "class": "muffin",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Blueberry_muffin,_unwrapped.jpg",
+    "original_title": "File:Blueberry muffin, unwrapped.jpg",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "muffin",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "croissant/img_0001.jpg": {
+    "class": "croissant",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:(20251110)_Croissant_toast_02.jpg",
+    "original_title": "File:(20251110) Croissant toast 02.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "croissant",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "croissant/img_0002.jpg": {
+    "class": "croissant",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:(20251110)_Croissant_toast_03.jpg",
+    "original_title": "File:(20251110) Croissant toast 03.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "croissant",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "croissant/img_0003.jpg": {
+    "class": "croissant",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2017-11-22_17_49_56_A_Thanksgiving_dinner_plate_with_turkey,_stuffing,_mashed_potatoes_and_gravy,_apple_sauce,_cranberry_sauce,_croissant_rolls,_pickles_and_deviled_eggs_in_Ewing,_Mercer_County,_New_Jersey.jpg",
+    "original_title": "File:2017-11-22 17 49 56 A Thanksgiving dinner plate with turkey, stuffing, mashed potatoes and gravy, apple sauce, cranberry sauce, croissant rolls, pickles and deviled eggs in Ewing, Mercer County, New Jersey.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "croissant",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "croissant/img_0004.jpg": {
+    "class": "croissant",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ancienne_abbaye_de_Lieu-Croissant_ou_des_Trois_Rois._(4).JPG",
+    "original_title": "File:Ancienne abbaye de Lieu-Croissant ou des Trois Rois. (4).JPG",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "croissant",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "croissant/img_0005.jpg": {
+    "class": "croissant",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Angers_-_maison_du_Croissant_02.jpg",
+    "original_title": "File:Angers - maison du Croissant 02.jpg",
+    "license": "CC0",
+    "ground_truth": "croissant",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "croissant/img_0006.jpg": {
+    "class": "croissant",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Angers_-_maison_du_Croissant_05.jpg",
+    "original_title": "File:Angers - maison du Croissant 05.jpg",
+    "license": "CC0",
+    "ground_truth": "croissant",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "croissant/img_0007.jpg": {
+    "class": "croissant",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Apricot_croissant_-_Caff%C3%A8_Nero_2024-12-12.jpg",
+    "original_title": "File:Apricot croissant - Caffè Nero 2024-12-12.jpg",
+    "license": "CC0",
+    "ground_truth": "croissant",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "croissant/img_0008.jpg": {
+    "class": "croissant",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Au_Croissant_-_Rue_Sur-la-Fontaine,_Li%C3%A8ge.jpg",
+    "original_title": "File:Au Croissant - Rue Sur-la-Fontaine, Liège.jpg",
+    "license": "CC BY 4.0",
+    "ground_truth": "croissant",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "french_toast/img_0001.jpg": {
+    "class": "french_toast",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:$40_French_Toast.jpg",
+    "original_title": "File:$40 French Toast.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "french_toast",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "french_toast/img_0002.jpg": {
+    "class": "french_toast",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:00_French_Toast.jpg",
+    "original_title": "File:00 French Toast.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "french_toast",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "french_toast/img_0003.jpg": {
+    "class": "french_toast",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-06-13_23_50_45_Part_of_the_%22Rt._1_Special%22_(One_pancake_and_one_french_toast)_at_the_Route_1_Diner_in_Lawrence_Township,_Mercer_County,_New_Jersey.jpg",
+    "original_title": "File:2019-06-13 23 50 45 Part of the \"Rt. 1 Special\" (One pancake and one french toast) at the Route 1 Diner in Lawrence Township, Mercer County, New Jersey.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "french_toast",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "french_toast/img_0004.jpg": {
+    "class": "french_toast",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2026-05-07_09_04_07_French_toast_and_bacon_at_Capital_Health_Medical_Center_-_Hopewell_in_Hopewell_Township,_Mercer_County,_New_Jersey.jpg",
+    "original_title": "File:2026-05-07 09 04 07 French toast and bacon at Capital Health Medical Center - Hopewell in Hopewell Township, Mercer County, New Jersey.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "french_toast",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "french_toast/img_0005.jpg": {
+    "class": "french_toast",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_French_Toast_with_Fruit_jam_and_butter.jpg",
+    "original_title": "File:A French Toast with Fruit jam and butter.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "french_toast",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "french_toast/img_0006.jpg": {
+    "class": "french_toast",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_French_Toast_with_Fruit_jam_and_butter_in_Yuen_Long.jpg",
+    "original_title": "File:A French Toast with Fruit jam and butter in Yuen Long.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "french_toast",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "french_toast/img_0007.jpg": {
+    "class": "french_toast",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Baguette_french_toast_with_bacon,_caramelised_apples_and_apple_syrup.jpg",
+    "original_title": "File:Baguette french toast with bacon, caramelised apples and apple syrup.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "french_toast",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "french_toast/img_0008.jpg": {
+    "class": "french_toast",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Banana_Foster_French_Toast.jpg",
+    "original_title": "File:Banana Foster French Toast.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "french_toast",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "hash_browns/img_0001.jpg": {
+    "class": "hash_browns",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:23_bk_hash_browns_(3021443868).jpg",
+    "original_title": "File:23 bk hash browns (3021443868).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "hash_browns",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "hash_browns/img_0002.jpg": {
+    "class": "hash_browns",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Avocado_kimchi_toast,_tempeh_bacon,_and_root_vegetable_hash_browns.jpg",
+    "original_title": "File:Avocado kimchi toast, tempeh bacon, and root vegetable hash browns.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "hash_browns",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "hash_browns/img_0003.jpg": {
+    "class": "hash_browns",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:BK_hash_browns.JPG",
+    "original_title": "File:BK hash browns.JPG",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "hash_browns",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "hash_browns/img_0004.jpg": {
+    "class": "hash_browns",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bacon,_eggs_and_hash_browns.jpg",
+    "original_title": "File:Bacon, eggs and hash browns.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "hash_browns",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "hash_browns/img_0005.jpg": {
+    "class": "hash_browns",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bacon,_hash_browns,_and_waffle_-_Auckland,_New_Zealand.jpg",
+    "original_title": "File:Bacon, hash browns, and waffle - Auckland, New Zealand.jpg",
+    "license": "CC0",
+    "ground_truth": "hash_browns",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "hash_browns/img_0006.jpg": {
+    "class": "hash_browns",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bacon,_sausage,_eggs_and_hash_browns.jpg",
+    "original_title": "File:Bacon, sausage, eggs and hash browns.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "hash_browns",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "hash_browns/img_0007.jpg": {
+    "class": "hash_browns",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Blueberry_pancakes_and_Hash_browns_02.jpg",
+    "original_title": "File:Blueberry pancakes and Hash browns 02.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "hash_browns",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "hash_browns/img_0008.jpg": {
+    "class": "hash_browns",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Breakfast_-_sausage,_bacon,_eggs,_mushrooms_and_hash_browns_-_Holiday_Inn_-_Bloomsbury_-_London_2026-06-05.jpg",
+    "original_title": "File:Breakfast - sausage, bacon, eggs, mushrooms and hash browns - Holiday Inn - Bloomsbury - London 2026-06-05.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "hash_browns",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "grits/img_0001.jpg": {
+    "class": "grits",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:200508_grits_at_jerry_day_(41082983).jpg",
+    "original_title": "File:200508 grits at jerry day (41082983).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "grits",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "grits/img_0002.jpg": {
+    "class": "grits",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aberystwyth_Grits_-_fault_across_strata_-_geograph.org.uk_-_3122612.jpg",
+    "original_title": "File:Aberystwyth Grits - fault across strata - geograph.org.uk - 3122612.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "grits",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "grits/img_0003.jpg": {
+    "class": "grits",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aberystwyth_Grits_-_fault_and_flute_casts_-_geograph.org.uk_-_2958309.jpg",
+    "original_title": "File:Aberystwyth Grits - fault and flute casts - geograph.org.uk - 2958309.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "grits",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "grits/img_0004.jpg": {
+    "class": "grits",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aberystwyth_Grits_-_faults_and_blowhole_-_geograph.org.uk_-_3122487.jpg",
+    "original_title": "File:Aberystwyth Grits - faults and blowhole - geograph.org.uk - 3122487.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "grits",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "grits/img_0005.jpg": {
+    "class": "grits",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aberystwyth_Grits_-_flute_casts_-_geograph.org.uk_-_3122342.jpg",
+    "original_title": "File:Aberystwyth Grits - flute casts - geograph.org.uk - 3122342.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "grits",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "grits/img_0006.jpg": {
+    "class": "grits",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aberystwyth_grits_-_fault_exposed_on_the_foreshore_-_geograph.org.uk_-_3126131.jpg",
+    "original_title": "File:Aberystwyth grits - fault exposed on the foreshore - geograph.org.uk - 3126131.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "grits",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "grits/img_0007.jpg": {
+    "class": "grits",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Asia_League_Ice_Hockey_2024-2025_Game46_%E6%A8%AA%E6%B5%9CGRITS_vs_%E3%83%AC%E3%83%83%E3%83%89%E3%82%A4%E3%83%BC%E3%82%B0%E3%83%AB%E3%82%B9%E5%8C%97%E6%B5%B7%E9%81%93_KOS%C3%89%E6%96%B0%E6%A8%AA%E6%B5%9C%E3%82%B9%E3%82%B1%E3%83%BC%E3%83%88%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC_2025%E5%B9%B41%E6%9C%885%E6%97%A5%E3%81%AE%E6%A8%AA%E6%B5%9C%E5%B8%82_202501051324_DSCN7277.jpg",
+    "original_title": "File:Asia League Ice Hockey 2024-2025 Game46 横浜GRITS vs レッドイーグルス北海道 KOSÉ新横浜スケートセンター 2025年1月5日の横浜市 202501051324 DSCN7277.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "grits",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "grits/img_0008.jpg": {
+    "class": "grits",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Asia_League_Ice_Hockey_2024-2025_Game46_%E6%A8%AA%E6%B5%9CGRITS_vs_%E3%83%AC%E3%83%83%E3%83%89%E3%82%A4%E3%83%BC%E3%82%B0%E3%83%AB%E3%82%B9%E5%8C%97%E6%B5%B7%E9%81%93_KOS%C3%89%E6%96%B0%E6%A8%AA%E6%B5%9C%E3%82%B9%E3%82%B1%E3%83%BC%E3%83%88%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC_2025%E5%B9%B41%E6%9C%885%E6%97%A5%E3%81%AE%E6%A8%AA%E6%B5%9C%E5%B8%82_202501051339_DSCN7462.jpg",
+    "original_title": "File:Asia League Ice Hockey 2024-2025 Game46 横浜GRITS vs レッドイーグルス北海道 KOSÉ新横浜スケートセンター 2025年1月5日の横浜市 202501051339 DSCN7462.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "grits",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "granola/img_0001.jpg": {
+    "class": "granola",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22granola_breakfast%22_waffle_-_Wafflemeister_2024-08-25.jpg",
+    "original_title": "File:\"granola breakfast\" waffle - Wafflemeister 2024-08-25.jpg",
+    "license": "CC0",
+    "ground_truth": "granola",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "granola/img_0002.jpg": {
+    "class": "granola",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:1_Granola.jpg",
+    "original_title": "File:1 Granola.jpg",
+    "license": "CC0",
+    "ground_truth": "granola",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "granola/img_0003.jpg": {
+    "class": "granola",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-08-10_01_41_38_A_Nature_Valley_Crunch_Oats_%27n_Honey_Granola_Bar_in_the_Dulles_section_of_Sterling,_Loudoun_County,_Virginia.jpg",
+    "original_title": "File:2020-08-10 01 41 38 A Nature Valley Crunch Oats 'n Honey Granola Bar in the Dulles section of Sterling, Loudoun County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "granola",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "granola/img_0004.jpg": {
+    "class": "granola",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-08-10_01_43_01_A_Nature_Valley_Crunch_Pecan_Crunch_Granola_Bar_in_the_Dulles_section_of_Sterling,_Loudoun_County,_Virginia.jpg",
+    "original_title": "File:2020-08-10 01 43 01 A Nature Valley Crunch Pecan Crunch Granola Bar in the Dulles section of Sterling, Loudoun County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "granola",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "granola/img_0005.jpg": {
+    "class": "granola",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-08-24_22_59_12_A_Fruit_and_Nut_flavor_Nature_Valley_Trail_Mix_Chewy_Granola_Bar_with_almonds,_raisins,_peanuts_and_cranberries_in_the_Dulles_section_of_Sterling,_Loudoun_County,_Virginia.jpg",
+    "original_title": "File:2020-08-24 22 59 12 A Fruit and Nut flavor Nature Valley Trail Mix Chewy Granola Bar with almonds, raisins, peanuts and cranberries in the Dulles section of Sterling, Loudoun County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "granola",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "granola/img_0006.jpg": {
+    "class": "granola",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-08-24_22_59_25_A_Fruit_and_Nut_flavor_Nature_Valley_Trail_Mix_Chewy_Granola_Bar_with_almonds,_raisins,_peanuts_and_cranberries_in_the_Dulles_section_of_Sterling,_Loudoun_County,_Virginia.jpg",
+    "original_title": "File:2020-08-24 22 59 25 A Fruit and Nut flavor Nature Valley Trail Mix Chewy Granola Bar with almonds, raisins, peanuts and cranberries in the Dulles section of Sterling, Loudoun County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "granola",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "granola/img_0007.jpg": {
+    "class": "granola",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-08-31_19_22_04_A_sample_of_Aurora_Natural_Brown_Sugar_Crunch_Granola_with_Almonds_%26_Raisins_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2020-08-31 19 22 04 A sample of Aurora Natural Brown Sugar Crunch Granola with Almonds & Raisins in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "granola",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "granola/img_0008.jpg": {
+    "class": "granola",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-08-31_20_09_23_A_sample_of_Aurora_Natural_Forest%27s_Bounty_Trail_Mix_%26_Granola_(Grail_Mix)_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2020-08-31 20 09 23 A sample of Aurora Natural Forest's Bounty Trail Mix & Granola (Grail Mix) in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "granola",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "yogurt/img_0001.jpg": {
+    "class": "yogurt",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-01-31_21_29_10_The_side_of_a_cup_of_Chobani_Greek_Yogurt_with_Peach_on_the_Bottom_before_being_opened_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-01-31 21 29 10 The side of a cup of Chobani Greek Yogurt with Peach on the Bottom before being opened in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "yogurt",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "yogurt/img_0002.jpg": {
+    "class": "yogurt",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-02-19_20_10_42_A_cup_of_Chobani_Greek_Yogurt_with_Strawberry_on_the_Bottom_before_being_opened_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-02-19 20 10 42 A cup of Chobani Greek Yogurt with Strawberry on the Bottom before being opened in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "yogurt",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "yogurt/img_0003.jpg": {
+    "class": "yogurt",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-02-19_16_27_53_A_cup_of_Chobani_Greek_Yogurt_with_Strawberry_on_the_Bottom_after_being_mixed_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2020-02-19 16 27 53 A cup of Chobani Greek Yogurt with Strawberry on the Bottom after being mixed in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "yogurt",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "yogurt/img_0004.jpg": {
+    "class": "yogurt",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-03-06_23_46_35_Chobani_Greek_Yogurt_with_Blueberry_on_the_Bottom_after_being_mixed_in_the_Dulles_section_of_Sterling,_Loudoun_County,_Virginia.jpg",
+    "original_title": "File:2020-03-06 23 46 35 Chobani Greek Yogurt with Blueberry on the Bottom after being mixed in the Dulles section of Sterling, Loudoun County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "yogurt",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "yogurt/img_0005.jpg": {
+    "class": "yogurt",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-03-10_21_11_38_Chobani_Greek_Yogurt_with_Strawberry_on_the_Bottom_while_being_mixed_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2020-03-10 21 11 38 Chobani Greek Yogurt with Strawberry on the Bottom while being mixed in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "yogurt",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "yogurt/img_0006.jpg": {
+    "class": "yogurt",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2022-02-23_21_27_18_A_cup_of_Chobani_Greek_Yogurt_with_Raspberry_on_the_Bottom_while_being_mixed_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2022-02-23 21 27 18 A cup of Chobani Greek Yogurt with Raspberry on the Bottom while being mixed in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "yogurt",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "yogurt/img_0007.jpg": {
+    "class": "yogurt",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:AOC_yogurt.jpg",
+    "original_title": "File:AOC yogurt.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "yogurt",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "yogurt/img_0008.jpg": {
+    "class": "yogurt",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Apples,plums_and_yogurt.jpg",
+    "original_title": "File:Apples,plums and yogurt.jpg",
+    "license": "CC0",
+    "ground_truth": "yogurt",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "churros/img_0001.jpg": {
+    "class": "churros",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22Chu_Don%27t_Know_Mang%22_-_churros_made_with_pound_cake_and_cinnamon_sugar_with_malted_chocolate_milk_and_vanilla_ice_cream_(16600963617).jpg",
+    "original_title": "File:\"Chu Don't Know Mang\" - churros made with pound cake and cinnamon sugar with malted chocolate milk and vanilla ice cream (16600963617).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "churros",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "churros/img_0002.jpg": {
+    "class": "churros",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_La_Espera_De_Churros_(116710307).jpeg",
+    "original_title": "File:A La Espera De Churros (116710307).jpeg",
+    "license": "CC BY 3.0",
+    "ground_truth": "churros",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "churros/img_0003.jpg": {
+    "class": "churros",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_cup_of_chocolate_and_churros.jpg",
+    "original_title": "File:A cup of chocolate and churros.jpg",
+    "license": "Public domain",
+    "ground_truth": "churros",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "churros/img_0004.jpg": {
+    "class": "churros",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_quien_no_les_gustan_los_churros.jpg",
+    "original_title": "File:A quien no les gustan los churros.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "churros",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "churros/img_0005.jpg": {
+    "class": "churros",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:At_San_Gines_again._One_of_the_oldest_chocolate_con_churros_in_Madrid_(18761909709).jpg",
+    "original_title": "File:At San Gines again. One of the oldest chocolate con churros in Madrid (18761909709).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "churros",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "churros/img_0006.jpg": {
+    "class": "churros",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Autofreier_Tag,_Churros_Mercedes-Benz_Imbisswagen,_V%C3%A1mh%C3%A1z_Boulevard,_2023_Belv%C3%A1ros-Lip%C3%B3tv%C3%A1ros.jpg",
+    "original_title": "File:Autofreier Tag, Churros Mercedes-Benz Imbisswagen, Vámház Boulevard, 2023 Belváros-Lipótváros.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "churros",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "churros/img_0007.jpg": {
+    "class": "churros",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bamberg_-_Weihnachtsmarkt_-_Churros.jpg",
+    "original_title": "File:Bamberg - Weihnachtsmarkt - Churros.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "churros",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "churros/img_0008.jpg": {
+    "class": "churros",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bandeja_de_churros.jpg",
+    "original_title": "File:Bandeja de churros.jpg",
+    "license": "CC BY 3.0",
+    "ground_truth": "churros",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "crepes/img_0001.jpg": {
+    "class": "crepes",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22%22%22_Ice_cream_display_(Crepes_%26_Waffles,_Quito)_pic.77.jpg",
+    "original_title": "File:\"\"\" Ice cream display (Crepes & Waffles, Quito) pic.77.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "crepes",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "crepes/img_0002.jpg": {
+    "class": "crepes",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22%22_Ice_cream_display_(Crepes_%26_Waffles,_Quito)_bb8a1.jpg",
+    "original_title": "File:\"\" Ice cream display (Crepes & Waffles, Quito) bb8a1.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "crepes",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "crepes/img_0003.jpg": {
+    "class": "crepes",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22%22_Ice_cream_display_(Crepes_%26_Waffles,_Quito)_pic._a1.jpg",
+    "original_title": "File:\"\" Ice cream display (Crepes & Waffles, Quito) pic. a1.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "crepes",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "crepes/img_0004.jpg": {
+    "class": "crepes",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22%22_Ice_cream_display_(Crepes_%26_Waffles,_Quito)_pic._a77.jpg",
+    "original_title": "File:\"\" Ice cream display (Crepes & Waffles, Quito) pic. a77.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "crepes",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "crepes/img_0005.jpg": {
+    "class": "crepes",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22%22_Ice_cream_display_(Crepes_%26_Waffles,_Quito)_pic._bb8a.jpg",
+    "original_title": "File:\"\" Ice cream display (Crepes & Waffles, Quito) pic. bb8a.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "crepes",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "crepes/img_0006.jpg": {
+    "class": "crepes",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22%22_Ice_cream_display_(Crepes_%26_Waffles,_Quito)_pic._bb8aa.jpg",
+    "original_title": "File:\"\" Ice cream display (Crepes & Waffles, Quito) pic. bb8aa.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "crepes",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "crepes/img_0007.jpg": {
+    "class": "crepes",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22_Ice_cream_display_(Crepes_%26_Waffles,_Quito)_pic._bb8.jpg",
+    "original_title": "File:\" Ice cream display (Crepes & Waffles, Quito) pic. bb8.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "crepes",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "crepes/img_0008.jpg": {
+    "class": "crepes",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:01_Lemon_Blueberry_Crepes.jpg",
+    "original_title": "File:01 Lemon Blueberry Crepes.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "crepes",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "paella/img_0001.jpg": {
+    "class": "paella",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:03_paella_hirviendo_con_romero.jpg",
+    "original_title": "File:03 paella hirviendo con romero.jpg",
+    "license": "CC BY 4.0",
+    "ground_truth": "paella",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "paella/img_0002.jpg": {
+    "class": "paella",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:03_paella_hirviendo_con_romero_cortado.jpg",
+    "original_title": "File:03 paella hirviendo con romero cortado.jpg",
+    "license": "CC BY 4.0",
+    "ground_truth": "paella",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "paella/img_0003.jpg": {
+    "class": "paella",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2012_Pa%C3%ABlla_Andalusia_Spain.jpg",
+    "original_title": "File:2012 Paëlla Andalusia Spain.jpg",
+    "license": "CC0",
+    "ground_truth": "paella",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "paella/img_0004.jpg": {
+    "class": "paella",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2021-06-27_Cuinant_paella_de_fetge_de_bou_02.jpg",
+    "original_title": "File:2021-06-27 Cuinant paella de fetge de bou 02.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "paella",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "paella/img_0005.jpg": {
+    "class": "paella",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Anokado_at_56th_Paella_Contest_in_Sueca_01.jpg",
+    "original_title": "File:Anokado at 56th Paella Contest in Sueca 01.jpg",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "paella",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "paella/img_0006.jpg": {
+    "class": "paella",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Arroz,_la_paella.jpg",
+    "original_title": "File:Arroz, la paella.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "paella",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "paella/img_0007.jpg": {
+    "class": "paella",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Arroz_de_paella.jpg",
+    "original_title": "File:Arroz de paella.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "paella",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "paella/img_0008.jpg": {
+    "class": "paella",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Arr%C3%B3z_en_paella_valenciana.JPG",
+    "original_title": "File:Arróz en paella valenciana.JPG",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "paella",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "gnocchi/img_0001.jpg": {
+    "class": "gnocchi",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:AIMG_3783_Gnocchi_mit_Spinatsahnesauce_und_Parmesan.jpg",
+    "original_title": "File:AIMG 3783 Gnocchi mit Spinatsahnesauce und Parmesan.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "gnocchi",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "gnocchi/img_0002.jpg": {
+    "class": "gnocchi",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Baked_Gnocchi_with_Taleggio_Cheese_and_Crispy_Sage_at_Il_Fornaio_in_Kilda.jpg",
+    "original_title": "File:Baked Gnocchi with Taleggio Cheese and Crispy Sage at Il Fornaio in Kilda.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "gnocchi",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "gnocchi/img_0003.jpg": {
+    "class": "gnocchi",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barilla_gnocchi_02.jpg",
+    "original_title": "File:Barilla gnocchi 02.jpg",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "gnocchi",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "gnocchi/img_0004.jpg": {
+    "class": "gnocchi",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barilla_gnocchi_03.jpg",
+    "original_title": "File:Barilla gnocchi 03.jpg",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "gnocchi",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "gnocchi/img_0005.jpg": {
+    "class": "gnocchi",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barilla_gnocchi_04.jpg",
+    "original_title": "File:Barilla gnocchi 04.jpg",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "gnocchi",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "gnocchi/img_0006.jpg": {
+    "class": "gnocchi",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bistrot_du_Bord_de_l%27Eau_(Levernois)_-_canon_de_lotte,_gnocchi_et_poireaux_confits,_cr%C3%A8me_d%27ail_doux.jpg",
+    "original_title": "File:Bistrot du Bord de l'Eau (Levernois) - canon de lotte, gnocchi et poireaux confits, crème d'ail doux.jpg",
+    "license": "CC0",
+    "ground_truth": "gnocchi",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "gnocchi/img_0007.jpg": {
+    "class": "gnocchi",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Blue_Cheese_Gnocchi.jpg",
+    "original_title": "File:Blue Cheese Gnocchi.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "gnocchi",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "gnocchi/img_0008.jpg": {
+    "class": "gnocchi",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Buffalo_Ricotta_Gnocchi_with_toasted_Agassiz_hazelnuts,_blue_cheese,_white_wine_and_North_Arm_Farm_spinach_(5895883294).jpg",
+    "original_title": "File:Buffalo Ricotta Gnocchi with toasted Agassiz hazelnuts, blue cheese, white wine and North Arm Farm spinach (5895883294).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "gnocchi",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "ravioli/img_0001.jpg": {
+    "class": "ravioli",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:02025_bone-broth-based_beet_soup_with_ravioli.jpg",
+    "original_title": "File:02025 bone-broth-based beet soup with ravioli.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "ravioli",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "ravioli/img_0002.jpg": {
+    "class": "ravioli",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-05-06_13_25_24_A_sample_of_Chef_Boyardee_Beef_Ravioli_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2020-05-06 13 25 24 A sample of Chef Boyardee Beef Ravioli in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "ravioli",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "ravioli/img_0003.jpg": {
+    "class": "ravioli",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-05-06_13_26_05_A_sample_of_Chef_Boyardee_Beef_Ravioli_with_several_ravioli_cut_into_two_pieces_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2020-05-06 13 26 05 A sample of Chef Boyardee Beef Ravioli with several ravioli cut into two pieces in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "ravioli",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "ravioli/img_0004.jpg": {
+    "class": "ravioli",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-05-07_14_17_05_A_sample_of_Chef_Boyardee_Cheese_Ravioli_in_Tomato_Sauce_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2020-05-07 14 17 05 A sample of Chef Boyardee Cheese Ravioli in Tomato Sauce in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "ravioli",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "ravioli/img_0005.jpg": {
+    "class": "ravioli",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-05-07_14_18_09_A_sample_of_Chef_Boyardee_Cheese_Ravioli_in_Tomato_Sauce_with_several_ravioli_cut_into_two_pieces_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2020-05-07 14 18 09 A sample of Chef Boyardee Cheese Ravioli in Tomato Sauce with several ravioli cut into two pieces in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "ravioli",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "ravioli/img_0006.jpg": {
+    "class": "ravioli",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-11-19_15_51_01_Four_individual_Wawa_five_cheese_blend_toasted_ravioli_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2020-11-19 15 51 01 Four individual Wawa five cheese blend toasted ravioli in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "ravioli",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "ravioli/img_0007.jpg": {
+    "class": "ravioli",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alkaline_Pasta_for_Ravioli_(2)_Sept_2010,_being_made.jpg",
+    "original_title": "File:Alkaline Pasta for Ravioli (2) Sept 2010, being made.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "ravioli",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "ravioli/img_0008.jpg": {
+    "class": "ravioli",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alkaline_Pasta_for_Ravioli_(3),_Sept_2010,_ravioli_and_chitarra_pasta.jpg",
+    "original_title": "File:Alkaline Pasta for Ravioli (3), Sept 2010, ravioli and chitarra pasta.jpg",
+    "license": "CC BY 4.0",
+    "ground_truth": "ravioli",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "risotto/img_0001.jpg": {
+    "class": "risotto",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_Seafood_risotto_from_California_Pizza_Kitchen.jpg",
+    "original_title": "File:A Seafood risotto from California Pizza Kitchen.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "risotto",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "risotto/img_0002.jpg": {
+    "class": "risotto",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Accord_Sil%C3%A9nus_avec_une_c%C3%B4te_de_cochon_sur_son_risotto_d%27%C3%A9peautre.jpg",
+    "original_title": "File:Accord Silénus avec une côte de cochon sur son risotto d'épeautre.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "risotto",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "risotto/img_0003.jpg": {
+    "class": "risotto",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Asparagus_Risotto_001.jpg",
+    "original_title": "File:Asparagus Risotto 001.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "risotto",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "risotto/img_0004.jpg": {
+    "class": "risotto",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Asparagus_Risotto_002.jpg",
+    "original_title": "File:Asparagus Risotto 002.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "risotto",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "risotto/img_0005.jpg": {
+    "class": "risotto",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Asparagus_lemongrass_risotto_(42274465435).jpg",
+    "original_title": "File:Asparagus lemongrass risotto (42274465435).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "risotto",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "risotto/img_0006.jpg": {
+    "class": "risotto",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aunty_Linda%27s_Prawn_Risotto_with_lemon_zest_(2306631321).jpg",
+    "original_title": "File:Aunty Linda's Prawn Risotto with lemon zest (2306631321).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "risotto",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "risotto/img_0007.jpg": {
+    "class": "risotto",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Baked_risotto_casserole_in_a_personalized_dish_(15577286686).jpg",
+    "original_title": "File:Baked risotto casserole in a personalized dish (15577286686).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "risotto",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "risotto/img_0008.jpg": {
+    "class": "risotto",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Baked_risotto_casserole_rice_asparagus_and_peas_(15414849358).jpg",
+    "original_title": "File:Baked risotto casserole rice asparagus and peas (15414849358).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "risotto",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_tikka_masala/img_0001.jpg": {
+    "class": "chicken_tikka_masala",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Butter_Nan_and_Chicken_Tikka_Masala.jpg",
+    "original_title": "File:Butter Nan and Chicken Tikka Masala.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "chicken_tikka_masala",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_tikka_masala/img_0002.jpg": {
+    "class": "chicken_tikka_masala",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:CHICKEN_TIKKA_MASALA.jpg",
+    "original_title": "File:CHICKEN TIKKA MASALA.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "chicken_tikka_masala",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_tikka_masala/img_0003.jpg": {
+    "class": "chicken_tikka_masala",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:CHICKEN_TIKKA_MASALA_-_MADE_AT_HOME_-_KOLKATA_,_WESTBENGAL_-_IMG006.jpg",
+    "original_title": "File:CHICKEN TIKKA MASALA - MADE AT HOME - KOLKATA , WESTBENGAL - IMG006.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "chicken_tikka_masala",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_tikka_masala/img_0004.jpg": {
+    "class": "chicken_tikka_masala",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_Tikka_Masala-01.jpg",
+    "original_title": "File:Chicken Tikka Masala-01.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "chicken_tikka_masala",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_tikka_masala/img_0005.jpg": {
+    "class": "chicken_tikka_masala",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_Tikka_Masala.jpeg",
+    "original_title": "File:Chicken Tikka Masala.jpeg",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "chicken_tikka_masala",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_tikka_masala/img_0006.jpg": {
+    "class": "chicken_tikka_masala",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_Tikka_Masala.jpg",
+    "original_title": "File:Chicken Tikka Masala.jpg",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "chicken_tikka_masala",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_tikka_masala/img_0007.jpg": {
+    "class": "chicken_tikka_masala",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_Tikka_Masala_(3170159918).jpg",
+    "original_title": "File:Chicken Tikka Masala (3170159918).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "chicken_tikka_masala",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_tikka_masala/img_0008.jpg": {
+    "class": "chicken_tikka_masala",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_Tikka_Masala_(4568565988).jpg",
+    "original_title": "File:Chicken Tikka Masala (4568565988).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "chicken_tikka_masala",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "butter_chicken/img_0001.jpg": {
+    "class": "butter_chicken",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-02-22_20_57_16_Butter_chicken_in_tomato_sauce_with_fenugreek_at_Karma_Modern_Indian_in_Washington,_D.C.jpg",
+    "original_title": "File:2020-02-22 20 57 16 Butter chicken in tomato sauce with fenugreek at Karma Modern Indian in Washington, D.C.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "butter_chicken",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "butter_chicken/img_0002.jpg": {
+    "class": "butter_chicken",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_shot_of_butter_chicken_masala.jpg",
+    "original_title": "File:A shot of butter chicken masala.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "butter_chicken",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "butter_chicken/img_0003.jpg": {
+    "class": "butter_chicken",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Butter-chicken.jpg",
+    "original_title": "File:Butter-chicken.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "butter_chicken",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "butter_chicken/img_0004.jpg": {
+    "class": "butter_chicken",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Butter_Chicken!_(2973166390).jpg",
+    "original_title": "File:Butter Chicken! (2973166390).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "butter_chicken",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "butter_chicken/img_0005.jpg": {
+    "class": "butter_chicken",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Butter_Chicken,_Beef_Masala,_Spinach%2BPotato,_rice,_roti_-_Zam_Zam_AUD8.50_(4833724931).jpg",
+    "original_title": "File:Butter Chicken, Beef Masala, Spinach+Potato, rice, roti - Zam Zam AUD8.50 (4833724931).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "butter_chicken",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "butter_chicken/img_0006.jpg": {
+    "class": "butter_chicken",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Butter_Chicken,_Beef_Masala,_Spinach%2BPotato,_rice,_roti_-_close-up_-_Zam_Zam_AUD8.50_(4833724803).jpg",
+    "original_title": "File:Butter Chicken, Beef Masala, Spinach+Potato, rice, roti - close-up - Zam Zam AUD8.50 (4833724803).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "butter_chicken",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "butter_chicken/img_0007.jpg": {
+    "class": "butter_chicken",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Butter_Chicken,_Beef_Vindaloo_Lunch_Thali_-_Spice_Kitchen_AUD9.90_(3694113488).jpg",
+    "original_title": "File:Butter Chicken, Beef Vindaloo Lunch Thali - Spice Kitchen AUD9.90 (3694113488).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "butter_chicken",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "butter_chicken/img_0008.jpg": {
+    "class": "butter_chicken",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Butter_Chicken,_Goa.jpg",
+    "original_title": "File:Butter Chicken, Goa.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "butter_chicken",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "samosa/img_0001.jpg": {
+    "class": "samosa",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22Preparation_of_wada_for_the_Sultan_Ghiyath_al-Din,_the_Sultan_of_Mandu._Samosas_being_prepared._Small_inscription_%27sanbusa%27,_samosa._Ghiyath_Shahi_seated_on_a_stool_in_a_garden_is_being_offered_a_dish,_possibly_of_samosas.jpg",
+    "original_title": "File:\"Preparation of wada for the Sultan Ghiyath al-Din, the Sultan of Mandu. Samosas being prepared. Small inscription 'sanbusa', samosa. Ghiyath Shahi seated on a stool in a garden is being offered a dish, possibly of samosas.jpg",
+    "license": "Public domain",
+    "ground_truth": "samosa",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "samosa/img_0002.jpg": {
+    "class": "samosa",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:020170711_Samosa.jpg",
+    "original_title": "File:020170711 Samosa.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "samosa",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "samosa/img_0003.jpg": {
+    "class": "samosa",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:1911_OvS_27_Samosa_Esperantista_Societo.jpg",
+    "original_title": "File:1911 OvS 27 Samosa Esperantista Societo.jpg",
+    "license": "Public domain",
+    "ground_truth": "samosa",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "samosa/img_0004.jpg": {
+    "class": "samosa",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2013_Sechsel%C3%A4uten_-_%27Samosa%27_und_%27Pakora%27_-_Limmatquai_2013-04-14_17-35-59_(P7700).JPG",
+    "original_title": "File:2013 Sechseläuten - 'Samosa' und 'Pakora' - Limmatquai 2013-04-14 17-35-59 (P7700).JPG",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "samosa",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "samosa/img_0005.jpg": {
+    "class": "samosa",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2013_Sechsel%C3%A4uten_-_%27Samosa%27_und_%27Pakora%27_-_Limmatquai_2013-04-14_17-37-42_(P7700).JPG",
+    "original_title": "File:2013 Sechseläuten - 'Samosa' und 'Pakora' - Limmatquai 2013-04-14 17-37-42 (P7700).JPG",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "samosa",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "samosa/img_0006.jpg": {
+    "class": "samosa",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_Samosa.jpg",
+    "original_title": "File:A Samosa.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "samosa",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "samosa/img_0007.jpg": {
+    "class": "samosa",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aloo_Samosa.JPG",
+    "original_title": "File:Aloo Samosa.JPG",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "samosa",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "samosa/img_0008.jpg": {
+    "class": "samosa",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aloo_filled_Samosa.jpg",
+    "original_title": "File:Aloo filled Samosa.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "samosa",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "spring_rolls/img_0001.jpg": {
+    "class": "spring_rolls",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2009-09-18_Pork_spring_rolls_at_Shilin_night_market.jpg",
+    "original_title": "File:2009-09-18 Pork spring rolls at Shilin night market.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "spring_rolls",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "spring_rolls/img_0002.jpg": {
+    "class": "spring_rolls",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ahi_poke_spring_rolls.jpg",
+    "original_title": "File:Ahi poke spring rolls.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "spring_rolls",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "spring_rolls/img_0003.jpg": {
+    "class": "spring_rolls",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Asian_Spring_Rolls_at_a_Restaurant.jpg",
+    "original_title": "File:Asian Spring Rolls at a Restaurant.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "spring_rolls",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "spring_rolls/img_0004.jpg": {
+    "class": "spring_rolls",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Australian_spring_rolls.jpg",
+    "original_title": "File:Australian spring rolls.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "spring_rolls",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "spring_rolls/img_0005.jpg": {
+    "class": "spring_rolls",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Australian_spring_rolls_(cropped).jpg",
+    "original_title": "File:Australian spring rolls (cropped).jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "spring_rolls",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "spring_rolls/img_0006.jpg": {
+    "class": "spring_rolls",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Avocado_Spring_Rolls_(4110720711).jpg",
+    "original_title": "File:Avocado Spring Rolls (4110720711).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "spring_rolls",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "spring_rolls/img_0007.jpg": {
+    "class": "spring_rolls",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Boshan_Fried_Spring_Rolls.jpg",
+    "original_title": "File:Boshan Fried Spring Rolls.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "spring_rolls",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "spring_rolls/img_0008.jpg": {
+    "class": "spring_rolls",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cambodian_Fresh_Spring_Rolls.jpg",
+    "original_title": "File:Cambodian Fresh Spring Rolls.jpg",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "spring_rolls",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "tempura/img_0001.jpg": {
+    "class": "tempura",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:(L-R)_Dynamite_Sushi_Slider_(tempura_kale_chip_guacamole,_ahi)_and_Hamakua_Mushroom_Fries_(16115116420).jpg",
+    "original_title": "File:(L-R) Dynamite Sushi Slider (tempura kale chip guacamole, ahi) and Hamakua Mushroom Fries (16115116420).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "tempura",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "tempura/img_0002.jpg": {
+    "class": "tempura",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2016-09-19_Liangmaqiao_Japanese_Restaurant_soft_boiled_egg_tempura_anagoria.jpg",
+    "original_title": "File:2016-09-19 Liangmaqiao Japanese Restaurant soft boiled egg tempura anagoria.jpg",
+    "license": "CC BY 3.0",
+    "ground_truth": "tempura",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "tempura/img_0003.jpg": {
+    "class": "tempura",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:3-_Red_Curry_Squash_Tempura.jpg",
+    "original_title": "File:3- Red Curry Squash Tempura.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "tempura",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "tempura/img_0004.jpg": {
+    "class": "tempura",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:3-_Red_Curry_Squash_Tempura_-_10793470146.jpg",
+    "original_title": "File:3- Red Curry Squash Tempura - 10793470146.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "tempura",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "tempura/img_0005.jpg": {
+    "class": "tempura",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Anago_Tempura_Noodle.jpg",
+    "original_title": "File:Anago Tempura Noodle.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "tempura",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "tempura/img_0006.jpg": {
+    "class": "tempura",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Assorted_Tempura.jpg",
+    "original_title": "File:Assorted Tempura.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "tempura",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "tempura/img_0007.jpg": {
+    "class": "tempura",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bacon-cheese_Charburger,_tempura_green_beans,_fries_(15472375463).jpg",
+    "original_title": "File:Bacon-cheese Charburger, tempura green beans, fries (15472375463).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "tempura",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "tempura/img_0008.jpg": {
+    "class": "tempura",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Batu_Night_Spectacular_-_Sosis_dan_Tempura_201333.jpg",
+    "original_title": "File:Batu Night Spectacular - Sosis dan Tempura 201333.jpg",
+    "license": "CC BY 4.0",
+    "ground_truth": "tempura",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "sashimi/img_0001.jpg": {
+    "class": "sashimi",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:141230_Sashimi_in_Shibuya_-_Flickr_-_odako1.jpg",
+    "original_title": "File:141230 Sashimi in Shibuya - Flickr - odako1.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "sashimi",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "sashimi/img_0002.jpg": {
+    "class": "sashimi",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:4_selections_of_Sashimi.jpg",
+    "original_title": "File:4 selections of Sashimi.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "sashimi",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "sashimi/img_0003.jpg": {
+    "class": "sashimi",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_Plate_of_Sashimi_at_The_Verandah.jpg",
+    "original_title": "File:A Plate of Sashimi at The Verandah.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "sashimi",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "sashimi/img_0004.jpg": {
+    "class": "sashimi",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_Vegetarian_Sashimi.jpg",
+    "original_title": "File:A Vegetarian Sashimi.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "sashimi",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "sashimi/img_0005.jpg": {
+    "class": "sashimi",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_sashimi_boat_in_Manazuru_peninsula_-_Flickr_-_odako1.jpg",
+    "original_title": "File:A sashimi boat in Manazuru peninsula - Flickr - odako1.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "sashimi",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "sashimi/img_0006.jpg": {
+    "class": "sashimi",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Awabi_sashimi.JPG",
+    "original_title": "File:Awabi sashimi.JPG",
+    "license": "CC0",
+    "ground_truth": "sashimi",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "sashimi/img_0007.jpg": {
+    "class": "sashimi",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Beef_liver_sashimi.JPG",
+    "original_title": "File:Beef liver sashimi.JPG",
+    "license": "CC BY 3.0",
+    "ground_truth": "sashimi",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "sashimi/img_0008.jpg": {
+    "class": "sashimi",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bento_-_sushi_-_sashimi_-_ravioli.jpg",
+    "original_title": "File:Bento - sushi - sashimi - ravioli.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "sashimi",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "teriyaki_chicken/img_0001.jpg": {
+    "class": "teriyaki_chicken",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alaska_Pollock_%26_Teriyaki_Chicken_Bento,_FamilyMart_Taiwan_Taoyuan_International_Airport_Terminal_2-5F,_2026_(01).jpg",
+    "original_title": "File:Alaska Pollock & Teriyaki Chicken Bento, FamilyMart Taiwan Taoyuan International Airport Terminal 2-5F, 2026 (01).jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "teriyaki_chicken",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "teriyaki_chicken/img_0002.jpg": {
+    "class": "teriyaki_chicken",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alaska_Pollock_%26_Teriyaki_Chicken_Bento,_FamilyMart_Taiwan_Taoyuan_International_Airport_Terminal_2-5F,_2026_(02).jpg",
+    "original_title": "File:Alaska Pollock & Teriyaki Chicken Bento, FamilyMart Taiwan Taoyuan International Airport Terminal 2-5F, 2026 (02).jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "teriyaki_chicken",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "teriyaki_chicken/img_0003.jpg": {
+    "class": "teriyaki_chicken",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bento_with_Teriyaki_Chicken,_Sesame_Spinach,_Gyoza,_Hamburger_-_Izakaya_Chuji_AUD15_(3533823221).jpg",
+    "original_title": "File:Bento with Teriyaki Chicken, Sesame Spinach, Gyoza, Hamburger - Izakaya Chuji AUD15 (3533823221).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "teriyaki_chicken",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "teriyaki_chicken/img_0004.jpg": {
+    "class": "teriyaki_chicken",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bowl_of_Teriyaki_chicken_and_beef_YakinikuCNE.jpg",
+    "original_title": "File:Bowl of Teriyaki chicken and beef YakinikuCNE.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "teriyaki_chicken",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "teriyaki_chicken/img_0005.jpg": {
+    "class": "teriyaki_chicken",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chan%27s_Original_Teriyaki_Chicken_on_a_Stick_01.jpg",
+    "original_title": "File:Chan's Original Teriyaki Chicken on a Stick 01.jpg",
+    "license": "CC BY 4.0",
+    "ground_truth": "teriyaki_chicken",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "teriyaki_chicken/img_0006.jpg": {
+    "class": "teriyaki_chicken",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chan%27s_Original_Teriyaki_Chicken_on_a_Stick_02.jpg",
+    "original_title": "File:Chan's Original Teriyaki Chicken on a Stick 02.jpg",
+    "license": "CC BY 4.0",
+    "ground_truth": "teriyaki_chicken",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "teriyaki_chicken/img_0007.jpg": {
+    "class": "teriyaki_chicken",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Crispy_Teriyaki_Chicken_at_Elephant_Bar_(8477257858).jpg",
+    "original_title": "File:Crispy Teriyaki Chicken at Elephant Bar (8477257858).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "teriyaki_chicken",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "teriyaki_chicken/img_0008.jpg": {
+    "class": "teriyaki_chicken",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Feeling%2B_teriyaki_chicken_sando_sandwich.jpg",
+    "original_title": "File:Feeling+ teriyaki chicken sando sandwich.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "teriyaki_chicken",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "green_curry/img_0001.jpg": {
+    "class": "green_curry",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Basil-fried_minced_pork_and_rice.jpg",
+    "original_title": "File:Basil-fried minced pork and rice.jpg",
+    "license": "CC BY 4.0",
+    "ground_truth": "green_curry",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "green_curry/img_0002.jpg": {
+    "class": "green_curry",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Beef_green_curry_-_Chiang_Mai_-_2017-07-08_(001).jpg",
+    "original_title": "File:Beef green curry - Chiang Mai - 2017-07-08 (001).jpg",
+    "license": "CC0",
+    "ground_truth": "green_curry",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "green_curry/img_0003.jpg": {
+    "class": "green_curry",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Beef_green_curry_-_Chiang_Mai_-_2017-07-08_(002).jpg",
+    "original_title": "File:Beef green curry - Chiang Mai - 2017-07-08 (002).jpg",
+    "license": "CC0",
+    "ground_truth": "green_curry",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "green_curry/img_0004.jpg": {
+    "class": "green_curry",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cambodian_green_curry(2).jpg",
+    "original_title": "File:Cambodian green curry(2).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "green_curry",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "green_curry/img_0005.jpg": {
+    "class": "green_curry",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cambodian_green_curry.jpg",
+    "original_title": "File:Cambodian green curry.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "green_curry",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "green_curry/img_0006.jpg": {
+    "class": "green_curry",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_Thai_Green_Curry.jpg",
+    "original_title": "File:Chicken Thai Green Curry.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "green_curry",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "green_curry/img_0007.jpg": {
+    "class": "green_curry",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:CreativeTools.se_-_PackshotCreator_-_Thai_Green_Curry_Paste_(4330419874).jpg",
+    "original_title": "File:CreativeTools.se - PackshotCreator - Thai Green Curry Paste (4330419874).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "green_curry",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "green_curry/img_0008.jpg": {
+    "class": "green_curry",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Green_Curry,_Kapunka_Panoramas,_Paris_001.jpg",
+    "original_title": "File:Green Curry, Kapunka Panoramas, Paris 001.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "green_curry",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "fajitas/img_0001.jpg": {
+    "class": "fajitas",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Beef_Fajitas_Costa_Rica.JPG",
+    "original_title": "File:Beef Fajitas Costa Rica.JPG",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "fajitas",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "fajitas/img_0002.jpg": {
+    "class": "fajitas",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Black_Bean_Fajitas_(32205626058).jpg",
+    "original_title": "File:Black Bean Fajitas (32205626058).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "fajitas",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "fajitas/img_0003.jpg": {
+    "class": "fajitas",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_fajitas.jpg",
+    "original_title": "File:Chicken fajitas.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "fajitas",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "fajitas/img_0004.jpg": {
+    "class": "fajitas",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_fajitas_-_La_Hacienda_-_Sarah_Stierch.jpg",
+    "original_title": "File:Chicken fajitas - La Hacienda - Sarah Stierch.jpg",
+    "license": "CC BY 4.0",
+    "ground_truth": "fajitas",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "fajitas/img_0005.jpg": {
+    "class": "fajitas",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_fajitas_at_Agave_Taqueria_(8785194803).jpg",
+    "original_title": "File:Chicken fajitas at Agave Taqueria (8785194803).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "fajitas",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "fajitas/img_0006.jpg": {
+    "class": "fajitas",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_fajitas_limes.jpg",
+    "original_title": "File:Chicken fajitas limes.jpg",
+    "license": "Public domain",
+    "ground_truth": "fajitas",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "fajitas/img_0007.jpg": {
+    "class": "fajitas",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cilantro_black_bean_fajitas_lunch_(31138228297).jpg",
+    "original_title": "File:Cilantro black bean fajitas lunch (31138228297).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "fajitas",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "fajitas/img_0008.jpg": {
+    "class": "fajitas",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Combination_Chicken_and_Steak_Fajitas_from_Uncle_Julio%27s.jpg",
+    "original_title": "File:Combination Chicken and Steak Fajitas from Uncle Julio's.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "fajitas",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "enchiladas/img_0001.jpg": {
+    "class": "enchiladas",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:00_Enchiladas.jpg",
+    "original_title": "File:00 Enchiladas.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "enchiladas",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "enchiladas/img_0002.jpg": {
+    "class": "enchiladas",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Beef_enchiladas,_rice_and_refried_beans.jpg",
+    "original_title": "File:Beef enchiladas, rice and refried beans.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "enchiladas",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "enchiladas/img_0003.jpg": {
+    "class": "enchiladas",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Birria_enchiladas_with_refried_beans_and_rice_from_El_Paso_restaurant.jpg",
+    "original_title": "File:Birria enchiladas with refried beans and rice from El Paso restaurant.jpg",
+    "license": "CC0",
+    "ground_truth": "enchiladas",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "enchiladas/img_0004.jpg": {
+    "class": "enchiladas",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Blue_Corn_Shrimp_Enchiladas_with_Christmas_Chile_(5749742106).jpg",
+    "original_title": "File:Blue Corn Shrimp Enchiladas with Christmas Chile (5749742106).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "enchiladas",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "enchiladas/img_0005.jpg": {
+    "class": "enchiladas",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Carne_asada_with_-cheese_-enchiladas_from_Rancho_Del_Zocalo_at_-Disneyland._The_asada_was_kinda_meh,_but_the_enchiladas_were_not_bad_at_all._I%27d_get_%27em_again._-disneyfood.jpg",
+    "original_title": "File:Carne asada with -cheese -enchiladas from Rancho Del Zocalo at -Disneyland. The asada was kinda meh, but the enchiladas were not bad at all. I'd get 'em again. -disneyfood.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "enchiladas",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "enchiladas/img_0006.jpg": {
+    "class": "enchiladas",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_Enchiladas_(6737769295).jpg",
+    "original_title": "File:Chicken Enchiladas (6737769295).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "enchiladas",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "enchiladas/img_0007.jpg": {
+    "class": "enchiladas",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_Enchiladas_with_red_sauce,_red_rice,_black_beans,_and_avocado.jpg",
+    "original_title": "File:Chicken Enchiladas with red sauce, red rice, black beans, and avocado.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "enchiladas",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "enchiladas/img_0008.jpg": {
+    "class": "enchiladas",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_enchiladas.jpg",
+    "original_title": "File:Chicken enchiladas.jpg",
+    "license": "Public domain",
+    "ground_truth": "enchiladas",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "tamales/img_0001.jpg": {
+    "class": "tamales",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:081223_tamales.JPG",
+    "original_title": "File:081223 tamales.JPG",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "tamales",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "tamales/img_0002.jpg": {
+    "class": "tamales",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:081228_tamales.JPG",
+    "original_title": "File:081228 tamales.JPG",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "tamales",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "tamales/img_0003.jpg": {
+    "class": "tamales",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:091223_tamales.jpg",
+    "original_title": "File:091223 tamales.jpg",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "tamales",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "tamales/img_0004.jpg": {
+    "class": "tamales",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:091225_tamales.JPG",
+    "original_title": "File:091225 tamales.JPG",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "tamales",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "tamales/img_0005.jpg": {
+    "class": "tamales",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:11_Homemade_Tamales.jpg",
+    "original_title": "File:11 Homemade Tamales.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "tamales",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "tamales/img_0006.jpg": {
+    "class": "tamales",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:161225-tamales.jpg",
+    "original_title": "File:161225-tamales.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "tamales",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "tamales/img_0007.jpg": {
+    "class": "tamales",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Binaki_(sweet_tamales)_in_the_Philippines_2.jpg",
+    "original_title": "File:Binaki (sweet tamales) in the Philippines 2.jpg",
+    "license": "CC0",
+    "ground_truth": "tamales",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "tamales/img_0008.jpg": {
+    "class": "tamales",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Binaki_(sweet_tamales)_in_the_Philippines_3.jpg",
+    "original_title": "File:Binaki (sweet tamales) in the Philippines 3.jpg",
+    "license": "CC0",
+    "ground_truth": "tamales",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "guacamole/img_0001.jpg": {
+    "class": "guacamole",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:(L-R)_Dynamite_Sushi_Slider_(tempura_kale_chip_guacamole,_ahi)_and_Hamakua_Mushroom_Fries_(16115116420).jpg",
+    "original_title": "File:(L-R) Dynamite Sushi Slider (tempura kale chip guacamole, ahi) and Hamakua Mushroom Fries (16115116420).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "guacamole",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "guacamole/img_0002.jpg": {
+    "class": "guacamole",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:01_Quesadillas_con_guacamole.jpg",
+    "original_title": "File:01 Quesadillas con guacamole.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "guacamole",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "guacamole/img_0003.jpg": {
+    "class": "guacamole",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:02_Guacamole_%26_salsa_borracha_y_totopos_-_Mesa_Coyoacan.jpg",
+    "original_title": "File:02 Guacamole & salsa borracha y totopos - Mesa Coyoacan.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "guacamole",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "guacamole/img_0004.jpg": {
+    "class": "guacamole",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2018-02-01-Guacamole_mit_Nachos-7937.jpg",
+    "original_title": "File:2018-02-01-Guacamole mit Nachos-7937.jpg",
+    "license": "CC0",
+    "ground_truth": "guacamole",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "guacamole/img_0005.jpg": {
+    "class": "guacamole",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-05-04_20_10_55_A_burrito_bowl_from_Chipotle_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-05-04 20 10 55 A burrito bowl from Chipotle in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "guacamole",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "guacamole/img_0006.jpg": {
+    "class": "guacamole",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:American_hamburger_with_guacamole.jpg",
+    "original_title": "File:American hamburger with guacamole.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "guacamole",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "guacamole/img_0007.jpg": {
+    "class": "guacamole",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Americano_Soft_Tacos_and_Guacamole_at_Baja_Fresh_(8565051661).jpg",
+    "original_title": "File:Americano Soft Tacos and Guacamole at Baja Fresh (8565051661).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "guacamole",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "guacamole/img_0008.jpg": {
+    "class": "guacamole",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Avocado-Guacamole-Colombia.jpg",
+    "original_title": "File:Avocado-Guacamole-Colombia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "guacamole",
+    "food_count": 1,
+    "multi_food": false
+  }
+}
