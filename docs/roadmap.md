@@ -288,3 +288,11 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Nutrition5k documentado como estratégico (CC BY 4.0, masa real por ingrediente; descarga vía gsutil pendiente)
 - [x] A/B escalamiento: CLIP scoring único con 465 candidates DEGRADA a 0% (baseline 71.3%) — los candidates descriptivos compiten (waffles 0.27 gana en pizza); el top_k no salva. Conclusión: se requiere CANDIDATE RETRIEVAL (coarse-to-fine) antes de activar el catálogo ampliado — pipeline de producción (38) intacto
 - [x] 38 clases = regression set intacto (71.3% food-us con score por clase)
+
+## FASE 26 — Coarse-to-Fine Candidate Retrieval ✅ (2026-08-31)
+- [x] Retrieval en memoria implementado (CLIP image ↔ text embeddings de 231 clases, top-N → detailed ensemble por clase)
+- [x] RECALL@N (métrica crítica): food-us @10 71.3% @20 80.6% @50 87.0% · v1 @10 55.1% @20 62.8% @50 76.1% · Food-101 @10 93.4% @20 97.0% @50 99.0% — el retrieval recupera bien
+- [x] TOP-1 final (detailed sobre top-N): food-us 34.3% vs legacy 71.3% · v1 26.3% vs 47.0% · Food-101 49.6% vs 89.4% — el detailed NO supera legacy
+- [x] DECISIÓN: NO en producción (top1 retrieval << legacy); legacy 38 = default. El retrieval resuelve la GENERACIÓN de candidatos (recall@N) pero el detailed necesita prototypes visuales (las 193 sin imágenes) — siguiente fase
+- [x] Latencia retrieval: ~215-280ms vs ~70ms legacy (3× — matmuls 465 candidates ×2 pasos)
+- [x] Regression set intacto (legacy default); tests 72/72
