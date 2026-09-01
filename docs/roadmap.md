@@ -296,3 +296,11 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] DECISIÓN: NO en producción (top1 retrieval << legacy); legacy 38 = default. El retrieval resuelve la GENERACIÓN de candidatos (recall@N) pero el detailed necesita prototypes visuales (las 193 sin imágenes) — siguiente fase
 - [x] Latencia retrieval: ~215-280ms vs ~70ms legacy (3× — matmuls 465 candidates ×2 pasos)
 - [x] Regression set intacto (legacy default); tests 72/72
+
+## FASE 27 — Visual Prototype Retrieval ✅ (2026-08-31)
+- [x] Prototype store: 17 clases, 126 prototipos (food-bench-v1 Commons CC0/CC BY/CC BY-SA/PD + multi-food + assets — permisivas; naan sin imágenes → fallback texto)
+- [x] Hybrid scoring (text retrieval top-10 + visual similarity, barrido w 0.25/0.5/0.75 × agg max/mean/topk5/medoid)
+- [x] RESULTADO: food-us 60.2% (w0.25 topk5_mean) vs legacy 71.3% vs F26 34.3% · v1 37.2% (w0.5 max) vs 47.0% vs 26.3% · Food-101 74.9% (w0.25 medoid) vs 89.4% vs 49.6%
+- [x] Los prototipos RECUPERAN ~26 pts del F26 pero NO superan el legacy → NO aprobar 231 en producción (Gates 1-2 no se cumplen)
+- [x] Prototype store: 681 KB (126 × 512 floats); latencia hybrid ~215ms (misma que F26 — el visual es matmul trivial)
+- [x] Conclusión: los prototipos visuales resuelven PARCIALMENTE F26; falta cobertura (17/231 clases) y calidad (8 prototipos por clase de Commons con ruido)
