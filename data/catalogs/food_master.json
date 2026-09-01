@@ -1,0 +1,4591 @@
+{
+  "schema_version": 1,
+  "description": "Food Master Catalog — separa identidad visual, nutrición USDA y porción.",
+  "generated_by": "scripts/build_food_master.py",
+  "foods": [
+    {
+      "canonical_name": "almonds",
+      "aliases": [
+        "almonds",
+        "roasted almonds"
+      ],
+      "clip_candidates": [
+        "almonds",
+        "roasted almonds"
+      ],
+      "category": "snack",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "apple",
+      "aliases": [
+        "apple",
+        "red apple"
+      ],
+      "clip_candidates": [
+        "apple",
+        "red apple"
+      ],
+      "category": "fruit",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "171688",
+        "fdc_name": "Apple, raw, with skin",
+        "data_type": null,
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.98,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "171688"
+      },
+      "portion": {
+        "reference_grams": 182,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "asparagus",
+      "aliases": [
+        "asparagus spears",
+        "grilled asparagus"
+      ],
+      "clip_candidates": [
+        "asparagus spears",
+        "grilled asparagus"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "avocado",
+      "aliases": [
+        "avocado",
+        "avocado halves",
+        "sliced avocado"
+      ],
+      "clip_candidates": [
+        "avocado",
+        "avocado halves",
+        "sliced avocado"
+      ],
+      "category": "fruit",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "canonical_name": "bacon",
+      "aliases": [
+        "bacon",
+        "bacon strips"
+      ],
+      "clip_candidates": [
+        "bacon",
+        "bacon strips"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "168322",
+        "fdc_name": "Pork, cured, bacon, pre-sliced, cooked, pan-fried",
+        "data_type": null,
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.95,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "168322"
+      },
+      "portion": {
+        "reference_grams": 12,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "bacon_burger",
+      "aliases": [
+        "bacon cheeseburger",
+        "burger with bacon"
+      ],
+      "clip_candidates": [
+        "bacon cheeseburger",
+        "burger with bacon"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "bagel",
+      "aliases": [
+        "bagel"
+      ],
+      "clip_candidates": [
+        "bagel"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2707684",
+        "fdc_name": "Bagel",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.95,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "2707684"
+      },
+      "portion": {
+        "reference_grams": 105,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "baked_potato",
+      "aliases": [
+        "baked potato",
+        "loaded baked potato"
+      ],
+      "clip_candidates": [
+        "baked potato",
+        "loaded baked potato"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "banana",
+      "aliases": [
+        "banana"
+      ],
+      "clip_candidates": [
+        "banana"
+      ],
+      "category": "fruit",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "173944",
+        "fdc_name": "Banana, raw",
+        "data_type": null,
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.98,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "173944"
+      },
+      "portion": {
+        "reference_grams": 118,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "bbq_sandwich",
+      "aliases": [
+        "bbq sandwich",
+        "pulled pork bbq"
+      ],
+      "clip_candidates": [
+        "bbq sandwich",
+        "pulled pork bbq"
+      ],
+      "category": "fast_food",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "beef_stew",
+      "aliases": [
+        "beef stew",
+        "hearty beef stew"
+      ],
+      "clip_candidates": [
+        "beef stew",
+        "hearty beef stew"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "biryani",
+      "aliases": [
+        "biryani",
+        "chicken biryani"
+      ],
+      "clip_candidates": [
+        "biryani",
+        "chicken biryani"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "canonical_name": "biscuits",
+      "aliases": [
+        "biscuits",
+        "buttermilk biscuits"
+      ],
+      "clip_candidates": [
+        "biscuits",
+        "buttermilk biscuits"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "black_bean_soup",
+      "aliases": [
+        "black bean soup",
+        "black bean stew"
+      ],
+      "clip_candidates": [
+        "black bean soup",
+        "black bean stew"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "blueberries",
+      "aliases": [
+        "blueberries",
+        "fresh blueberries"
+      ],
+      "clip_candidates": [
+        "blueberries",
+        "fresh blueberries"
+      ],
+      "category": "fruit",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "brisket",
+      "aliases": [
+        "brisket",
+        "smoked brisket"
+      ],
+      "clip_candidates": [
+        "brisket",
+        "smoked brisket"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2705851",
+        "fdc_name": "Beef, brisket",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2705851"
+      },
+      "portion": {
+        "reference_grams": 60,
+        "min_grams": 45,
+        "max_grams": 75,
+        "source": "FDC foodPortions undetermined 1 regular/thin slice",
+        "source_id": "2705851"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "broccoli",
+      "aliases": [
+        "broccoli"
+      ],
+      "clip_candidates": [
+        "broccoli"
+      ],
+      "category": "vegetable",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "170379",
+        "fdc_name": "Broccoli, raw",
+        "data_type": null,
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.98,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "170379"
+      },
+      "portion": {
+        "reference_grams": 91,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "brownie",
+      "aliases": [
+        "brownie"
+      ],
+      "clip_candidates": [
+        "brownie"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2707904",
+        "fdc_name": "Cookie, brownie, without icing",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.85,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "2707904"
+      },
+      "portion": {
+        "reference_grams": 50,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "bruschetta",
+      "aliases": [
+        "bruschetta",
+        "toasted bread with tomatoes"
+      ],
+      "clip_candidates": [
+        "bruschetta",
+        "toasted bread with tomatoes"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2707652",
+        "fdc_name": "Bruschetta",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 1.0,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2707652"
+      },
+      "portion": {
+        "reference_grams": 59,
+        "min_grams": 44,
+        "max_grams": 74,
+        "source": "FDC foodPortions undetermined 1 large or thick slice",
+        "source_id": "2707652"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "brussels_sprouts",
+      "aliases": [
+        "brussels sprouts",
+        "roasted brussels sprouts"
+      ],
+      "clip_candidates": [
+        "brussels sprouts",
+        "roasted brussels sprouts"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "burrito",
+      "aliases": [
+        "burrito"
+      ],
+      "clip_candidates": [
+        "burrito"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "172039",
+        "fdc_name": "Fast foods, burrito, with beans and cheese",
+        "data_type": null,
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.88,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "172039"
+      },
+      "portion": {
+        "reference_grams": 185,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "burrito_bowl",
+      "aliases": [
+        "burrito bowl",
+        "rice bowl with meat and beans"
+      ],
+      "clip_candidates": [
+        "burrito bowl",
+        "rice bowl with meat and beans"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "butter_chicken",
+      "aliases": [
+        "butter chicken",
+        "indian butter chicken"
+      ],
+      "clip_candidates": [
+        "butter chicken",
+        "indian butter chicken"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "caesar_salad",
+      "aliases": [
+        "caesar salad",
+        "caesar salad with croutons"
+      ],
+      "clip_candidates": [
+        "caesar salad",
+        "caesar salad with croutons"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "cake",
+      "aliases": [
+        "cake",
+        "slice of cake"
+      ],
+      "clip_candidates": [
+        "cake",
+        "slice of cake"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "172750",
+        "fdc_name": "Cake, yellow, plain, without frosting, per 100 g",
+        "data_type": null,
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.94,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "172750"
+      },
+      "portion": {
+        "reference_grams": 95,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "calzone",
+      "aliases": [
+        "calzone",
+        "folded pizza calzone"
+      ],
+      "clip_candidates": [
+        "calzone",
+        "folded pizza calzone"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "caprese_salad",
+      "aliases": [
+        "caprese salad",
+        "mozzarella tomato basil salad"
+      ],
+      "clip_candidates": [
+        "caprese salad",
+        "mozzarella tomato basil salad"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "carrot",
+      "aliases": [
+        "carrot"
+      ],
+      "clip_candidates": [
+        "carrot"
+      ],
+      "category": "vegetable",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "170393",
+        "fdc_name": "Carrot, raw",
+        "data_type": null,
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.98,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "170393"
+      },
+      "portion": {
+        "reference_grams": 61,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "carrot_cake",
+      "aliases": [
+        "carrot cake",
+        "carrot cake slice"
+      ],
+      "clip_candidates": [
+        "carrot cake",
+        "carrot cake slice"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "casserole",
+      "aliases": [
+        "casserole",
+        "baked casserole dish"
+      ],
+      "clip_candidates": [
+        "casserole",
+        "baked casserole dish"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "canonical_name": "cauliflower",
+      "aliases": [
+        "cauliflower",
+        "roasted cauliflower"
+      ],
+      "clip_candidates": [
+        "cauliflower",
+        "roasted cauliflower"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "cereal",
+      "aliases": [
+        "cereal",
+        "bowl of cereal"
+      ],
+      "clip_candidates": [
+        "cereal",
+        "bowl of cereal"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "NO_RELIABLE_NUTRITION"
+    },
+    {
+      "canonical_name": "cereal_bowl",
+      "aliases": [
+        "cereal with milk",
+        "bowl of breakfast cereal"
+      ],
+      "clip_candidates": [
+        "cereal with milk",
+        "bowl of breakfast cereal"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "cheeseburger",
+      "aliases": [
+        "cheeseburger",
+        "double cheeseburger"
+      ],
+      "clip_candidates": [
+        "cheeseburger",
+        "double cheeseburger"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "canonical_name": "cheesecake",
+      "aliases": [
+        "cheesecake",
+        "new york cheesecake slice"
+      ],
+      "clip_candidates": [
+        "cheesecake",
+        "new york cheesecake slice"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "cherries",
+      "aliases": [
+        "cherries",
+        "cherry bowl"
+      ],
+      "clip_candidates": [
+        "cherries",
+        "cherry bowl"
+      ],
+      "category": "fruit",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2709231",
+        "fdc_name": "Cherries, raw",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2709231"
+      },
+      "portion": {
+        "reference_grams": 7,
+        "min_grams": 5,
+        "max_grams": 9,
+        "source": "FDC foodPortions undetermined 1 cherry",
+        "source_id": "2709231"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "chicken_burger",
+      "aliases": [
+        "chicken burger",
+        "crispy chicken sandwich"
+      ],
+      "clip_candidates": [
+        "chicken burger",
+        "crispy chicken sandwich"
+      ],
+      "category": "fast_food",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "chicken_cordon_bleu",
+      "aliases": [
+        "chicken cordon bleu",
+        "stuffed chicken breast"
+      ],
+      "clip_candidates": [
+        "chicken cordon bleu",
+        "stuffed chicken breast"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "chicken_nuggets",
+      "aliases": [
+        "chicken nuggets"
+      ],
+      "clip_candidates": [
+        "chicken nuggets"
+      ],
+      "category": "fast_food",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2706092",
+        "fdc_name": "Chicken nuggets, NFS",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.9,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "2706092"
+      },
+      "portion": {
+        "reference_grams": 87,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "chicken_parmesan",
+      "aliases": [
+        "chicken parmesan",
+        "chicken parmigiana"
+      ],
+      "clip_candidates": [
+        "chicken parmesan",
+        "chicken parmigiana"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "chicken_pot_pie",
+      "aliases": [
+        "chicken pot pie",
+        "pot pie"
+      ],
+      "clip_candidates": [
+        "chicken pot pie",
+        "pot pie"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "chicken_salad",
+      "aliases": [
+        "chicken salad",
+        "chicken salad sandwich"
+      ],
+      "clip_candidates": [
+        "chicken salad",
+        "chicken salad sandwich"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "chicken_soup",
+      "aliases": [
+        "chicken noodle soup",
+        "chicken soup"
+      ],
+      "clip_candidates": [
+        "chicken noodle soup",
+        "chicken soup"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "chicken_stew",
+      "aliases": [
+        "chicken stew",
+        "chicken casserole"
+      ],
+      "clip_candidates": [
+        "chicken stew",
+        "chicken casserole"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "chicken_tenders",
+      "aliases": [
+        "chicken tenders",
+        "fried chicken strips"
+      ],
+      "clip_candidates": [
+        "chicken tenders",
+        "fried chicken strips"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "chicken_tikka_masala",
+      "aliases": [
+        "chicken tikka masala",
+        "tikka masala with rice"
+      ],
+      "clip_candidates": [
+        "chicken tikka masala",
+        "tikka masala with rice"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "chicken_wings",
+      "aliases": [
+        "chicken wings",
+        "buffalo chicken wings"
+      ],
+      "clip_candidates": [
+        "chicken wings",
+        "buffalo chicken wings"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "chili_con_carne",
+      "aliases": [
+        "chili con carne",
+        "beef chili bowl"
+      ],
+      "clip_candidates": [
+        "chili con carne",
+        "beef chili bowl"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "chips",
+      "aliases": [
+        "potato chips",
+        "bag of chips"
+      ],
+      "clip_candidates": [
+        "potato chips",
+        "bag of chips"
+      ],
+      "category": "snack",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "canonical_name": "chocolate_cake",
+      "aliases": [
+        "chocolate cake",
+        "chocolate cake slice"
+      ],
+      "clip_candidates": [
+        "chocolate cake",
+        "chocolate cake slice"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "chow_mein",
+      "aliases": [
+        "chow mein",
+        "stir fried noodles"
+      ],
+      "clip_candidates": [
+        "chow mein",
+        "stir fried noodles"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "chowder",
+      "aliases": [
+        "clam chowder",
+        "corn chowder"
+      ],
+      "clip_candidates": [
+        "clam chowder",
+        "corn chowder"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "churros",
+      "aliases": [
+        "churros",
+        "cinnamon churros"
+      ],
+      "clip_candidates": [
+        "churros",
+        "cinnamon churros"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2708070",
+        "fdc_name": "Churros",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 1.0,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2708070"
+      },
+      "portion": {
+        "reference_grams": 45,
+        "min_grams": 34,
+        "max_grams": 56,
+        "source": "FDC foodPortions undetermined 1 regular",
+        "source_id": "2708070"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "cinnamon_roll",
+      "aliases": [
+        "cinnamon roll",
+        "cinnamon bun"
+      ],
+      "clip_candidates": [
+        "cinnamon roll",
+        "cinnamon bun"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "clams",
+      "aliases": [
+        "clams",
+        "steamed clams"
+      ],
+      "clip_candidates": [
+        "clams",
+        "steamed clams"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "canonical_name": "club_sandwich",
+      "aliases": [
+        "club sandwich",
+        "triple decker club sandwich"
+      ],
+      "clip_candidates": [
+        "club sandwich",
+        "triple decker club sandwich"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "cobb_salad",
+      "aliases": [
+        "cobb salad",
+        "cobb salad with chicken"
+      ],
+      "clip_candidates": [
+        "cobb salad",
+        "cobb salad with chicken"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "cod",
+      "aliases": [
+        "cod fillet",
+        "baked cod"
+      ],
+      "clip_candidates": [
+        "cod fillet",
+        "baked cod"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "canonical_name": "coleslaw",
+      "aliases": [
+        "coleslaw",
+        "cabbage slaw"
+      ],
+      "clip_candidates": [
+        "coleslaw",
+        "cabbage slaw"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2709815",
+        "fdc_name": "Coleslaw",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 1.0,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2709815"
+      },
+      "portion": {
+        "reference_grams": 110,
+        "min_grams": 82,
+        "max_grams": 138,
+        "source": "FDC foodPortions undetermined Quantity not specified",
+        "source_id": "2709815"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "cookie",
+      "aliases": [
+        "cookies",
+        "chocolate chip cookies"
+      ],
+      "clip_candidates": [
+        "cookies",
+        "chocolate chip cookies"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2707909",
+        "fdc_name": "Cookie, chocolate chip",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.9,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "2707909"
+      },
+      "portion": {
+        "reference_grams": 16,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "corn_dog",
+      "aliases": [
+        "corn dog",
+        "corn dog on a stick"
+      ],
+      "clip_candidates": [
+        "corn dog",
+        "corn dog on a stick"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "corn_on_cob",
+      "aliases": [
+        "corn on the cob",
+        "butter corn cob"
+      ],
+      "clip_candidates": [
+        "corn on the cob",
+        "butter corn cob"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "corn_salad",
+      "aliases": [
+        "corn salad",
+        "southwest corn salad"
+      ],
+      "clip_candidates": [
+        "corn salad",
+        "southwest corn salad"
+      ],
+      "category": "fast_food",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "cornbread",
+      "aliases": [
+        "cornbread",
+        "southern cornbread"
+      ],
+      "clip_candidates": [
+        "cornbread",
+        "southern cornbread"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "canonical_name": "cottage_cheese",
+      "aliases": [
+        "cottage cheese",
+        "cottage cheese bowl"
+      ],
+      "clip_candidates": [
+        "cottage cheese",
+        "cottage cheese bowl"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "crab_cakes",
+      "aliases": [
+        "crab cakes",
+        "crab cake patties"
+      ],
+      "clip_candidates": [
+        "crab cakes",
+        "crab cake patties"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "crackers",
+      "aliases": [
+        "crackers",
+        "cheese crackers"
+      ],
+      "clip_candidates": [
+        "crackers",
+        "cheese crackers"
+      ],
+      "category": "snack",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "crepes",
+      "aliases": [
+        "crepes",
+        "french crepes with filling"
+      ],
+      "clip_candidates": [
+        "crepes",
+        "french crepes with filling"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "croissant",
+      "aliases": [
+        "croissant",
+        "butter croissant pastry"
+      ],
+      "clip_candidates": [
+        "croissant",
+        "butter croissant pastry"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2707678",
+        "fdc_name": "Croissant",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 1.0,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2707678"
+      },
+      "portion": {
+        "reference_grams": 70,
+        "min_grams": 52,
+        "max_grams": 88,
+        "source": "FDC foodPortions undetermined Quantity not specified",
+        "source_id": "2707678"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "cupcake",
+      "aliases": [
+        "cupcake",
+        "frosted cupcake"
+      ],
+      "clip_candidates": [
+        "cupcake",
+        "frosted cupcake"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "curry",
+      "aliases": [
+        "curry",
+        "curry with rice"
+      ],
+      "clip_candidates": [
+        "curry",
+        "curry with rice"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "canonical_name": "deviled_eggs",
+      "aliases": [
+        "deviled eggs",
+        "stuffed eggs"
+      ],
+      "clip_candidates": [
+        "deviled eggs",
+        "stuffed eggs"
+      ],
+      "category": "fast_food",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "dim_sum",
+      "aliases": [
+        "dim sum",
+        "dim sum basket"
+      ],
+      "clip_candidates": [
+        "dim sum",
+        "dim sum basket"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "donut",
+      "aliases": [
+        "donut",
+        "doughnut"
+      ],
+      "clip_candidates": [
+        "donut",
+        "doughnut"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "dumplings",
+      "aliases": [
+        "dumplings",
+        "steamed dumplings"
+      ],
+      "clip_candidates": [
+        "dumplings",
+        "steamed dumplings"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "eggs",
+      "aliases": [
+        "eggs",
+        "fried eggs"
+      ],
+      "clip_candidates": [
+        "eggs",
+        "fried eggs"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "enchiladas",
+      "aliases": [
+        "enchiladas",
+        "enchiladas with sauce"
+      ],
+      "clip_candidates": [
+        "enchiladas",
+        "enchiladas with sauce"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "english_muffin",
+      "aliases": [
+        "english muffin",
+        "toasted english muffin"
+      ],
+      "clip_candidates": [
+        "english muffin",
+        "toasted english muffin"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "fajitas",
+      "aliases": [
+        "fajitas",
+        "chicken fajitas with peppers"
+      ],
+      "clip_candidates": [
+        "fajitas",
+        "chicken fajitas with peppers"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "falafel",
+      "aliases": [
+        "falafel",
+        "falafel pita"
+      ],
+      "clip_candidates": [
+        "falafel",
+        "falafel pita"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2707408",
+        "fdc_name": "Falafel",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 1.0,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2707408"
+      },
+      "portion": {
+        "reference_grams": 28,
+        "min_grams": 21,
+        "max_grams": 35,
+        "source": "FDC foodPortions undetermined Quantity not specified",
+        "source_id": "2707408"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "fettuccine_alfredo",
+      "aliases": [
+        "fettuccine alfredo",
+        "alfredo pasta"
+      ],
+      "clip_candidates": [
+        "fettuccine alfredo",
+        "alfredo pasta"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "filet_mignon",
+      "aliases": [
+        "filet mignon",
+        "tenderloin steak"
+      ],
+      "clip_candidates": [
+        "filet mignon",
+        "tenderloin steak"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "fish_and_chips",
+      "aliases": [
+        "fish and chips",
+        "battered fish with fries"
+      ],
+      "clip_candidates": [
+        "fish and chips",
+        "battered fish with fries"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "fish_sandwich",
+      "aliases": [
+        "fish sandwich",
+        "fried fish fillet sandwich"
+      ],
+      "clip_candidates": [
+        "fish sandwich",
+        "fried fish fillet sandwich"
+      ],
+      "category": "fast_food",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "fish_tacos",
+      "aliases": [
+        "fish tacos",
+        "baja fish tacos"
+      ],
+      "clip_candidates": [
+        "fish tacos",
+        "baja fish tacos"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "flan",
+      "aliases": [
+        "flan",
+        "caramel flan"
+      ],
+      "clip_candidates": [
+        "flan",
+        "caramel flan"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2705683",
+        "fdc_name": "Flan",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 1.0,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2705683"
+      },
+      "portion": {
+        "reference_grams": 19,
+        "min_grams": 14,
+        "max_grams": 24,
+        "source": "FDC foodPortions undetermined 1 cubic inch",
+        "source_id": "2705683"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "french_fries",
+      "aliases": [
+        "french fries",
+        "fries",
+        "thin fried potato strips",
+        "long golden potato sticks"
+      ],
+      "clip_candidates": [
+        "french fries",
+        "fries",
+        "thin fried potato strips",
+        "long golden potato sticks"
+      ],
+      "category": "fast_food",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2709461",
+        "fdc_name": "Potato, french fries, fast food (FNDDS)",
+        "data_type": null,
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.9,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "2709461"
+      },
+      "portion": {
+        "reference_grams": 117,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "french_toast",
+      "aliases": [
+        "french toast",
+        "french toast with syrup"
+      ],
+      "clip_candidates": [
+        "french toast",
+        "french toast with syrup"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "fried_chicken",
+      "aliases": [
+        "fried chicken",
+        "large fried chicken piece",
+        "battered chicken piece"
+      ],
+      "clip_candidates": [
+        "fried chicken",
+        "large fried chicken piece",
+        "battered chicken piece"
+      ],
+      "category": "fast_food",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "171476",
+        "fdc_name": "Chicken, breast, meat and skin, cooked, fried, flour",
+        "data_type": null,
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.85,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "171476"
+      },
+      "portion": {
+        "reference_grams": 203,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "fried_rice",
+      "aliases": [
+        "fried rice",
+        "chinese fried rice"
+      ],
+      "clip_candidates": [
+        "fried rice",
+        "chinese fried rice"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "fruit_salad",
+      "aliases": [
+        "fruit salad",
+        "mixed fruit bowl"
+      ],
+      "clip_candidates": [
+        "fruit salad",
+        "mixed fruit bowl"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "garlic_bread",
+      "aliases": [
+        "garlic bread",
+        "garlic bread sticks"
+      ],
+      "clip_candidates": [
+        "garlic bread",
+        "garlic bread sticks"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "gelato",
+      "aliases": [
+        "gelato",
+        "gelato scoop"
+      ],
+      "clip_candidates": [
+        "gelato",
+        "gelato scoop"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2705637",
+        "fdc_name": "Gelato, chocolate",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2705637"
+      },
+      "portion": {
+        "reference_grams": 480,
+        "min_grams": 360,
+        "max_grams": 600,
+        "source": "FDC foodPortions undetermined 1 large ice cream cup",
+        "source_id": "2705637"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "general_tso",
+      "aliases": [
+        "general tso chicken",
+        "general tsos chicken"
+      ],
+      "clip_candidates": [
+        "general tso chicken",
+        "general tsos chicken"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "gnocchi",
+      "aliases": [
+        "gnocchi",
+        "potato gnocchi"
+      ],
+      "clip_candidates": [
+        "gnocchi",
+        "potato gnocchi"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2708721",
+        "fdc_name": "Gnocchi, cheese",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2708721"
+      },
+      "portion": {
+        "reference_grams": 70,
+        "min_grams": 52,
+        "max_grams": 88,
+        "source": "FDC foodPortions undetermined Quantity not specified",
+        "source_id": "2708721"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "goulash",
+      "aliases": [
+        "goulash",
+        "hungarian goulash"
+      ],
+      "clip_candidates": [
+        "goulash",
+        "hungarian goulash"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "granola",
+      "aliases": [
+        "granola",
+        "granola with yogurt"
+      ],
+      "clip_candidates": [
+        "granola",
+        "granola with yogurt"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "granola_bar",
+      "aliases": [
+        "granola bar",
+        "cereal bar"
+      ],
+      "clip_candidates": [
+        "granola bar",
+        "cereal bar"
+      ],
+      "category": "snack",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "grapes",
+      "aliases": [
+        "grapes",
+        "red grapes bunch"
+      ],
+      "clip_candidates": [
+        "grapes",
+        "red grapes bunch"
+      ],
+      "category": "fruit",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2709237",
+        "fdc_name": "Grapes, raw",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2709237"
+      },
+      "portion": {
+        "reference_grams": 75,
+        "min_grams": 56,
+        "max_grams": 94,
+        "source": "FDC foodPortions undetermined Quantity not specified",
+        "source_id": "2709237"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "gravy",
+      "aliases": [
+        "gravy",
+        "brown gravy bowl"
+      ],
+      "clip_candidates": [
+        "gravy",
+        "brown gravy bowl"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2707145",
+        "fdc_name": "Gravy, beef",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2707145"
+      },
+      "portion": {
+        "reference_grams": 60,
+        "min_grams": 45,
+        "max_grams": 75,
+        "source": "FDC foodPortions undetermined Quantity not specified",
+        "source_id": "2707145"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "greek_salad",
+      "aliases": [
+        "greek salad",
+        "greek village salad"
+      ],
+      "clip_candidates": [
+        "greek salad",
+        "greek village salad"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "green_beans",
+      "aliases": [
+        "green beans",
+        "sauteed green beans"
+      ],
+      "clip_candidates": [
+        "green beans",
+        "sauteed green beans"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "green_curry",
+      "aliases": [
+        "thai green curry",
+        "green curry with rice"
+      ],
+      "clip_candidates": [
+        "thai green curry",
+        "green curry with rice"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "grilled_cheese",
+      "aliases": [
+        "grilled cheese sandwich",
+        "toasted cheese sandwich"
+      ],
+      "clip_candidates": [
+        "grilled cheese sandwich",
+        "toasted cheese sandwich"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "grilled_chicken",
+      "aliases": [
+        "grilled chicken",
+        "grilled chicken breast pieces"
+      ],
+      "clip_candidates": [
+        "grilled chicken",
+        "grilled chicken breast pieces"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2705968",
+        "fdc_name": "Chicken breast, grilled without sauce, skin not eaten",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.9,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "2705968"
+      },
+      "portion": {
+        "reference_grams": 120,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "grits",
+      "aliases": [
+        "grits",
+        "southern grits bowl"
+      ],
+      "clip_candidates": [
+        "grits",
+        "southern grits bowl"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2708363",
+        "fdc_name": "Grits, NFS",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2708363"
+      },
+      "portion": {
+        "reference_grams": 240,
+        "min_grams": 180,
+        "max_grams": 300,
+        "source": "FDC foodPortions undetermined 1 cup, cooked",
+        "source_id": "2708363"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "guacamole",
+      "aliases": [
+        "guacamole",
+        "guacamole with tortilla chips"
+      ],
+      "clip_candidates": [
+        "guacamole",
+        "guacamole with tortilla chips"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "gyro",
+      "aliases": [
+        "gyro",
+        "gyro pita wrap"
+      ],
+      "clip_candidates": [
+        "gyro",
+        "gyro pita wrap"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "canonical_name": "hamburger",
+      "aliases": [
+        "hamburger",
+        "cheeseburger",
+        "hamburger with a round sesame bun"
+      ],
+      "clip_candidates": [
+        "hamburger",
+        "cheeseburger",
+        "hamburger with a round sesame bun"
+      ],
+      "category": "fast_food",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "170693",
+        "fdc_name": "Fast foods, hamburger; single, regular patty; plain",
+        "data_type": null,
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.96,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "170693"
+      },
+      "portion": {
+        "reference_grams": 78,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "hash_browns",
+      "aliases": [
+        "hash browns",
+        "crispy hash brown potato"
+      ],
+      "clip_candidates": [
+        "hash browns",
+        "crispy hash brown potato"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "hot_dog",
+      "aliases": [
+        "hot dog",
+        "hot dog sausage in a long bun"
+      ],
+      "clip_candidates": [
+        "hot dog",
+        "hot dog sausage in a long bun"
+      ],
+      "category": "fast_food",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "hot_sour_soup",
+      "aliases": [
+        "hot and sour soup",
+        "hot sour soup"
+      ],
+      "clip_candidates": [
+        "hot and sour soup",
+        "hot sour soup"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "hot_wing",
+      "aliases": [
+        "hot wings",
+        "spicy chicken wings"
+      ],
+      "clip_candidates": [
+        "hot wings",
+        "spicy chicken wings"
+      ],
+      "category": "fast_food",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "hummus",
+      "aliases": [
+        "hummus",
+        "hummus with pita"
+      ],
+      "clip_candidates": [
+        "hummus",
+        "hummus with pita"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "ice_cream",
+      "aliases": [
+        "ice cream",
+        "bowl of ice cream"
+      ],
+      "clip_candidates": [
+        "ice cream",
+        "bowl of ice cream"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2705630",
+        "fdc_name": "Ice cream, vanilla",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.9,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "2705630"
+      },
+      "portion": {
+        "reference_grams": 66,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "kale_salad",
+      "aliases": [
+        "kale salad",
+        "kale caesar"
+      ],
+      "clip_candidates": [
+        "kale salad",
+        "kale caesar"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "kebab",
+      "aliases": [
+        "kebab",
+        "chicken kebab skewer"
+      ],
+      "clip_candidates": [
+        "kebab",
+        "chicken kebab skewer"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "kung_pao_chicken",
+      "aliases": [
+        "kung pao chicken",
+        "spicy kung pao"
+      ],
+      "clip_candidates": [
+        "kung pao chicken",
+        "spicy kung pao"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "lamb_chops",
+      "aliases": [
+        "lamb chops",
+        "grilled lamb chops"
+      ],
+      "clip_candidates": [
+        "lamb chops",
+        "grilled lamb chops"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "lasagna",
+      "aliases": [
+        "lasagna"
+      ],
+      "clip_candidates": [
+        "lasagna"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2708750",
+        "fdc_name": "Lasagna with meat",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.9,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "2708750"
+      },
+      "portion": {
+        "reference_grams": 206,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "lentil_soup",
+      "aliases": [
+        "lentil soup",
+        "lentil stew"
+      ],
+      "clip_candidates": [
+        "lentil soup",
+        "lentil stew"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "lo_mein",
+      "aliases": [
+        "lo mein",
+        "chow mein noodles"
+      ],
+      "clip_candidates": [
+        "lo mein",
+        "chow mein noodles"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "loaded_fries",
+      "aliases": [
+        "loaded fries",
+        "cheese fries"
+      ],
+      "clip_candidates": [
+        "loaded fries",
+        "cheese fries"
+      ],
+      "category": "fast_food",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "lobster",
+      "aliases": [
+        "lobster tail",
+        "butter lobster"
+      ],
+      "clip_candidates": [
+        "lobster tail",
+        "butter lobster"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2706349",
+        "fdc_name": "Lobster",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 1.0,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2706349"
+      },
+      "portion": {
+        "reference_grams": 85,
+        "min_grams": 64,
+        "max_grams": 106,
+        "source": "FDC foodPortions undetermined Quantity not specified",
+        "source_id": "2706349"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "mac_and_cheese",
+      "aliases": [
+        "mac and cheese"
+      ],
+      "clip_candidates": [
+        "mac and cheese"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "169770",
+        "fdc_name": "Macaroni and cheese, box mix with cheese sauce, prepared",
+        "data_type": "SR Legacy",
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.85,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "169770"
+      },
+      "portion": {
+        "reference_grams": 189,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "mac_and_cheese_bowl",
+      "aliases": [
+        "macaroni and cheese bowl",
+        "creamy mac and cheese"
+      ],
+      "clip_candidates": [
+        "macaroni and cheese bowl",
+        "creamy mac and cheese"
+      ],
+      "category": "fast_food",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "macaroni_salad",
+      "aliases": [
+        "macaroni salad",
+        "pasta salad"
+      ],
+      "clip_candidates": [
+        "macaroni salad",
+        "pasta salad"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "mango",
+      "aliases": [
+        "mango slices",
+        "fresh mango"
+      ],
+      "clip_candidates": [
+        "mango slices",
+        "fresh mango"
+      ],
+      "category": "fruit",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "mashed_potatoes",
+      "aliases": [
+        "mashed potatoes",
+        "creamy mashed potatoes"
+      ],
+      "clip_candidates": [
+        "mashed potatoes",
+        "creamy mashed potatoes"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "massaman_curry",
+      "aliases": [
+        "massaman curry",
+        "thai massaman"
+      ],
+      "clip_candidates": [
+        "massaman curry",
+        "thai massaman"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "meatloaf",
+      "aliases": [
+        "meatloaf",
+        "meatloaf with sauce"
+      ],
+      "clip_candidates": [
+        "meatloaf",
+        "meatloaf with sauce"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "canonical_name": "milkshake",
+      "aliases": [
+        "milkshake",
+        "chocolate milkshake"
+      ],
+      "clip_candidates": [
+        "milkshake",
+        "chocolate milkshake"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "minestrone",
+      "aliases": [
+        "minestrone",
+        "minestrone soup"
+      ],
+      "clip_candidates": [
+        "minestrone",
+        "minestrone soup"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2710114",
+        "fdc_name": "Soup, minestrone",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2710114"
+      },
+      "portion": {
+        "reference_grams": 245,
+        "min_grams": 184,
+        "max_grams": 306,
+        "source": "FDC foodPortions undetermined Quantity not specified",
+        "source_id": "2710114"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "miso_soup",
+      "aliases": [
+        "miso soup",
+        "miso soup with tofu"
+      ],
+      "clip_candidates": [
+        "miso soup",
+        "miso soup with tofu"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "moo_shu",
+      "aliases": [
+        "moo shu pork",
+        "moo shu wrap"
+      ],
+      "clip_candidates": [
+        "moo shu pork",
+        "moo shu wrap"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "mozzarella_sticks",
+      "aliases": [
+        "mozzarella sticks",
+        "fried cheese sticks"
+      ],
+      "clip_candidates": [
+        "mozzarella sticks",
+        "fried cheese sticks"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "muffin",
+      "aliases": [
+        "muffin",
+        "blueberry muffin",
+        "bakery muffin"
+      ],
+      "clip_candidates": [
+        "muffin",
+        "blueberry muffin",
+        "bakery muffin"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "canonical_name": "mussels",
+      "aliases": [
+        "mussels",
+        "steamed mussels"
+      ],
+      "clip_candidates": [
+        "mussels",
+        "steamed mussels"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2706350",
+        "fdc_name": "Mussels",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 1.0,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2706350"
+      },
+      "portion": {
+        "reference_grams": 15,
+        "min_grams": 11,
+        "max_grams": 19,
+        "source": "FDC foodPortions undetermined 1 mussel",
+        "source_id": "2706350"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "naan",
+      "aliases": [
+        "naan bread",
+        "garlic naan"
+      ],
+      "clip_candidates": [
+        "naan bread",
+        "garlic naan"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2707613",
+        "fdc_name": "Bread, naan",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2707613"
+      },
+      "portion": {
+        "reference_grams": 44,
+        "min_grams": 33,
+        "max_grams": 55,
+        "source": "FDC foodPortions undetermined Quantity not specified",
+        "source_id": "2707613"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "nachos",
+      "aliases": [
+        "nachos",
+        "nachos with melted cheese on tortilla chips"
+      ],
+      "clip_candidates": [
+        "nachos",
+        "nachos with melted cheese on tortilla chips"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2708577",
+        "fdc_name": "Nachos, cheese only",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.85,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "2708577"
+      },
+      "portion": {
+        "reference_grams": 80,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "nuts",
+      "aliases": [
+        "mixed nuts",
+        "nuts bowl"
+      ],
+      "clip_candidates": [
+        "mixed nuts",
+        "nuts bowl"
+      ],
+      "category": "snack",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "canonical_name": "oatmeal",
+      "aliases": [
+        "oatmeal",
+        "bowl of oatmeal"
+      ],
+      "clip_candidates": [
+        "oatmeal",
+        "bowl of oatmeal"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2708380",
+        "fdc_name": "Oatmeal, NFS",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.85,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "2708380"
+      },
+      "portion": {
+        "reference_grams": 234,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "omelette",
+      "aliases": [
+        "omelette",
+        "cheese omelette"
+      ],
+      "clip_candidates": [
+        "omelette",
+        "cheese omelette"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "onion_rings",
+      "aliases": [
+        "onion rings",
+        "crispy onion rings"
+      ],
+      "clip_candidates": [
+        "onion rings",
+        "crispy onion rings"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "orange",
+      "aliases": [
+        "orange",
+        "whole orange"
+      ],
+      "clip_candidates": [
+        "orange",
+        "whole orange"
+      ],
+      "category": "fruit",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "169097",
+        "fdc_name": "Orange, raw",
+        "data_type": null,
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.98,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "169097"
+      },
+      "portion": {
+        "reference_grams": 131,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "oysters",
+      "aliases": [
+        "oysters",
+        "raw oysters on shell"
+      ],
+      "clip_candidates": [
+        "oysters",
+        "raw oysters on shell"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "canonical_name": "pad_thai",
+      "aliases": [
+        "pad thai",
+        "thai pad thai noodles"
+      ],
+      "clip_candidates": [
+        "pad thai",
+        "thai pad thai noodles"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "paella",
+      "aliases": [
+        "paella",
+        "seafood paella"
+      ],
+      "clip_candidates": [
+        "paella",
+        "seafood paella"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2706723",
+        "fdc_name": "Paella, NFS",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2706723"
+      },
+      "portion": {
+        "reference_grams": 300,
+        "min_grams": 225,
+        "max_grams": 375,
+        "source": "FDC foodPortions undetermined Quantity not specified",
+        "source_id": "2706723"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "pancakes",
+      "aliases": [
+        "pancakes",
+        "pancake stack with butter and syrup",
+        "flat round pancakes stacked"
+      ],
+      "clip_candidates": [
+        "pancakes",
+        "pancake stack with butter and syrup",
+        "flat round pancakes stacked"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "175009",
+        "fdc_name": "Pancakes, plain, prepared from recipe",
+        "data_type": null,
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.94,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "175009"
+      },
+      "portion": {
+        "reference_grams": 77,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "panna_cotta",
+      "aliases": [
+        "panna cotta",
+        "italian panna cotta"
+      ],
+      "clip_candidates": [
+        "panna cotta",
+        "italian panna cotta"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "pasta",
+      "aliases": [
+        "pasta",
+        "spaghetti"
+      ],
+      "clip_candidates": [
+        "pasta",
+        "spaghetti"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "169737",
+        "fdc_name": "Pasta, cooked, enriched, without added salt",
+        "data_type": null,
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.95,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "169737"
+      },
+      "portion": {
+        "reference_grams": 124,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "peach",
+      "aliases": [
+        "peach",
+        "fresh peach"
+      ],
+      "clip_candidates": [
+        "peach",
+        "fresh peach"
+      ],
+      "category": "fruit",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2709249",
+        "fdc_name": "Peach, raw",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2709249"
+      },
+      "portion": {
+        "reference_grams": 20,
+        "min_grams": 15,
+        "max_grams": 25,
+        "source": "FDC foodPortions undetermined 1 slice/chunk",
+        "source_id": "2709249"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "peanuts",
+      "aliases": [
+        "peanuts",
+        "roasted peanuts"
+      ],
+      "clip_candidates": [
+        "peanuts",
+        "roasted peanuts"
+      ],
+      "category": "snack",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "pear",
+      "aliases": [
+        "pear",
+        "fresh pear"
+      ],
+      "clip_candidates": [
+        "pear",
+        "fresh pear"
+      ],
+      "category": "fruit",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2709254",
+        "fdc_name": "Pear, raw",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2709254"
+      },
+      "portion": {
+        "reference_grams": 180,
+        "min_grams": 135,
+        "max_grams": 225,
+        "source": "FDC foodPortions undetermined 1 fruit",
+        "source_id": "2709254"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "penne_arrabbiata",
+      "aliases": [
+        "penne arrabbiata",
+        "spicy penne pasta"
+      ],
+      "clip_candidates": [
+        "penne arrabbiata",
+        "spicy penne pasta"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "pesto_pasta",
+      "aliases": [
+        "pesto pasta",
+        "pasta with pesto"
+      ],
+      "clip_candidates": [
+        "pesto pasta",
+        "pasta with pesto"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "pho",
+      "aliases": [
+        "pho",
+        "pho noodle soup"
+      ],
+      "clip_candidates": [
+        "pho",
+        "pho noodle soup"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2707125",
+        "fdc_name": "Soup, pho, no meat",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2707125"
+      },
+      "portion": {
+        "reference_grams": 245,
+        "min_grams": 184,
+        "max_grams": 306,
+        "source": "FDC foodPortions undetermined 1 cup",
+        "source_id": "2707125"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "pie",
+      "aliases": [
+        "pie",
+        "apple pie slice"
+      ],
+      "clip_candidates": [
+        "pie",
+        "apple pie slice"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "canonical_name": "pineapple",
+      "aliases": [
+        "pineapple chunks",
+        "fresh pineapple"
+      ],
+      "clip_candidates": [
+        "pineapple chunks",
+        "fresh pineapple"
+      ],
+      "category": "fruit",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "pizza",
+      "aliases": [
+        "pizza"
+      ],
+      "clip_candidates": [
+        "pizza"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "173058",
+        "fdc_name": "Pizza, cheese, per 100 g",
+        "data_type": null,
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.95,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "173058"
+      },
+      "portion": {
+        "reference_grams": 107,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "popcorn",
+      "aliases": [
+        "popcorn",
+        "buttered popcorn"
+      ],
+      "clip_candidates": [
+        "popcorn",
+        "buttered popcorn"
+      ],
+      "category": "snack",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "pork_chop",
+      "aliases": [
+        "pork chop",
+        "grilled pork chop"
+      ],
+      "clip_candidates": [
+        "pork chop",
+        "grilled pork chop"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "pork_ribs",
+      "aliases": [
+        "pork ribs",
+        "bbq ribs"
+      ],
+      "clip_candidates": [
+        "pork ribs",
+        "bbq ribs"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "potato_salad",
+      "aliases": [
+        "potato salad",
+        "american potato salad"
+      ],
+      "clip_candidates": [
+        "potato salad",
+        "american potato salad"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "poutine",
+      "aliases": [
+        "poutine",
+        "fries with gravy and cheese"
+      ],
+      "clip_candidates": [
+        "poutine",
+        "fries with gravy and cheese"
+      ],
+      "category": "fast_food",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "pretzels",
+      "aliases": [
+        "pretzels",
+        "pretzel sticks"
+      ],
+      "clip_candidates": [
+        "pretzels",
+        "pretzel sticks"
+      ],
+      "category": "snack",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "protein_bar",
+      "aliases": [
+        "protein bar",
+        "energy bar"
+      ],
+      "clip_candidates": [
+        "protein bar",
+        "energy bar"
+      ],
+      "category": "snack",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "pudding",
+      "aliases": [
+        "pudding",
+        "chocolate pudding cup"
+      ],
+      "clip_candidates": [
+        "pudding",
+        "chocolate pudding cup"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "canonical_name": "pulled_pork",
+      "aliases": [
+        "pulled pork sandwich",
+        "bbq pulled pork"
+      ],
+      "clip_candidates": [
+        "pulled pork sandwich",
+        "bbq pulled pork"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "pumpkin_pie",
+      "aliases": [
+        "pumpkin pie",
+        "pumpkin pie slice"
+      ],
+      "clip_candidates": [
+        "pumpkin pie",
+        "pumpkin pie slice"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "quesadilla",
+      "aliases": [
+        "quesadilla",
+        "folded grilled tortilla with melted cheese inside",
+        "quesadilla cut in triangles"
+      ],
+      "clip_candidates": [
+        "quesadilla",
+        "folded grilled tortilla with melted cheese inside",
+        "quesadilla cut in triangles"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2708590",
+        "fdc_name": "Quesadilla, NFS",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.85,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "2708590"
+      },
+      "portion": {
+        "reference_grams": 157,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "quiche",
+      "aliases": [
+        "quiche",
+        "quiche lorraine slice"
+      ],
+      "clip_candidates": [
+        "quiche",
+        "quiche lorraine slice"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "canonical_name": "ramen",
+      "aliases": [
+        "ramen",
+        "ramen noodle bowl"
+      ],
+      "clip_candidates": [
+        "ramen",
+        "ramen noodle bowl"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2709153",
+        "fdc_name": "Ramen bowl, NFS",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2709153"
+      },
+      "portion": {
+        "reference_grams": 245,
+        "min_grams": 184,
+        "max_grams": 306,
+        "source": "FDC foodPortions undetermined 1 cup",
+        "source_id": "2709153"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "ravioli",
+      "aliases": [
+        "ravioli",
+        "stuffed ravioli"
+      ],
+      "clip_candidates": [
+        "ravioli",
+        "stuffed ravioli"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "173328",
+        "fdc_name": "Ravioli, cheese-filled, canned",
+        "data_type": "SR Legacy",
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "173328"
+      },
+      "portion": {
+        "reference_grams": 242,
+        "min_grams": 182,
+        "max_grams": 302,
+        "source": "FDC foodPortions undetermined cup",
+        "source_id": "173328"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "red_velvet",
+      "aliases": [
+        "red velvet cake",
+        "red velvet slice"
+      ],
+      "clip_candidates": [
+        "red velvet cake",
+        "red velvet slice"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "refried_beans",
+      "aliases": [
+        "refried beans",
+        "refried bean side"
+      ],
+      "clip_candidates": [
+        "refried beans",
+        "refried bean side"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "reuben",
+      "aliases": [
+        "reuben sandwich",
+        "corned beef reuben"
+      ],
+      "clip_candidates": [
+        "reuben sandwich",
+        "corned beef reuben"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2706952",
+        "fdc_name": "Reuben sandwich",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2706952"
+      },
+      "portion": {
+        "reference_grams": 215,
+        "min_grams": 161,
+        "max_grams": 269,
+        "source": "FDC foodPortions undetermined 1 sandwich, any size",
+        "source_id": "2706952"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "ribeye_steak",
+      "aliases": [
+        "ribeye steak",
+        "ribeye on the plate"
+      ],
+      "clip_candidates": [
+        "ribeye steak",
+        "ribeye on the plate"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "rice",
+      "aliases": [
+        "rice",
+        "cooked rice"
+      ],
+      "clip_candidates": [
+        "rice",
+        "cooked rice"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "168878",
+        "fdc_name": "Rice, white, long-grain, regular, enriched, cooked",
+        "data_type": null,
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.97,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "168878"
+      },
+      "portion": {
+        "reference_grams": 158,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "risotto",
+      "aliases": [
+        "risotto",
+        "creamy risotto"
+      ],
+      "clip_candidates": [
+        "risotto",
+        "creamy risotto"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "roast_beef",
+      "aliases": [
+        "roast beef",
+        "roast beef slices"
+      ],
+      "clip_candidates": [
+        "roast beef",
+        "roast beef slices"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "roasted_vegetables",
+      "aliases": [
+        "roasted vegetables",
+        "roasted veggie medley"
+      ],
+      "clip_candidates": [
+        "roasted vegetables",
+        "roasted veggie medley"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "rotisserie_chicken",
+      "aliases": [
+        "rotisserie chicken",
+        "whole roasted chicken"
+      ],
+      "clip_candidates": [
+        "rotisserie chicken",
+        "whole roasted chicken"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "salad",
+      "aliases": [
+        "salad",
+        "green salad"
+      ],
+      "clip_candidates": [
+        "salad",
+        "green salad"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2709792",
+        "fdc_name": "Mixed salad greens, raw (FNDDS)",
+        "data_type": null,
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.85,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "2709792"
+      },
+      "portion": {
+        "reference_grams": 35,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "salmon",
+      "aliases": [
+        "salmon",
+        "grilled salmon",
+        "grilled salmon fillet with pink flesh"
+      ],
+      "clip_candidates": [
+        "salmon",
+        "grilled salmon",
+        "grilled salmon fillet with pink flesh"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "172000",
+        "fdc_name": "Fish, salmon, chum, cooked, dry heat",
+        "data_type": "SR Legacy",
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.85,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "172000"
+      },
+      "portion": {
+        "reference_grams": 170,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "samosa",
+      "aliases": [
+        "samosa",
+        "fried samosa"
+      ],
+      "clip_candidates": [
+        "samosa",
+        "fried samosa"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2708730",
+        "fdc_name": "Samosa",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 1.0,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2708730"
+      },
+      "portion": {
+        "reference_grams": 25,
+        "min_grams": 19,
+        "max_grams": 31,
+        "source": "FDC foodPortions undetermined 1 small/individual",
+        "source_id": "2708730"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "sandwich",
+      "aliases": [
+        "sandwich",
+        "sandwich between two slices of bread"
+      ],
+      "clip_candidates": [
+        "sandwich",
+        "sandwich between two slices of bread"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "NO_RELIABLE_NUTRITION"
+    },
+    {
+      "canonical_name": "sashimi",
+      "aliases": [
+        "sashimi",
+        "raw fish slices"
+      ],
+      "clip_candidates": [
+        "sashimi",
+        "raw fish slices"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "sausage_patty",
+      "aliases": [
+        "breakfast sausage patty",
+        "pork sausage links"
+      ],
+      "clip_candidates": [
+        "breakfast sausage patty",
+        "pork sausage links"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "scrambled_eggs",
+      "aliases": [
+        "scrambled eggs",
+        "fluffy scrambled eggs"
+      ],
+      "clip_candidates": [
+        "scrambled eggs",
+        "fluffy scrambled eggs"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "shepherds_pie",
+      "aliases": [
+        "shepherds pie",
+        "cottage pie"
+      ],
+      "clip_candidates": [
+        "shepherds pie",
+        "cottage pie"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "short_ribs",
+      "aliases": [
+        "beef short ribs",
+        "braised short ribs"
+      ],
+      "clip_candidates": [
+        "beef short ribs",
+        "braised short ribs"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "shrimp",
+      "aliases": [
+        "shrimp",
+        "grilled shrimp",
+        "sauteed shrimp"
+      ],
+      "clip_candidates": [
+        "shrimp",
+        "grilled shrimp",
+        "sauteed shrimp"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "shrimp_scampi",
+      "aliases": [
+        "shrimp scampi",
+        "garlic shrimp pasta"
+      ],
+      "clip_candidates": [
+        "shrimp scampi",
+        "garlic shrimp pasta"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "sirloin_steak",
+      "aliases": [
+        "sirloin steak",
+        "grilled sirloin"
+      ],
+      "clip_candidates": [
+        "sirloin steak",
+        "grilled sirloin"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "sliders",
+      "aliases": [
+        "sliders",
+        "mini hamburger sliders"
+      ],
+      "clip_candidates": [
+        "sliders",
+        "mini hamburger sliders"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "smoothie",
+      "aliases": [
+        "fruit smoothie",
+        "berry smoothie glass"
+      ],
+      "clip_candidates": [
+        "fruit smoothie",
+        "berry smoothie glass"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2710152",
+        "fdc_name": "Vegetable smoothie",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2710152"
+      },
+      "portion": {
+        "reference_grams": 864,
+        "min_grams": 648,
+        "max_grams": 1080,
+        "source": "FDC foodPortions undetermined 1 medium",
+        "source_id": "2710152"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "soup",
+      "aliases": [
+        "soup",
+        "bowl of soup"
+      ],
+      "clip_candidates": [
+        "soup",
+        "bowl of soup"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "NO_RELIABLE_NUTRITION"
+    },
+    {
+      "canonical_name": "spaghetti_carbonara",
+      "aliases": [
+        "spaghetti carbonara",
+        "pasta carbonara"
+      ],
+      "clip_candidates": [
+        "spaghetti carbonara",
+        "pasta carbonara"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "spaghetti_meatballs",
+      "aliases": [
+        "spaghetti with meatballs",
+        "spaghetti and meatballs"
+      ],
+      "clip_candidates": [
+        "spaghetti with meatballs",
+        "spaghetti and meatballs"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "spinach",
+      "aliases": [
+        "spinach",
+        "sauteed spinach"
+      ],
+      "clip_candidates": [
+        "spinach",
+        "sauteed spinach"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "spring_rolls",
+      "aliases": [
+        "spring rolls",
+        "fried spring rolls"
+      ],
+      "clip_candidates": [
+        "spring rolls",
+        "fried spring rolls"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "steak",
+      "aliases": [
+        "steak",
+        "grilled steak",
+        "grilled beef steak on a plate"
+      ],
+      "clip_candidates": [
+        "steak",
+        "grilled steak",
+        "grilled beef steak on a plate"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2705825",
+        "fdc_name": "Beef, steak, chuck",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.8,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "2705825"
+      },
+      "portion": {
+        "reference_grams": 85,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "steamed_broccoli",
+      "aliases": [
+        "steamed broccoli",
+        "broccoli florets"
+      ],
+      "clip_candidates": [
+        "steamed broccoli",
+        "broccoli florets"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "strawberries",
+      "aliases": [
+        "strawberries",
+        "fresh strawberry bowl"
+      ],
+      "clip_candidates": [
+        "strawberries",
+        "fresh strawberry bowl"
+      ],
+      "category": "fruit",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "sub_sandwich",
+      "aliases": [
+        "sub sandwich",
+        "hoagie sub"
+      ],
+      "clip_candidates": [
+        "sub sandwich",
+        "hoagie sub"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "sushi_roll",
+      "aliases": [
+        "sushi roll",
+        "california roll",
+        "sushi platter"
+      ],
+      "clip_candidates": [
+        "sushi roll",
+        "california roll",
+        "sushi platter"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "sweet_potato",
+      "aliases": [
+        "sweet potato",
+        "baked sweet potato"
+      ],
+      "clip_candidates": [
+        "sweet potato",
+        "baked sweet potato"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "sweet_sour_chicken",
+      "aliases": [
+        "sweet and sour chicken",
+        "sweet sour pork"
+      ],
+      "clip_candidates": [
+        "sweet and sour chicken",
+        "sweet sour pork"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "taco",
+      "aliases": [
+        "taco",
+        "crispy corn taco shell with meat and lettuce"
+      ],
+      "clip_candidates": [
+        "taco",
+        "crispy corn taco shell with meat and lettuce"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "170689",
+        "fdc_name": "Fast foods, taco with beef, cheese and lettuce, hard shell",
+        "data_type": null,
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.9,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "170689"
+      },
+      "portion": {
+        "reference_grams": 69,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "tamales",
+      "aliases": [
+        "tamales",
+        "corn husk tamales"
+      ],
+      "clip_candidates": [
+        "tamales",
+        "corn husk tamales"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "167636",
+        "fdc_name": "Tamales (Navajo)",
+        "data_type": "SR Legacy",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "167636"
+      },
+      "portion": {
+        "reference_grams": 186,
+        "min_grams": 140,
+        "max_grams": 232,
+        "source": "FDC foodPortions undetermined piece",
+        "source_id": "167636"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "tbone_steak",
+      "aliases": [
+        "t bone steak",
+        "tbone steak"
+      ],
+      "clip_candidates": [
+        "t bone steak",
+        "tbone steak"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "tempura",
+      "aliases": [
+        "tempura",
+        "shrimp tempura"
+      ],
+      "clip_candidates": [
+        "tempura",
+        "shrimp tempura"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2710065",
+        "fdc_name": "Vegetable tempura",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2710065"
+      },
+      "portion": {
+        "reference_grams": 7,
+        "min_grams": 5,
+        "max_grams": 9,
+        "source": "FDC foodPortions undetermined 1 piece",
+        "source_id": "2710065"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "teriyaki_chicken",
+      "aliases": [
+        "teriyaki chicken",
+        "teriyaki bowl"
+      ],
+      "clip_candidates": [
+        "teriyaki chicken",
+        "teriyaki bowl"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "tilapia",
+      "aliases": [
+        "tilapia fillet",
+        "grilled tilapia"
+      ],
+      "clip_candidates": [
+        "tilapia fillet",
+        "grilled tilapia"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2706322",
+        "fdc_name": "Fish, tilapia, fried",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2706322"
+      },
+      "portion": {
+        "reference_grams": 135,
+        "min_grams": 101,
+        "max_grams": 169,
+        "source": "FDC foodPortions undetermined 1 cup",
+        "source_id": "2706322"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "tiramisu",
+      "aliases": [
+        "tiramisu",
+        "tiramisu slice"
+      ],
+      "clip_candidates": [
+        "tiramisu",
+        "tiramisu slice"
+      ],
+      "category": "dessert",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2705702",
+        "fdc_name": "Tiramisu",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 1.0,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2705702"
+      },
+      "portion": {
+        "reference_grams": 10,
+        "min_grams": 8,
+        "max_grams": 12,
+        "source": "FDC foodPortions undetermined 1 cubic inch",
+        "source_id": "2705702"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "toast",
+      "aliases": [
+        "toast",
+        "slice of toast"
+      ],
+      "clip_candidates": [
+        "toast",
+        "slice of toast"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2707599",
+        "fdc_name": "Bread, white, toasted",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.95,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08 (import API 2026-08-31)",
+        "source_id": "2707599"
+      },
+      "portion": {
+        "reference_grams": 22,
+        "source": "FDC foodPortions / USDA SR Legacy"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "tomato_soup",
+      "aliases": [
+        "tomato soup",
+        "cream of tomato soup"
+      ],
+      "clip_candidates": [
+        "tomato soup",
+        "cream of tomato soup"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "tortilla_chips",
+      "aliases": [
+        "tortilla chips",
+        "corn chips"
+      ],
+      "clip_candidates": [
+        "tortilla chips",
+        "corn chips"
+      ],
+      "category": "snack",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "trail_mix",
+      "aliases": [
+        "trail mix",
+        "nuts and dried fruit mix"
+      ],
+      "clip_candidates": [
+        "trail mix",
+        "nuts and dried fruit mix"
+      ],
+      "category": "snack",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "trout",
+      "aliases": [
+        "trout fillet",
+        "pan fried trout"
+      ],
+      "clip_candidates": [
+        "trout fillet",
+        "pan fried trout"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2706306",
+        "fdc_name": "Fish, trout, fried",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2706306"
+      },
+      "portion": {
+        "reference_grams": 135,
+        "min_grams": 101,
+        "max_grams": 169,
+        "source": "FDC foodPortions undetermined 1 large fillet",
+        "source_id": "2706306"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "tuna_salad",
+      "aliases": [
+        "tuna salad",
+        "tuna salad bowl"
+      ],
+      "clip_candidates": [
+        "tuna salad",
+        "tuna salad bowl"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "tuna_steak",
+      "aliases": [
+        "tuna steak",
+        "seared tuna"
+      ],
+      "clip_candidates": [
+        "tuna steak",
+        "seared tuna"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "turkey_breast",
+      "aliases": [
+        "turkey breast",
+        "roasted turkey slices"
+      ],
+      "clip_candidates": [
+        "turkey breast",
+        "roasted turkey slices"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "udon",
+      "aliases": [
+        "udon noodles",
+        "udon soup bowl"
+      ],
+      "clip_candidates": [
+        "udon noodles",
+        "udon soup bowl"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "veggie_burger",
+      "aliases": [
+        "veggie burger",
+        "plant based burger"
+      ],
+      "clip_candidates": [
+        "veggie burger",
+        "plant based burger"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "waffles",
+      "aliases": [
+        "waffles",
+        "waffle with square grid pattern",
+        "waffles with syrup in the squares"
+      ],
+      "clip_candidates": [
+        "waffles",
+        "waffle with square grid pattern",
+        "waffles with syrup in the squares"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "watermelon",
+      "aliases": [
+        "watermelon slices",
+        "watermelon wedge"
+      ],
+      "clip_candidates": [
+        "watermelon slices",
+        "watermelon wedge"
+      ],
+      "category": "fruit",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2709270",
+        "fdc_name": "Watermelon, raw",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2709270"
+      },
+      "portion": {
+        "reference_grams": 6000,
+        "min_grams": 4500,
+        "max_grams": 7500,
+        "source": "FDC foodPortions undetermined 1 large melon",
+        "source_id": "2709270"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "wonton_soup",
+      "aliases": [
+        "wonton soup",
+        "wonton noodle soup"
+      ],
+      "clip_candidates": [
+        "wonton soup",
+        "wonton noodle soup"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": null,
+      "portion": null,
+      "status": "VISUAL_ONLY"
+    },
+    {
+      "canonical_name": "wrap",
+      "aliases": [
+        "wrap sandwich",
+        "tortilla wrap with filling"
+      ],
+      "clip_candidates": [
+        "wrap sandwich",
+        "tortilla wrap with filling"
+      ],
+      "category": "restaurant",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "2707032",
+        "fdc_name": "Fish wrap sandwich",
+        "data_type": "Survey (FNDDS)",
+        "mapping_status": "GOOD_EQUIVALENCE",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "2707032"
+      },
+      "portion": {
+        "reference_grams": 151,
+        "min_grams": 113,
+        "max_grams": 189,
+        "source": "FDC foodPortions undetermined 1 sandwich, any size",
+        "source_id": "2707032"
+      },
+      "status": "PRODUCTION_READY"
+    },
+    {
+      "canonical_name": "yogurt",
+      "aliases": [
+        "yogurt",
+        "plain yogurt cup"
+      ],
+      "clip_candidates": [
+        "yogurt",
+        "plain yogurt cup"
+      ],
+      "category": "breakfast",
+      "visual_sources": [],
+      "nutrition": {
+        "fdc_id": "167722",
+        "fdc_name": "Tofu yogurt",
+        "data_type": "SR Legacy",
+        "mapping_status": "DIRECT_MATCH",
+        "mapping_confidence": 0.5,
+        "source": "USDA FoodData Central",
+        "source_version": "FDC 2026-08",
+        "source_id": "167722"
+      },
+      "portion": {
+        "reference_grams": 262,
+        "min_grams": 196,
+        "max_grams": 328,
+        "source": "FDC foodPortions undetermined cup",
+        "source_id": "167722"
+      },
+      "status": "PRODUCTION_READY"
+    }
+  ]
+}

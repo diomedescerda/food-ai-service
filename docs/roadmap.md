@@ -281,3 +281,10 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] README completo (34 secciones, 7 diagramas Mermaid, glosario) - documentacion oficial del servicio
 - [x] OUTs de scripts actualizados a benchmarks/; refs de regions.json corregidas en 7 scripts
 - [x] Sin regresion: pytest 72/72, E2E food-us 59.3%
+
+## FASE 25 — Massive Food Catalog Expansion ✅ (2026-08-31)
+- [x] Food Master Catalog (data/catalogs/food_master.json): 231 clases con estados (65 PRODUCTION_READY, 146 VISUAL_ONLY, 17 REVIEW_REQUIRED, 3 NO_RELIABLE)
+- [x] 53 mappings USDA nuevos verificados (43 DIRECT + 10 GOOD) via API + 17 falsos revertidos (Cape Cod, Avocado dressing...) + porciones foodPortions
+- [x] Nutrition5k documentado como estratégico (CC BY 4.0, masa real por ingrediente; descarga vía gsutil pendiente)
+- [x] A/B escalamiento: CLIP scoring único con 465 candidates DEGRADA a 0% (baseline 71.3%) — los candidates descriptivos compiten (waffles 0.27 gana en pizza); el top_k no salva. Conclusión: se requiere CANDIDATE RETRIEVAL (coarse-to-fine) antes de activar el catálogo ampliado — pipeline de producción (38) intacto
+- [x] 38 clases = regression set intacto (71.3% food-us con score por clase)

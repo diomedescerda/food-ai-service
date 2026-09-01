@@ -1,0 +1,5441 @@
+[
+  {
+    "canonical": "almonds",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "asparagus",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "avocado",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2710208",
+    "fdc_name": "Avocado dressing",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 1.9,
+      "fat": 43.3,
+      "carbohydrates": 7.36,
+      "calories": 427,
+      "sugar": 6.67,
+      "fiber": 0.1,
+      "sodium": 867
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 245
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 31
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 tablespoon",
+        "gram_weight": 15.3
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2710208",
+        "name": "Avocado dressing",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2709223",
+        "name": "Avocado, raw",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "173573",
+        "name": "Oil, avocado",
+        "data_type": "SR Legacy",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "bacon_burger",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2707481",
+        "name": "Veggie burger, on bun",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706890",
+        "name": "Cheeseburger (Burger King)",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706922",
+        "name": "Hamburger (Burger King)",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "baked_potato",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2709383",
+        "name": "Potato, baked, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2709435",
+        "name": "Potato chips, baked, flavored",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2709434",
+        "name": "Potato chips, baked, plain",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "bbq_sandwich",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706973",
+        "name": "Cuban sandwich",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706962",
+        "name": "Gyro sandwich",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706946",
+        "name": "Meatloaf sandwich",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "beef_stew",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "biryani",
+    "status": "GOOD_EQUIVALENCE",
+    "confidence": 0.5,
+    "fdc_id": "2708985",
+    "fdc_name": "Biryani with vegetables",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 1.93,
+      "fat": 3.2,
+      "carbohydrates": 17.9,
+      "calories": 109,
+      "sugar": 1.18,
+      "fiber": 1.2,
+      "sodium": 177
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 215
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 172
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2708985",
+        "name": "Biryani with vegetables",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "2706538",
+        "name": "Biryani with chicken",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "2706490",
+        "name": "Biryani with meat",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      }
+    ]
+  },
+  {
+    "canonical": "biscuits",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2707971",
+        "name": "Marie biscuit",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707807",
+        "name": "Biscuit with fruit",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708744",
+        "name": "Biscuit with gravy",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "black_bean_soup",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "blueberries",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "brisket",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2705851",
+    "fdc_name": "Beef, brisket",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 29.4,
+      "fat": 12.0,
+      "carbohydrates": 0.0,
+      "calories": 231,
+      "sugar": 0.0,
+      "fiber": 0.0,
+      "sodium": 377
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 regular/thin slice",
+        "gram_weight": 60
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 oz yields",
+        "gram_weight": 20
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 thick slice",
+        "gram_weight": 90
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2705851",
+        "name": "Beef, brisket",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "170200",
+        "name": "Beef, cured, corned beef, brisket, cooked",
+        "data_type": "SR Legacy",
+        "sim": 0.2
+      },
+      {
+        "fdc_id": "170199",
+        "name": "Beef, cured, corned beef, brisket, raw",
+        "data_type": "SR Legacy",
+        "sim": 0.2
+      }
+    ]
+  },
+  {
+    "canonical": "bruschetta",
+    "status": "DIRECT_MATCH",
+    "confidence": 1.0,
+    "fdc_id": "2707652",
+    "fdc_name": "Bruschetta",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 4.29,
+      "fat": 7.61,
+      "carbohydrates": 21.3,
+      "calories": 171,
+      "sugar": 3.34,
+      "fiber": 1.5,
+      "sodium": 264
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 large or thick slice",
+        "gram_weight": 59
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 slice",
+        "gram_weight": 43
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 slice, snack-size",
+        "gram_weight": 14
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2707652",
+        "name": "Bruschetta",
+        "data_type": "Survey (FNDDS)",
+        "sim": 1.0
+      }
+    ]
+  },
+  {
+    "canonical": "brussels_sprouts",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "burrito_bowl",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2708560",
+        "name": "Burrito bowl, chicken",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708555",
+        "name": "Burrito bowl, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708564",
+        "name": "Burrito bowl, with beans",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "butter_chicken",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "171314",
+        "name": "Butter, Clarified butter (ghee)",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706087",
+        "name": "Chicken, chicken roll, roasted",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2710302",
+        "name": "Fruit butter",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "caesar_salad",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2709591",
+        "name": "Caesar salad, with romaine, no dressing",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "169055",
+        "name": "Salad dressing, caesar dressing, regular",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "171045",
+        "name": "Salad dressing, caesar, fat-free",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "calzone",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2708684",
+        "name": "Calzone, with cheese, meatless",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.25
+      },
+      {
+        "fdc_id": "2708685",
+        "name": "Calzone, with meat and cheese",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.2
+      }
+    ]
+  },
+  {
+    "canonical": "caprese_salad",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "carrot_cake",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2707859",
+        "name": "Cake or cupcake, carrot",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "casserole",
+    "status": "GOOD_EQUIVALENCE",
+    "confidence": 0.5,
+    "fdc_id": "2710040",
+    "fdc_name": "Green bean casserole",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 1.96,
+      "fat": 2.21,
+      "carbohydrates": 7.05,
+      "calories": 56.0,
+      "sugar": 2.03,
+      "fiber": 1.9,
+      "sodium": 316
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 230
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 115
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2709630",
+        "name": "Spinach and cheese casserole",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.25
+      },
+      {
+        "fdc_id": "2709654",
+        "name": "Broccoli casserole with noodles",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.25
+      },
+      {
+        "fdc_id": "2709655",
+        "name": "Broccoli casserole with rice",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.25
+      }
+    ]
+  },
+  {
+    "canonical": "cauliflower",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "cereal",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "cereal_bowl",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2708560",
+        "name": "Burrito bowl, chicken",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708555",
+        "name": "Burrito bowl, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708564",
+        "name": "Burrito bowl, with beans",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "cheeseburger",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2706892",
+    "fdc_name": "Cheeseburger (McDonalds)",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 13.5,
+      "fat": 12.9,
+      "carbohydrates": 25.5,
+      "calories": 270,
+      "sugar": 5.24,
+      "fiber": 1.9,
+      "sodium": 628
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 110
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cheeseburger",
+        "gram_weight": 110
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2706892",
+        "name": "Cheeseburger (McDonalds)",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "cheesecake",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "cherries",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2709231",
+    "fdc_name": "Cherries, raw",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 1.04,
+      "fat": 0.19,
+      "carbohydrates": 16.2,
+      "calories": 71.0,
+      "sugar": 13.9,
+      "fiber": 2.1,
+      "sodium": 0.0
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 cherry",
+        "gram_weight": 7
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 150
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 75
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2709231",
+        "name": "Cherries, raw",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2709232",
+        "name": "Cherries, canned",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2709199",
+        "name": "Cherries, dried",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "chicken_burger",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "170731",
+        "name": "BURGER KING, Chicken Strips",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "170331",
+        "name": "BURGER KING, Original Chicken Sandwich",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707019",
+        "name": "Turkey or chicken burger, on wheat bun",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "chicken_cordon_bleu",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706441",
+        "name": "Chicken or turkey cordon bleu",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706418",
+        "name": "Veal cordon bleu",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "chicken_parmesan",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "169857",
+        "name": "CARRABBA'S ITALIAN GRILL, chicken parmesan without cavatappi pasta",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "171247",
+        "name": "Cheese, parmesan, grated",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "325036",
+        "name": "Cheese, parmesan, grated",
+        "data_type": "Foundation",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "chicken_pot_pie",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "chicken_salad",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "chicken_soup",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2707134",
+        "name": "Soup, chicken",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2709149",
+        "name": "Soup, chicken noodle",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707133",
+        "name": "Soup, chicken, canned",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "chicken_stew",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706678",
+        "name": "Stew, chicken",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706061",
+        "name": "Chicken wing, stewed",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706677",
+        "name": "Stew, chicken, with pasta",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "chicken_tenders",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706098",
+        "name": "Chicken tenders or strips, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "169841",
+        "name": "APPLEBEE'S, chicken tenders platter",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "171515",
+        "name": "Chicken breast tenders, breaded, uncooked",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "chicken_tikka_masala",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "chicken_wings",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "chili_con_carne",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "172097",
+        "name": "Chili con carne with beans, canned entree",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "chips",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2708293",
+    "fdc_name": "Cracker chips",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 7.95,
+      "fat": 21.1,
+      "carbohydrates": 67.3,
+      "calories": 491,
+      "sugar": 7.2,
+      "fiber": 8.8,
+      "sodium": 423
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 18
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cracker chip",
+        "gram_weight": 3
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cup, NFS",
+        "gram_weight": 30
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2708290",
+        "name": "Multigrain chips (Sun Chips)",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "2708293",
+        "name": "Cracker chips",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2710333",
+        "name": "Chocolate chips",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "chocolate_cake",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2707873",
+        "name": "Snack cake, chocolate",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707871",
+        "name": "Cake, chocolate, flourless",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "174942",
+        "name": "Cake, snack cakes, creme-filled, chocolate with frosting",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "chow_mein",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2708354",
+        "name": "Noodles, chow mein",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "168905",
+        "name": "Noodles, chinese, chow mein",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2710064",
+        "name": "Chow mein or chop suey, meatless, no noodles",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "chowder",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2707138",
+        "name": "Soup, Manhattan clam chowder",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.25
+      },
+      {
+        "fdc_id": "2707139",
+        "name": "Soup, New England clam chowder",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.2
+      },
+      {
+        "fdc_id": "174556",
+        "name": "CAMPBELL'S CHUNKY, New England Clam Chowder",
+        "data_type": "SR Legacy",
+        "sim": 0.17
+      }
+    ]
+  },
+  {
+    "canonical": "churros",
+    "status": "DIRECT_MATCH",
+    "confidence": 1.0,
+    "fdc_id": "2708070",
+    "fdc_name": "Churros",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 6.05,
+      "fat": 22.2,
+      "carbohydrates": 48.9,
+      "calories": 419,
+      "sugar": 23.4,
+      "fiber": 2.6,
+      "sodium": 309
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 regular",
+        "gram_weight": 45
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 miniature",
+        "gram_weight": 15
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 45
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2708070",
+        "name": "Churros",
+        "data_type": "Survey (FNDDS)",
+        "sim": 1.0
+      }
+    ]
+  },
+  {
+    "canonical": "cinnamon_roll",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2707667",
+        "name": "Roll, sweet, cinnamon bun, no frosting",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707668",
+        "name": "Roll, sweet, cinnamon bun, frosted",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "167513",
+        "name": "Pillsbury, Cinnamon Rolls with Icing, refrigerated dough",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "clams",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2706564",
+    "fdc_name": "Clams Casino",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 11.8,
+      "fat": 7.9,
+      "carbohydrates": 10.3,
+      "calories": 162,
+      "sugar": 1.8,
+      "fiber": 1.0,
+      "sodium": 454
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 85
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 clam",
+        "gram_weight": 30
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2706564",
+        "name": "Clams Casino",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2706341",
+        "name": "Clams, fried",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2706343",
+        "name": "Clams, canned",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "club_sandwich",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706995",
+        "name": "Club sandwich on wheat",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706993",
+        "name": "Club sandwich on white",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706996",
+        "name": "Club sandwich on wheat, with cheese",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "cobb_salad",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2709832",
+        "name": "Cobb salad, no dressing",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "cod",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2710629",
+    "fdc_name": "Cape Cod",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 0.0,
+      "fat": 0.08,
+      "carbohydrates": 10.2,
+      "calories": 98.0,
+      "sugar": 8.94,
+      "fiber": 0.0,
+      "sodium": 2.0
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 fl oz",
+        "gram_weight": 30
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 225
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 drink",
+        "gram_weight": 225
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2710629",
+        "name": "Cape Cod",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2706244",
+        "name": "Fish, cod, fried",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "2706242",
+        "name": "Fish, cod, grilled",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      }
+    ]
+  },
+  {
+    "canonical": "coleslaw",
+    "status": "DIRECT_MATCH",
+    "confidence": 1.0,
+    "fdc_id": "2709815",
+    "fdc_name": "Coleslaw",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 0.94,
+      "fat": 7.98,
+      "carbohydrates": 10.4,
+      "calories": 117,
+      "sugar": 7.44,
+      "fiber": 1.9,
+      "sodium": 280
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 110
+      },
+      {
+        "unit": "undetermined",
+        "description": "Guideline amount per sandwich",
+        "gram_weight": 55
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 220
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2709815",
+        "name": "Coleslaw",
+        "data_type": "Survey (FNDDS)",
+        "sim": 1.0
+      }
+    ]
+  },
+  {
+    "canonical": "corn_dog",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2707044",
+        "name": "Corn dog",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "173345",
+        "name": "Corn dogs, frozen, prepared",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707470",
+        "name": "Hot dog, vegetarian",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "corn_on_cob",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "169365",
+        "name": "Corn, sweet, white, frozen, kernels on cob, unprepared",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "168400",
+        "name": "Corn, sweet, yellow, frozen, kernels on cob, unprepared",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "168544",
+        "name": "Corn, sweet, white, frozen, kernels cut off cob, unprepared",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "corn_salad",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "171029",
+        "name": "Oil, corn, industrial and retail, all purpose salad or cooking",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706749",
+        "name": "Beef salad",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706824",
+        "name": "Crab salad",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "cornbread",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2707812",
+    "fdc_name": "Cornbread stuffing",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 2.9,
+      "fat": 8.8,
+      "carbohydrates": 21.9,
+      "calories": 179,
+      "sugar": 0.0,
+      "fiber": 2.9,
+      "sodium": 526
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 100
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cup, NFS",
+        "gram_weight": 200
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2707812",
+        "name": "Cornbread stuffing",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2708745",
+        "name": "Chicken cornbread",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2707810",
+        "name": "Cornbread, prepared from mix",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.25
+      }
+    ]
+  },
+  {
+    "canonical": "cottage_cheese",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "crab_cakes",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706549",
+        "name": "Crab, cake",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707022",
+        "name": "Crab cake sandwich",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "crackers",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "crepes",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2708341",
+        "name": "Crepe, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708342",
+        "name": "Crepe, plain",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708719",
+        "name": "Crepe, with meat",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "croissant",
+    "status": "DIRECT_MATCH",
+    "confidence": 1.0,
+    "fdc_id": "2707678",
+    "fdc_name": "Croissant",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 8.2,
+      "fat": 21.0,
+      "carbohydrates": 45.8,
+      "calories": 406,
+      "sugar": 11.3,
+      "fiber": 2.6,
+      "sodium": 300
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 70
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 small croissant",
+        "gram_weight": 42
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 large croissant",
+        "gram_weight": 73
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2707678",
+        "name": "Croissant",
+        "data_type": "Survey (FNDDS)",
+        "sim": 1.0
+      },
+      {
+        "fdc_id": "2707679",
+        "name": "Croissant, cheese",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2707680",
+        "name": "Croissant, chocolate",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "cupcake",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "curry",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2706388",
+    "fdc_name": "Beef curry",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 7.57,
+      "fat": 6.57,
+      "carbohydrates": 6.53,
+      "calories": 113,
+      "sugar": 2.56,
+      "fiber": 1.4,
+      "sodium": 359
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 240
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 240
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2706388",
+        "name": "Beef curry",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2706437",
+        "name": "Chicken curry",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2710178",
+        "name": "Curry sauce",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "deviled_eggs",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2707181",
+        "name": "Egg, deviled",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "dim_sum",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "dumplings",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2708344",
+        "name": "Dumpling, no meat",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706543",
+        "name": "Chicken or turkey with dumplings",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.25
+      },
+      {
+        "fdc_id": "168042",
+        "name": "Stew, dumpling with mutton (Navajo)",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "enchiladas",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2708566",
+        "name": "Enchilada, beef",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708568",
+        "name": "Enchilada, chicken",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708565",
+        "name": "Enchilada, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "english_muffin",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2707698",
+        "name": "Muffin, English",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707700",
+        "name": "Muffin, English, cheese",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707787",
+        "name": "Muffin, English, multigrain",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "fajitas",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2708604",
+        "name": "Fajita, chicken",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708603",
+        "name": "Fajita, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708606",
+        "name": "Fajita, shrimp",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "falafel",
+    "status": "DIRECT_MATCH",
+    "confidence": 1.0,
+    "fdc_id": "2707408",
+    "fdc_name": "Falafel",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 8.28,
+      "fat": 41.2,
+      "carbohydrates": 29.0,
+      "calories": 514,
+      "sugar": 4.52,
+      "fiber": 4.8,
+      "sodium": 499
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 28
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 patty",
+        "gram_weight": 17
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2707408",
+        "name": "Falafel",
+        "data_type": "Survey (FNDDS)",
+        "sim": 1.0
+      },
+      {
+        "fdc_id": "2707483",
+        "name": "Falafel sandwich",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "172455",
+        "name": "Falafel, home-prepared",
+        "data_type": "SR Legacy",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "fettuccine_alfredo",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "filet_mignon",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "170319",
+        "name": "McDONALD'S, FILET-O-FISH",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "173314",
+        "name": "McDONALD'S, FILET-O-FISH (without tartar sauce)",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "fish_and_chips",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "174195",
+        "name": "Fish, fish sticks, frozen, prepared",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "171606",
+        "name": "Fish broth",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706460",
+        "name": "Fish curry",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "fish_sandwich",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2707031",
+        "name": "Fish sandwich, grilled",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707026",
+        "name": "Fish sandwich, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707032",
+        "name": "Fish wrap sandwich",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "fish_tacos",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2708529",
+        "name": "Taco, fish",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "170736",
+        "name": "TACO BELL, Taco Salad",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "174195",
+        "name": "Fish, fish sticks, frozen, prepared",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "flan",
+    "status": "DIRECT_MATCH",
+    "confidence": 1.0,
+    "fdc_id": "2705683",
+    "fdc_name": "Flan",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 5.23,
+      "fat": 4.94,
+      "carbohydrates": 28.2,
+      "calories": 178,
+      "sugar": 28.1,
+      "fiber": 0.0,
+      "sodium": 163
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 cubic inch",
+        "gram_weight": 19
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 130
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 260
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2705683",
+        "name": "Flan",
+        "data_type": "Survey (FNDDS)",
+        "sim": 1.0
+      },
+      {
+        "fdc_id": "169602",
+        "name": "Flan, caramel custard, dry mix",
+        "data_type": "SR Legacy",
+        "sim": 0.2
+      },
+      {
+        "fdc_id": "167574",
+        "name": "Desserts, flan, caramel custard, prepared-from-recipe",
+        "data_type": "SR Legacy",
+        "sim": 0.2
+      }
+    ]
+  },
+  {
+    "canonical": "french_toast",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2708338",
+        "name": "French toast sticks",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708332",
+        "name": "French toast, frozen",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708331",
+        "name": "French toast, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "fried_rice",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2708951",
+        "name": "Rice, fried, meatless",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708952",
+        "name": "Rice, fried, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708955",
+        "name": "Rice, fried, with beef",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "fruit_salad",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2709296",
+        "name": "Fruit salad, excluding citrus fruits, with salad dressing or mayonnaise",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2709302",
+        "name": "Fruit salad, including citrus fruits, with salad dressing or mayonnaise",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2709299",
+        "name": "Fruit salad, excluding citrus fruits, with marshmallows",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "garlic_bread",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "167939",
+        "name": "Garlic bread, frozen",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707626",
+        "name": "Garlic bread, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "gelato",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2705637",
+    "fdc_name": "Gelato, chocolate",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 4.72,
+      "fat": 17.0,
+      "carbohydrates": 19.8,
+      "calories": 251,
+      "sugar": 17.4,
+      "fiber": 0.9,
+      "sodium": 57.0
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 large ice cream cup",
+        "gram_weight": 480
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 175
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 175
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2705637",
+        "name": "Gelato, chocolate",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "general_tso",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706794",
+        "name": "General Tso chicken",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "gnocchi",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2708721",
+    "fdc_name": "Gnocchi, cheese",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 8.51,
+      "fat": 12.0,
+      "carbohydrates": 9.38,
+      "calories": 178,
+      "sugar": 0.14,
+      "fiber": 0.2,
+      "sodium": 263
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 70
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 70
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2708721",
+        "name": "Gnocchi, cheese",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2708722",
+        "name": "Gnocchi, potato",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "goulash",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706466",
+        "name": "Stew, fish",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "granola",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "granola_bar",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2708095",
+        "name": "Cereal or granola bar (Quaker Chewy Granola Bar)",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708098",
+        "name": "Cereal or granola bar (Quaker Chewy Dipps Granola Bar)",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708096",
+        "name": "Cereal or granola bar (Quaker Chewy 90 Calorie Granola Bar)",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "grapes",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2709237",
+    "fdc_name": "Grapes, raw",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 0.9,
+      "fat": 0.2,
+      "carbohydrates": 19.4,
+      "calories": 83.0,
+      "sugar": 16.7,
+      "fiber": 0.9,
+      "sodium": 5.0
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 75
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 150
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 grape",
+        "gram_weight": 7
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2709237",
+        "name": "Grapes, raw",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2709325",
+        "name": "Grape juice, 100%",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "169393",
+        "name": "Grape leaves, canned",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "gravy",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2707145",
+    "fdc_name": "Gravy, beef",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 3.75,
+      "fat": 2.36,
+      "carbohydrates": 4.81,
+      "calories": 53.0,
+      "sugar": 0.21,
+      "fiber": 0.4,
+      "sodium": 633
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 60
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 240
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2708744",
+        "name": "Biscuit with gravy",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "2706379",
+        "name": "Beef with gravy",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "2706428",
+        "name": "Chicken with gravy",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      }
+    ]
+  },
+  {
+    "canonical": "greek_salad",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2709830",
+        "name": "Greek Salad, no dressing",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706749",
+        "name": "Beef salad",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706824",
+        "name": "Crab salad",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "green_beans",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "green_curry",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706388",
+        "name": "Beef curry",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706437",
+        "name": "Chicken curry",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2710178",
+        "name": "Curry sauce",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "grilled_cheese",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2705801",
+        "name": "Grilled cheese sandwich, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2705804",
+        "name": "Grilled cheese sandwich, cheddar cheese, on white bread",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2705805",
+        "name": "Grilled cheese sandwich, cheddar cheese, on wheat bread",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "grits",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2708363",
+    "fdc_name": "Grits, NFS",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 1.19,
+      "fat": 1.84,
+      "carbohydrates": 12.2,
+      "calories": 71.0,
+      "sugar": 0.1,
+      "fiber": 0.7,
+      "sodium": 81.0
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 cup, cooked",
+        "gram_weight": 240
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 240
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 oz, dry, yields",
+        "gram_weight": 185
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2708363",
+        "name": "Grits, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2708369",
+        "name": "Grits, with cheese, fat added",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.2
+      },
+      {
+        "fdc_id": "2708368",
+        "name": "Grits, with cheese, no added fat",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.2
+      }
+    ]
+  },
+  {
+    "canonical": "guacamole",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "gyro",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2706962",
+    "fdc_name": "Gyro sandwich",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 11.2,
+      "fat": 6.76,
+      "carbohydrates": 18.8,
+      "calories": 184,
+      "sugar": 1.74,
+      "fiber": 1.0,
+      "sodium": 323
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 200
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 sandwich, any size",
+        "gram_weight": 200
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2706962",
+        "name": "Gyro sandwich",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "hash_browns",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "169025",
+        "name": "DENNY'S, hash browns",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "173298",
+        "name": "McDONALD'S, Hash Brown",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "170304",
+        "name": "CHICK-FIL-A, hash browns",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "hot_sour_soup",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2707136",
+        "name": "Soup, hot and sour",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2710654",
+        "name": "Whiskey sour",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2710105",
+        "name": "Soup, borscht",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "hot_wing",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706073",
+        "name": "Chicken \"wings\" with hot sauce, from precooked",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706076",
+        "name": "Chicken \"wings\" with hot sauce, from other sources",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706080",
+        "name": "Chicken \"wings\", boneless, with hot sauce, from other sources",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "hummus",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "kale_salad",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "168421",
+        "name": "Kale, raw",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2709599",
+        "name": "Kale, raw",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "323505",
+        "name": "Kale, raw",
+        "data_type": "Foundation",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "kebab",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "kung_pao_chicken",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706796",
+        "name": "Kung pao chicken",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706743",
+        "name": "Kung Pao beef",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706763",
+        "name": "Kung Pao pork",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "lamb_chops",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2705906",
+        "name": "Lamb, chop",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "172517",
+        "name": "Lamb, New Zealand, imported, loin chop, separable lean and fat, raw",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "173810",
+        "name": "Lamb, New Zealand, imported, loin chop, separable lean only, raw",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "lentil_soup",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2707462",
+        "name": "Soup, lentil",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707460",
+        "name": "Soup, lentil, canned",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707463",
+        "name": "Soup, lentil, with meat",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "lo_mein",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2708800",
+        "name": "Lo mein, with shrimp",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708799",
+        "name": "Lo mein, meatless",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708798",
+        "name": "Lo mein, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "loaded_fries",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706334",
+        "name": "Calamari, fried",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706341",
+        "name": "Clams, fried",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706347",
+        "name": "Crayfish, fried",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "lobster",
+    "status": "DIRECT_MATCH",
+    "confidence": 1.0,
+    "fdc_id": "2706349",
+    "fdc_name": "Lobster",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 20.9,
+      "fat": 0.95,
+      "carbohydrates": 0.0,
+      "calories": 97.0,
+      "sugar": 0.0,
+      "fiber": 0.0,
+      "sodium": 535
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 85
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 claw",
+        "gram_weight": 50
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 lobster",
+        "gram_weight": 200
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2706349",
+        "name": "Lobster",
+        "data_type": "Survey (FNDDS)",
+        "sim": 1.0
+      },
+      {
+        "fdc_id": "2707141",
+        "name": "Lobster gumbo",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2706825",
+        "name": "Lobster salad",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "mac_and_cheese_bowl",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2708815",
+        "name": "Macaroni or noodles with cheese, Easy Mac type",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706916",
+        "name": "Big Mac (McDonalds)",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "172067",
+        "name": "McDONALD'S, BIG MAC (without Big Mac Sauce)",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "macaroni_salad",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "mango",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "mashed_potatoes",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "massaman_curry",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706388",
+        "name": "Beef curry",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706437",
+        "name": "Chicken curry",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "meatloaf",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2706946",
+    "fdc_name": "Meatloaf sandwich",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 11.8,
+      "fat": 6.15,
+      "carbohydrates": 28.7,
+      "calories": 217,
+      "sugar": 5.9,
+      "fiber": 1.3,
+      "sodium": 494
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 sandwich, any size",
+        "gram_weight": 135
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 135
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2706946",
+        "name": "Meatloaf sandwich",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "169888",
+        "name": "Vegetarian meatloaf or patties",
+        "data_type": "SR Legacy",
+        "sim": 0.33
+      }
+    ]
+  },
+  {
+    "canonical": "milkshake",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "minestrone",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2710114",
+    "fdc_name": "Soup, minestrone",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 1.71,
+      "fat": 0.5,
+      "carbohydrates": 7.3,
+      "calories": 40.0,
+      "sugar": 1.04,
+      "fiber": 1.5,
+      "sodium": 241
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 245
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 245
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 individual container",
+        "gram_weight": 440
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2710114",
+        "name": "Soup, minestrone",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "171578",
+        "name": "SMART SOUP, Greek Minestrone",
+        "data_type": "SR Legacy",
+        "sim": 0.25
+      },
+      {
+        "fdc_id": "171153",
+        "name": "Soup, minestrone, canned, condensed",
+        "data_type": "SR Legacy",
+        "sim": 0.25
+      }
+    ]
+  },
+  {
+    "canonical": "miso_soup",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2707455",
+        "name": "Soup, miso or tofu",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707439",
+        "name": "Miso",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "172442",
+        "name": "Miso",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "moo_shu",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706764",
+        "name": "Moo Shu pork, without Chinese pancake",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706795",
+        "name": "Moo Goo Gai Pan",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "mozzarella_sticks",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "169011",
+        "name": "APPLEBEE'S, mozzarella sticks",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "168076",
+        "name": "DENNY'S, mozzarella cheese sticks",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2705817",
+        "name": "Mozzarella sticks, breaded, baked, or fried",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "muffin",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2707844",
+    "fdc_name": "Muffin, zucchini",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 5.05,
+      "fat": 13.1,
+      "carbohydrates": 42.6,
+      "calories": 306,
+      "sugar": 22.7,
+      "fiber": 0.9,
+      "sodium": 290
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 bite size",
+        "gram_weight": 10
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 large",
+        "gram_weight": 180
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 miniature",
+        "gram_weight": 25
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2707844",
+        "name": "Muffin, zucchini",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2707830",
+        "name": "Muffin, fruit",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2707845",
+        "name": "Muffin, carrot",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "mussels",
+    "status": "DIRECT_MATCH",
+    "confidence": 1.0,
+    "fdc_id": "2706350",
+    "fdc_name": "Mussels",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 15.1,
+      "fat": 2.84,
+      "carbohydrates": 4.67,
+      "calories": 109,
+      "sugar": 0.0,
+      "fiber": 0.0,
+      "sodium": 362
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 mussel",
+        "gram_weight": 15
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 135
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 85
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2706350",
+        "name": "Mussels",
+        "data_type": "Survey (FNDDS)",
+        "sim": 1.0
+      },
+      {
+        "fdc_id": "174216",
+        "name": "Mollusks, mussel, blue, raw",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "naan",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2707613",
+    "fdc_name": "Bread, naan",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 11.1,
+      "fat": 7.28,
+      "carbohydrates": 50.2,
+      "calories": 311,
+      "sugar": 3.7,
+      "fiber": 5.2,
+      "sodium": 508
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 44
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 piece (1/4 of 10\" dia)",
+        "gram_weight": 44
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 surface inch",
+        "gram_weight": 2.4
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2707613",
+        "name": "Bread, naan",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "171845",
+        "name": "Bread, naan, plain, commercially prepared, refrigerated",
+        "data_type": "SR Legacy",
+        "sim": 0.17
+      },
+      {
+        "fdc_id": "174077",
+        "name": "Bread, naan, whole wheat, commercially prepared, refrigerated",
+        "data_type": "SR Legacy",
+        "sim": 0.14
+      }
+    ]
+  },
+  {
+    "canonical": "nuts",
+    "status": "GOOD_EQUIVALENCE",
+    "confidence": 0.5,
+    "fdc_id": "2515374",
+    "fdc_name": "Nuts, cashew nuts, raw",
+    "data_type": "Foundation",
+    "nutrition": {
+      "protein": 17.44,
+      "fat": 38.86,
+      "carbohydrates": 36.29,
+      "fiber": 4.1,
+      "sodium": 4.76,
+      "calories": 0,
+      "sugar": 0
+    },
+    "portions": [
+      {
+        "unit": "RACC",
+        "description": "",
+        "gram_weight": 30.0
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2515374",
+        "name": "Nuts, cashew nuts, raw",
+        "data_type": "Foundation",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "170162",
+        "name": "Nuts, cashew nuts, raw",
+        "data_type": "SR Legacy",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "170176",
+        "name": "Nuts, ginkgo nuts, canned",
+        "data_type": "SR Legacy",
+        "sim": 0.33
+      }
+    ]
+  },
+  {
+    "canonical": "omelette",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "onion_rings",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "oysters",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2706849",
+    "fdc_name": "Oysters Rockefeller",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 7.64,
+      "fat": 7.53,
+      "carbohydrates": 9.38,
+      "calories": 134,
+      "sugar": 1.23,
+      "fiber": 1.9,
+      "sodium": 430
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 oyster",
+        "gram_weight": 30
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 85
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2708747",
+        "name": "Dressing with oysters",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "2708160",
+        "name": "Crackers, oyster",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "1999627",
+        "name": "Mushroom, oyster",
+        "data_type": "Foundation",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "pad_thai",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2708806",
+        "name": "Pad Thai with chicken",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708808",
+        "name": "Pad Thai with meat",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708807",
+        "name": "Pad Thai with seafood",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "paella",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2706723",
+    "fdc_name": "Paella, NFS",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 9.53,
+      "fat": 7.17,
+      "carbohydrates": 15.8,
+      "calories": 169,
+      "sugar": 0.67,
+      "fiber": 0.6,
+      "sodium": 737
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 300
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 240
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2706711",
+        "name": "Paella with seafood",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "2706723",
+        "name": "Paella, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2708973",
+        "name": "Seafood paella, Puerto Rican style",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.2
+      }
+    ]
+  },
+  {
+    "canonical": "panna_cotta",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "peach",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2709249",
+    "fdc_name": "Peach, raw",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 0.91,
+      "fat": 0.27,
+      "carbohydrates": 10.1,
+      "calories": 46.0,
+      "sugar": 8.39,
+      "fiber": 1.5,
+      "sodium": 13.0
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 slice/chunk",
+        "gram_weight": 20
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 fruit",
+        "gram_weight": 150
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 155
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2709249",
+        "name": "Peach, raw",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2709253",
+        "name": "Peach, frozen",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2708022",
+        "name": "Cobbler, peach",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "peanuts",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "pear",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2709254",
+    "fdc_name": "Pear, raw",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 0.37,
+      "fat": 0.15,
+      "carbohydrates": 15.2,
+      "calories": 59.0,
+      "sugar": 9.73,
+      "fiber": 3.1,
+      "sodium": 3.0
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 fruit",
+        "gram_weight": 180
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 slice/chunk",
+        "gram_weight": 25
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 180
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2709254",
+        "name": "Pear, raw",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2709349",
+        "name": "Pear nectar",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2709208",
+        "name": "Pear, dried",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "penne_arrabbiata",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "pesto_pasta",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2710175",
+        "name": "Pesto sauce",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "171582",
+        "name": "Sauce, pesto, CLASSICO, basil pesto, ready-to-serve",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "171581",
+        "name": "Sauce, pesto, BUITONI, pesto with basil, ready-to-serve, refrigerated",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "pho",
+    "status": "GOOD_EQUIVALENCE",
+    "confidence": 0.5,
+    "fdc_id": "2707125",
+    "fdc_name": "Soup, pho, no meat",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 1.42,
+      "fat": 0.93,
+      "carbohydrates": 5.9,
+      "calories": 37.0,
+      "sugar": 0.64,
+      "fiber": 0.5,
+      "sodium": 357
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 245
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 245
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2707124",
+        "name": "Soup, pho, with meat",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.25
+      },
+      {
+        "fdc_id": "2707125",
+        "name": "Soup, pho, no meat",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      }
+    ]
+  },
+  {
+    "canonical": "pie",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2708017",
+    "fdc_name": "Pie shell",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 6.5,
+      "fat": 28.6,
+      "carbohydrates": 56.2,
+      "calories": 508,
+      "sugar": 4.23,
+      "fiber": 3.3,
+      "sodium": 467
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 25
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 tart shell",
+        "gram_weight": 25
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 pie shell (9\" dia)",
+        "gram_weight": 170
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2708017",
+        "name": "Pie shell",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2707993",
+        "name": "Pie, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2708506",
+        "name": "Frito pie",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "pineapple",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "popcorn",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "pork_chop",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2705872",
+        "name": "Pork, chop, stuffed",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2727575",
+        "name": "Pork, chop, center cut, raw",
+        "data_type": "Foundation",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2705867",
+        "name": "Pork, chop, lean and fat eaten",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "pork_ribs",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2705894",
+        "name": "Pork, ribs",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "167895",
+        "name": "Pork, fresh, loin, country-style ribs, separable lean and fat, raw",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "168305",
+        "name": "Pork, fresh, loin, country-style ribs, separable lean only, raw",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "potato_salad",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "poutine",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "pretzels",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "protein_bar",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "pudding",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2705697",
+    "fdc_name": "Banana pudding",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 2.57,
+      "fat": 4.26,
+      "carbohydrates": 28.0,
+      "calories": 160,
+      "sugar": 19.7,
+      "fiber": 0.7,
+      "sodium": 128
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 190
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 130
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2705697",
+        "name": "Banana pudding",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2705680",
+        "name": "Pudding, bread",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2705685",
+        "name": "Pudding, rice",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "pulled_pork",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "173344",
+        "name": "Pulled pork in barbecue sauce",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "pumpkin_pie",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "quiche",
+    "status": "GOOD_EQUIVALENCE",
+    "confidence": 0.5,
+    "fdc_id": "2708732",
+    "fdc_name": "Spinach quiche, meatless",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 10.3,
+      "fat": 23.5,
+      "carbohydrates": 11.7,
+      "calories": 299,
+      "sugar": 1.88,
+      "fiber": 1.0,
+      "sodium": 317
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 160
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cubic inch",
+        "gram_weight": 11
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 individual quiche",
+        "gram_weight": 113
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2708732",
+        "name": "Spinach quiche, meatless",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "2708733",
+        "name": "Cheese quiche, meatless",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "2708731",
+        "name": "Quiche with meat, poultry or fish",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.2
+      }
+    ]
+  },
+  {
+    "canonical": "ramen",
+    "status": "GOOD_EQUIVALENCE",
+    "confidence": 0.5,
+    "fdc_id": "2709153",
+    "fdc_name": "Ramen bowl, NFS",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 7.13,
+      "fat": 4.57,
+      "carbohydrates": 14.0,
+      "calories": 127,
+      "sugar": 0.42,
+      "fiber": 0.9,
+      "sodium": 333
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 245
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 245
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2709154",
+        "name": "Ramen bowl with beef",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.25
+      },
+      {
+        "fdc_id": "2709155",
+        "name": "Ramen bowl with chicken",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.25
+      },
+      {
+        "fdc_id": "2709156",
+        "name": "Ramen bowl with fish",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.25
+      }
+    ]
+  },
+  {
+    "canonical": "ravioli",
+    "status": "GOOD_EQUIVALENCE",
+    "confidence": 0.5,
+    "fdc_id": "173328",
+    "fdc_name": "Ravioli, cheese-filled, canned",
+    "data_type": "SR Legacy",
+    "nutrition": {
+      "calories": 77.0,
+      "protein": 2.48,
+      "fat": 1.45,
+      "carbohydrates": 13.64,
+      "fiber": 1.3,
+      "sugar": 3.72,
+      "sodium": 306.0
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "cup",
+        "gram_weight": 242.0
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "173328",
+        "name": "Ravioli, cheese-filled, canned",
+        "data_type": "SR Legacy",
+        "sim": 0.33
+      }
+    ]
+  },
+  {
+    "canonical": "red_velvet",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2707884",
+        "name": "Cake or cupcake, red velvet",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "refried_beans",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2707396",
+        "name": "Refried beans",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "reuben",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2706952",
+    "fdc_name": "Reuben sandwich",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 10.0,
+      "fat": 19.4,
+      "carbohydrates": 16.4,
+      "calories": 282,
+      "sugar": 3.48,
+      "fiber": 2.2,
+      "sodium": 688
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 sandwich, any size",
+        "gram_weight": 215
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 215
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2706952",
+        "name": "Reuben sandwich",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "ribeye_steak",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2646172",
+        "name": "Beef, ribeye, steak, boneless, choice, raw",
+        "data_type": "Foundation",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2705829",
+        "name": "Beef, steak, ribeye, lean and fat eaten",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2705830",
+        "name": "Beef, steak, ribeye, lean only eaten",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "risotto",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "roast_beef",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "roasted_vegetables",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "172284",
+        "name": "Babyfood, vegetables, garden vegetable, strained",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "172283",
+        "name": "Babyfood, vegetables, mix vegetables junior",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "173515",
+        "name": "Babyfood, vegetables, mix vegetables strained",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "rotisserie_chicken",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706060",
+        "name": "Chicken wing, rotisserie",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2705964",
+        "name": "Chicken breast, rotisserie, skin not eaten",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706009",
+        "name": "Chicken drumstick, rotisserie, skin not eaten",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "samosa",
+    "status": "DIRECT_MATCH",
+    "confidence": 1.0,
+    "fdc_id": "2708730",
+    "fdc_name": "Samosa",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 5.14,
+      "fat": 17.5,
+      "carbohydrates": 33.2,
+      "calories": 310,
+      "sugar": 1.28,
+      "fiber": 1.8,
+      "sodium": 388
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 small/individual",
+        "gram_weight": 25
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 regular/large",
+        "gram_weight": 100
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 75
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2708730",
+        "name": "Samosa",
+        "data_type": "Survey (FNDDS)",
+        "sim": 1.0
+      }
+    ]
+  },
+  {
+    "canonical": "sandwich",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2708171",
+    "fdc_name": "Crackers, sandwich",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 11.5,
+      "fat": 24.5,
+      "carbohydrates": 58.4,
+      "calories": 494,
+      "sugar": 10.5,
+      "fiber": 2.3,
+      "sodium": 801
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 individual package",
+        "gram_weight": 45
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 miniature/bite size",
+        "gram_weight": 3
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 sandwich",
+        "gram_weight": 7
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2708171",
+        "name": "Crackers, sandwich",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2706973",
+        "name": "Cuban sandwich",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2707483",
+        "name": "Falafel sandwich",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "sashimi",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "sausage_patty",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "172934",
+        "name": "Pork sausage, link/patty, unprepared",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "174578",
+        "name": "Pork sausage, link/patty, cooked, pan-fried",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "172971",
+        "name": "Pork sausage, link/patty, fully cooked, microwaved",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "scrambled_eggs",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "172187",
+        "name": "Egg, whole, cooked, scrambled",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "169904",
+        "name": "Eggs, scrambled, frozen mixture",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707201",
+        "name": "Egg omelet or scrambled egg, made with butter",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "shepherds_pie",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706594",
+        "name": "Shepherd's pie",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "short_ribs",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "170827",
+        "name": "Beef, chuck, short ribs, boneless, separable lean and fat, trimmed to 0\" fat, choice, raw",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "170828",
+        "name": "Beef, chuck, short ribs, boneless, separable lean and fat, trimmed to 0\" fat, select, raw",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "170783",
+        "name": "Beef, chuck, short ribs, boneless, separable lean only, trimmed to 0\" fat, choice, raw",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "shrimp",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "shrimp_scampi",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706458",
+        "name": "Shrimp scampi",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "sirloin_steak",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "167673",
+        "name": "DENNY'S, top sirloin steak",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2727574",
+        "name": "Beef, top sirloin steak, raw",
+        "data_type": "Foundation",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "167670",
+        "name": "CRACKER BARREL, grilled sirloin steak",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "sliders",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706894",
+        "name": "Cheeseburger slider",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706926",
+        "name": "Hamburger slider",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "smoothie",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2710152",
+    "fdc_name": "Vegetable smoothie",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 2.75,
+      "fat": 6.63,
+      "carbohydrates": 5.84,
+      "calories": 89.0,
+      "sugar": 2.57,
+      "fiber": 2.8,
+      "sodium": 38.0
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 medium",
+        "gram_weight": 864
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 fl oz",
+        "gram_weight": 27
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 324
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2710152",
+        "name": "Vegetable smoothie",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2709338",
+        "name": "Fruit smoothie, light",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "2709339",
+        "name": "Fruit smoothie, bottled",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      }
+    ]
+  },
+  {
+    "canonical": "soup",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2710105",
+    "fdc_name": "Soup, borscht",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 0.52,
+      "fat": 0.37,
+      "carbohydrates": 3.9,
+      "calories": 20.0,
+      "sugar": 2.24,
+      "fiber": 0.8,
+      "sodium": 245
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 245
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 245
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2710105",
+        "name": "Soup, borscht",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2707126",
+        "name": "Soup, pepperpot",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2709147",
+        "name": "Soup, barley",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "spaghetti_carbonara",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2709745",
+        "name": "Spaghetti sauce",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "169845",
+        "name": "DENNY'S, spaghetti and meatballs",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706470",
+        "name": "Spaghetti sauce with meat",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "spaghetti_meatballs",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "169845",
+        "name": "DENNY'S, spaghetti and meatballs",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "172099",
+        "name": "Spaghetti, with meatballs in tomato sauce, canned",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707472",
+        "name": "Meatball, meatless",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "spinach",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "spring_rolls",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2707782",
+        "name": "Roll, multigrain",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "168889",
+        "name": "Wheat, hard red spring",
+        "data_type": "SR Legacy",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708701",
+        "name": "Egg roll, with shrimp",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "steamed_broccoli",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706353",
+        "name": "Oysters, steamed",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706342",
+        "name": "Clams, steamed or boiled",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706299",
+        "name": "Fish, bass, steamed",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "strawberries",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "sub_sandwich",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706945",
+        "name": "Meatball sandwich or sub",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706959",
+        "name": "Steak sandwich or sub on wheat",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706958",
+        "name": "Steak sandwich or sub on white",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "sushi_roll",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2708961",
+        "name": "Sushi roll, California",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708966",
+        "name": "Sushi roll, vegetable",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708965",
+        "name": "Sushi roll tuna",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "sweet_potato",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2709715",
+        "name": "Sweet potato tots",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707648",
+        "name": "Bread, sweet potato",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708012",
+        "name": "Pie, sweet potato",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "sweet_sour_chicken",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706435",
+        "name": "Sweet and sour chicken or turkey",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706436",
+        "name": "Sweet and sour chicken or turkey, without vegetables",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706401",
+        "name": "Sweet and sour pork",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "tamales",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "167636",
+    "fdc_name": "Tamales (Navajo)",
+    "data_type": "SR Legacy",
+    "nutrition": {
+      "calories": 153.0,
+      "protein": 6.28,
+      "fat": 6.12,
+      "carbohydrates": 18.12,
+      "fiber": 3.1,
+      "sugar": 0.99,
+      "sodium": 427.0
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "piece",
+        "gram_weight": 186.0
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2708571",
+        "name": "Tamale, beef",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708573",
+        "name": "Tamale, chicken",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708570",
+        "name": "Tamale, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "tbone_steak",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706747",
+        "name": "Pepper steak",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2709752",
+        "name": "Steak sauce",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706394",
+        "name": "Steak tartare",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "tempura",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2710065",
+    "fdc_name": "Vegetable tempura",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 3.81,
+      "fat": 15.8,
+      "carbohydrates": 20.4,
+      "calories": 239,
+      "sugar": 1.49,
+      "fiber": 1.6,
+      "sodium": 12.0
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 piece",
+        "gram_weight": 7
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 fritter",
+        "gram_weight": 30
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 63
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2710065",
+        "name": "Vegetable tempura",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2706844",
+        "name": "Fish, tofu, and vegetables, tempura",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.2
+      }
+    ]
+  },
+  {
+    "canonical": "teriyaki_chicken",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "tilapia",
+    "status": "GOOD_EQUIVALENCE",
+    "confidence": 0.5,
+    "fdc_id": "2706322",
+    "fdc_name": "Fish, tilapia, fried",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 17.2,
+      "fat": 13.5,
+      "carbohydrates": 11.7,
+      "calories": 237,
+      "sugar": 0.2,
+      "fiber": 0.5,
+      "sodium": 383
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 135
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 small/regular fillet",
+        "gram_weight": 90
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cubic inch",
+        "gram_weight": 17
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2706322",
+        "name": "Fish, tilapia, fried",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "2706320",
+        "name": "Fish, tilapia, grilled",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "2706318",
+        "name": "Fish, tilapia, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      }
+    ]
+  },
+  {
+    "canonical": "tiramisu",
+    "status": "DIRECT_MATCH",
+    "confidence": 1.0,
+    "fdc_id": "2705702",
+    "fdc_name": "Tiramisu",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 5.65,
+      "fat": 23.9,
+      "carbohydrates": 29.4,
+      "calories": 353,
+      "sugar": 18.7,
+      "fiber": 0.6,
+      "sodium": 173
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 cubic inch",
+        "gram_weight": 10
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 175
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 cup",
+        "gram_weight": 145
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2705702",
+        "name": "Tiramisu",
+        "data_type": "Survey (FNDDS)",
+        "sim": 1.0
+      }
+    ]
+  },
+  {
+    "canonical": "tomato_soup",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2709757",
+        "name": "Soup, tomato",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2709758",
+        "name": "Soup, cream of tomato",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2709759",
+        "name": "Soup, tomato, canned",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "tortilla_chips",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "trail_mix",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "trout",
+    "status": "GOOD_EQUIVALENCE",
+    "confidence": 0.5,
+    "fdc_id": "2706306",
+    "fdc_name": "Fish, trout, fried",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 17.1,
+      "fat": 16.9,
+      "carbohydrates": 11.7,
+      "calories": 271,
+      "sugar": 0.2,
+      "fiber": 0.5,
+      "sodium": 382
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 large fillet",
+        "gram_weight": 135
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 small/regular fillet",
+        "gram_weight": 90
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 90
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2706306",
+        "name": "Fish, trout, fried",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "2706304",
+        "name": "Fish, trout, grilled",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "2706302",
+        "name": "Fish, trout, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      }
+    ]
+  },
+  {
+    "canonical": "tuna_salad",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "tuna_steak",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2706747",
+        "name": "Pepper steak",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2709752",
+        "name": "Steak sauce",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2706394",
+        "name": "Steak tartare",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "turkey_breast",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "udon",
+    "status": "REVIEW_REQUIRED",
+    "reason": "sin candidato genérico",
+    "candidates": []
+  },
+  {
+    "canonical": "veggie_burger",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2707481",
+        "name": "Veggie burger, on bun",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707473",
+        "name": "Veggie burger patty, no bun",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2707482",
+        "name": "Veggie burger, on bun, with cheese",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "watermelon",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "2709270",
+    "fdc_name": "Watermelon, raw",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 0.61,
+      "fat": 0.15,
+      "carbohydrates": 7.55,
+      "calories": 30.0,
+      "sugar": 6.2,
+      "fiber": 0.4,
+      "sodium": 1.0
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 large melon",
+        "gram_weight": 6000
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 medium wedge/slice",
+        "gram_weight": 325
+      },
+      {
+        "unit": "undetermined",
+        "description": "1 medium melon",
+        "gram_weight": 5200
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2709270",
+        "name": "Watermelon, raw",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "167765",
+        "name": "Watermelon, raw",
+        "data_type": "SR Legacy",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2709333",
+        "name": "Watermelon juice, 100%",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  },
+  {
+    "canonical": "wonton_soup",
+    "status": "REVIEW_REQUIRED",
+    "confidence": null,
+    "fdc_id": null,
+    "fdc_name": null,
+    "data_type": null,
+    "nutrition": null,
+    "portions": null,
+    "candidates": [
+      {
+        "fdc_id": "2709160",
+        "name": "Soup, wonton",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708179",
+        "name": "Crackers, wonton",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      },
+      {
+        "fdc_id": "2708705",
+        "name": "Wonton, dumpling or pot sticker, fried",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.0
+      }
+    ]
+  },
+  {
+    "canonical": "wrap",
+    "status": "GOOD_EQUIVALENCE",
+    "confidence": 0.5,
+    "fdc_id": "2707032",
+    "fdc_name": "Fish wrap sandwich",
+    "data_type": "Survey (FNDDS)",
+    "nutrition": {
+      "protein": 14.7,
+      "fat": 12.4,
+      "carbohydrates": 22.6,
+      "calories": 262,
+      "sugar": 1.79,
+      "fiber": 1.4,
+      "sodium": 562
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "1 sandwich, any size",
+        "gram_weight": 151
+      },
+      {
+        "unit": "undetermined",
+        "description": "Quantity not specified",
+        "gram_weight": 151
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "2707032",
+        "name": "Fish wrap sandwich",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "2706970",
+        "name": "Ham sandwich wrap",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      },
+      {
+        "fdc_id": "2706881",
+        "name": "Sandwich wrap, NFS",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.33
+      }
+    ]
+  },
+  {
+    "canonical": "yogurt",
+    "status": "DIRECT_MATCH",
+    "confidence": 0.5,
+    "fdc_id": "167722",
+    "fdc_name": "Tofu yogurt",
+    "data_type": "SR Legacy",
+    "nutrition": {
+      "calories": 94.0,
+      "protein": 3.5,
+      "fat": 1.8,
+      "carbohydrates": 15.96,
+      "fiber": 0.2,
+      "sugar": 1.24,
+      "sodium": 35.0
+    },
+    "portions": [
+      {
+        "unit": "undetermined",
+        "description": "cup",
+        "gram_weight": 262.0
+      }
+    ],
+    "candidates": [
+      {
+        "fdc_id": "167722",
+        "name": "Tofu yogurt",
+        "data_type": "SR Legacy",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2705443",
+        "name": "Yogurt tube",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      },
+      {
+        "fdc_id": "2705442",
+        "name": "Yogurt, liquid",
+        "data_type": "Survey (FNDDS)",
+        "sim": 0.5
+      }
+    ]
+  }
+]
