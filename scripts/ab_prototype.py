@@ -1,7 +1,7 @@
-"""F27.3-5: visual prototype retrieval — A/B hybrid scoring (text + visual).
+"""F27.3-5: visual prototype retrieval â€” A/B hybrid scoring (text + visual).
 
 Por imagen: retrieval de texto (top-N, F26) + similitud visual contra prototipos
-de las clases candidatas → hybrid (1-w)*text + w*visual. Los scores se guardan
+de las clases candidatas â†’ hybrid (1-w)*text + w*visual. Los scores se guardan
 por imagen; el barrido de (w, aggregation) es post-proceso (sin re-inferencia).
 
 Baselines: legacy 38 (pipeline) y F26 (text-only 231).
@@ -9,6 +9,7 @@ Baselines: legacy 38 (pipeline) y F26 (text-only 231).
 Uso: python scripts/ab_prototype.py
 """
 import json
+import os
 import sys
 import time
 from collections import Counter, defaultdict
@@ -28,7 +29,7 @@ CROPS_V1 = BASE / "datasets/crops-v1"
 SUBSET = BASE / "datasets/food101-subset"
 REGIONS = json.loads((BASE / "benchmarks/detection/regions.json").read_text(encoding="utf-8"))
 MASTER = json.loads((BASE / "data/catalogs/food_master.json").read_text(encoding="utf-8"))
-PROTOS = json.loads((BASE / "data/prototypes/f27_prototypes.json").read_text(encoding="utf-8"))
+PROTOS = json.loads((BASE / os.environ.get("PROTO_STORE", "data/prototypes/f27_prototypes.json")).read_text(encoding="utf-8"))
 
 TOP_N = 10
 WEIGHTS = (0.25, 0.50, 0.75)
@@ -152,7 +153,9 @@ def main() -> None:
     hm = HybridModel()
 
     results: dict = {}
-    for source in ("food-us", "v1", "food101"):
+    import sys as _sys
+    sources_arg = _sys.argv[1:] or ("food-us", "v1", "food101")
+    for source in sources_arg:
         rows = []
         legacy_total = legacy_top1 = 0
         t0 = time.perf_counter()
@@ -198,3 +201,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+

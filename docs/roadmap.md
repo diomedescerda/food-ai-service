@@ -304,3 +304,9 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Los prototipos RECUPERAN ~26 pts del F26 pero NO superan el legacy → NO aprobar 231 en producción (Gates 1-2 no se cumplen)
 - [x] Prototype store: 681 KB (126 × 512 floats); latencia hybrid ~215ms (misma que F26 — el visual es matmul trivial)
 - [x] Conclusión: los prototipos visuales resuelven PARCIALMENTE F26; falta cobertura (17/231 clases) y calidad (8 prototipos por clase de Commons con ruido)
+
+## FASE 28 — Prototype Coverage + Quality ✅ (2026-08-31)
+- [x] Calidad: 24 WRONG/7 DUP de 126 (salmon 5/8 ruido); A/B raw vs clean IDENTICOS — la limpieza no cambia (agregación diluye)
+- [x] Cobertura: 17 → 33 clases (254 prototipos, food-bench completo + assets); 198 clases INSUFFICIENT_DATA
+- [x] RESULTADO: v1 55.1% SUPERA legacy 47.0% (+17.9 vs F27); Food-101 85.0% (94.8% del legacy); food-us 59.3% (gap −12: fries/fried→rice estructural)
+- [x] DECISIÓN: REJECT 231 (food-us no alcanza legacy); la cobertura es la dirección correcta (evidencia v1); faltan 198 clases + resolver fries→rice

@@ -1,13 +1,13 @@
-"""F27.1-2: construye el Visual Prototype Store.
+﻿"""F27.1-2: construye el Visual Prototype Store.
 
-Fuentes PERMISIVAS para producción (verificadas):
-- food-bench-v1 (Wikimedia Commons: CC0/CC BY/CC BY-SA/PD — en metadata.json)
-- multi-food (imágenes propias del proyecto)
-- tests/assets (imágenes propias)
+Fuentes PERMISIVAS para producciÃ³n (verificadas):
+- food-bench-v1 (Wikimedia Commons: CC0/CC BY/CC BY-SA/PD â€” en metadata.json)
+- multi-food (imÃ¡genes propias del proyecto)
+- tests/assets (imÃ¡genes propias)
 
 NO usa Food-101 (non-commercial) ni Nutrition5k (no descargado).
 
-Salida: data/prototypes/f27_prototypes.json — {class: [embeddings + metadata]}
+Salida: data/prototypes/f27_prototypes.json â€” {class: [embeddings + metadata]}
 Uso: python scripts/build_prototypes.py
 """
 import json
@@ -22,10 +22,10 @@ from app.core.config import Settings  # noqa: E402
 from app.models.zero_shot_classifier import ZeroShotFoodClassifier  # noqa: E402
 
 BASE = Path(__file__).resolve().parents[1]
-OUT = BASE / "data/prototypes/f27_prototypes.json"
+OUT = BASE / "data/prototypes/f28_full.json"
 
-# Clases problemáticas (F21/F22/F26) + las 6 del regression set food-us.
-TARGET_CLASSES = [
+# Clases problemÃ¡ticas (F21/F22/F26) + las 6 del regression set food-us.
+TARGET_CLASSES = sorted({p.parent.name for p in (BASE / "datasets/food-bench-v1").rglob("*.jpg")}) + [
     "french_fries", "fried_chicken", "hot_dog", "hamburger", "taco",
     "quesadilla", "nachos", "steak", "grilled_chicken", "salmon", "pizza",
     "sandwich", "mac_and_cheese", "lasagna", "chicken_nuggets", "banana", "apple",
@@ -89,7 +89,7 @@ def main() -> None:
     store: dict[str, list[dict]] = {}
     for cls, items in sources.items():
         if not items:
-            print(f"[sin imágenes] {cls}", flush=True)
+            print(f"[sin imÃ¡genes] {cls}", flush=True)
             continue
         store[cls] = []
         for it in items:
@@ -116,3 +116,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
