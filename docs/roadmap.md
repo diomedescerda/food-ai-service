@@ -327,3 +327,10 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] JERÁRQUICO food-us (legacy + rice, crops): 72.2% > 71.3% legacy ✓ (Gate 1); 77.8% de F30 no se reproduce exactamente (variación por semilla con 24 imágenes de train — documentado)
 - [x] DECISIÓN: REJECT default — la arquitectura valida el concepto; los otros grupos fallaron por DATOS (8 imgs/clase), no por el enfoque
 - [x] F32: más datos por grupo (Nutrition5k/Commons) + gating fino + re-evaluar grupos con >=20 imgs
+
+## FASE 32 — Data Sufficiency + Deterministic Splits + Gating ✅ (2026-08-31)
+- [x] Splits deterministas (hash md5 % 20) + multi-seed (42/123/2026) + gating 0.6 — infraestructura lista
+- [x] HALLAZGO: más datos CRUDOS de Commons degradan (rice 75% -> 46.4%) — el punto de saturación de rice es ~8-12 imágenes LIMPIAS; pizza/naan SÍ mejora con datos (40 -> 86.7)
+- [x] Diagnóstico de representación: hamburger/sandwich MUY separable (inter 0.403) — el sandwich 0/20 es calidad del train; fried/nuggets NO separable (inter 0.637 ≈ intra) — representación
+- [x] Global con datos crudos = legacy (71.3); F31 (limpio) sigue siendo el mejor (72.2)
+- [x] DECISIÓN: REJECT — calidad > cantidad; F33 = pipeline de validación obligatorio + LoRA para representación-limitados

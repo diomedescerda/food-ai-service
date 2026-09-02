@@ -2798,5 +2798,825 @@
     "ground_truth": "guacamole",
     "food_count": 1,
     "multi_food": false
+  },
+  "naan/img_0019.jpg": {
+    "class": "naan",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-02-22_20_57_14_Mixed_herb_and_cheese_naan_bread_at_Karma_Modern_Indian_in_Washington,_D.C.jpg",
+    "original_title": "File:2020-02-22 20 57 14 Mixed herb and cheese naan bread at Karma Modern Indian in Washington, D.C.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "naan",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "naan/img_0020.jpg": {
+    "class": "naan",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ham_and_eggs_served_with_naan_bread.jpg",
+    "original_title": "File:Ham and eggs served with naan bread.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "naan",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "naan/img_0021.jpg": {
+    "class": "naan",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Indian_naan_bread.jpg",
+    "original_title": "File:Indian naan bread.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "naan",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "naan/img_0022.jpg": {
+    "class": "naan",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Korma_chicken,_tarkha_dhaal,_saffron_rice_%26_naan_bread,_courtesy_of_Sainsbury_-_17_05_2019_(34003607278).jpg",
+    "original_title": "File:Korma chicken, tarkha dhaal, saffron rice & naan bread, courtesy of Sainsbury - 17 05 2019 (34003607278).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "naan",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "naan/img_0023.jpg": {
+    "class": "naan",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Naan_Bread.JPG",
+    "original_title": "File:Naan Bread.JPG",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "naan",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "naan/img_0024.jpg": {
+    "class": "naan",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Naan_bread_(3170160310).jpg",
+    "original_title": "File:Naan bread (3170160310).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "naan",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "taco/img_0021.jpg": {
+    "class": "taco",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-03-24_15_09_24_A_Crunchy_Taco_Supreme_from_Taco_Bell_in_the_Dulles_section_of_Sterling,_Loudoun_County,_Virginia.jpg",
+    "original_title": "File:2020-03-24 15 09 24 A Crunchy Taco Supreme from Taco Bell in the Dulles section of Sterling, Loudoun County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "taco",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "taco/img_0022.jpg": {
+    "class": "taco",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-03-24_15_10_36_A_Crunchy_Taco_Supreme_from_Taco_Bell_in_the_Dulles_section_of_Sterling,_Loudoun_County,_Virginia.jpg",
+    "original_title": "File:2020-03-24 15 10 36 A Crunchy Taco Supreme from Taco Bell in the Dulles section of Sterling, Loudoun County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "taco",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "taco/img_0023.jpg": {
+    "class": "taco",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-03-24_15_13_06_A_Crunchy_Taco_Supreme_from_Taco_Bell_in_the_Dulles_section_of_Sterling,_Loudoun_County,_Virginia.jpg",
+    "original_title": "File:2020-03-24 15 13 06 A Crunchy Taco Supreme from Taco Bell in the Dulles section of Sterling, Loudoun County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "taco",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "taco/img_0024.jpg": {
+    "class": "taco",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-03-24_15_14_12_A_Crunchy_Taco_Supreme_from_Taco_Bell_in_the_Dulles_section_of_Sterling,_Loudoun_County,_Virginia.jpg",
+    "original_title": "File:2020-03-24 15 14 12 A Crunchy Taco Supreme from Taco Bell in the Dulles section of Sterling, Loudoun County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "taco",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0001.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22Pacman_Quesadilla%22_(28665804985).jpg",
+    "original_title": "File:\"Pacman Quesadilla\" (28665804985).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0002.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:02_Tamales,_Chile_Relleno,_Quesadilla_Platter.jpg",
+    "original_title": "File:02 Tamales, Chile Relleno, Quesadilla Platter.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0003.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:04_Pork_Quesadilla_and_Chorizo_Huarache_-_New_Mexico_Place.jpg",
+    "original_title": "File:04 Pork Quesadilla and Chorizo Huarache - New Mexico Place.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0004.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:04_Veggie_Quesadilla_-_El_Nuevo_Amanecer_Restaurant.jpg",
+    "original_title": "File:04 Veggie Quesadilla - El Nuevo Amanecer Restaurant.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0005.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:05_Beef_Quesadilla_-_El_Nuevo_Amanecer_Restaurant.jpg",
+    "original_title": "File:05 Beef Quesadilla - El Nuevo Amanecer Restaurant.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0006.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:06_Beef_Quesadilla_-_El_Nuevo_Amanecer_Restaurant.jpg",
+    "original_title": "File:06 Beef Quesadilla - El Nuevo Amanecer Restaurant.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0007.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:06_Shrimp_Quesadilla_-_Fresco_Tortilla.jpg",
+    "original_title": "File:06 Shrimp Quesadilla - Fresco Tortilla.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0008.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2018-02-22_16_52_42_Classic_appetizer_combo_(Chips_with_spinach-artichoke_dip,_mozzarella_sticks,_honey-bbq_buffalo_wings_and_chicken_quesadilla)_at_the_Applebee%27s_in_Fair_Lakes,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2018-02-22 16 52 42 Classic appetizer combo (Chips with spinach-artichoke dip, mozzarella sticks, honey-bbq buffalo wings and chicken quesadilla) at the Applebee's in Fair Lakes, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0009.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2018-03-25_11_35_28_Classic_appetizer_combo_(Chips_with_spinach-artichoke_dip,_mozzarella_sticks,_honey-bbq_buffalo_wings_and_chicken_quesadilla)_at_the_Applebee%27s_in_Fair_Lakes,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2018-03-25 11 35 28 Classic appetizer combo (Chips with spinach-artichoke dip, mozzarella sticks, honey-bbq buffalo wings and chicken quesadilla) at the Applebee's in Fair Lakes, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0010.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2018-08-16_21_23_41_Classic_appetizer_combo_(Chips_with_spinach-artichoke_dip,_mozzarella_sticks,_honey-bbq_buffalo_wings_and_chicken_quesadilla)_at_the_Applebee%27s_in_Fair_Lakes,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2018-08-16 21 23 41 Classic appetizer combo (Chips with spinach-artichoke dip, mozzarella sticks, honey-bbq buffalo wings and chicken quesadilla) at the Applebee's in Fair Lakes, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0011.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2018-11-12_11_14_55_Classic_appetizer_combo_(Chips_with_spinach-artichoke_dip,_mozzarella_sticks,_honey-bbq_buffalo_wings_and_chicken_quesadilla)_at_the_Applebee%27s_in_Fair_Lakes,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2018-11-12 11 14 55 Classic appetizer combo (Chips with spinach-artichoke dip, mozzarella sticks, honey-bbq buffalo wings and chicken quesadilla) at the Applebee's in Fair Lakes, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0012.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-01-22_21_01_02_A_cheese_quesadilla_from_Taco_Bell_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-01-22 21 01 02 A cheese quesadilla from Taco Bell in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0013.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-02-25_19_29_02_Chicken_quesadilla_at_the_Applebee%27s_in_Fair_Lakes,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-02-25 19 29 02 Chicken quesadilla at the Applebee's in Fair Lakes, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0014.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-08-11_11_26_39_Classic_appetizer_combo_(Chips_with_spinach-artichoke_dip,_mozzarella_sticks,_honey-bbq_buffalo_wings_and_chicken_quesadilla)_at_the_Applebee%27s_in_Fair_Lakes,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-08-11 11 26 39 Classic appetizer combo (Chips with spinach-artichoke dip, mozzarella sticks, honey-bbq buffalo wings and chicken quesadilla) at the Applebee's in Fair Lakes, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0015.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-03-13_21_27_00_Classic_appetizer_combo_(Chips_with_spinach-artichoke_dip,_mozzarella_sticks,_honey-bbq_buffalo_wings_and_chicken_quesadilla)_at_the_Applebee%27s_in_Fair_Lakes,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2020-03-13 21 27 00 Classic appetizer combo (Chips with spinach-artichoke dip, mozzarella sticks, honey-bbq buffalo wings and chicken quesadilla) at the Applebee's in Fair Lakes, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0016.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-03-24_15_01_10_A_cheese_quesadilla_from_Taco_Bell_in_the_Dulles_section_of_Sterling,_Loudoun_County,_Virginia.jpg",
+    "original_title": "File:2020-03-24 15 01 10 A cheese quesadilla from Taco Bell in the Dulles section of Sterling, Loudoun County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0017.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-04-28_21_05_45_A_cheese_quesadilla_from_Taco_Bell_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2020-04-28 21 05 45 A cheese quesadilla from Taco Bell in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0018.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-04-28_21_05_45_A_cheese_quesadilla_split_into_portions_from_Taco_Bell_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2020-04-28 21 05 45 A cheese quesadilla split into portions from Taco Bell in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0019.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-04-28_21_09_15_A_broken_portion_of_a_cheese_quesadilla_from_Taco_Bell_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2020-04-28 21 09 15 A broken portion of a cheese quesadilla from Taco Bell in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0020.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-11-30_20_30_19_Classic_appetizer_combo_(Chips_with_spinach-artichoke_dip,_mozzarella_sticks,_honey-bbq_buffalo_wings_and_chicken_quesadilla)_at_the_Applebee%27s_in_Fair_Lakes,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2020-11-30 20 30 19 Classic appetizer combo (Chips with spinach-artichoke dip, mozzarella sticks, honey-bbq buffalo wings and chicken quesadilla) at the Applebee's in Fair Lakes, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0021.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2021-01-07_19_57_30_Classic_appetizer_combo_(Chips_with_spinach-artichoke_dip,_mozzarella_sticks,_honey-bbq_buffalo_wings_and_chicken_quesadilla)_at_the_Applebee%27s_in_Fair_Lakes,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2021-01-07 19 57 30 Classic appetizer combo (Chips with spinach-artichoke dip, mozzarella sticks, honey-bbq buffalo wings and chicken quesadilla) at the Applebee's in Fair Lakes, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0022.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2021-10-27_22_46_18_The_chicken_quesadilla_portion_of_the_Classic_Combo_at_the_State_College_Applebee%27s_along_Colonnade_Way_in_Patton_Township,_Centre_County,_Pennsylvania.jpg",
+    "original_title": "File:2021-10-27 22 46 18 The chicken quesadilla portion of the Classic Combo at the State College Applebee's along Colonnade Way in Patton Township, Centre County, Pennsylvania.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0023.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2022-01-29_20_52_17_Classic_appetizer_combo_(Chips_with_spinach-artichoke_dip,_mozzarella_sticks,_honey-bbq_buffalo_wings_and_chicken_quesadilla)_at_the_Applebee%27s_in_Fair_Lakes,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2022-01-29 20 52 17 Classic appetizer combo (Chips with spinach-artichoke dip, mozzarella sticks, honey-bbq buffalo wings and chicken quesadilla) at the Applebee's in Fair Lakes, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "quesadilla/img_0024.jpg": {
+    "class": "quesadilla",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2025-11-07_15_07_02_The_chicken_quesadilla_portion_of_the_Classic_Combo_at_the_Applebee%27s_along_U.S._Route_1_(Brunswick_Pike)_in_Lawrence_Township,_Mercer_County,_New_Jersey.jpg",
+    "original_title": "File:2025-11-07 15 07 02 The chicken quesadilla portion of the Classic Combo at the Applebee's along U.S. Route 1 (Brunswick Pike) in Lawrence Township, Mercer County, New Jersey.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "quesadilla",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0001.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:01_Guacamole_Nachos.jpg",
+    "original_title": "File:01 Guacamole Nachos.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0002.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:02_Beef_Tongue_Texan_Nachos_-_Yola%27s_Cafe.jpg",
+    "original_title": "File:02 Beef Tongue Texan Nachos - Yola's Cafe.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0003.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:03_Beef_Tongue_Texan_Nachos_-_Yola%27s_Cafe.jpg",
+    "original_title": "File:03 Beef Tongue Texan Nachos - Yola's Cafe.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0004.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2018-02-01-Guacamole_mit_Nachos-7937.jpg",
+    "original_title": "File:2018-02-01-Guacamole mit Nachos-7937.jpg",
+    "license": "CC0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0005.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-01-27_21_44_47_A_serving_of_Zesty_Nachos_at_the_Amphora_Diner_in_Herndon,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-01-27 21 44 47 A serving of Zesty Nachos at the Amphora Diner in Herndon, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0006.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-01-27_21_44_57_A_serving_of_Zesty_Nachos_at_the_Amphora_Diner_in_Herndon,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-01-27 21 44 57 A serving of Zesty Nachos at the Amphora Diner in Herndon, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0007.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-02-26_19_27_38_A_serving_of_Zesty_Nachos_at_the_Amphora_Diner_in_Herndon,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-02-26 19 27 38 A serving of Zesty Nachos at the Amphora Diner in Herndon, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0008.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-02-26_19_27_45_A_serving_of_Zesty_Nachos_at_the_Amphora_Diner_in_Herndon,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-02-26 19 27 45 A serving of Zesty Nachos at the Amphora Diner in Herndon, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0009.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-02-26_19_28_39_A_serving_of_Zesty_Nachos_at_the_Amphora_Diner_in_Herndon,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-02-26 19 28 39 A serving of Zesty Nachos at the Amphora Diner in Herndon, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0010.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-02-26_19_28_44_A_serving_of_Zesty_Nachos_at_the_Amphora_Diner_in_Herndon,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-02-26 19 28 44 A serving of Zesty Nachos at the Amphora Diner in Herndon, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0011.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2019-05-12_22_57_41_A_serving_of_Zesty_Nachos_at_the_Amphora_Diner_in_Herndon,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2019-05-12 22 57 41 A serving of Zesty Nachos at the Amphora Diner in Herndon, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0012.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-03-05_20_08_44_A_serving_of_neighborhood_nachos_with_beef_at_the_Applebee%27s_in_Fair_Lakes,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2020-03-05 20 08 44 A serving of neighborhood nachos with beef at the Applebee's in Fair Lakes, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0013.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-03-05_20_08_52_A_serving_of_neighborhood_nachos_with_beef_at_the_Applebee%27s_in_Fair_Lakes,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2020-03-05 20 08 52 A serving of neighborhood nachos with beef at the Applebee's in Fair Lakes, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0014.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2020-09-22_23_51_23_A_sample_of_Utz_Party_Mix_(tortilla_chips,_bbq_corn_chips,_cheese_crunchies,_nachos,_pretzel_wheels)_in_the_Dulles_section_of_Sterling,_Loudoun_County,_Virginia.jpg",
+    "original_title": "File:2020-09-22 23 51 23 A sample of Utz Party Mix (tortilla chips, bbq corn chips, cheese crunchies, nachos, pretzel wheels) in the Dulles section of Sterling, Loudoun County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0015.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2021-10-09_21_29_14_Taco_Bell_nachos_at_the_Royal_Kona_Resort_in_Kailua-Kona,_Hawaii_County,_Hawaii.jpg",
+    "original_title": "File:2021-10-09 21 29 14 Taco Bell nachos at the Royal Kona Resort in Kailua-Kona, Hawaii County, Hawaii.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0016.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2024_Wisconsin_State_Fair_40_(Elvis_Nachos).jpg",
+    "original_title": "File:2024 Wisconsin State Fair 40 (Elvis Nachos).jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0017.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Airport_Grocery-_Louisiana_nachos,_hot_tamales,_fried_crawfish.jpg",
+    "original_title": "File:Airport Grocery- Louisiana nachos, hot tamales, fried crawfish.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0018.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Arabi_21Dec2013_Nachos.JPG",
+    "original_title": "File:Arabi 21Dec2013 Nachos.JPG",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0019.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:BBQ_Nachos_015.jpg",
+    "original_title": "File:BBQ Nachos 015.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0020.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Baked_onion,_chile,_and_hoop_cheese_nachos.jpg",
+    "original_title": "File:Baked onion, chile, and hoop cheese nachos.jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0021.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Beef_Nachos_01.jpg",
+    "original_title": "File:Beef Nachos 01.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0022.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Beef_Nachos_02.jpg",
+    "original_title": "File:Beef Nachos 02.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0023.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Blackened_Tuna_Nachos_(15828444357).jpg",
+    "original_title": "File:Blackened Tuna Nachos (15828444357).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "nachos/img_0024.jpg": {
+    "class": "nachos",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Blackened_Tuna_Nachos_(16014193515).jpg",
+    "original_title": "File:Blackened Tuna Nachos (16014193515).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "nachos",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0001.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:02023_0279_Chicken_nuggets.jpg",
+    "original_title": "File:02023 0279 Chicken nuggets.jpg",
+    "license": "CC0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0002.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:10_piece_chicken_nuggets.jpg",
+    "original_title": "File:10 piece chicken nuggets.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0003.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2022-04-13_19_17_09_Chicken_nuggets_from_Chick-fil-A_at_the_Wingate_by_Wyndham_hotel_in_Chantilly,_Fairfax_County,_Virginia.jpg",
+    "original_title": "File:2022-04-13 19 17 09 Chicken nuggets from Chick-fil-A at the Wingate by Wyndham hotel in Chantilly, Fairfax County, Virginia.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0004.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:8_Chicken_Nuggets_-_Captain_Cook%27s_2025-06-30.jpg",
+    "original_title": "File:8 Chicken Nuggets - Captain Cook's 2025-06-30.jpg",
+    "license": "CC0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0005.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_bowl_of_chicken_nuggets.jpg",
+    "original_title": "File:A bowl of chicken nuggets.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0006.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_pack_of_Vegetarian_Chicken_Nuggets.jpg",
+    "original_title": "File:A pack of Vegetarian Chicken Nuggets.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0007.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_pack_of_Vegetarian_Chicken_Nuggets_2.jpg",
+    "original_title": "File:A pack of Vegetarian Chicken Nuggets 2.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0008.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bell_Sauce_for_the_Chicken_Nuggets_at_Taco_Bell_(54474164029).jpg",
+    "original_title": "File:Bell Sauce for the Chicken Nuggets at Taco Bell (54474164029).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0009.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Burger_King_Chicken_Nuggets_(15423233415).jpg",
+    "original_title": "File:Burger King Chicken Nuggets (15423233415).jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0010.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:CHICKEN_NUGGETS.jpg",
+    "original_title": "File:CHICKEN NUGGETS.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0011.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_Nuggets.jpg",
+    "original_title": "File:Chicken Nuggets.jpg",
+    "license": "CC BY-SA 2.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0012.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_Nuggets_(3010738716).jpg",
+    "original_title": "File:Chicken Nuggets (3010738716).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0013.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_Nuggets_(53369993505).jpg",
+    "original_title": "File:Chicken Nuggets (53369993505).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0014.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_Nuggets_2.jpg",
+    "original_title": "File:Chicken Nuggets 2.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0015.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_Nuggets_are_Back_at_Taco_Bell_(54472277302).jpg",
+    "original_title": "File:Chicken Nuggets are Back at Taco Bell (54472277302).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0016.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_nuggets.JPG",
+    "original_title": "File:Chicken nuggets.JPG",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0017.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_nuggets.jpg",
+    "original_title": "File:Chicken nuggets.jpg",
+    "license": "CC BY 4.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0018.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_nuggets%3F_(50547551116).jpg",
+    "original_title": "File:Chicken nuggets? (50547551116).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0019.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_nuggets_%26_sauce_from_a_restaurant_in_Bangladesh.jpg",
+    "original_title": "File:Chicken nuggets & sauce from a restaurant in Bangladesh.jpg",
+    "license": "CC BY-SA 4.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0020.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_nuggets_-_10pc.jpg",
+    "original_title": "File:Chicken nuggets - 10pc.jpg",
+    "license": "CC BY-SA 3.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0021.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_nuggets_20160918_181323.jpg",
+    "original_title": "File:Chicken nuggets 20160918 181323.jpg",
+    "license": "CC BY 4.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0022.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_nuggets_and_ketchup_(with_a_spoon).jpg",
+    "original_title": "File:Chicken nuggets and ketchup (with a spoon).jpg",
+    "license": "CC0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0023.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_nuggets_in_a_box_a_Popeyes.jpg",
+    "original_title": "File:Chicken nuggets in a box a Popeyes.jpg",
+    "license": "CC0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
+  },
+  "chicken_nuggets/img_0024.jpg": {
+    "class": "chicken_nuggets",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chicken_nuggets_of_KFC_(639108699).jpg",
+    "original_title": "File:Chicken nuggets of KFC (639108699).jpg",
+    "license": "CC BY 2.0",
+    "ground_truth": "chicken_nuggets",
+    "food_count": 1,
+    "multi_food": false
   }
 }

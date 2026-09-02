@@ -147,7 +147,7 @@ def fetch_thumbnails(term: str, limit: int) -> list[dict]:
 
 def main() -> None:
     only = sys.argv[1:] if len(sys.argv) > 1 else list(CLASSES)
-    per_class = 8
+    per_class = 24
     metadata = {}
     (OUT / "_meta").mkdir(parents=True, exist_ok=True)
 
@@ -218,4 +218,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
