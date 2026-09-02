@@ -366,3 +366,10 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] RUNTIME CONFIRMADO: Gate B (conf<0.40 + top-3) = 74.1% (80/108) — el 74.1% estimado de F36 MEDIDO; pizza 20/20, 21 llamadas DINO (19.4%), 0 falsos, 0 perdidas; Gate A no rescata (71.3)
 - [x] Latencia: +887ms por llamada (19.4% de imágenes) = +172ms promedio — aceptable para el specialist selectivo
 - [x] DECISIÓN: APPROVE EXPERIMENTAL — rollout controlado (legacy_specialists), no default; rice NO añadir (evidencia negativa)
+
+## FASE 38 — Controlled Rollout + Shadow + DINO-base ✅ (2026-08-31)
+- [x] Threshold sweep 0.20-0.50: 0.35+ estable 74.1%, 0 regresiones en todo el rango; 0.40 confirmado
+- [x] Shadow telemetría: 19.4% invocación, 3 correcciones, 0 regresiones, 1 abstención — offline == runtime (74.1 reproducible)
+- [x] DINO-base == DINO-L en accuracy (74.1) con 264ms vs 902ms -> BASE preferible (Caso D)
+- [x] SpecialistRouter como abstracción (app/models/specialist_router.py) + 6 tests unitarios (78/78 totales)
+- [x] DECISIÓN: APPROVE EXPERIMENTAL -> rollout controlado preparado (env config, rollback garantizado, backward compat testado)
