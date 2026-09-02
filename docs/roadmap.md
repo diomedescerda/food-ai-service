@@ -321,3 +321,9 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Global 67 clases (8 imgs/clase): Linear 17.6% / MLP 15.7% — no escala con datos mínimos (Caso E parcial)
 - [x] JERÁRQUICO (legacy + grupo rice): 77.8% food-us > 71.3% legacy (+6.5) — Caso D: la vía es legacy + specialized groups, no el modelo global
 - [x] DECISIÓN: APPROVE experimental para la arquitectura jerárquica (grupos de confusión); default = legacy; F31 implementa ConfusionGroup generalizado + más datos
+
+## FASE 31 — Generalized Confusion-Group Hierarchical Classifier ✅ (2026-08-31)
+- [x] ConfusionGroup abstraction: 5 grupos entrenados (Linear CLIP frozen) — SOLO rice habilita (75% vs legacy 60.7, +14.3); pizza/naan (40%), hamburger/sandwich (47.5%), taco (sin GT), fried/nuggets (50%) DEGRADAN -> enabled=false (criterio: accuracy > legacy)
+- [x] JERÁRQUICO food-us (legacy + rice, crops): 72.2% > 71.3% legacy ✓ (Gate 1); 77.8% de F30 no se reproduce exactamente (variación por semilla con 24 imágenes de train — documentado)
+- [x] DECISIÓN: REJECT default — la arquitectura valida el concepto; los otros grupos fallaron por DATOS (8 imgs/clase), no por el enfoque
+- [x] F32: más datos por grupo (Nutrition5k/Commons) + gating fino + re-evaluar grupos con >=20 imgs
