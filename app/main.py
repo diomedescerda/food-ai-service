@@ -106,8 +106,12 @@ async def lifespan(app: FastAPI):
         threshold=settings.specialist_threshold,
         groups=tuple(g.strip() for g in settings.specialist_groups.split(",")),
     )
-    if settings.specialist_shadow_enabled:
-        app.state.logger.info("specialist shadow HABILITADO (available=%s)", app.state.specialist_shadow.available())
+    app.state.logger.info(
+        "SPECIALIST CONFIG: enabled=%s threshold=%s groups=%s model=%s available=%s",
+        settings.specialist_shadow_enabled, settings.specialist_threshold,
+        settings.specialist_groups, "dino_base",
+        app.state.specialist_shadow.available(),
+    )
     yield
 
 

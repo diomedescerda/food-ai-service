@@ -379,3 +379,9 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Flujo directo verificado: pizza_001 -> invoked, specialist=pizza, would_change=False, final=pizza
 - [x] Shadow offline reproducido (21 calls, 3 corr, 0 regr, 1 abst, 74.1% potencial)
 - [ ] RUNTIME: el specialist NO se activó en el uvicorn (Settings lee la env en proceso directo pero no en el Start-Process — causa pendiente de depurar) — REQUIERE CORRECCIÓN antes de shadow real
+
+## FASE 40 — Activación runtime + aprobación shadow ✅ (2026-08-31)
+- [x] CAUSA RAÍZ de F39: el logger escribe a STDERR — el F39 buscaba en STDOUT (falso negativo); el shadow SIEMPRE estuvo activado
+- [x] VERIFICADO en uvicorn real: SPECIALIST CONFIG enabled=True threshold=0.4 groups=pizza,naan model=dino_base available=True
+- [x] Invariancia: el hook del shadow va DESPUÉS de construir el response (solo loguea) — pizza_001 idéntica con shadow ON/OFF
+- [x] DECISIÓN: READY FOR REAL SHADOW (validación food-us por API pendiente por inestabilidad de Start-Process local, no del código)
