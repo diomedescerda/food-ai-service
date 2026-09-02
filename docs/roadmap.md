@@ -354,3 +354,9 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Grupos: pizza/naan dino 100% (vs 88.3), fried/nuggets siglip 100%, hamburger/sandwich dino 49.2 (con 3 sandwich VALID); rice bloqueado (fries 0 VALID)
 - [x] Global dino Linear: 56.4% (no supera legacy — datos, no representación)
 - [x] DECISIÓN: APPROVE REPRESENTATION — F36: validación relajada de fries + jerárquico con DINOv2-L
+
+## FASE 36 — DINOv2 Rice Validation + Hierarchical ✅ (2026-08-31)
+- [x] Validación RELAXED: fries 19 VALID (16 strict + 3 relaxed) — bloqueo resuelto
+- [x] RICE con fries ampliadas + DINO: 44% ± 22.7 (F35 48.8) — SIN mejora: el 48.8% NO era solo datos; el grupo es resistente al DINO frozen (el inter 0.218 no se traduce en clasificación)
+- [x] Híbrido legacy + DINO pizza/naan (100% vs 88.3): global estimado 74.1% > 71.3 ✓ — la vía viable
+- [x] DECISIÓN: APPROVE EXPERIMENTAL (híbrido); rice pendiente de otra estrategia (auditar GT fries + fine-tuning candidato)
