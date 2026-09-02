@@ -1,0 +1,16 @@
+{
+  "best_t": 0.2,
+  "best_sm": [
+    0.0,
+    0.0
+  ],
+  "test": {
+    "total": 79,
+    "acc": 0.7215189873417721,
+    "gated": 0.0,
+    "rescue": 0,
+    "harmful": 0,
+    "net": 0,
+    "lat_extra_ms": 0.0
+  }
+}

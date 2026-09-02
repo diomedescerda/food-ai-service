@@ -341,3 +341,9 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] HALLAZGO: el flujo por predicción-legacy (prompt §8) solo CONFIRMA — el especializado no rescata las imágenes que legacy ya falló -> global 71.3 = legacy
 - [x] rice degradó con la validación estricta (29.8) — las fries difíciles eliminadas
 - [x] DECISIÓN: REJECT — el gating por legacy-confidence (activar especializado cuando legacy confía poco) es el siguiente paso (F34)
+
+## FASE 34 — Confidence Gating + Rescue ✅ (2026-08-31)
+- [x] Gating por confianza (T sweep 0.20-0.70 × S/M) + routing por top-3 del legacy
+- [x] RESULTADO: RESCUE=0 en todos los thresholds — los errores de legacy y especialista están CORRELACIONADOS (mismo embedding CLIP); el top-3 activa grupos irrelevantes (harmful hasta 7)
+- [x] DECISIÓN: REJECT + CIERRE del paradigma frozen-CLIP + confusion groups (criterio del prompt: falla incluso con especialistas 96.7%/100%)
+- [x] F35: backbone visual más fuerte (DINOv2/SigLIP/CLIP-L) como representación del clasificador aprendido
