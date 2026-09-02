@@ -360,3 +360,9 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] RICE con fries ampliadas + DINO: 44% ± 22.7 (F35 48.8) — SIN mejora: el 48.8% NO era solo datos; el grupo es resistente al DINO frozen (el inter 0.218 no se traduce en clasificación)
 - [x] Híbrido legacy + DINO pizza/naan (100% vs 88.3): global estimado 74.1% > 71.3 ✓ — la vía viable
 - [x] DECISIÓN: APPROVE EXPERIMENTAL (híbrido); rice pendiente de otra estrategia (auditar GT fries + fine-tuning candidato)
+
+## FASE 37 — Specialist Router + Runtime Validation ✅ (2026-08-31)
+- [x] SpecialistRouter: legacy + DINO pizza/naan (3 seeds) con gates A/B/C
+- [x] RUNTIME CONFIRMADO: Gate B (conf<0.40 + top-3) = 74.1% (80/108) — el 74.1% estimado de F36 MEDIDO; pizza 20/20, 21 llamadas DINO (19.4%), 0 falsos, 0 perdidas; Gate A no rescata (71.3)
+- [x] Latencia: +887ms por llamada (19.4% de imágenes) = +172ms promedio — aceptable para el specialist selectivo
+- [x] DECISIÓN: APPROVE EXPERIMENTAL — rollout controlado (legacy_specialists), no default; rice NO añadir (evidencia negativa)
