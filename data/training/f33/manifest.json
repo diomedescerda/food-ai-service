@@ -1,0 +1,1163 @@
+{
+  "chicken_nuggets/img_0002.jpg": {
+    "image_id": "img_0002.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\chicken_nuggets\\img_0002.jpg",
+    "class": "chicken_nuggets",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "chicken_nuggets/img_0005.jpg": {
+    "image_id": "img_0005.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\chicken_nuggets\\img_0005.jpg",
+    "class": "chicken_nuggets",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "chicken_nuggets/img_0009.jpg": {
+    "image_id": "img_0009.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\chicken_nuggets\\img_0009.jpg",
+    "class": "chicken_nuggets",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "chicken_nuggets/img_0011.jpg": {
+    "image_id": "img_0011.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\chicken_nuggets\\img_0011.jpg",
+    "class": "chicken_nuggets",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "chicken_nuggets/img_0012.jpg": {
+    "image_id": "img_0012.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\chicken_nuggets\\img_0012.jpg",
+    "class": "chicken_nuggets",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "chicken_nuggets/img_0013.jpg": {
+    "image_id": "img_0013.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\chicken_nuggets\\img_0013.jpg",
+    "class": "chicken_nuggets",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "chicken_nuggets/img_0014.jpg": {
+    "image_id": "img_0014.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\chicken_nuggets\\img_0014.jpg",
+    "class": "chicken_nuggets",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "chicken_nuggets/img_0017.jpg": {
+    "image_id": "img_0017.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\chicken_nuggets\\img_0017.jpg",
+    "class": "chicken_nuggets",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "chicken_nuggets/img_0020.jpg": {
+    "image_id": "img_0020.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\chicken_nuggets\\img_0020.jpg",
+    "class": "chicken_nuggets",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "chicken_nuggets/img_0022.jpg": {
+    "image_id": "img_0022.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\chicken_nuggets\\img_0022.jpg",
+    "class": "chicken_nuggets",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "chicken_nuggets/img_0024.jpg": {
+    "image_id": "img_0024.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\chicken_nuggets\\img_0024.jpg",
+    "class": "chicken_nuggets",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "french_fries/img_0001.jpg": {
+    "image_id": "img_0001.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\french_fries\\img_0001.jpg",
+    "class": "french_fries",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "french_fries/img_0002.jpg": {
+    "image_id": "img_0002.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\french_fries\\img_0002.jpg",
+    "class": "french_fries",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "french_fries/img_0003.jpg": {
+    "image_id": "img_0003.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\french_fries\\img_0003.jpg",
+    "class": "french_fries",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "french_fries/img_0004.jpg": {
+    "image_id": "img_0004.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\french_fries\\img_0004.jpg",
+    "class": "french_fries",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "french_fries/img_0006.jpg": {
+    "image_id": "img_0006.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\french_fries\\img_0006.jpg",
+    "class": "french_fries",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "french_fries/img_0007.jpg": {
+    "image_id": "img_0007.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\french_fries\\img_0007.jpg",
+    "class": "french_fries",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "french_fries/img_0008.jpg": {
+    "image_id": "img_0008.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\french_fries\\img_0008.jpg",
+    "class": "french_fries",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "french_fries/img_0009.jpg": {
+    "image_id": "img_0009.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\french_fries\\img_0009.jpg",
+    "class": "french_fries",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "french_fries/img_0010.jpg": {
+    "image_id": "img_0010.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\french_fries\\img_0010.jpg",
+    "class": "french_fries",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "french_fries/img_0022.jpg": {
+    "image_id": "img_0022.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\french_fries\\img_0022.jpg",
+    "class": "french_fries",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "french_fries/img_0023.jpg": {
+    "image_id": "img_0023.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\french_fries\\img_0023.jpg",
+    "class": "french_fries",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "fried_chicken/img_0002.jpg": {
+    "image_id": "img_0002.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\fried_chicken\\img_0002.jpg",
+    "class": "fried_chicken",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "fried_chicken/img_0003.jpg": {
+    "image_id": "img_0003.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\fried_chicken\\img_0003.jpg",
+    "class": "fried_chicken",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "fried_chicken/img_0004.jpg": {
+    "image_id": "img_0004.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\fried_chicken\\img_0004.jpg",
+    "class": "fried_chicken",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "fried_chicken/img_0005.jpg": {
+    "image_id": "img_0005.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\fried_chicken\\img_0005.jpg",
+    "class": "fried_chicken",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "fried_chicken/img_0006.jpg": {
+    "image_id": "img_0006.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\fried_chicken\\img_0006.jpg",
+    "class": "fried_chicken",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "fried_chicken/img_0007.jpg": {
+    "image_id": "img_0007.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\fried_chicken\\img_0007.jpg",
+    "class": "fried_chicken",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "fried_chicken/img_0008.jpg": {
+    "image_id": "img_0008.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\fried_chicken\\img_0008.jpg",
+    "class": "fried_chicken",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "fried_chicken/img_0009.jpg": {
+    "image_id": "img_0009.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\fried_chicken\\img_0009.jpg",
+    "class": "fried_chicken",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "fried_chicken/img_0010.jpg": {
+    "image_id": "img_0010.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\fried_chicken\\img_0010.jpg",
+    "class": "fried_chicken",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "fried_chicken/img_0017.jpg": {
+    "image_id": "img_0017.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\fried_chicken\\img_0017.jpg",
+    "class": "fried_chicken",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "fried_chicken/img_0018.jpg": {
+    "image_id": "img_0018.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\fried_chicken\\img_0018.jpg",
+    "class": "fried_chicken",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "fried_chicken/img_0021.jpg": {
+    "image_id": "img_0021.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\fried_chicken\\img_0021.jpg",
+    "class": "fried_chicken",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "fried_chicken/img_0022.jpg": {
+    "image_id": "img_0022.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\fried_chicken\\img_0022.jpg",
+    "class": "fried_chicken",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "fried_chicken/img_0023.jpg": {
+    "image_id": "img_0023.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\fried_chicken\\img_0023.jpg",
+    "class": "fried_chicken",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "fried_chicken/img_0024.jpg": {
+    "image_id": "img_0024.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\fried_chicken\\img_0024.jpg",
+    "class": "fried_chicken",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "hamburger/img_0005.jpg": {
+    "image_id": "img_0005.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\hamburger\\img_0005.jpg",
+    "class": "hamburger",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "hamburger/img_0006.jpg": {
+    "image_id": "img_0006.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\hamburger\\img_0006.jpg",
+    "class": "hamburger",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "hamburger/img_0007.jpg": {
+    "image_id": "img_0007.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\hamburger\\img_0007.jpg",
+    "class": "hamburger",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "hamburger/img_0002.jpg": {
+    "image_id": "img_0002.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\hamburger\\img_0002.jpg",
+    "class": "hamburger",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "hamburger/img_0008.jpg": {
+    "image_id": "img_0008.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\hamburger\\img_0008.jpg",
+    "class": "hamburger",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "hamburger/img_0013.jpg": {
+    "image_id": "img_0013.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\hamburger\\img_0013.jpg",
+    "class": "hamburger",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "hamburger/img_0014.jpg": {
+    "image_id": "img_0014.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\hamburger\\img_0014.jpg",
+    "class": "hamburger",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "hamburger/img_0015.jpg": {
+    "image_id": "img_0015.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\hamburger\\img_0015.jpg",
+    "class": "hamburger",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "hamburger/img_0019.jpg": {
+    "image_id": "img_0019.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\hamburger\\img_0019.jpg",
+    "class": "hamburger",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "hamburger/img_0023.jpg": {
+    "image_id": "img_0023.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\hamburger\\img_0023.jpg",
+    "class": "hamburger",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "hamburger/img_0024.jpg": {
+    "image_id": "img_0024.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\hamburger\\img_0024.jpg",
+    "class": "hamburger",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "naan/img_0001.jpg": {
+    "image_id": "img_0001.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\naan\\img_0001.jpg",
+    "class": "naan",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "naan/img_0003.jpg": {
+    "image_id": "img_0003.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\naan\\img_0003.jpg",
+    "class": "naan",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "naan/img_0004.jpg": {
+    "image_id": "img_0004.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\naan\\img_0004.jpg",
+    "class": "naan",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "naan/img_0005.jpg": {
+    "image_id": "img_0005.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\naan\\img_0005.jpg",
+    "class": "naan",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "naan/img_0006.jpg": {
+    "image_id": "img_0006.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\naan\\img_0006.jpg",
+    "class": "naan",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "naan/img_0007.jpg": {
+    "image_id": "img_0007.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\naan\\img_0007.jpg",
+    "class": "naan",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "naan/img_0008.jpg": {
+    "image_id": "img_0008.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\naan\\img_0008.jpg",
+    "class": "naan",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "naan/img_0018.jpg": {
+    "image_id": "img_0018.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\naan\\img_0018.jpg",
+    "class": "naan",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "nachos/img_0001.jpg": {
+    "image_id": "img_0001.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\nachos\\img_0001.jpg",
+    "class": "nachos",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "nachos/img_0002.jpg": {
+    "image_id": "img_0002.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\nachos\\img_0002.jpg",
+    "class": "nachos",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "nachos/img_0003.jpg": {
+    "image_id": "img_0003.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\nachos\\img_0003.jpg",
+    "class": "nachos",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "nachos/img_0004.jpg": {
+    "image_id": "img_0004.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\nachos\\img_0004.jpg",
+    "class": "nachos",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "nachos/img_0005.jpg": {
+    "image_id": "img_0005.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\nachos\\img_0005.jpg",
+    "class": "nachos",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "nachos/img_0007.jpg": {
+    "image_id": "img_0007.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\nachos\\img_0007.jpg",
+    "class": "nachos",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "nachos/img_0011.jpg": {
+    "image_id": "img_0011.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\nachos\\img_0011.jpg",
+    "class": "nachos",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "nachos/img_0012.jpg": {
+    "image_id": "img_0012.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\nachos\\img_0012.jpg",
+    "class": "nachos",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "nachos/img_0013.jpg": {
+    "image_id": "img_0013.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\nachos\\img_0013.jpg",
+    "class": "nachos",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "nachos/img_0015.jpg": {
+    "image_id": "img_0015.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\nachos\\img_0015.jpg",
+    "class": "nachos",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "nachos/img_0016.jpg": {
+    "image_id": "img_0016.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\nachos\\img_0016.jpg",
+    "class": "nachos",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "nachos/img_0019.jpg": {
+    "image_id": "img_0019.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\nachos\\img_0019.jpg",
+    "class": "nachos",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "nachos/img_0020.jpg": {
+    "image_id": "img_0020.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\nachos\\img_0020.jpg",
+    "class": "nachos",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "nachos/img_0021.jpg": {
+    "image_id": "img_0021.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\nachos\\img_0021.jpg",
+    "class": "nachos",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "nachos/img_0022.jpg": {
+    "image_id": "img_0022.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\nachos\\img_0022.jpg",
+    "class": "nachos",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0001.jpg": {
+    "image_id": "img_0001.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0001.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0002.jpg": {
+    "image_id": "img_0002.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0002.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0003.jpg": {
+    "image_id": "img_0003.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0003.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0004.jpg": {
+    "image_id": "img_0004.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0004.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0005.jpg": {
+    "image_id": "img_0005.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0005.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0006.jpg": {
+    "image_id": "img_0006.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0006.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0007.jpg": {
+    "image_id": "img_0007.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0007.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0008.jpg": {
+    "image_id": "img_0008.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0008.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0012.jpg": {
+    "image_id": "img_0012.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0012.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0013.jpg": {
+    "image_id": "img_0013.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0013.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0014.jpg": {
+    "image_id": "img_0014.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0014.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0015.jpg": {
+    "image_id": "img_0015.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0015.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0016.jpg": {
+    "image_id": "img_0016.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0016.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0017.jpg": {
+    "image_id": "img_0017.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0017.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0019.jpg": {
+    "image_id": "img_0019.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0019.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0020.jpg": {
+    "image_id": "img_0020.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0020.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0022.jpg": {
+    "image_id": "img_0022.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0022.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0023.jpg": {
+    "image_id": "img_0023.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0023.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "pizza/img_0024.jpg": {
+    "image_id": "img_0024.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\pizza\\img_0024.jpg",
+    "class": "pizza",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "quesadilla/img_0002.jpg": {
+    "image_id": "img_0002.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\quesadilla\\img_0002.jpg",
+    "class": "quesadilla",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "quesadilla/img_0006.jpg": {
+    "image_id": "img_0006.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\quesadilla\\img_0006.jpg",
+    "class": "quesadilla",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "quesadilla/img_0007.jpg": {
+    "image_id": "img_0007.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\quesadilla\\img_0007.jpg",
+    "class": "quesadilla",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "quesadilla/img_0008.jpg": {
+    "image_id": "img_0008.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\quesadilla\\img_0008.jpg",
+    "class": "quesadilla",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "quesadilla/img_0005.jpg": {
+    "image_id": "img_0005.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\quesadilla\\img_0005.jpg",
+    "class": "quesadilla",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "quesadilla/img_0013.jpg": {
+    "image_id": "img_0013.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\quesadilla\\img_0013.jpg",
+    "class": "quesadilla",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "quesadilla/img_0014.jpg": {
+    "image_id": "img_0014.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\quesadilla\\img_0014.jpg",
+    "class": "quesadilla",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "quesadilla/img_0016.jpg": {
+    "image_id": "img_0016.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\quesadilla\\img_0016.jpg",
+    "class": "quesadilla",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "quesadilla/img_0017.jpg": {
+    "image_id": "img_0017.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\quesadilla\\img_0017.jpg",
+    "class": "quesadilla",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "quesadilla/img_0018.jpg": {
+    "image_id": "img_0018.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\quesadilla\\img_0018.jpg",
+    "class": "quesadilla",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "quesadilla/img_0019.jpg": {
+    "image_id": "img_0019.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\quesadilla\\img_0019.jpg",
+    "class": "quesadilla",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "quesadilla/img_0020.jpg": {
+    "image_id": "img_0020.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\quesadilla\\img_0020.jpg",
+    "class": "quesadilla",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "quesadilla/img_0022.jpg": {
+    "image_id": "img_0022.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\quesadilla\\img_0022.jpg",
+    "class": "quesadilla",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "quesadilla/img_0024.jpg": {
+    "image_id": "img_0024.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\quesadilla\\img_0024.jpg",
+    "class": "quesadilla",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "rice/img_0003.jpg": {
+    "image_id": "img_0003.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\rice\\img_0003.jpg",
+    "class": "rice",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "rice/img_0004.jpg": {
+    "image_id": "img_0004.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\rice\\img_0004.jpg",
+    "class": "rice",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "rice/img_0007.jpg": {
+    "image_id": "img_0007.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\rice\\img_0007.jpg",
+    "class": "rice",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "rice/img_0008.jpg": {
+    "image_id": "img_0008.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\rice\\img_0008.jpg",
+    "class": "rice",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "rice/img_0009.jpg": {
+    "image_id": "img_0009.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\rice\\img_0009.jpg",
+    "class": "rice",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "rice/img_0010.jpg": {
+    "image_id": "img_0010.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\rice\\img_0010.jpg",
+    "class": "rice",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "rice/img_0011.jpg": {
+    "image_id": "img_0011.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\rice\\img_0011.jpg",
+    "class": "rice",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "rice/img_0012.jpg": {
+    "image_id": "img_0012.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\rice\\img_0012.jpg",
+    "class": "rice",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "rice/img_0013.jpg": {
+    "image_id": "img_0013.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\rice\\img_0013.jpg",
+    "class": "rice",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "rice/img_0016.jpg": {
+    "image_id": "img_0016.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\rice\\img_0016.jpg",
+    "class": "rice",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "rice/img_0019.jpg": {
+    "image_id": "img_0019.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\rice\\img_0019.jpg",
+    "class": "rice",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "rice/img_0020.jpg": {
+    "image_id": "img_0020.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\rice\\img_0020.jpg",
+    "class": "rice",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "rice/img_0024.jpg": {
+    "image_id": "img_0024.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\rice\\img_0024.jpg",
+    "class": "rice",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "sandwich/img_0001.jpg": {
+    "image_id": "img_0001.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\sandwich\\img_0001.jpg",
+    "class": "sandwich",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "sandwich/img_0002.jpg": {
+    "image_id": "img_0002.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\sandwich\\img_0002.jpg",
+    "class": "sandwich",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "sandwich/img_0003.jpg": {
+    "image_id": "img_0003.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\sandwich\\img_0003.jpg",
+    "class": "sandwich",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "taco/img_0003.jpg": {
+    "image_id": "img_0003.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\taco\\img_0003.jpg",
+    "class": "taco",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "taco/img_0004.jpg": {
+    "image_id": "img_0004.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\taco\\img_0004.jpg",
+    "class": "taco",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "taco/img_0005.jpg": {
+    "image_id": "img_0005.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\taco\\img_0005.jpg",
+    "class": "taco",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "taco/img_0006.jpg": {
+    "image_id": "img_0006.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\taco\\img_0006.jpg",
+    "class": "taco",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "taco/img_0007.jpg": {
+    "image_id": "img_0007.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\taco\\img_0007.jpg",
+    "class": "taco",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "taco/img_0008.jpg": {
+    "image_id": "img_0008.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\food-bench-v1\\taco\\img_0008.jpg",
+    "class": "taco",
+    "source": "food-bench-v1",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "taco/img_0002.jpg": {
+    "image_id": "img_0002.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\taco\\img_0002.jpg",
+    "class": "taco",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "taco/img_0011.jpg": {
+    "image_id": "img_0011.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\taco\\img_0011.jpg",
+    "class": "taco",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  },
+  "taco/img_0012.jpg": {
+    "image_id": "img_0012.jpg",
+    "path": "C:\\Users\\Carlos Cortina\\Documents\\CoppAddresd\\food-ai-service\\datasets\\prototype-src\\taco\\img_0012.jpg",
+    "class": "taco",
+    "source": "prototype-src",
+    "license": "Commons CC0/CC BY/CC BY-SA/PD o propio",
+    "validation_status": "VALID",
+    "validator": "f33_validate.py"
+  }
+}

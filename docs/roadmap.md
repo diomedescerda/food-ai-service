@@ -334,3 +334,10 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Diagnóstico de representación: hamburger/sandwich MUY separable (inter 0.403) — el sandwich 0/20 es calidad del train; fried/nuggets NO separable (inter 0.637 ≈ intra) — representación
 - [x] Global con datos crudos = legacy (71.3); F31 (limpio) sigue siendo el mejor (72.2)
 - [x] DECISIÓN: REJECT — calidad > cantidad; F33 = pipeline de validación obligatorio + LoRA para representación-limitados
+
+## FASE 33 — Validated Data + Selective Adaptation ✅ (2026-08-31)
+- [x] Validación obligatoria: 344 candidatas -> 129 VALID (fries 0, naan 1, sandwich 3 — las clases de confusión eliminadas por el top-1 del legacy y el dedup)
+- [x] GRUPOS con VALID: pizza/naan 96.7% ± 4.7 (vs 85 legacy) y fried/nuggets 100% ± 0 (vs 50 — la validación lo arregló: 33±47 crudo); LoRA 50% < frozen -> descartado
+- [x] HALLAZGO: el flujo por predicción-legacy (prompt §8) solo CONFIRMA — el especializado no rescata las imágenes que legacy ya falló -> global 71.3 = legacy
+- [x] rice degradó con la validación estricta (29.8) — las fries difíciles eliminadas
+- [x] DECISIÓN: REJECT — el gating por legacy-confidence (activar especializado cuando legacy confía poco) es el siguiente paso (F34)
