@@ -373,3 +373,9 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] DINO-base == DINO-L en accuracy (74.1) con 264ms vs 902ms -> BASE preferible (Caso D)
 - [x] SpecialistRouter como abstracción (app/models/specialist_router.py) + 6 tests unitarios (78/78 totales)
 - [x] DECISIÓN: APPROVE EXPERIMENTAL -> rollout controlado preparado (env config, rollback garantizado, backward compat testado)
+
+## FASE 39 — Shadow en tráfico real ✅ parcial (2026-08-31)
+- [x] SpecialistShadow module + flags + integración analyze/main/config (78/78 tests; el resultado legacy NUNCA cambia — verificado)
+- [x] Flujo directo verificado: pizza_001 -> invoked, specialist=pizza, would_change=False, final=pizza
+- [x] Shadow offline reproducido (21 calls, 3 corr, 0 regr, 1 abst, 74.1% potencial)
+- [ ] RUNTIME: el specialist NO se activó en el uvicorn (Settings lee la env en proceso directo pero no en el Start-Process — causa pendiente de depurar) — REQUIERE CORRECCIÓN antes de shadow real

@@ -207,6 +207,34 @@ async def _run_pipeline(
             depth_map,
         )
 
+    # F39: shadow specialist (telemetría; el resultado SIEMPRE es legacy).
+    shadow = getattr(request.app.state, "specialist_shadow", None)
+    if shadow is not None and shadow.available() and classifier is not None:
+        try:
+            for idx, det in enumerate(detections):
+                crop = classifier._crop(pil_image, det)
+                if crop is None:
+                    continue
+                ranking = classifier._score_crop(crop)
+                best = {}
+                for r in ranking:
+                    if r.name not in best or r.score > best[r.name]:
+                        best[r.name] = r.score
+                top3 = sorted(best, key=best.get, reverse=True)[:3]
+                pred = max(best, key=best.get) if best else "unknown"
+                tel = shadow.shadow_evaluate(pred, best.get(pred, 0.0), top3, crop, analysis_id, idx)
+                if tel.get("invoked") and request.app.state.logger:
+                    request.app.state.logger.info(
+                        "specialist_shadow analysis_id=%s food=%s legacy=%s spec=%s "
+                        "would_change=%s abstain=%s spec_score=%.3f lat_ms=%.0f final=%s",
+                        tel.get("analysis_id"), tel.get("food_index"), tel.get("legacy_prediction"),
+                        tel.get("specialist_prediction"), tel.get("would_change_prediction", False),
+                        tel.get("specialist_abstention", False), tel.get("specialist_score", 0.0),
+                        tel.get("latency_ms", 0.0), tel.get("final_class"),
+                    )
+        except Exception as exc:  # noqa: BLE001 — el shadow jamás rompe la respuesta
+            request.app.state.logger.error("specialist shadow error (ignorado): %s", exc)
+
     return AnalyzeResponse(
         analysis_id=analysis_id,
         status="completed",

@@ -98,6 +98,16 @@ async def lifespan(app: FastAPI):
     app.state.settings = settings
     # FASE 23: serializa la inferencia CPU (torch concurrente con DINO crashea).
     app.state.inference_semaphore = asyncio.Semaphore(1)
+    # F39: shadow specialist (default off; jamás cambia la respuesta).
+    from app.models.specialist_shadow import SpecialistShadow  # noqa: PLC0415
+
+    app.state.specialist_shadow = SpecialistShadow(
+        enabled=settings.specialist_shadow_enabled,
+        threshold=settings.specialist_threshold,
+        groups=tuple(g.strip() for g in settings.specialist_groups.split(",")),
+    )
+    if settings.specialist_shadow_enabled:
+        app.state.logger.info("specialist shadow HABILITADO (available=%s)", app.state.specialist_shadow.available())
     yield
 
 

@@ -51,6 +51,12 @@ class Settings(BaseSettings):
     # el resultado es relativo (gramos nulos) — ver docs/portion-estimation.md.
     portion_method: str = "basic"
 
+    # === Especialista DINO (F38/F39 — shadow por defecto; jamás cambia el
+    # resultado si specialist_shadow_enabled=false) ===
+    specialist_shadow_enabled: bool = False
+    specialist_threshold: float = 0.40
+    specialist_groups: str = "pizza,naan"
+
     # === Modelo de profundidad (solo si portion_method=advanced) ===
     depth_enabled: bool = True
     depth_model_path: str = "depth-anything/Depth-Anything-V2-Small-hf"
