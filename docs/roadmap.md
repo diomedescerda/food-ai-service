@@ -347,3 +347,10 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] RESULTADO: RESCUE=0 en todos los thresholds — los errores de legacy y especialista están CORRELACIONADOS (mismo embedding CLIP); el top-3 activa grupos irrelevantes (harmful hasta 7)
 - [x] DECISIÓN: REJECT + CIERRE del paradigma frozen-CLIP + confusion groups (criterio del prompt: falla incluso con especialistas 96.7%/100%)
 - [x] F35: backbone visual más fuerte (DINOv2/SigLIP/CLIP-L) como representación del clasificador aprendido
+
+## FASE 35 — Strong Visual Backbones ✅ (2026-08-31)
+- [x] Benchmark: CLIP-B/32 vs DINOv2-L vs SigLIP (CLIP-L sin evaluar — disco)
+- [x] DIAGNÓSTICO: DINOv2-L inter 0.038-0.218 vs 0.60-0.67 (separación 3-15x mejor) — la hipótesis de representación CONFIRMADA
+- [x] Grupos: pizza/naan dino 100% (vs 88.3), fried/nuggets siglip 100%, hamburger/sandwich dino 49.2 (con 3 sandwich VALID); rice bloqueado (fries 0 VALID)
+- [x] Global dino Linear: 56.4% (no supera legacy — datos, no representación)
+- [x] DECISIÓN: APPROVE REPRESENTATION — F36: validación relajada de fries + jerárquico con DINOv2-L
