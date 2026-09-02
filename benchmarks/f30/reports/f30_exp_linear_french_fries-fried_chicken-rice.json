@@ -1,0 +1,11 @@
+{
+  "group": [
+    "french_fries",
+    "fried_chicken",
+    "rice"
+  ],
+  "mlp": false,
+  "train": 24,
+  "val_acc": 0.5,
+  "best_epoch": 5
+}

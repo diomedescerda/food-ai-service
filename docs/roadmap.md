@@ -315,3 +315,9 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Rice analysis: hybrid enfocado w=0.5 -> 21/28 (75%) vs legacy 60.7% — la confusión rice se reduce con scoring dirigido (4->rice, 3->fried restantes)
 - [x] Cobertura 33->68 (36 clases Commons nuevas): food-us 59.3 -> 38.9 DEGRADA; v1 55.1 -> 53.4 — la cobertura amplia NO escala (prototipos ruidosos compiten)
 - [x] DECISIÓN: REJECT 231 — techo arquitectónico ~60% del prototype approach; detener expansión masiva; F30 = fine-tuning/representación o legacy
+
+## FASE 30 — CLIP Embedding Adaptation + Confusion-Group Classifier ✅ (2026-08-31)
+- [x] Frozen CLIP + Linear: grupo rice 85.7% (fries 20/20, elimina fries→rice) vs legacy 60.7% y F29 75% — la frontera aprendida SÍ separa el grupo
+- [x] Global 67 clases (8 imgs/clase): Linear 17.6% / MLP 15.7% — no escala con datos mínimos (Caso E parcial)
+- [x] JERÁRQUICO (legacy + grupo rice): 77.8% food-us > 71.3% legacy (+6.5) — Caso D: la vía es legacy + specialized groups, no el modelo global
+- [x] DECISIÓN: APPROVE experimental para la arquitectura jerárquica (grupos de confusión); default = legacy; F31 implementa ConfusionGroup generalizado + más datos
