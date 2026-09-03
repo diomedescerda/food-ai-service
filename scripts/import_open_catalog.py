@@ -1,4 +1,4 @@
-﻿"""F41: importador de catÃ¡logo masivo desde USDA FNDDS (CC0).
+"""F41: importador de catÃ¡logo masivo desde USDA FNDDS (CC0).
 
 Descarga nombres del FNDDS (Survey) vÃ­a la API, normaliza a canÃ³nicos
 genÃ©ricos (no cada variante), deduplica y genera aliases. Reproducible.
@@ -32,6 +32,28 @@ PREP_PATTERNS = [
     r", from .*$", r" \(.*\)$", r", made with .*$", r", prepared.*$", r", cooked.*$",
     r", raw.*$", r", fresh.*$", r", frozen.*$", r", canned.*$", r", dried.*$",
 ]
+
+# Tokens genéricos de alimentos: el canónico = el alimento base de los nombres
+# compuestos del FNDDS ("breakfast pizza with egg" -> "pizza"), con los
+# compuestos como aliases. Política F41: no crear clase por variante.
+GENERIC_TOKENS = (
+    "pizza", "hamburger", "burger", "hot dog", "sandwich", "chicken", "rice", "pasta",
+    "salad", "soup", "bread", "cake", "banana", "apple", "orange", "fish", "steak",
+    "egg", "potato", "cheese", "pork", "beef", "turkey", "ham", "bacon", "sausage",
+    "shrimp", "salmon", "taco", "burrito", "nachos", "quesadilla", "pancake", "waffle",
+    "toast", "bagel", "cookie", "brownie", "donut", "pie", "muffin", "croissant",
+    "yogurt", "cereal", "oatmeal", "granola", "noodle", "bean", "corn", "carrot",
+    "broccoli", "tomato", "lettuce", "avocado", "strawberry", "grape", "melon",
+    "peach", "pear", "mango", "pineapple", "berry", "lamb", "duck", "sushi",
+    "curry", "lasagna", "pancake", "french fries", "fries", "nuggets", "wings",
+)
+
+
+def generic_of(normalized: str) -> str:
+    for token in GENERIC_TOKENS:
+        if token in normalized:
+            return token
+    return normalized
 NON_FOOD = ("beverage", "drink", "juice", "water", "tea", "coffee", "soda", "energy drink",
             "alcohol", "wine", "beer", "liquor", "cocktail", "protein powder", "formula",
             "supplement", "baby food", "infant", "oil", "sauce", "dressing", "gravy",
@@ -40,19 +62,26 @@ NON_FOOD = ("beverage", "drink", "juice", "water", "tea", "coffee", "soda", "ene
 
 def fetch_fndds(query: str, page: int = 0, page_size: int = 50) -> tuple[list[dict], int]:
     params = urllib.parse.urlencode({
-        "api_key": KEY, "query": query, "pageSize": page_size, "pageNumber": page,
+        "api_key": KEY, "query": query, "pageSize": page_size, "pageNumber": page + 1,
     })
     data_type = urllib.parse.quote("Survey (FNDDS)", safe="()")
     url = f"{API}/foods/search?{params}&dataType={data_type}".replace("+", "%20")
-    with urllib.request.urlopen(url, timeout=30) as resp:
-        data = json.loads(resp.read().decode("utf-8"))
-    return data.get("foods", []), data.get("totalHits", 0)
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(url, timeout=30) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+            return data.get("foods", []), data.get("totalHits", 0)
+        except Exception:
+            if attempt == 2:
+                return [], 0
+            time.sleep(2 * (attempt + 1))
+    return [], 0
 
 
 QUERIES = ("beef", "chicken", "vegetables", "fruit", "bread", "dessert", "soup", "salad",
            "pasta", "rice", "sandwich", "burger", "pizza", "breakfast", "fast food", "cheese",
            "fish", "pork", "egg", "potato", "snack", "cake", "cereal", "bean", "poultry",
-           "pancake", "pizza", "noodle", "taco", "burrito", "seafood", "sausage", "steak", "grilled")
+           "pancake", "pizza", "noodle", "taco", "burrito", "seafood", "sausage", "steak", "grilled", "salmon", "shrimp", "toast", "bagel", "yogurt", "curry", "sushi", "omelette", "granola", "brownie", "cookie", "donut", "ice cream", "sandwich", "pork chop", "lamb", "turkey", "ham", "bacon", "peanut", "almond", "avocado", "lettuce", "tomato", "corn", "carrot", "broccoli", "apple", "banana", "orange", "strawberry")
 
 
 def normalize(name: str) -> str:
@@ -83,38 +112,40 @@ def main() -> None:
         print(f"[{q}] acumulados {len(raw)}", flush=True)
         time.sleep(0.25)
 
-    # NormalizaciÃ³n + dedup: canonical -> {aliases, fdc_ids, raw_names}
-    canonical_map: dict[str, dict] = {}
+    # Entradas: una por alimento/variante (food_id unico) con canonical_name =
+    # el generico (agrupacion). Dedup por nombre normalizado. Total >= 1000.
+    seen: dict[str, str] = {}
+    foods = []
     for name, fdc_id in raw:
         n = normalize(name)
         if not is_food(n):
             continue
-        entry = canonical_map.setdefault(n, {"canonical_name": n, "aliases": [], "fdc_ids": [], "raw_names": []})
-        entry["fdc_ids"].append(fdc_id)
-        entry["raw_names"].append(name)
-        if name.lower().strip() != n and name.lower().strip() not in entry["aliases"]:
-            entry["aliases"].append(name.lower().strip())
-
-    foods = []
-    for n, entry in canonical_map.items():
+        if n in seen:
+            continue
+        seen[n] = fdc_id
+        canon = generic_of(n)
         foods.append({
-            "food_id": f"fndds_{entry['fdc_ids'][0]}",
-            "canonical_name": n,
-            "aliases": entry["aliases"][:5],
+            "food_id": f"fndds_{fdc_id}",
+            "canonical_name": canon,
+            "aliases": [n] if n != canon else [],
             "category": "unknown",
-            "nutrition_mapping": {"fdc_id": entry["fdc_ids"][0], "source": "USDA FNDDS"},
+            "subcategory": "",
+            "source": "FNDDS",
+            "source_id": fdc_id,
+            "nutrition_mapping": {"fdc_id": fdc_id, "source": "USDA FNDDS"},
             "status": "catalog",
-            "source_raw_count": len(entry["raw_names"]),
+            "raw_name": name,
         })
 
     foods.sort(key=lambda f: f["canonical_name"])
     catalog = {
-        "schema_version": 1,
-        "source": "USDA FoodData Central â€” Survey (FNDDS)",
+        "schema_version": 2,
+        "source": "USDA FoodData Central - Survey (FNDDS)",
         "license": "CC0 (public domain)",
         "imported_at": "2026-08-31",
         "total_raw": len(raw),
-        "total_normalized": len(foods),
+        "canonical_foods": len({f["canonical_name"] for f in foods}),
+        "entries": len(foods),
         "foods": foods,
     }
     (OUT_DIR / "foods.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -124,9 +155,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-

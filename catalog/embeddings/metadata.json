@@ -1,0 +1,11 @@
+{
+  "model": "CLIP ViT-B/32",
+  "dim": 512,
+  "templates": [
+    "a photo of {food}",
+    "a picture of {food}",
+    "a close-up photo of {food}"
+  ],
+  "count": 1451,
+  "version": "f42-1"
+}

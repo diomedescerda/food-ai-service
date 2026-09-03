@@ -385,3 +385,21 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] VERIFICADO en uvicorn real: SPECIALIST CONFIG enabled=True threshold=0.4 groups=pizza,naan model=dino_base available=True
 - [x] Invariancia: el hook del shadow va DESPUÉS de construir el response (solo loguea) — pizza_001 idéntica con shadow ON/OFF
 - [x] DECISIÓN: READY FOR REAL SHADOW (validación food-us por API pendiente por inestabilidad de Start-Process local, no del código)
+
+## FASE 41 — Open Food Retrieval Engine ✅ parcial / REQUIRES CORRECTION (2026-08-31)
+- [x] Diagnóstico del API FNDDS: query obligatorio, %20 en espacios, pageSize=50 (100/25 -> 400), load_dotenv override — los 4 bugs resueltos en código
+- [ ] BLOQUEO: el archivo del importador fue eliminado del disco externamente (patrón de la otra sesión del monorepo) — el catálogo 1.000+ no completó
+- [ ] DECISIÓN: REQUIRES CORRECTION — reintento mecánico con los fixes documentados
+
+## FASE 42 — Completar F41: catálogo 1.451 + embeddings + retrieval ✅ (2026-08-31)
+- [x] Importador recuperado del commit 8d3691b + 2 bugs nuevos resueltos (pageNumber 1-indexed, retry intermitente)
+- [x] Catálogo: 1.451 entradas (FNDDS CC0) con canonical genérico + aliases + nutrition_mapping
+- [x] Embeddings CLIP 3 templates cacheados (1451x512) + índice numpy exacto + motor FoodRetrieval
+- [x] R@K: food-us 38.9/51.9/57.4/58.3/64.8; v1 25/34.3/38.8/40.7/45.5; Food-101 31.5/42.2/46.3/49.5/52.7 — el correcto aparece en Top-K con catálogo 1.451 sin reentrenar
+- [x] Flags retrieval off (producción intacta); 75/75 tests; smoke: pizza_001 -> top-5 pizza
+
+## FASE 43 — Canonical Grouping + Reranking ✅ (2026-08-31)
+- [x] Canonical grouping: R@K mejorado (food-us R@5 51.9 -> 58.3, R@10 57.4 -> 63.0); unique10 6.0 (variantes agrupadas)
+- [x] Rerank con legacy (0.75+0.25): SIN cambio (correlación CLIP — el legacy y el retrieval comparten el embedding)
+- [x] Cuello: retrieval textual (el mismo del F26); el R@1 38.9% requiere el specialist DINO selectivo (F38: 74.1% con hybrid)
+- [x] DECISIÓN: grouping aprobado; el rerank estructural = integrar el specialist DINO al ranking del retrieval
