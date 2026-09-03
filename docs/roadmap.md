@@ -293,3 +293,10 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Rerank con legacy (0.75+0.25): SIN cambio (correlación CLIP — el legacy y el retrieval comparten el embedding)
 - [x] Cuello: retrieval textual (el mismo del F26); el R@1 38.9% requiere el specialist DINO selectivo (F38: 74.1% con hybrid)
 - [x] DECISIÓN: grouping aprobado; el rerank estructural = integrar el specialist DINO al ranking del retrieval
+
+## FASE 45 — Calibración final + congelación ✅ (2026-08-31)
+- [x] Sweep 3x3 (gate top-3/5/10 x th 0.65/0.70/0.75): config final Top-3 + 0.75 — regr 42 -> 22 (-48%), R@1 41.7 conservado, F101 -0.2
+- [x] Regresiones explícitas: 17, TODAS lasagna/nachos -> pizza (conf 0.75-0.82) — categoría única
+- [x] Config congelada: SPECIALIST_MODEL=dino_base GROUPS=pizza,naan THRESHOLD=0.75 GATE_TOPK=3 GATE_CONF=0.40 ENABLED=false
+- [x] app/models/retrieval_rerank.py (regla pura) + 9 tests (84/84)
+- [x] NOTA: SpecialistRouter/Shadow en feature/f38 (rama ajena) — traer para F46
