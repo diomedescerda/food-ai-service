@@ -275,3 +275,8 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Graceful failure: imagen inválida → 400; health/readiness: /health (modelos+servicio) + /api/v1/foodai/health (probe backend+foodAI) ✓
 - [x] Regression gate: 72/72 pytest, 213/213 .NET, 14/14 integration; E2E clave sin regresión (pizza/hot_dog/salmon/nachos/fries/mf_003/mf_006/mf_011 ✓)
 - [x] DECISIÓN: PRODUCTION READY con límites documentados (concurrencia <=4 por la serialización CPU; DINO 10-17s en 33-56% de requests)
+
+## FASE 41 — Open Food Retrieval Engine ✅ parcial / REQUIRES CORRECTION (2026-08-31)
+- [x] Diagnóstico del API FNDDS: query obligatorio, %20 en espacios, pageSize=50 (100/25 -> 400), load_dotenv override — los 4 bugs resueltos en código
+- [ ] BLOQUEO: el archivo del importador fue eliminado del disco externamente (patrón de la otra sesión del monorepo) — el catálogo 1.000+ no completó
+- [ ] DECISIÓN: REQUIRES CORRECTION — reintento mecánico con los fixes documentados
