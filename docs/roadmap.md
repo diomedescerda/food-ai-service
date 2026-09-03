@@ -280,3 +280,10 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Diagnóstico del API FNDDS: query obligatorio, %20 en espacios, pageSize=50 (100/25 -> 400), load_dotenv override — los 4 bugs resueltos en código
 - [ ] BLOQUEO: el archivo del importador fue eliminado del disco externamente (patrón de la otra sesión del monorepo) — el catálogo 1.000+ no completó
 - [ ] DECISIÓN: REQUIRES CORRECTION — reintento mecánico con los fixes documentados
+
+## FASE 42 — Completar F41: catálogo 1.451 + embeddings + retrieval ✅ (2026-08-31)
+- [x] Importador recuperado del commit 8d3691b + 2 bugs nuevos resueltos (pageNumber 1-indexed, retry intermitente)
+- [x] Catálogo: 1.451 entradas (FNDDS CC0) con canonical genérico + aliases + nutrition_mapping
+- [x] Embeddings CLIP 3 templates cacheados (1451x512) + índice numpy exacto + motor FoodRetrieval
+- [x] R@K: food-us 38.9/51.9/57.4/58.3/64.8; v1 25/34.3/38.8/40.7/45.5; Food-101 31.5/42.2/46.3/49.5/52.7 — el correcto aparece en Top-K con catálogo 1.451 sin reentrenar
+- [x] Flags retrieval off (producción intacta); 75/75 tests; smoke: pizza_001 -> top-5 pizza
