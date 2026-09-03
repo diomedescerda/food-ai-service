@@ -287,3 +287,9 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Embeddings CLIP 3 templates cacheados (1451x512) + índice numpy exacto + motor FoodRetrieval
 - [x] R@K: food-us 38.9/51.9/57.4/58.3/64.8; v1 25/34.3/38.8/40.7/45.5; Food-101 31.5/42.2/46.3/49.5/52.7 — el correcto aparece en Top-K con catálogo 1.451 sin reentrenar
 - [x] Flags retrieval off (producción intacta); 75/75 tests; smoke: pizza_001 -> top-5 pizza
+
+## FASE 43 — Canonical Grouping + Reranking ✅ (2026-08-31)
+- [x] Canonical grouping: R@K mejorado (food-us R@5 51.9 -> 58.3, R@10 57.4 -> 63.0); unique10 6.0 (variantes agrupadas)
+- [x] Rerank con legacy (0.75+0.25): SIN cambio (correlación CLIP — el legacy y el retrieval comparten el embedding)
+- [x] Cuello: retrieval textual (el mismo del F26); el R@1 38.9% requiere el specialist DINO selectivo (F38: 74.1% con hybrid)
+- [x] DECISIÓN: grouping aprobado; el rerank estructural = integrar el specialist DINO al ranking del retrieval
