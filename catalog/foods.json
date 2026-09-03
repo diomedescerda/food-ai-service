@@ -1,0 +1,764 @@
+{
+  "schema_version": 1,
+  "source": "USDA FoodData Central â€” Survey (FNDDS)",
+  "license": "CC0 (public domain)",
+  "imported_at": "2026-08-31",
+  "total_raw": 200,
+  "total_normalized": 54,
+  "foods": [
+    {
+      "food_id": "fndds_2705463",
+      "canonical_name": "baby toddler food",
+      "aliases": [
+        "baby toddler food, nfs"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2705463",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2707392",
+      "canonical_name": "baked beans from fast food restaurant",
+      "aliases": [
+        "baked beans from fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2707392",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2708986",
+      "canonical_name": "beans and rice from fast food restaurant",
+      "aliases": [
+        "beans and rice, from fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2708986",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2707803",
+      "canonical_name": "biscuit from fast food restaurant",
+      "aliases": [
+        "biscuit, from fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2707803",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2707365",
+      "canonical_name": "black beans from fast food restaurant",
+      "aliases": [
+        "black beans, from fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2707365",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2710785",
+      "canonical_name": "breading or batter as ingredient in food",
+      "aliases": [],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2710785",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2707693",
+      "canonical_name": "breadsticks soft fast food restaurant",
+      "aliases": [
+        "breadsticks, soft, fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2707693",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2707854",
+      "canonical_name": "cake angel food",
+      "aliases": [
+        "cake, angel food"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2707854",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2705770",
+      "canonical_name": "cheese processed cheese food",
+      "aliases": [
+        "cheese, processed cheese food"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2705770",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2706909",
+      "canonical_name": "cheeseburger from fast food 1 large patty",
+      "aliases": [
+        "cheeseburger, from fast food, 1 large patty"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2706909",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2706897",
+      "canonical_name": "cheeseburger from fast food 1 medium patty",
+      "aliases": [
+        "cheeseburger, from fast food, 1 medium patty"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2706897",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2706889",
+      "canonical_name": "cheeseburger from fast food 1 small patty",
+      "aliases": [
+        "cheeseburger, from fast food, 1 small patty"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2706889",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2706887",
+      "canonical_name": "cheeseburger slider from fast food",
+      "aliases": [
+        "cheeseburger slider, from fast food"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2706887",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2707002",
+      "canonical_name": "chicken fillet biscuit from fast food",
+      "aliases": [
+        "chicken fillet biscuit, from fast food"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2707002",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2707003",
+      "canonical_name": "chicken fillet sandwich fried from fast food",
+      "aliases": [
+        "chicken fillet sandwich, fried, from fast food"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2707003",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2707005",
+      "canonical_name": "chicken fillet sandwich grilled from fast food",
+      "aliases": [
+        "chicken fillet sandwich, grilled, from fast food"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2707005",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2706093",
+      "canonical_name": "chicken nuggets from fast food",
+      "aliases": [
+        "chicken nuggets, from fast food"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2706093",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2706067",
+      "canonical_name": "chicken wing fried coated from fast food",
+      "aliases": [
+        "chicken wing, fried, coated, from fast food"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2706067",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2706072",
+      "canonical_name": "chicken wings plain from fast food restaurant",
+      "aliases": [
+        "chicken \"wings\", plain, from fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2706072",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2709814",
+      "canonical_name": "coleslaw fast food restaurant",
+      "aliases": [
+        "coleslaw, fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2709814",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2707163",
+      "canonical_name": "egg whole fried from fast food restaurant",
+      "aliases": [
+        "egg, whole, fried, from fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2707163",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2707020",
+      "canonical_name": "fish sandwich fried from fast food",
+      "aliases": [
+        "fish sandwich, fried, from fast food"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2707020",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2708333",
+      "canonical_name": "french toast fast food restaurant",
+      "aliases": [
+        "french toast, fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2708333",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2708339",
+      "canonical_name": "french toast sticks fast food restaurant",
+      "aliases": [
+        "french toast sticks, fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2708339",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2707627",
+      "canonical_name": "garlic bread from fast food restaurant",
+      "aliases": [
+        "garlic bread, from fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2707627",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2706930",
+      "canonical_name": "hamburger from fast food 1 large patty",
+      "aliases": [
+        "hamburger, from fast food, 1 large patty"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2706930",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2706929",
+      "canonical_name": "hamburger from fast food 1 medium patty",
+      "aliases": [
+        "hamburger, from fast food, 1 medium patty"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2706929",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2706921",
+      "canonical_name": "hamburger from fast food 1 small patty",
+      "aliases": [
+        "hamburger, from fast food, 1 small patty"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2706921",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2706919",
+      "canonical_name": "hamburger slider from fast food",
+      "aliases": [
+        "hamburger slider, from fast food"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2706919",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2706963",
+      "canonical_name": "hamburger wrap sandwich from fast food",
+      "aliases": [
+        "hamburger wrap sandwich, from fast food"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2706963",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2710037",
+      "canonical_name": "jai monk s food",
+      "aliases": [
+        "jai, monk's food"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2710037",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2707385",
+      "canonical_name": "kidney beans from fast food restaurant",
+      "aliases": [
+        "kidney beans, from fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2707385",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2705508",
+      "canonical_name": "milk shake fast food chocolate",
+      "aliases": [
+        "milk shake, fast food, chocolate"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2705508",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2708379",
+      "canonical_name": "oatmeal fast food flavored",
+      "aliases": [
+        "oatmeal, fast food, flavored"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2708379",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2708378",
+      "canonical_name": "oatmeal fast food plain",
+      "aliases": [
+        "oatmeal, fast food, plain"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2708378",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2708301",
+      "canonical_name": "pancakes chocolate fast food restaurant",
+      "aliases": [
+        "pancakes, chocolate, fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2708301",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2708300",
+      "canonical_name": "pancakes fruit fast food restaurant",
+      "aliases": [
+        "pancakes, fruit, fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2708300",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2708299",
+      "canonical_name": "pancakes plain fast food restaurant",
+      "aliases": [
+        "pancakes, plain, fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2708299",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2708302",
+      "canonical_name": "pancakes whole grain fast food restaurant",
+      "aliases": [
+        "pancakes, whole grain, fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2708302",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2707996",
+      "canonical_name": "pie apple fast food",
+      "aliases": [
+        "pie, apple, fast food"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2707996",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2707377",
+      "canonical_name": "pinto beans from fast food restaurant",
+      "aliases": [
+        "pinto beans, from fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2707377",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2709461",
+      "canonical_name": "potato french fries fast food",
+      "aliases": [
+        "potato, french fries, fast food"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2709461",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2709478",
+      "canonical_name": "potato hash brown from fast food",
+      "aliases": [
+        "potato, hash brown, from fast food"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2709478",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2709473",
+      "canonical_name": "potato home fries from restaurant fast food",
+      "aliases": [
+        "potato, home fries, from restaurant / fast food"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2709473",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2709493",
+      "canonical_name": "potato mashed from fast food",
+      "aliases": [
+        "potato, mashed, from fast food"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2709493",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2709449",
+      "canonical_name": "potato scalloped from fast food or restaurant",
+      "aliases": [
+        "potato, scalloped, from fast food or restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2709449",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2709512",
+      "canonical_name": "potato tots fast food restaurant",
+      "aliases": [
+        "potato tots, fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2709512",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2707397",
+      "canonical_name": "refried beans from fast food restaurant",
+      "aliases": [
+        "refried beans, from fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2707397",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2709713",
+      "canonical_name": "sweet potato fries fast food restaurant",
+      "aliases": [
+        "sweet potato fries, fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2709713",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2709716",
+      "canonical_name": "sweet potato tots fast food restaurant",
+      "aliases": [
+        "sweet potato tots, fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2709716",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2708321",
+      "canonical_name": "waffle chocolate fast food restaurant",
+      "aliases": [
+        "waffle, chocolate, fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2708321",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2708322",
+      "canonical_name": "waffle fruit fast food restaurant",
+      "aliases": [
+        "waffle, fruit, fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2708322",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2708320",
+      "canonical_name": "waffle plain fast food restaurant",
+      "aliases": [
+        "waffle, plain, fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2708320",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    },
+    {
+      "food_id": "fndds_2708323",
+      "canonical_name": "waffle whole grain fast food restaurant",
+      "aliases": [
+        "waffle, whole grain, fast food / restaurant"
+      ],
+      "category": "unknown",
+      "nutrition_mapping": {
+        "fdc_id": "2708323",
+        "source": "USDA FNDDS"
+      },
+      "status": "catalog",
+      "source_raw_count": 2
+    }
+  ]
+}
