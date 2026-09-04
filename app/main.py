@@ -98,6 +98,41 @@ async def lifespan(app: FastAPI):
     app.state.settings = settings
     # FASE 23: serializa la inferencia CPU (torch concurrente con DINO crashea).
     app.state.inference_semaphore = asyncio.Semaphore(1)
+
+    # FASE 46: shadow del retrieval (telemetría; la respuesta SIEMPRE es legacy).
+    app.state.retrieval_shadow = None
+    app.state.logger.info(
+        "RETRIEVAL CONFIG: enabled=%s shadow=%s catalog_size=%s specialist_model=dino_base "
+        "specialist_threshold=0.75 specialist_gate_topk=3 specialist_groups=pizza,naan",
+        settings.retrieval_enabled, settings.retrieval_shadow_enabled,
+        "1451" if settings.retrieval_shadow_enabled or settings.retrieval_enabled else "n/a",
+    )
+    if settings.retrieval_shadow_enabled:
+        from app.models.food_retrieval import FoodRetrieval  # noqa: PLC0415
+        from app.models.retrieval_shadow import RetrievalShadow  # noqa: PLC0415
+        from app.models.zero_shot_classifier import ZeroShotFoodClassifier  # noqa: PLC0415
+
+        # El shadow necesita su propio CLIP (independiente del clasificador
+        # del pipeline: detector_based o zero_shot — el retrieval usa CLIP).
+        if not isinstance(classifier, ZeroShotFoodClassifier):
+            clip = ZeroShotFoodClassifier(
+                model_name=settings.clip_model,
+                device=settings.clip_device,
+                threshold=settings.clip_threshold,
+                prompt_template=settings.clip_prompt_template,
+                crop_padding=settings.clip_crop_padding,
+            )
+            clip.load()
+            shadow_clf = clip
+        else:
+            shadow_clf = classifier
+        retrieval = FoodRetrieval(enabled=True, clf=shadow_clf)
+        app.state.retrieval_shadow = RetrievalShadow(enabled=True, clf=shadow_clf, retrieval=retrieval)
+        app.state.logger.info(
+            "retrieval shadow listo: available=%s catalog=%d",
+            app.state.retrieval_shadow.available(),
+            retrieval.catalog_size if retrieval.available() else 0,
+        )
     yield
 
 

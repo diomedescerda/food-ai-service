@@ -1,4 +1,4 @@
-﻿from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
@@ -59,6 +59,13 @@ class Settings(BaseSettings):
 
     # Directorio para guardar imÃ¡genes de debug (bbox + labels). VacÃ­o = off.
     debug_images_dir: str = ""
+
+    # === Retrieval masivo (FASE 42): catÃ¡logo 1.451 FNDDS ===
+    # enabled=true reemplazarÃ­a el legacy (NO activado). shadow=true ejecuta
+    # el pipeline completo sin tocar la respuesta (telemetrÃ­a).
+    retrieval_enabled: bool = False
+    retrieval_shadow_enabled: bool = False
+    retrieval_top_k: int = 50
 
 
 settings = Settings()

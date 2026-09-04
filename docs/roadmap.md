@@ -300,3 +300,11 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Config congelada: SPECIALIST_MODEL=dino_base GROUPS=pizza,naan THRESHOLD=0.75 GATE_TOPK=3 GATE_CONF=0.40 ENABLED=false
 - [x] app/models/retrieval_rerank.py (regla pura) + 9 tests (84/84)
 - [x] NOTA: SpecialistRouter/Shadow en feature/f38 (rama ajena) — traer para F46
+
+## FASE 46 — Shadow Real del Retrieval + Specialist ✅ (2026-09-03)
+- [x] SpecialistRouter/Shadow recuperados de feature/f38 (la rama carlos no los tenía)
+- [x] RetrievalShadow (retrieval+grouping+rerank) + startup log RETRIEVAL CONFIG + flag retrieval_shadow_enabled=false
+- [x] food-us por API real: 108 peticiones, telemetría 48 líneas: canonical hit@1 33.3%, reranked 34.3%, spec 14.8%, fallback 0, lat p50 98ms
+- [x] Invariancia: pizza_001 OFF vs ON -> pizza 0.9075 idéntico (hook post-response)
+- [x] Concurrencia 4 simultáneos: 200x4, 0 crashes; fallbacks verificados (DINO unavailable + retrieval error + DetectorBased real)
+- [x] 5 tests shadow (89/89) — DECISIÓN: APPROVE F46 READY TO SCALE CATALOG
