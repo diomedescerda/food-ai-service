@@ -358,3 +358,9 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Confianzas separadas (visual 0.298 runtime / nutrition 0.95 USDA / portion externa); flags confidence_enabled=false + min_visual_confidence=0.20
 - [x] Shadow de decisión runtime: pizza -> NEW_RESULT_READY + nutrición real (292 kcal); golden cases A-E en tests
 - [x] 8 tests (142/142) — DECISIÓN: APPROVE READY FOR FINAL SHADOW
+
+## FASE 54 — Nutrition Coverage + Shadow Final ✅ APPROVE (2026-09-04)
+- [x] Nutrition: 1.184 -> 2.184 (37.9%, USDA 2.000 + OFF 184, 0 errores, 0 NaN/negativos, tandas reanudables)
+- [x] Shadow final food-us (107 por API): new 56.1% vs legacy 43.9% (+12.2); A=44 B=3 C=16 D=44; nutrition READY 91.6% runtime
+- [x] Invariancia OFF==ON (pizza 0.9075); concurrencia 4x200; muestra 50: 41 correct/9 acceptable
+- [x] DECISIÓN: APPROVE READY FOR ACTIVE ROLLOUT
