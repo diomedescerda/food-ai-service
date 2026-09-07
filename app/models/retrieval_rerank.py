@@ -14,6 +14,33 @@ SPECIALIST_GATE_TOPK = 3
 SPECIALIST_THRESHOLD = 0.75
 
 
+def rerank_general(
+    candidates: list[dict],
+    support_max: float,
+    dino_s: tuple[str, float] | None = None,
+    w_support: float = 0.5,
+    w_alias: float = 0.1,
+    w_dino: float = 1.0,
+) -> list[str]:
+    """Reranker general determinista (F48).
+
+    Señales por canonical: retrieval_max + support_count (estructural) +
+    alias_count (estructural) + specialist DINO (cuando aplica). Features
+    ausentes NO penalizan (specialist unavailable -> sin término). El orden
+    de los ties se mantiene estable (sort estable de Python).
+    """
+    out = []
+    for c in candidates:
+        score = c["max"]
+        score += w_support * (c.get("support", 0) / support_max)
+        score += w_alias * (0.5 * (c.get("alias", 0) / 20.0))
+        if w_dino and dino_s is not None and c["name"] == dino_s[0]:
+            score += w_dino * dino_s[1]
+        out.append((c["name"], score))
+    out.sort(key=lambda x: -x[1])
+    return [n for n, _ in out]
+
+
 def specialist_eligible(legacy_conf1: float, legacy_topk: list[str], topk: int = SPECIALIST_GATE_TOPK) -> bool:
     """Gate del F38: solo invocar el specialist si el legacy duda
     (conf1 < 0.40) y pizza/naan están entre sus top-K candidatos."""

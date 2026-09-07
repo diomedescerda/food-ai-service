@@ -316,3 +316,10 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] R@K degradación esperada: food-us 38.9 -> 10.2 (espacio 4x; documentado para F48 — NO reducir catálogo)
 - [x] 8 tests (97/97): count, unicidad, aliases, cobertura, rebuild, backcompat, smoke, fuentes
 - [ ] 10k estricto NO alcanzado: política no-variantes limita a ~5.8k reales — nivel variante u OFF estable = decisión F48
+
+## FASE 48 — General Reranker para 5.761 ✅ APPROVE (2026-09-04)
+- [x] Reranker determinista (retrieval + support + alias_count + specialist DINO): food-us 10.2 -> 38.9 (recupera el nivel del 1.451), v1 8.7 -> 21.0, Food-101 9.5 -> 34.2 (superado) — sin entrenar
+- [x] Alias_count (proxy del canónico genérico) = señal clave; support aporta poco; specialist +0.9 (regla F45 intacta)
+- [x] MRR 0.185 -> 0.458, med_rank 6 -> 1, prom 43/dem 4 (food-us); buckets: A=46% (GT fuera del Top-50 — recall, no ranking)
+- [x] app/models/retrieval_rerank.py: rerank_general (puro) + 7 tests (104/104)
+- [x] DECISIÓN: APPROVE — el ranking escala con el catálogo; el cuello restante = recall del retrieval (bucket A)
