@@ -376,3 +376,9 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Latencia estable p50 ~2.2-2.4s; rollback por flag (etapa 0% = rollback ejecutado); nutrition 37.9% independiente
 - [x] scripts/f56_rollout.py (split determinista por hash) + 4 tests (152/152)
 - [x] DECISIÓN: APPROVE FULL PRODUCTION ROLLOUT — siguiente: F57 hardening + monitoring
+
+## FASE 57 — Hardening + Monitoring ✅ APPROVE (2026-09-04)
+- [x] RELEASE versionado (f57/5761/multitext-v1/reranker-v1/specialist-v1/nutrition-v1) en startup
+- [x] /health/readiness (runtime: ready, index/clip/dino/nutrition True) + /metrics (contadores por request, runtime verificado)
+- [x] Consistencia catálogo 5761 == índice 7498; fallback reasons separados; rollback por flag documentado; nutrition 37.9% observable
+- [x] 8 tests (160/160) — DECISIÓN: APPROVE PRODUCTION HARDENED — sistema operable, observable, reversible

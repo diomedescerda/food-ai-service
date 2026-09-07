@@ -2,7 +2,7 @@ import asyncio
 import logging
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 
 from app.api.analyze import router as analyze_router
 from app.api.health import router as health_router
@@ -105,6 +105,19 @@ async def lifespan(app: FastAPI):
     # tocar la respuesta). Default false -> legacy exacto.
     app.state.food_pipeline = None
     app.state.nutrition_service = None
+    app.state.metrics = {
+        "total_requests": 0, "successful_requests": 0, "failed_requests": 0,
+        "new_pipeline_used": 0, "legacy_fallback": 0,
+        "fallback_pipeline_error": 0, "fallback_low_confidence": 0,
+        "nutrition_ready": 0, "nutrition_unavailable": 0, "nutrition_errors": 0,
+        "specialist_calls": 0, "portion_available": 0, "portion_unavailable": 0,
+    }
+    # F57: versión del pipeline en startup (observabilidad).
+    app.state.logger.info(
+        "RELEASE: pipeline=f57 catalog=5761 retrieval=multitext-v1 "
+        "reranker=general-v1 specialist=dino-base-pizza-naan-v1 "
+        "nutrition=mapping-v1 index=multitext-7498"
+    )
     app.state.logger.info(
         "RETRIEVAL CONFIG: enabled=%s shadow=%s catalog_size=%s specialist_model=dino_base "
         "specialist_threshold=0.75 specialist_gate_topk=3 specialist_groups=pizza,naan",
@@ -151,6 +164,12 @@ def create_app() -> FastAPI:
         description="Servicio de IA de FoodAI: detección, segmentación, clasificación, porción y nutrición.",
         lifespan=lifespan,
     )
+    @app.get("/metrics")
+    def metrics_endpoint(request: Request) -> dict:
+        """Métricas agregadas en memoria (F57): requests, pipeline,
+        fallbacks, nutrition, specialist. Cero coste de red."""
+        return dict(getattr(request.app.state, "metrics", {}))
+
     app.include_router(health_router)
     app.include_router(analyze_router)
     return app

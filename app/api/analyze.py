@@ -345,6 +345,18 @@ async def _run_pipeline(
         except Exception as exc:  # noqa: BLE001 — la decisión jamás rompe la respuesta
             request.app.state.logger.error("decision shadow error (ignorado): %s", exc)
 
+    # F57: métricas agregadas por request (observabilidad). Nunca rompe el
+    # request: cualquier fallo del contador se ignora.
+    try:
+        metrics = getattr(request.app.state, "metrics", None)
+        if metrics is not None:
+            metrics["total_requests"] += 1
+            metrics["successful_requests"] += 1
+            if pipeline_on and final_names:
+                metrics["new_pipeline_used"] += 1
+    except Exception:  # noqa: BLE001
+        pass
+
     return AnalyzeResponse(
         analysis_id=analysis_id,
         status="completed",
