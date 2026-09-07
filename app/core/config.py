@@ -73,5 +73,11 @@ class Settings(BaseSettings):
     nutrition_enabled: bool = False
     nutrition_shadow_enabled: bool = False
 
+    # === Confianza/fallback (FASE 53): política de decisión ===
+    # confidence_enabled=false: la decisión nunca rechaza por confianza
+    # (el mecanismo queda preparado, sin activar).
+    confidence_enabled: bool = False
+    min_visual_confidence: float = 0.20
+
 
 settings = Settings()

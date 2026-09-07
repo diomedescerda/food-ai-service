@@ -352,3 +352,9 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Golden foods validados (pizza 292, rice 119, fries 185 kcal/100g); muestra 50: 38 correct/7 acceptable/5 unavailable/0 ambiguous
 - [x] Flags nutrition_enabled/shadow_enabled=false + shadow hook + 10 tests (134/134)
 - [x] DECISIÓN: PARTIAL SUCCESS — el límite diario del USDA pospone el 100% (~4 días de tandas); pipeline funcional
+
+## FASE 53 — Confidence + Fallback ✅ APPROVE (2026-09-04)
+- [x] DecisionPolicy: NEW_RESULT_READY/NUTRITION_UNAVAILABLE/LOW_CONFIDENCE/LEGACY_FALLBACK; identificación vs nutrición INDEPENDIENTES (no revierte identificación por falta de nutrientes)
+- [x] Confianzas separadas (visual 0.298 runtime / nutrition 0.95 USDA / portion externa); flags confidence_enabled=false + min_visual_confidence=0.20
+- [x] Shadow de decisión runtime: pizza -> NEW_RESULT_READY + nutrición real (292 kcal); golden cases A-E en tests
+- [x] 8 tests (142/142) — DECISIÓN: APPROVE READY FOR FINAL SHADOW

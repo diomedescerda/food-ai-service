@@ -300,6 +300,46 @@ async def _run_pipeline(
         except Exception as exc:  # noqa: BLE001 — el nutrition jamás rompe la respuesta
             request.app.state.logger.error("nutrition shadow error (ignorado): %s", exc)
 
+    # F53: shadow de la decisión (pipeline + nutrition + política). Telemetría
+    # únicamente; la respuesta SIEMPRE es legacy. Jamás rompe el request.
+    pipeline_f53 = getattr(request.app.state, "food_pipeline", None)
+    nutrition_f53 = getattr(request.app.state, "nutrition_service", None)
+    if (
+        pipeline_f53 is not None and pipeline_f53.available() and request.app.state.logger
+        and getattr(request.app.state.settings, "retrieval_shadow_enabled", False)
+    ):
+        try:
+            from app.models.decision import DecisionPolicy  # noqa: PLC0415
+
+            crop = shadow_crop if shadow_crop is not None else pil_image
+            res = pipeline_f53.analyze_food(crop, legacy_conf1=legacy_conf1, legacy_top3=legacy_top3)
+            canonical = res.get("canonical_name")
+            visual_conf = res.get("confidence", {}).get("retrieval_score", 0.0) if not res.get("fallback") else 0.0
+            nutrition = None
+            if canonical and nutrition_f53 is not None and nutrition_f53.available():
+                nutrition = nutrition_f53.canonical_nutrition(canonical)
+            n_status = nutrition.get("status", "NUTRITION_UNAVAILABLE") if nutrition else "NUTRITION_UNAVAILABLE"
+            policy = DecisionPolicy(
+                min_visual_confidence=request.app.state.settings.min_visual_confidence,
+                confidence_enabled=request.app.state.settings.confidence_enabled,
+            )
+            decision = policy.decide(
+                visual_confidence=visual_conf,
+                nutrition_status=n_status,
+                pipeline_error=bool(res.get("fallback")),
+            )
+            request.app.state.logger.info(
+                "decision_shadow legacy=%s new=%s visual_conf=%.3f nutrition_status=%s "
+                "nutrition_conf=%.2f decision=%s would_fallback=%s reason=%s",
+                final_names[0] if final_names else "none", canonical,
+                visual_conf, n_status,
+                nutrition.get("nutrition_confidence", 0.0) if nutrition else 0.0,
+                decision["decision"], decision["decision"] == "LEGACY_FALLBACK",
+                decision["fallback_reason"],
+            )
+        except Exception as exc:  # noqa: BLE001 — la decisión jamás rompe la respuesta
+            request.app.state.logger.error("decision shadow error (ignorado): %s", exc)
+
     return AnalyzeResponse(
         analysis_id=analysis_id,
         status="completed",
