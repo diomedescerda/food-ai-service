@@ -308,3 +308,11 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Invariancia: pizza_001 OFF vs ON -> pizza 0.9075 idéntico (hook post-response)
 - [x] Concurrencia 4 simultáneos: 200x4, 0 crashes; fallbacks verificados (DINO unavailable + retrieval error + DetectorBased real)
 - [x] 5 tests shadow (89/89) — DECISIÓN: APPROVE F46 READY TO SCALE CATALOG
+
+## FASE 47 — Escalado del catálogo (4x, sin reentrenar) ⚠️ PARCIAL (2026-09-04)
+- [x] Catálogo 1.451 -> 5.761 canónicos (9.067 entries, 1.737 aliases): FNDDS completo + SR Legacy (list API paginado) + OFF (cache incremental por query; OFF inestable 503/401)
+- [x] 1.451 preservados (foods_legacy_1451.json + cross-check legacy + naan restaurado como alias)
+- [x] Embeddings 5.761x512 x3 + índice numpy (build ~5s, RAM ~12MB, matmul ~2ms)
+- [x] R@K degradación esperada: food-us 38.9 -> 10.2 (espacio 4x; documentado para F48 — NO reducir catálogo)
+- [x] 8 tests (97/97): count, unicidad, aliases, cobertura, rebuild, backcompat, smoke, fuentes
+- [ ] 10k estricto NO alcanzado: política no-variantes limita a ~5.8k reales — nivel variante u OFF estable = decisión F48
