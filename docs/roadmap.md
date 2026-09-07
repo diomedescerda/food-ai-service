@@ -370,3 +370,9 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Confidence del active = retrieval score real (no 0.5 fijo); fallback/rollback por flag probados (legacy exacto)
 - [x] 108 requests controlados, 0 crashes, contract intacto, nutrition 37.9% (tandas independientes)
 - [x] 6 tests (148/148) — DECISIÓN: APPROVE READY FOR GRADUAL PRODUCTION
+
+## FASE 56 — Rollout Gradual Real ✅ APPROVE (2026-09-04)
+- [x] 5 etapas (0/10/25/50/100%): el nuevo supera al legacy en TODAS (10%: 70.0 vs 43.3; 100%: 47.7% = 70.8% detectados); 0 fallos del pipeline; 1 error = imagen corrupta del dataset
+- [x] Latencia estable p50 ~2.2-2.4s; rollback por flag (etapa 0% = rollback ejecutado); nutrition 37.9% independiente
+- [x] scripts/f56_rollout.py (split determinista por hash) + 4 tests (152/152)
+- [x] DECISIÓN: APPROVE FULL PRODUCTION ROLLOUT — siguiente: F57 hardening + monitoring
