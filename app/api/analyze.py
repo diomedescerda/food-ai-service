@@ -136,7 +136,35 @@ async def _run_pipeline(
     # Clasificación final: con DetectorBasedClassifier no hay inferencia extra
     # (la clase/confianza vienen del detector); el pipeline habla contra
     # IFoodClassifier para poder sustituirlo por un clasificador dedicado.
-    if classifier is not None and classifier.is_loaded:
+    # FASE 51: si FOOD_AI_RETRIEVAL_ENABLED=true, el pipeline 5.761 sustituye
+    # la clase por el canonical del multi-text retrieval (experimental).
+    pipeline = getattr(request.app.state, "food_pipeline", None)
+    pipeline_on = (
+        pipeline is not None and pipeline.available()
+        and getattr(request.app.state.settings, "retrieval_enabled", False)
+    )
+    if pipeline_on:
+        cls_start = time.perf_counter()
+        final_names = []
+        final_confidences = []
+        pipeline_crop_clf = getattr(pipeline, "clf", None)
+        for d in detections:
+            crop = None
+            if pipeline_crop_clf is not None and hasattr(pipeline_crop_clf, "_crop"):
+                crop = pipeline_crop_clf._crop(pil_image, d)
+            if crop is None:
+                crop = pil_image
+            res = pipeline.analyze_food(crop)
+            if res.get("fallback", False) or not res.get("canonical_name"):
+                final_names.append(d.name)
+                final_confidences.append(d.confidence)
+            else:
+                final_names.append(res["canonical_name"])
+                # F55: confidence del active mode = retrieval score real del
+                # canonical final (no un 0.5 fijo)
+                final_confidences.append(res.get("confidence", {}).get("retrieval_score", 0.5))
+        cls_ms = round((time.perf_counter() - cls_start) * 1000)
+    elif classifier is not None and classifier.is_loaded:
         cls_start = time.perf_counter()
         classifications = classifier.classify(pil_image, detections)
         cls_ms = round((time.perf_counter() - cls_start) * 1000)
@@ -147,6 +175,30 @@ async def _run_pipeline(
         final_confidences = [d.confidence for d in detections]
         classifier = None
         cls_ms = 0
+
+    # F51: scores legacy para el gate del specialist (solo si el pipeline está
+    # activo; el pipeline legacy no cambia). Usa el CLIP propio del pipeline.
+    legacy_conf1 = 0.0
+    legacy_top3: list[str] = []
+    shadow_crop = None
+    pipeline_active = getattr(request.app.state, "food_pipeline", None)
+    pipeline_clf = getattr(pipeline_active, "clf", None) if pipeline_active is not None else None
+    if (
+        pipeline_active is not None and pipeline_active.available()
+        and pipeline_clf is not None and detections
+        and hasattr(pipeline_clf, "_score_crop") and hasattr(pipeline_clf, "_crop")
+    ):
+        try:
+            shadow_crop = pipeline_clf._crop(pil_image, detections[0])
+            if shadow_crop is not None:
+                _best: dict[str, float] = {}
+                for r in pipeline_clf._score_crop(shadow_crop):
+                    _best[r.name] = max(_best.get(r.name, 0.0), r.score)
+                legacy_conf1 = max(_best.values()) if _best else 0.0
+                legacy_top3 = [n for n, _ in sorted(_best.items(), key=lambda x: -x[1])[:3]]
+        except Exception:  # noqa: BLE001 — el pipeline jamás rompe la respuesta
+            legacy_conf1 = 0.0
+            legacy_top3 = []
 
     # Estimación de porción (básica): referencia + tamaño visual relativo.
     # estimatedGrams != measuredGrams — aproximación, nunca peso medido.
@@ -206,6 +258,104 @@ async def _run_pipeline(
             analysis_id,
             depth_map,
         )
+
+# F51: shadow del pipeline 5.761 (telemetría; el resultado SIEMPRE es legacy).
+    # Se ejecuta DESPUÉS de construir el response — jamás puede modificarlo.
+    pipeline = getattr(request.app.state, "food_pipeline", None)
+    if (
+        pipeline is not None and pipeline.available() and request.app.state.logger
+        and getattr(request.app.state.settings, "retrieval_shadow_enabled", False)
+    ):
+        try:
+            crop = shadow_crop if shadow_crop is not None else pil_image
+            tel = pipeline.analyze_food(crop, legacy_conf1=legacy_conf1, legacy_top3=legacy_top3)
+            if not tel.get("fallback", False):
+                request.app.state.logger.info(
+                    "pipeline_f51 analysis_id=%s retrieval1=%s reranked1=%s final=%s "
+                    "spec_used=%s spec_conf=%s lat=%sms embed=%sms fallback=%s",
+                    tel.get("retrieval", {}).get("top1"), tel.get("reranker", {}).get("top1"),
+                    tel.get("canonical_name"), tel.get("specialist_used", False),
+                    tel.get("specialist", {}).get("confidence"), tel.get("latency_ms"),
+                    tel.get("embedding_ms"), tel.get("fallback", False),
+                )
+        except Exception as exc:  # noqa: BLE001 — el pipeline jamás rompe la respuesta
+            request.app.state.logger.error("pipeline F51 shadow error (ignorado): %s", exc)
+
+    # F52: shadow de nutrición (telemetría; la respuesta SIEMPRE es legacy).
+    # El canonical (pipeline o legacy) -> lookup local -> nutrientes log.
+    nutrition = getattr(request.app.state, "nutrition_service", None)
+    if (
+        nutrition is not None and nutrition.available() and request.app.state.logger
+        and getattr(request.app.state.settings, "nutrition_shadow_enabled", False)
+    ):
+        try:
+            canonical = pipeline_on and final_names[0] if pipeline_on and final_names else (final_names[0] if final_names else None)
+            if canonical:
+                tel = nutrition.canonical_nutrition(canonical)
+                request.app.state.logger.info(
+                    "nutrition_shadow canonical=%s status=%s conf=%.2f source=%s "
+                    "cal=%.0f protein=%.1f carbs=%.1f fat=%.1f ref=%dg",
+                    canonical, tel.get("status"), tel.get("nutrition_confidence", 0.0),
+                    tel.get("source"), tel.get("nutrients_per_100g", {}).get("calories", {}).get("value", 0),
+                    tel.get("nutrients_per_100g", {}).get("protein", {}).get("value", 0),
+                    tel.get("nutrients_per_100g", {}).get("carbohydrates", {}).get("value", 0),
+                    tel.get("nutrients_per_100g", {}).get("fat", {}).get("value", 0),
+                    tel.get("reference_grams", 100),
+                )
+        except Exception as exc:  # noqa: BLE001 — el nutrition jamás rompe la respuesta
+            request.app.state.logger.error("nutrition shadow error (ignorado): %s", exc)
+
+    # F53: shadow de la decisión (pipeline + nutrition + política). Telemetría
+    # únicamente; la respuesta SIEMPRE es legacy. Jamás rompe el request.
+    pipeline_f53 = getattr(request.app.state, "food_pipeline", None)
+    nutrition_f53 = getattr(request.app.state, "nutrition_service", None)
+    if (
+        pipeline_f53 is not None and pipeline_f53.available() and request.app.state.logger
+        and getattr(request.app.state.settings, "retrieval_shadow_enabled", False)
+    ):
+        try:
+            from app.models.decision import DecisionPolicy  # noqa: PLC0415
+
+            crop = shadow_crop if shadow_crop is not None else pil_image
+            res = pipeline_f53.analyze_food(crop, legacy_conf1=legacy_conf1, legacy_top3=legacy_top3)
+            canonical = res.get("canonical_name")
+            visual_conf = res.get("confidence", {}).get("retrieval_score", 0.0) if not res.get("fallback") else 0.0
+            nutrition = None
+            if canonical and nutrition_f53 is not None and nutrition_f53.available():
+                nutrition = nutrition_f53.canonical_nutrition(canonical)
+            n_status = nutrition.get("status", "NUTRITION_UNAVAILABLE") if nutrition else "NUTRITION_UNAVAILABLE"
+            policy = DecisionPolicy(
+                min_visual_confidence=request.app.state.settings.min_visual_confidence,
+                confidence_enabled=request.app.state.settings.confidence_enabled,
+            )
+            decision = policy.decide(
+                visual_confidence=visual_conf,
+                nutrition_status=n_status,
+                pipeline_error=bool(res.get("fallback")),
+            )
+            request.app.state.logger.info(
+                "decision_shadow legacy=%s new=%s visual_conf=%.3f nutrition_status=%s "
+                "nutrition_conf=%.2f decision=%s would_fallback=%s reason=%s",
+                final_names[0] if final_names else "none", canonical,
+                visual_conf, n_status,
+                nutrition.get("nutrition_confidence", 0.0) if nutrition else 0.0,
+                decision["decision"], decision["decision"] == "LEGACY_FALLBACK",
+                decision["fallback_reason"],
+            )
+        except Exception as exc:  # noqa: BLE001 — la decisión jamás rompe la respuesta
+            request.app.state.logger.error("decision shadow error (ignorado): %s", exc)
+
+    # F57: métricas agregadas por request (observabilidad). Nunca rompe el
+    # request: cualquier fallo del contador se ignora.
+    try:
+        metrics = getattr(request.app.state, "metrics", None)
+        if metrics is not None:
+            metrics["total_requests"] += 1
+            metrics["successful_requests"] += 1
+            if pipeline_on and final_names:
+                metrics["new_pipeline_used"] += 1
+    except Exception:  # noqa: BLE001
+        pass
 
     return AnalyzeResponse(
         analysis_id=analysis_id,

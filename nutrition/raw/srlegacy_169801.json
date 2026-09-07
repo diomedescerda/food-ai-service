@@ -1,0 +1,1 @@
+{"source": "USDA FDC", "fdc_id": "169801", "reference_grams": 100, "nutrients_per_100g": {"protein": {"value": 10.8, "unit": "g"}, "calories": {"value": 326.0, "unit": "kcal"}, "fat": {"value": 31.4, "unit": "g"}, "carbohydrates": {"value": 0.0, "unit": "g"}}, "food_id": "srlegacy_169801", "canonical_name": "caribou eye raw", "status": "NUTRITION_READY"}
