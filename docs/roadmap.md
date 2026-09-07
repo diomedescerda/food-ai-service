@@ -338,3 +338,10 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Aggregación max > top-2mean; R@1 retrieval solo: 38.0 food-us (= F48 completo)
 - [x] group_text_matches en retrieval_rerank + 7 tests (117/117)
 - [x] DECISIÓN: APPROVE — el recall soporta el F51 (segmentación + reranker) y el F52 (10k)
+
+## FASE 51 — Integración Final del Pipeline 5.761 ✅ APPROVE (2026-09-04)
+- [x] app/models/food_pipeline.py: multi-text retrieval -> grouping -> reranker F48 -> specialist DINO (F45) -> canonical; fallback seguro
+- [x] Fix calibración: support=1+aliases, alias=min(20) — el reranker F48 (calibrado 1.451) degradaba con el v4 (31.5 -> 56.5 food-us)
+- [x] Integración API: flags retrieval_enabled/shadow_enabled (default false, legacy exact); shadow telemetría pipeline_f51
+- [x] R@1 integrado: food-us 56.5 (vs F50 38.0), v1 21.8, food101 27.1; invariancia pizza 0.9075 off==on; concurrencia 4x200; smoke ✓
+- [x] 7 tests pipeline (124/124) — DECISIÓN: APPROVE READY FOR NUTRITION

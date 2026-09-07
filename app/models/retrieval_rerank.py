@@ -33,7 +33,7 @@ def rerank_general(
     """
     out = []
     for c in candidates:
-        score = c["max"]
+        score = c.get("max", c.get("score", 0.0))
         score += w_support * (c.get("support", 0) / support_max)
         score += w_alias * (0.5 * (c.get("alias", 0) / 20.0))
         if w_rank:

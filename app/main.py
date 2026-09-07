@@ -99,21 +99,21 @@ async def lifespan(app: FastAPI):
     # FASE 23: serializa la inferencia CPU (torch concurrente con DINO crashea).
     app.state.inference_semaphore = asyncio.Semaphore(1)
 
-    # FASE 46: shadow del retrieval (telemetría; la respuesta SIEMPRE es legacy).
-    app.state.retrieval_shadow = None
+    # FASE 51: pipeline único 5.761 alimentos (retrieval multi-text +
+    # grouping + reranker F48 + specialist DINO). Flag: retrieval_enabled
+    # (respuesta = pipeline) o retrieval_shadow_enabled (telemetría sin
+    # tocar la respuesta). Default false -> legacy exacto.
+    app.state.food_pipeline = None
     app.state.logger.info(
         "RETRIEVAL CONFIG: enabled=%s shadow=%s catalog_size=%s specialist_model=dino_base "
         "specialist_threshold=0.75 specialist_gate_topk=3 specialist_groups=pizza,naan",
         settings.retrieval_enabled, settings.retrieval_shadow_enabled,
-        "1451" if settings.retrieval_shadow_enabled or settings.retrieval_enabled else "n/a",
+        "5761" if settings.retrieval_enabled or settings.retrieval_shadow_enabled else "n/a",
     )
-    if settings.retrieval_shadow_enabled:
-        from app.models.food_retrieval import FoodRetrieval  # noqa: PLC0415
-        from app.models.retrieval_shadow import RetrievalShadow  # noqa: PLC0415
+    if settings.retrieval_enabled or settings.retrieval_shadow_enabled:
+        from app.models.food_pipeline import FoodPipeline  # noqa: PLC0415
         from app.models.zero_shot_classifier import ZeroShotFoodClassifier  # noqa: PLC0415
 
-        # El shadow necesita su propio CLIP (independiente del clasificador
-        # del pipeline: detector_based o zero_shot — el retrieval usa CLIP).
         if not isinstance(classifier, ZeroShotFoodClassifier):
             clip = ZeroShotFoodClassifier(
                 model_name=settings.clip_model,
@@ -123,15 +123,14 @@ async def lifespan(app: FastAPI):
                 crop_padding=settings.clip_crop_padding,
             )
             clip.load()
-            shadow_clf = clip
+            pipeline_clf = clip
         else:
-            shadow_clf = classifier
-        retrieval = FoodRetrieval(enabled=True, clf=shadow_clf)
-        app.state.retrieval_shadow = RetrievalShadow(enabled=True, clf=shadow_clf, retrieval=retrieval)
+            pipeline_clf = classifier
+        app.state.food_pipeline = FoodPipeline(clf=pipeline_clf, enabled=True)
         app.state.logger.info(
-            "retrieval shadow listo: available=%s catalog=%d",
-            app.state.retrieval_shadow.available(),
-            retrieval.catalog_size if retrieval.available() else 0,
+            "pipeline F51 listo: available=%s índice=%s",
+            app.state.food_pipeline.available(),
+            app.state.food_pipeline.index.shape if app.state.food_pipeline.index is not None else None,
         )
     yield
 

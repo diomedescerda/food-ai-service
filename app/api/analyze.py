@@ -136,7 +136,30 @@ async def _run_pipeline(
     # Clasificación final: con DetectorBasedClassifier no hay inferencia extra
     # (la clase/confianza vienen del detector); el pipeline habla contra
     # IFoodClassifier para poder sustituirlo por un clasificador dedicado.
-    if classifier is not None and classifier.is_loaded:
+    # FASE 51: si FOOD_AI_RETRIEVAL_ENABLED=true, el pipeline 5.761 sustituye
+    # la clase por el canonical del multi-text retrieval (experimental).
+    pipeline = getattr(request.app.state, "food_pipeline", None)
+    pipeline_on = (
+        pipeline is not None and pipeline.available()
+        and getattr(request.app.state.settings, "retrieval_enabled", False)
+    )
+    if pipeline_on:
+        cls_start = time.perf_counter()
+        final_names = []
+        final_confidences = []
+        for d in detections:
+            crop = classifier._crop(pil_image, d) if classifier is not None and hasattr(classifier, "_crop") else None
+            if crop is None:
+                crop = pil_image
+            res = pipeline.analyze_food(crop)
+            if res.get("fallback", False) or not res.get("canonical_name"):
+                final_names.append(d.name)
+                final_confidences.append(d.confidence)
+            else:
+                final_names.append(res["canonical_name"])
+                final_confidences.append(0.5)
+        cls_ms = round((time.perf_counter() - cls_start) * 1000)
+    elif classifier is not None and classifier.is_loaded:
         cls_start = time.perf_counter()
         classifications = classifier.classify(pil_image, detections)
         cls_ms = round((time.perf_counter() - cls_start) * 1000)
@@ -148,27 +171,27 @@ async def _run_pipeline(
         classifier = None
         cls_ms = 0
 
-    # F46: scores legacy para el gate del shadow (solo si el shadow está
-    # activo; el pipeline legacy no cambia). Usa el CLIP propio del shadow.
+    # F51: scores legacy para el gate del specialist (solo si el pipeline está
+    # activo; el pipeline legacy no cambia). Usa el CLIP propio del pipeline.
     legacy_conf1 = 0.0
     legacy_top3: list[str] = []
     shadow_crop = None
-    shadow_active = getattr(request.app.state, "retrieval_shadow", None)
-    shadow_clf = getattr(shadow_active, "clf", None) if shadow_active is not None else None
+    pipeline_active = getattr(request.app.state, "food_pipeline", None)
+    pipeline_clf = getattr(pipeline_active, "clf", None) if pipeline_active is not None else None
     if (
-        shadow_active is not None and shadow_active.available()
-        and shadow_clf is not None and detections
-        and hasattr(shadow_clf, "_score_crop") and hasattr(shadow_clf, "_crop")
+        pipeline_active is not None and pipeline_active.available()
+        and pipeline_clf is not None and detections
+        and hasattr(pipeline_clf, "_score_crop") and hasattr(pipeline_clf, "_crop")
     ):
         try:
-            shadow_crop = shadow_clf._crop(pil_image, detections[0])
+            shadow_crop = pipeline_clf._crop(pil_image, detections[0])
             if shadow_crop is not None:
                 _best: dict[str, float] = {}
-                for r in shadow_clf._score_crop(shadow_crop):
+                for r in pipeline_clf._score_crop(shadow_crop):
                     _best[r.name] = max(_best.get(r.name, 0.0), r.score)
                 legacy_conf1 = max(_best.values()) if _best else 0.0
                 legacy_top3 = [n for n, _ in sorted(_best.items(), key=lambda x: -x[1])[:3]]
-        except Exception:  # noqa: BLE001 — el shadow jamás rompe la respuesta
+        except Exception:  # noqa: BLE001 — el pipeline jamás rompe la respuesta
             legacy_conf1 = 0.0
             legacy_top3 = []
 
@@ -231,24 +254,27 @@ async def _run_pipeline(
             depth_map,
         )
 
-    # F46: shadow del retrieval (telemetría; el resultado SIEMPRE es legacy).
+# F51: shadow del pipeline 5.761 (telemetría; el resultado SIEMPRE es legacy).
     # Se ejecuta DESPUÉS de construir el response — jamás puede modificarlo.
-    shadow = getattr(request.app.state, "retrieval_shadow", None)
-    if shadow is not None and shadow.available() and request.app.state.logger:
+    pipeline = getattr(request.app.state, "food_pipeline", None)
+    if (
+        pipeline is not None and pipeline.available() and request.app.state.logger
+        and getattr(request.app.state.settings, "retrieval_shadow_enabled", False)
+    ):
         try:
             crop = shadow_crop if shadow_crop is not None else pil_image
-            tel = shadow.shadow_evaluate(crop, analysis_id, legacy_conf1, legacy_top3)
-            request.app.state.logger.info(
-                    "retrieval_shadow analysis_id=%s catalog=%s raw1=%s canonical1=%s reranked1=%s "
-                    "spec_called=%s spec_abstain=%s spec_conf=%s spec_lat=%sms lat=%sms fallback=%s",
-                    tel.get("analysis_id"), tel.get("catalog_size"), tel.get("retrieval_top1"),
-                    tel.get("canonical_top1"), tel.get("reranked_top1"),
-                    tel.get("specialist_called", False), tel.get("specialist_abstain", False),
-                    tel.get("specialist_confidence"), tel.get("specialist_latency_ms"),
-                    tel.get("latency_ms"), tel.get("fallback", False),
+            tel = pipeline.analyze_food(crop, legacy_conf1=legacy_conf1, legacy_top3=legacy_top3)
+            if not tel.get("fallback", False):
+                request.app.state.logger.info(
+                    "pipeline_f51 analysis_id=%s retrieval1=%s reranked1=%s final=%s "
+                    "spec_used=%s spec_conf=%s lat=%sms embed=%sms fallback=%s",
+                    tel.get("retrieval", {}).get("top1"), tel.get("reranker", {}).get("top1"),
+                    tel.get("canonical_name"), tel.get("specialist_used", False),
+                    tel.get("specialist", {}).get("confidence"), tel.get("latency_ms"),
+                    tel.get("embedding_ms"), tel.get("fallback", False),
                 )
-        except Exception as exc:  # noqa: BLE001 — el shadow jamás rompe la respuesta
-            request.app.state.logger.error("retrieval shadow error (ignorado): %s", exc)
+        except Exception as exc:  # noqa: BLE001 — el pipeline jamás rompe la respuesta
+            request.app.state.logger.error("pipeline F51 shadow error (ignorado): %s", exc)
 
     return AnalyzeResponse(
         analysis_id=analysis_id,
