@@ -364,3 +364,9 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Shadow final food-us (107 por API): new 56.1% vs legacy 43.9% (+12.2); A=44 B=3 C=16 D=44; nutrition READY 91.6% runtime
 - [x] Invariancia OFF==ON (pizza 0.9075); concurrencia 4x200; muestra 50: 41 correct/9 acceptable
 - [x] DECISIÓN: APPROVE READY FOR ACTIVE ROLLOUT
+
+## FASE 55 — Active Rollout Controlado ✅ APPROVE (2026-09-04)
+- [x] Fix crop del active (CLIP del pipeline, no DetectorBased): 38.9 -> 47.7% bruto / 70.8% sobre detectados (> legacy 65.3%)
+- [x] Confidence del active = retrieval score real (no 0.5 fijo); fallback/rollback por flag probados (legacy exacto)
+- [x] 108 requests controlados, 0 crashes, contract intacto, nutrition 37.9% (tandas independientes)
+- [x] 6 tests (148/148) — DECISIÓN: APPROVE READY FOR GRADUAL PRODUCTION

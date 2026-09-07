@@ -147,8 +147,11 @@ async def _run_pipeline(
         cls_start = time.perf_counter()
         final_names = []
         final_confidences = []
+        pipeline_crop_clf = getattr(pipeline, "clf", None)
         for d in detections:
-            crop = classifier._crop(pil_image, d) if classifier is not None and hasattr(classifier, "_crop") else None
+            crop = None
+            if pipeline_crop_clf is not None and hasattr(pipeline_crop_clf, "_crop"):
+                crop = pipeline_crop_clf._crop(pil_image, d)
             if crop is None:
                 crop = pil_image
             res = pipeline.analyze_food(crop)
@@ -157,7 +160,9 @@ async def _run_pipeline(
                 final_confidences.append(d.confidence)
             else:
                 final_names.append(res["canonical_name"])
-                final_confidences.append(0.5)
+                # F55: confidence del active mode = retrieval score real del
+                # canonical final (no un 0.5 fijo)
+                final_confidences.append(res.get("confidence", {}).get("retrieval_score", 0.5))
         cls_ms = round((time.perf_counter() - cls_start) * 1000)
     elif classifier is not None and classifier.is_loaded:
         cls_start = time.perf_counter()
