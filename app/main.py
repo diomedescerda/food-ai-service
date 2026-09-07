@@ -104,12 +104,21 @@ async def lifespan(app: FastAPI):
     # (respuesta = pipeline) o retrieval_shadow_enabled (telemetría sin
     # tocar la respuesta). Default false -> legacy exacto.
     app.state.food_pipeline = None
+    app.state.nutrition_service = None
     app.state.logger.info(
         "RETRIEVAL CONFIG: enabled=%s shadow=%s catalog_size=%s specialist_model=dino_base "
         "specialist_threshold=0.75 specialist_gate_topk=3 specialist_groups=pizza,naan",
         settings.retrieval_enabled, settings.retrieval_shadow_enabled,
         "5761" if settings.retrieval_enabled or settings.retrieval_shadow_enabled else "n/a",
     )
+    if settings.nutrition_enabled or settings.nutrition_shadow_enabled:
+        from app.models.nutrition_service import NutritionService  # noqa: PLC0415
+
+        app.state.nutrition_service = NutritionService(enabled=True)
+        app.state.logger.info(
+            "nutrition service listo: %d mappings",
+            len(app.state.nutrition_service.index),
+        )
     if settings.retrieval_enabled or settings.retrieval_shadow_enabled:
         from app.models.food_pipeline import FoodPipeline  # noqa: PLC0415
         from app.models.zero_shot_classifier import ZeroShotFoodClassifier  # noqa: PLC0415

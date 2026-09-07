@@ -67,5 +67,11 @@ class Settings(BaseSettings):
     retrieval_shadow_enabled: bool = False
     retrieval_top_k: int = 50
 
+    # === Nutrición (FASE 52): lookup local precomputado ===
+    # enabled=true usaría la nutrición mapeada (NO activado). shadow=true
+    # registra la telemetría de nutrición sin cambiar la respuesta.
+    nutrition_enabled: bool = False
+    nutrition_shadow_enabled: bool = False
+
 
 settings = Settings()

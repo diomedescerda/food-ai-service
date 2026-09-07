@@ -345,3 +345,10 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Integración API: flags retrieval_enabled/shadow_enabled (default false, legacy exact); shadow telemetría pipeline_f51
 - [x] R@1 integrado: food-us 56.5 (vs F50 38.0), v1 21.8, food101 27.1; invariancia pizza 0.9075 off==on; concurrencia 4x200; smoke ✓
 - [x] 7 tests pipeline (124/124) — DECISIÓN: APPROVE READY FOR NUTRITION
+
+## FASE 52 — Nutrition Mapping Masivo ⚠️ PARTIAL (2026-09-04)
+- [x] 96% de los 5.761 con fdc_id reales (USDA FNDDS/SR + OFF); 1.184 con nutrientes hoy (límite diario FDC 1000 — reanudable, 0 errores)
+- [x] NutritionService: lookup local (cero red), per-100g, unidades explícitas, NUTRITION_READY/UNAVAILABLE, confianza por fuente (0.95 USDA / 0.85 OFF)
+- [x] Golden foods validados (pizza 292, rice 119, fries 185 kcal/100g); muestra 50: 38 correct/7 acceptable/5 unavailable/0 ambiguous
+- [x] Flags nutrition_enabled/shadow_enabled=false + shadow hook + 10 tests (134/134)
+- [x] DECISIÓN: PARTIAL SUCCESS — el límite diario del USDA pospone el 100% (~4 días de tandas); pipeline funcional

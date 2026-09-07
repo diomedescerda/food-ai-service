@@ -276,6 +276,30 @@ async def _run_pipeline(
         except Exception as exc:  # noqa: BLE001 — el pipeline jamás rompe la respuesta
             request.app.state.logger.error("pipeline F51 shadow error (ignorado): %s", exc)
 
+    # F52: shadow de nutrición (telemetría; la respuesta SIEMPRE es legacy).
+    # El canonical (pipeline o legacy) -> lookup local -> nutrientes log.
+    nutrition = getattr(request.app.state, "nutrition_service", None)
+    if (
+        nutrition is not None and nutrition.available() and request.app.state.logger
+        and getattr(request.app.state.settings, "nutrition_shadow_enabled", False)
+    ):
+        try:
+            canonical = pipeline_on and final_names[0] if pipeline_on and final_names else (final_names[0] if final_names else None)
+            if canonical:
+                tel = nutrition.canonical_nutrition(canonical)
+                request.app.state.logger.info(
+                    "nutrition_shadow canonical=%s status=%s conf=%.2f source=%s "
+                    "cal=%.0f protein=%.1f carbs=%.1f fat=%.1f ref=%dg",
+                    canonical, tel.get("status"), tel.get("nutrition_confidence", 0.0),
+                    tel.get("source"), tel.get("nutrients_per_100g", {}).get("calories", {}).get("value", 0),
+                    tel.get("nutrients_per_100g", {}).get("protein", {}).get("value", 0),
+                    tel.get("nutrients_per_100g", {}).get("carbohydrates", {}).get("value", 0),
+                    tel.get("nutrients_per_100g", {}).get("fat", {}).get("value", 0),
+                    tel.get("reference_grams", 100),
+                )
+        except Exception as exc:  # noqa: BLE001 — el nutrition jamás rompe la respuesta
+            request.app.state.logger.error("nutrition shadow error (ignorado): %s", exc)
+
     return AnalyzeResponse(
         analysis_id=analysis_id,
         status="completed",
