@@ -323,3 +323,11 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] MRR 0.185 -> 0.458, med_rank 6 -> 1, prom 43/dem 4 (food-us); buckets: A=46% (GT fuera del Top-50 — recall, no ranking)
 - [x] app/models/retrieval_rerank.py: rerank_general (puro) + 7 tests (104/104)
 - [x] DECISIÓN: APPROVE — el ranking escala con el catálogo; el cuello restante = recall del retrieval (bucket A)
+
+## FASE 49 — Recall Expansion ⚠️ REQUIRES BETTER REPRESENTATION (2026-09-04)
+- [x] K sweep: R@200 food-us 73.1 (+19.4), v1 45.6, food101 60.1; bucket A 46 -> 27%
+- [x] F49-A top-200: food-us 43.5 (+4.6) pero v1 16.5 / food101 19.9 (REGRESIÓN — el reranker F48 calibrado para top-50 no escala al pool-200)
+- [x] F49-B multi-query (4 vistas): sin ganancia (vistas del mismo CLIP correlacionan); el multi no supera el single
+- [x] A4 (>500): 26-44% GT fuera — el límite = representación CLIP textual, no el pool
+- [x] fuse_views en retrieval_rerank + 6 tests (110/110)
+- [x] DECISIÓN: REQUIRES BETTER RETRIEVAL REPRESENTATION — NO escalar a 10k; siguiente: aliases como prompts del índice (sin entrenar)

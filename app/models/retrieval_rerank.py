@@ -21,24 +21,48 @@ def rerank_general(
     w_support: float = 0.5,
     w_alias: float = 0.1,
     w_dino: float = 1.0,
+    w_rank: float = 0.0,
+    pool_size: int = 200,
 ) -> list[str]:
-    """Reranker general determinista (F48).
+    """Reranker general determinista (F48, F49).
 
-    Señales por canonical: retrieval_max + support_count (estructural) +
-    alias_count (estructural) + specialist DINO (cuando aplica). Features
-    ausentes NO penalizan (specialist unavailable -> sin término). El orden
-    de los ties se mantiene estable (sort estable de Python).
+    Señales: retrieval_max + support_count + alias_count + specialist DINO
+    + rank (posición en el candidate pool — relevante con pools grandes,
+    F49: el top-200 diluye el ranking sin el rank). Features ausentes NO
+    penalizan. Orden estable para ties.
     """
     out = []
     for c in candidates:
         score = c["max"]
         score += w_support * (c.get("support", 0) / support_max)
         score += w_alias * (0.5 * (c.get("alias", 0) / 20.0))
+        if w_rank:
+            score += w_rank * (1.0 - (c.get("rank", pool_size) - 1) / pool_size)
         if w_dino and dino_s is not None and c["name"] == dino_s[0]:
             score += w_dino * dino_s[1]
         out.append((c["name"], score))
     out.sort(key=lambda x: -x[1])
     return [n for n, _ in out]
+
+
+def fuse_views(views: list[list[dict]]) -> list[dict]:
+    """Fusión multi-query (F49): union por canonical con max/mean/rank/
+    query_count. Cada vista: lista de {name, score, rank}. Dedup por
+    canonical — las variantes no consumen posiciones del pool."""
+    group: dict[str, dict] = {}
+    for view in views:
+        for item in view:
+            g = group.setdefault(item["name"], {"scores": [], "ranks": []})
+            g["scores"].append(float(item["score"]))
+            g["ranks"].append(int(item["rank"]))
+    out = []
+    for name, g in group.items():
+        s = g["scores"]
+        out.append({
+            "name": name, "max": float(max(s)), "mean": float(sum(s) / len(s)),
+            "rank": min(g["ranks"]), "queries": len(s),
+        })
+    return out
 
 
 def specialist_eligible(legacy_conf1: float, legacy_topk: list[str], topk: int = SPECIALIST_GATE_TOPK) -> bool:
