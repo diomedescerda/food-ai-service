@@ -331,3 +331,10 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] A4 (>500): 26-44% GT fuera — el límite = representación CLIP textual, no el pool
 - [x] fuse_views en retrieval_rerank + 6 tests (110/110)
 - [x] DECISIÓN: REQUIRES BETTER RETRIEVAL REPRESENTATION — NO escalar a 10k; siguiente: aliases como prompts del índice (sin entrenar)
+
+## FASE 50 — Multi-Text Retrieval (canonical + aliases) ✅ APPROVE (2026-09-04)
+- [x] Índice 7.498 textos (canonical + aliases) x3 templates = 22.494 embeddings (15MB RAM, +25%)
+- [x] Recall: food-us R@500 74.1 -> 90.7; bucket A500 26% -> 9%; R@50 +22; 356 rescates por alias (ejemplos: french fries <- potato french fries school)
+- [x] Aggregación max > top-2mean; R@1 retrieval solo: 38.0 food-us (= F48 completo)
+- [x] group_text_matches en retrieval_rerank + 7 tests (117/117)
+- [x] DECISIÓN: APPROVE — el recall soporta el F51 (segmentación + reranker) y el F52 (10k)

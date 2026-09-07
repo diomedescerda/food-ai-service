@@ -65,6 +65,34 @@ def fuse_views(views: list[list[dict]]) -> list[dict]:
     return out
 
 
+def group_text_matches(matches: list[tuple[str, float, str, int]], aggregation: str = "max") -> list[dict]:
+    """Grouping multi-text (F50): los text-matches del índice -> canonical.
+
+    matches: (canonical, score, text, rank). Aggregation "max" (best score
+    del canonical) o "top2mean". Devuelve candidatos ordenados con
+    best_text/best_rank/queries. Dedup por canonical — nunca duplica.
+    """
+    group: dict[str, dict] = {}
+    for canonical, score, text, rank in matches:
+        g = group.setdefault(canonical, {"scores": [], "best_text": text, "best_rank": rank})
+        if not g["scores"] or score > max(g["scores"]):
+            g["best_text"] = text
+            g["best_rank"] = rank
+        g["scores"].append(float(score))
+    out = []
+    for canonical, g in group.items():
+        s = sorted(g["scores"], reverse=True)
+        score = float(np_mean(s[:2])) if aggregation == "top2mean" else float(max(s))
+        out.append({"name": canonical, "score": score, "best_text": g["best_text"],
+                    "best_rank": g["best_rank"], "queries": len(s)})
+    out.sort(key=lambda x: -x["score"])
+    return out
+
+
+def np_mean(xs) -> float:
+    return sum(xs) / len(xs)
+
+
 def specialist_eligible(legacy_conf1: float, legacy_topk: list[str], topk: int = SPECIALIST_GATE_TOPK) -> bool:
     """Gate del F38: solo invocar el specialist si el legacy duda
     (conf1 < 0.40) y pizza/naan están entre sus top-K candidatos."""
