@@ -1,646 +1,217 @@
-# Food AI Service
+# FoodAI Service
 
-Servicio de IA de análisis de alimentos del ecosistema **COPP-ADRESD / ANTARES Biohacking**.
+Servicio de IA de análisis de alimentos del ecosistema CoppAddresd: detección, clasificación (reconocimiento de **5.761 alimentos**), estimación de porción y nutrición. Python 3.11+ / FastAPI / CLIP + DINO.
 
-Recibe una fotografía de comida y devuelve: alimentos identificados, porción estimada y nutrición (calorías, macros, rangos, fuente USDA). Es el componente de visión del flujo: **foto → alimento → nutrición**.
-
-Python 3.12+ / FastAPI. Puerto **8010** (el 8000 lo ocupa `ai-service/`).
+**Estado actual: FASE 57 — PRODUCTION HARDENED.** El sistema está desplegado y operando con el pipeline de 5.761 alimentos como resultado principal (activado por flag), con legacy como red de seguridad, monitoreo operativo (health/readiness/metrics) y rollback por flag.
 
 ---
 
-## 1. Qué es este proyecto
-
-### En lenguaje simple
-
-El usuario toma una foto de su comida con el celular. El sistema identifica qué alimentos hay en la foto (pizza, hamburguesa, papas fritas…), estima cuánto pesa cada porción y devuelve las calorías y macros con su fuente (USDA). El usuario ve el resultado en la app.
-
-### En lenguaje técnico
-
-Pipeline de visión por computadora:
+## 1. Pipeline de reconocimiento (F51+)
 
 ```
-imagen
-→ detección de regiones (YOLO11n-seg)
-→ fallback open-vocabulary (Grounding DINO-tiny)
-→ crops por región (padding 0.10)
-→ clasificación zero-shot (CLIP ViT-B/32 + ensemble de prompts)
-→ score por clase (máximo de candidatos)
-→ Food Catalog (38 clases)
-→ alias → PostgreSQL (foodai.*)
-→ estimación de porción (BasicPortionEstimator)
-→ cálculo nutricional (NutritionCalculator .NET, backend)
-→ respuesta API
+Imagen
+  ↓
+Detector (YOLO hybrid + DINO fallback) → crops
+  ↓
+CLIP ViT-B/32 image embedding
+  ↓
+Multi-text retrieval (canonical + aliases, 7.498 textos × 3 templates)
+  ↓
+Canonical grouping (dedup por canonical, best_text)
+  ↓
+General reranker (retrieval + support + alias_count, determinista)
+  ↓
+DINO-base specialist pizza/naan (threshold 0.75, gate top-3, conf legacy < 0.40)
+  ↓
+Food canonical final
+  ↓
+NutritionService (lookup local, per 100 g, cero red)
+  ↓
+BasicPortionEstimator / AdvancedPortionEstimator
+  ↓
+DecisionPolicy (confidence / fallback legacy)
 ```
 
-Este servicio NO es una base nutricional. Identifica alimentos. La nutrición la aporta **USDA FoodData Central** (importada a PostgreSQL), la porción la estima `BasicPortionEstimator` y el cálculo final (`nutriente × gramos / 100`) lo hace el **backend .NET**.
+La red neuronal **no tiene 5.761 clases**: el catálogo vive en texto + embeddings + índice numpy. Agregar alimentos = agregar registros + embeddings, no entrenar.
 
----
-
-## 2. Qué problema resuelve
-
-"Tomar una foto de comida y obtener información nutricional estimada y trazable."
-
-Aclaraciones importantes:
-
-- La IA **identifica** alimentos (visión).
-- **USDA** proporciona los datos nutricionales (fuente de verdad, `source/sourceVersion/sourceId`).
-- La **porción** es una estimación (nunca un peso medido).
-- El **NutritionCalculator .NET** calcula los valores finales (el servicio Python NO calcula nutrición).
-- El servicio responde **honestamente** cuando no puede: `unknown`, `unavailable`, `portion_unavailable` — nunca inventa valores.
-
----
-
-## 3. Arquitectura general
-
-```mermaid
-flowchart TD
-    FE[Frontend ANTAres Paciente<br/>NutricionPage.tsx] -->|POST /api/v1/foodai/analyze| GW[Gateway YARP :5080]
-    GW --> API[Backend .NET :5122<br/>AnalyzeFoodImageCommandHandler]
-    API -->|multipart image + analysis_id| FA[Food AI Service :8010]
-    FA --> DET[YOLO11n-seg + DINO fallback]
-    DET --> CLIP[CLIP ViT-B/32 zero-shot]
-    CLIP --> CAT[Food Catalog 38 clases]
-    API --> NUT[DatabaseNutritionProvider]
-    NUT --> PG[(PostgreSQL<br/>foodai.foods / food_nutrition / food_aliases)]
-    API --> CALC[NutritionCalculator .NET<br/>decimal × gramos / 100]
-    CALC --> FE
-```
-
-Flujo real de un análisis (verificado): `NutricionPage.tsx` → gateway `:5080` → API `:5122` → food-ai `:8010` → respuesta con nutrición.
-
----
-
-## 4. Pipeline de IA
-
-```mermaid
-flowchart LR
-    IMG[Imagen] --> YOLO[YOLO11n-seg]
-    YOLO -->|hay regiones| CROP[Crop + padding 0.10]
-    YOLO -->|0 regiones| DINO[Grounding DINO-tiny<br/>fallback open-vocabulary]
-    DINO --> CROP
-    CROP --> CLIP[CLIP ViT-B/32<br/>3 templates ensemble]
-    CLIP --> SCORE[Score por clase = max candidatos]
-    SCORE -->|score ≥ 0.20| CANON[canonical food]
-    SCORE -->|score < 0.20| UNK[unknown]
-    CANON --> MAP[alias → PostgreSQL]
-    MAP --> PORT[BasicPortionEstimator]
-    PORT --> CALC[NutritionCalculator .NET]
-```
-
-### 4.1 Input
-
-`POST /analyze` (interno, consumido por el backend .NET): `multipart/form-data` con `image` (JPEG/PNG/WebP, máx. 10 MB) y `analysis_id` (UUID).
-
-### 4.2 YOLO11n-seg
-
-Detector de regiones COCO (80 clases, incluye pizza/hot dog/sandwich…). Produce **bounding boxes** (rectángulo x,y,w,h en píxeles) y **máscaras de segmentación** (binarias, base64) cuando la región es de una clase segmentable. Rápido (~80-130 ms) pero limitado a sus clases de entrenamiento y a fotos "limpias".
-
-### 4.3 Grounding DINO (fallback)
-
-Detector **open-vocabulary** (puede buscar cualquier texto, en este caso `"food on a plate"`). Se ejecuta SOLO cuando YOLO no encuentra regiones. Resuelve el problema de YOLO con fotos reales (fondos complejos, alimentos fuera de COCO). Es lento (~10-17 s en CPU), por eso es fallback y no el detector principal. El resultado se filtra con NMS (IoU 0.5).
-
-### 4.4 Cropping
-
-Cada región se recorta de la imagen con **padding 0.10** (10% del tamaño del bbox por lado) para incluir un poco de contexto. Verificado experimentalmente como el mejor padding (FASE 17): padding 0.0 y masked crop degradan.
-
-### 4.5 CLIP ViT-B/32 (zero-shot)
-
-CLIP aprende a alinear imágenes y texto en un espacio de **embeddings** común. Zero-shot = clasifica sin entrenar para nuestras clases: compara el **embedding de la imagen** (el crop) contra los **embeddings de texto** de los candidatos del catálogo y toma el más similar. El score es la similitud coseno normalizada.
-
-**Ensemble actual (3 templates)**: `"a photo of {food}"`, `"a picture of {food}"`, `"a close-up photo of {food}"` — se promedian los scores por candidato (mejora top-1 vs una sola plantilla).
-
-### 4.6 Score por clase
-
-Varias clases tienen varios candidatos de texto (ej. `french_fries`: "french fries", "fries", "thin fried potato strips", "long golden potato sticks"). El **score de la clase = máximo de sus candidatos** (no el promedio): esto recuperó `hot_dog` (13/20) en FASE 16 sin degradar el resto. El ranking final es por clase.
-
-### 4.7 Unknown (threshold)
-
-Si el mejor score por clase es **< 0.20** (`FOOD_AI_CLIP_THRESHOLD`), la detección se clasifica `unknown` → el backend responde `portion_unavailable`/sin nutrición para esa región. Nunca se inventa la identidad.
-
----
-
-## 5. Food Catalog
-
-`app/models/food_catalog.py` — **38 clases** actuales (canonical, candidatos CLIP, categoría, nutrition_key). El catálogo define las clases que la aplicación intenta mapear a nutrición. Ver catálogo completo con `python scripts/audit_catalog.py`.
-
-> **IMPORTANTE**: "38 alimentos" es el catálogo de la APLICACIÓN, no un límite del modelo CLIP. CLIP puede reconocer muchísimos más conceptos; nosotros elegimos estas 38 clases. Ampliar el catálogo = añadir entrada + candidatos + mapping USDA + referencia de porción + evaluación (ver §27).
-
-Cadena de identidad→nutrición:
-
-```
-CLIP canonical (ej. "hot_dog")
-→ alias normalizado ("hot dog", "hot_dog")
-→ PostgreSQL foodai.food_aliases → foodai.foods → foodai.food_nutrition
-→ NutritionCalculator .NET
-```
-
-Agregar una clase visual NO implica que exista nutrición: el mapping USDA es un paso independiente (35/38 tienen).
-
----
-
-## 6. USDA FoodData Central
-
-**USDA FDC** = base de datos nutricional oficial del gobierno de EE. UU. (fdc.nal.usda.gov). Proporciona valores por 100 g con trazabilidad: `fdc_id`, `fdc_name`, `data_type` (SR Legacy / FNDDS / Foundation / Branded).
-
-Estados de mapping:
-
-| Estado | Significado |
-|---|---|
-| `DIRECT_MATCH` | Equivalencia directa y confiable |
-| `GOOD_EQUIVALENCE` | Equivalencia genérica razonable (documentada) |
-| `REVIEW_REQUIRED` | Sin equivalencia defendible aún |
-| `NO_RELIABLE_MATCH` | Sin equivalencia genérica defendible (sandwich, soup, cereal) |
-
-**La API de USDA se usa para IMPORTAR datos, nunca en el runtime.** El runtime consulta PostgreSQL:
-
-```mermaid
-flowchart LR
-    USDA[USDA API key] -->|scripts/import_usda_foods.py --sync| CUR[JSON curado<br/>coppAddresdBack Seeders/data/food_usda_curated.json]
-    CUR --> SEED[FoodAiNutritionSeeder .NET]
-    SEED --> PG[(PostgreSQL foodai.*)]
-    PG --> LOOKUP[DatabaseNutritionProvider (runtime)]
-```
-
-Cobertura actual: **35/38 = 92.1%** con nutrición confiable (21 DIRECT_MATCH + 14 GOOD_EQUIVALENCE). `sandwich`, `soup`, `cereal` sin mapping defendible (se responden honestamente como `unavailable`).
-
----
-
-## 7. Nutrition Database (PostgreSQL)
-
-Schema `foodai.` (backend .NET, EF Core):
-
-- `foodai.foods` — alimento canónico + display name.
-- `foodai.food_aliases` — aliases (normalización `_`→espacio, hot_dog→"hot dog").
-- `foodai.food_nutrition` — valores por 100 g + `source` ("USDA FoodData Central"), `sourceVersion`, `sourceId` (fdc_id).
-
-**PostgreSQL es la fuente de verdad nutricional del runtime.** El backend la consulta con `DatabaseNutritionProvider`; el food-ai NO tiene copia de la nutrición.
-
----
-
-## 8. Portion Estimation
-
-`app/models/basic_portion_estimator.py` — `BasicPortionEstimator`:
-
-1. Referencia por alimento: gramos de UNA porción doméstica típica según USDA (`REFERENCE_GRAMS`, 35 alimentos con FDC ID).
-2. Tamaño visual: área relativa de la máscara (o bbox) → `small`/`medium`/`large` (umbrales fijos documentados).
-3. Gramos: `estimated = base × factor(tamaño)`; `min/max` = rango alrededor.
-
-Esto es una **estimación heurística**, nunca un peso medido (sin escala física). `confidence` fija 0.55. Sin referencia → `portion_unavailable`.
-
----
-
-## 9. Nutrition Calculation (backend .NET)
-
-El cálculo final vive en `NutritionCalculator` (.NET, decimal):
-
-```
-nutrition_for_portion = nutrition_per_100g × estimated_grams / 100
-```
-
-Con rangos: `nutritionRange.min/max` = rango de gramos (min/max) aplicado a la misma fórmula. El frontend y el food-ai NO calculan nutrición: el backend es la única calculadora.
-
----
-
-## 10. Integración con el backend .NET
-
-Archivos del backend involucrados (repo `coppAddresdBack/`, proyecto `CoppAddresd.Api` + `Application` + `Infrastructure`):
-
-- `src/CoppAddresd.Api/Controllers/FoodAiController.cs` — endpoints.
-- `src/CoppAddresd.Application/Features/FoodAi/AnalyzeFoodImageCommandHandler.cs` — orquestación: validación de imagen → storage → `IFoodAiClient.SendImageAsync` → nutrición por alimento → summary → persistencia (`FoodAnalysis` snapshot).
-- `src/CoppAddresd.Infrastructure/Services/FoodAiClient.cs` + `IFoodAiClient.cs` — cliente HTTP multipart.
-- `src/CoppAddresd.Api/Seeders/FoodAiNutritionSeeder.cs` + `Seeders/data/food_usda_curated.json` — carga nutricional.
-- Config: `appsettings.json` → `FoodAi:BaseUrl=http://localhost:8010`, `TimeoutSeconds=60`, `MaxImageSizeBytes=10MB`.
-
-Contrato backend → food-ai:
-
-| | |
-|---|---|
-| Endpoint | `POST /analyze` (interno) |
-| Método | `POST` |
-| Body | `multipart/form-data` |
-| Campos | `image` (archivo) + `analysis_id` (UUID) |
-| Auth | ninguna (solo alcanzable vía el backend) |
-| Timeout | 60 s (soporta DINO fallback 10-17 s) |
-| Errores | 400/413/422 con `{"error": {...}}`; el backend los mapea a `FoodAiException` → 502 |
-
-Endpoint público del backend: `POST /api/v1/foodai/analyze` (AllowAnonymous, multipart `image`).
-
----
-
-## 11. Integración con el frontend
-
-Repo `antares-paciente/` (React 19 + Ionic 8.8 + Vite):
-
-- `src/utils/foodAiApi.ts` — cliente del análisis (fetch multipart, tipado, timeout 60 s, mensajes de error en español).
-- `src/components/CameraCapture.tsx` — cámara (`getUserMedia`, cámara trasera) + fallback a selección de archivo; detiene los tracks al capturar/desmontar.
-- `src/pages/NutritionPage.tsx` — estados IDLE → CAMERA → ANALYZING (animación) → SUCCESS/ERROR; tarjetas por alimento + total.
-
-```mermaid
-flowchart LR
-    FE[NutricionPage] -->|blob| CAM[CameraCapture / file input]
-    CAM --> API2[foodAiApi.analyzeFoodImage]
-    API2 -->|POST /api/v1/foodai/analyze| GW[Gateway :5080]
-    GW --> B[Backend :5122]
-    B --> FA[Food AI :8010]
-    FA --> B --> API2 -->|foods + summary| FE[UI: tarjetas + TOTAL]
-```
-
----
-
-## 12. API contract (backend público)
-
-**Request** — `POST /api/v1/foodai/analyze`, `multipart/form-data`:
-
-```
-image: <archivo jpg/png/webp>
-analysis_id: <uuid opcional>
-```
-
-**Response success** (real, pizza_001):
-
-```json
-{
-  "analysisId": "…", "status": "completed",
-  "foods": [{
-    "name": "pizza", "confidence": 0.28,
-    "boundingBox": {"x":127,"y":448,"width":525,"height":493},
-    "portion": {"portionSize":"small","estimatedGrams":86,"minGrams":64,"maxGrams":96,"confidence":0.55,"method":"basic_reference"},
-    "nutrition": {"calories":228.76,"protein":9.80,"carbohydrates":28.66,"fat":8.94,"fiber":1.98,"sugar":3.10,"sodium":514.28},
-    "nutritionRange": {"min":{…},"max":{…}},
-    "nutritionStatus": "available",
-    "source": "USDA FoodData Central", "sourceVersion": "2026-08-27", "sourceId": null
-  }],
-  "summary": {"calories":228.76,"protein":9.80,"carbohydrates":28.66,"fat":8.94,"fiber":1.98,"sugar":3.10,"sodium":514.28},
-  "summaryRange": {"min":{…},"max":{…}}
-}
-```
-
-**Multi-food** (real, mf_003 — 2 hamburguesas): dos entradas `foods` (hamburger 62 g / 184.14 kcal ×2) y `summary.calories = 368.28`.
-
-**Unavailable** (sandwich): `"nutritionStatus": "unavailable"`, `nutrition: null` → el frontend muestra "Identificamos este alimento, pero no tenemos información nutricional disponible".
-
-**Errores**: 400 (imagen inválida/empty/too large), 413, 422, 502 (food-ai caído). Cuerpo de error: `{"error": {"code": "...", "message": "..."}}`.
-
----
-
-## 13. Multi-food
-
-- Cada región detectada se clasifica y se procesa por separado.
-- Cada alimento con nutrición contribuye al `summary` (SUM de instancias válidas).
-- Verificado en E2E real: `hamburger ×2` → 2 instancias → 2 × 184.14 = **368.28 kcal** en el summary.
-- Protección de duplicados: deduplicación espacial (ver §14). NO existe el cap "máximo 1 por clase".
-
----
-
-## 14. Deduplication
-
-Problema: DINO/YOLO generan varias regiones del mismo alimento (plato + caja interna + subregión) → doble conteo.
-
-Mecanismos (en `zero_shot_classifier.py`):
-
-1. **NMS** en regiones DINO (IoU 0.5).
-2. **IoU > 0.3** entre detecciones de la misma clase → conservar la mejor.
-3. **Contención** (≥70% del área menor dentro de la mayor) → eliminar la envolvente (plato).
-4. **Centro-contención** (centro de la menor dentro de la mayor + ≥30% de área) → mismo objeto fragmentado (pan+bollo).
-
-Instancias separadas reales (IoU ~0) se conservan: 2 huevos, 2 hamburguesas. **Limitación conocida**: regiones dispersas del mismo objeto con IoU < 0.3 (ej. mf_000) pueden quedar como 2 instancias — sin fix con evidencia en 2D.
-
----
-
-## 15. Modelos
-
-| Modelo | Función | Cuándo | Latencia CPU | Licencia | Estado |
-|---|---|---|---|---|---|
-| YOLO11n-seg | Detección + segmentación | siempre (primero) | ~80-130 ms | AGPL-3.0 | PRODUCCIÓN |
-| Grounding DINO-tiny | Detección fallback open-vocabulary | solo si YOLO = 0 regiones | ~10-17 s | Apache-2.0 | PRODUCCIÓN |
-| CLIP ViT-B/32 | Clasificación zero-shot | siempre | ~80-120 ms/crop | MIT | PRODUCCIÓN |
-
-Evaluados y **descartados** (no producción): DINOv3 Food ViT-L (top1 food-us 55.6% vs CLIP 58.3%, unknown alto, 6× más lento — licencia Apache-2.0), BEiT Food 384 (32.4%, MIT). Detalle: `docs/pretrained-model-evaluation.md`.
-
----
-
-## 16. Performance
-
-| Etapa | p50 | p95 |
-|---|---|---|
-| YOLO | 78 ms | 115 ms |
-| DINO fallback | 11.8 s | 13.8 s |
-| CLIP | ~100 ms/crop | — |
-| Fast path total | ~0.4-0.6 s | — |
-| Con fallback DINO | ~13-17 s | — |
-| Memoria food-ai | ~1.3 GB WS (oscila, no lineal) | — |
-
-- **Fast path**: YOLO detecta → ~0.5 s.
-- **DINO fallback**: 33.3% de imágenes en food-us, 55.6% en food-bench-v1 (fotos reales).
-- Concurrencia: la inferencia CPU está **serializada** (semáforo asyncio) — torch en CPU crashea con DINO concurrente. 100 requests secuenciales OK; concurrencia ≤4 por réplica con latencias crecientes (cola).
-
----
-
-## 17. Production configuration
+## 2. Comandos
 
 ```bash
-FOOD_AI_DETECTOR_TYPE=hybrid        # yolo | dino | hybrid
-FOOD_AI_CLASSIFIER_TYPE=zero_shot
-FOOD_AI_CLIP_THRESHOLD=0.20
-FOOD_AI_CLIP_CROP_PADDING=0.10
-FOOD_AI_CLIP_PROMPT_TEMPLATE=a photo of {food}
-FOOD_AI_CLIP_PROMPT_ENSEMBLE=a picture of {food}|a close-up photo of {food}
-FOOD_AI_PORTION_METHOD=basic
-FOODAI_USDA_API_KEY=<YOUR_KEY>      # solo import; nunca en logs/código
-```
-
----
-
-## 18. Project structure
-
-```
-food-ai-service/
-├── app/
-│   ├── api/            # routers FastAPI (analyze, health)
-│   ├── core/           # Settings (pydantic-settings, env FOOD_AI_*)
-│   ├── models/         # YOLO, DINO hybrid, segmenter, CLIP, portion, catálogo
-│   ├── schemas/        # contratos Pydantic
-│   ├── services/       # porción geométrica
-│   └── utils/          # debug
-├── scripts/            # herramientas de desarrollo (benchmarks, USDA, estabilidad)
-├── tests/              # pytest (assets: pizza/banana/apple)
-├── datasets/
-│   ├── food-us-v0.1/   # benchmark histórico (108 imágenes, 6 clases)
-│   ├── food-bench-v1/  # benchmark ampliado (248, 31 clases, Wikimedia Commons)
-│   ├── multi-food/     # benchmark multi-food (16, GT por instancia)
-│   └── food101-subset/ # evaluación interna Food-101 (3500, 14 clases)
-├── benchmarks/
-│   ├── classification/ # resultados CLIP/Food-101/v1/hybrid
-│   ├── detection/      # regions.json (detección precalculada food-us)
-│   ├── nutrition/      # food_coverage_report.json
-│   ├── multifood/      # multifood_results.json
-│   └── history/        # resultados de fases anteriores (F14-F22)
-├── docs/               # documentación técnica por tema
-├── weights/            # modelos .pt (gitignored)
-├── run_dev.py          # dev server (SelectorEventLoop, Windows)
-├── requirements.txt / requirements-dev.txt
-└── Dockerfile
-```
-
----
-
-## 19. Installation
-
-```bash
-cd food-ai-service
 python -m venv .venv
 .\.venv\Scripts\pip install -r requirements-dev.txt
+.\.venv\Scripts\python -m pytest        # tests (160+)
+.\.venv\Scripts\python run_dev.py       # dev server puerto 8010 (Windows: selector loop)
+```
 
-# Modelos (primera vez — gitignored)
+**Modelos** (primera vez):
+```bash
 mkdir weights
 curl -L -o weights/yolo11n.pt https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt
 curl -L -o weights/yolo11n-seg.pt https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-seg.pt
-# (CLIP y DINO se descargan automáticamente de Hugging Face al primer arranque)
-
-# .env (copiar de .env.example; FOODAI_USDA_API_KEY solo para importar)
 ```
 
-Dependencia externa: backend .NET (`coppAddresdBack`) + PostgreSQL (schema `foodai.`). El food-ai solo necesita el backend para nutrición; para desarrollo del pipeline puede correr solo (los foods sin nutrición aparecen como `unavailable`).
+**Puerto 8010**: el 8000 lo ocupa el `ai-service/` (agente IA). No usar 8000.
+**Windows**: no usar `uvicorn app.main:app` directo (ProactorEventLoop incompatible con psycopg async); `run_dev.py` fuerza SelectorEventLoop. Para pruebas sin reload: `scripts/f46_server.py` (puerto por env `PORT_F46`).
 
-## 20. Development
+## 3. Configuración (flags de feature)
+
+Todas en `.env` (o variables de entorno). **Defaults = legacy puro** (producción segura):
+
+| Flag | Default | Efecto |
+|---|---|---|
+| `FOOD_AI_RETRIEVAL_ENABLED` | `false` | `true` → la respuesta usa el pipeline 5.761 (active mode) |
+| `FOOD_AI_RETRIEVAL_SHADOW_ENABLED` | `false` | `true` → ejecuta el pipeline en shadow (telemetría, respuesta legacy intacta) |
+| `FOOD_AI_NUTRITION_ENABLED` | `false` | `true` → nutrición mapeada en la respuesta |
+| `FOOD_AI_NUTRITION_SHADOW_ENABLED` | `false` | `true` → shadow de nutrición (log, sin tocar la respuesta) |
+| `FOOD_AI_CONFIDENCE_ENABLED` | `false` | `true` → el threshold de confianza visual puede rechazar (LOW_CONFIDENCE) |
+| `FOOD_AI_MIN_VISUAL_CONFIDENCE` | `0.20` | umbral usado solo si CONFIDENCE_ENABLED=true |
+| `FOODAI_USDA_API_KEY` | — | API key USDA FoodData Central (descargas de nutrición, nunca imprimir) |
+
+**Rollback**: `FOOD_AI_RETRIEVAL_ENABLED=false` → legacy exacto, sin redeploy.
+
+## 4. Endpoints
+
+| Endpoint | Descripción |
+|---|---|
+| `POST /analyze` | Análisis completo (multipart: `analysis_id`, `image`) |
+| `GET /health` | Liveness: detector/segmenter/classifier + pipeline + nutrition |
+| `GET /health/readiness` | Readiness: catalog_size, index/clip/dino/nutrition loaded, pipeline_version |
+| `GET /metrics` | Métricas agregadas en memoria (requests, pipeline, fallbacks, nutrition, specialist) |
+
+`GET /api/v1/foodai/health` (backend): el backend .NET lo consume vía `IFoodAiClient` (`BaseUrl=http://localhost:8010`).
+
+## 5. Catálogo (5.761 alimentos)
+
+- **5.761 canonical foods** / 9.067 entries / 1.737 aliases (schema_version 3).
+- Fuentes: **USDA FDC** (FNDDS + SR Legacy, CC0) + **Open Food Facts** (ODbL).
+- Archivos: `catalog/foods.json`, `catalog/foods_legacy_1451.json` (snapshot de preservación), `catalog/embeddings/` (embeddings CLIP del catálogo), `catalog/embeddings/multitext/` (7.498 textos × 3 templates = 22.494 embeddings, índice multi-text).
+- Política de canonicalización: los platos preparados colapsan al genérico (`"beef cheeseburger with bacon" → "hamburger"`); los ingredientes quedan a nivel específico USDA. Nunca fusionar alimentos realmente distintos.
+- Regeneración: `python scripts/f47_import_catalog.py` (reanudable, cache de OFF por query) + `python scripts/f42_retrieval.py --embeddings`.
+
+## 6. Nutrición (F52–F54)
+
+- **2.184 / 5.761 con nutrientes (37.9%)** y creciendo: tandas USDA diarias (~1.000 requests/día, caché reanudable) + Open Food Facts.
+- `nutrition/mappings.json` + `nutrition/raw/`: lookup **100 % local, cero red en inferencia**.
+- Normalización: `nutrients_per_100g` + `reference_grams=100` + unidades explícitas (kcal/g/mg).
+- Estados: `NUTRITION_READY` / `NUTRITION_UNAVAILABLE` — nunca se inventan nutrientes.
+- Confianza nutricional por fuente: 0.95 USDA / 0.85 OFF.
+- Continuar tandas: `python scripts/f52_nutrition.py --priority [--limit N] [--off]`.
+- Los alimentos `UNAVAILABLE → READY` se usan automáticamente en runtime, sin redeploy.
+
+## 7. Confidence / Fallback (F53)
+
+Tres confianzas **separadas** (nunca combinadas): `visual_confidence` (retrieval score), `nutrition_confidence`, `portion_confidence`.
+
+Estados de decisión (`app/models/decision.py`):
+`NEW_RESULT_READY` · `NEW_RESULT_NUTRITION_UNAVAILABLE` · `NEW_RESULT_LOW_CONFIDENCE` · `LEGACY_FALLBACK`
+
+Reglas clave:
+- La **identificación y la nutrición son independientes**: un alimento identificado sin nutrientes NO se convierte en unknown.
+- Fallback reasons observables: `pipeline_error` / `nutrition_unavailable` / `low_visual_confidence` / `nutrition_error`.
+- Cualquier excepción del pipeline experimental → legacy, sin romper el request.
+
+## 8. Specialist (congelado, F45)
+
+```
+SPECIALIST_MODEL=dino_base · SPECIALIST_GROUPS=pizza,naan
+SPECIALIST_THRESHOLD=0.75 · SPECIALIST_GATE_TOPK=3 · SPECIALIST_GATE_CONF=0.40
+```
+No crear nuevos especialistas sin evidencia independiente. El DINO se ejecuta solo cuando el gate se abre (conf legacy < 0.40 + pizza/naan en top-3 del legacy).
+
+## 9. Benchmark (resultados medidos)
+
+| Fase | Métrica | Resultado |
+|---|---|---|
+| F48 reranker (catálogo 1.451) | food-us R@1 | 38.9 % |
+| F50 multi-text retrieval | food-us R@50 / R@500 | 75.9 % / 90.7 % |
+| F51 pipeline integrado | food-us R@1 | 56.5 % |
+| F54 shadow runtime (107) | nuevo vs legacy | **56.1 % vs 43.9 %** (+12.2, ratio corr/regr 5.3:1) |
+| F55 active (sobre detectados) | nuevo vs legacy | **70.8 % vs 65.3 %** |
+| F56 rollout gradual | nuevo vs legacy por etapa | nuevo gana en todas (10 %: 70.0 vs 43.3) |
+| F57 runtime | p50 / p95 | ~2.2–2.4 s / ~2.4 s |
+
+Reportes por fase en `benchmarks/f{41..57}/reports/`.
+
+## 10. Tests
 
 ```bash
-.\.venv\Scripts\python run_dev.py        # dev server :8010 (Windows: SelectorEventLoop)
-.\.venv\Scripts\python -m pytest -q      # 72 tests
-.\.venv\Scripts\python scripts/benchmark_e2e.py            # E2E food-us (59.3%)
-.\.venv\Scripts\python scripts/audit_catalog.py            # matriz catálogo
-.\.venv\Scripts\python scripts/benchmark_multifood_v2.py   # multi-food por instancia
-.\.venv\Scripts\python scripts/stability_check.py 100 90   # estabilidad secuencial
+.\.venv\Scripts\python -m pytest        # 160+ tests, sin API keys (modelos fake/mocks)
 ```
+Cubren: clasificación, detección, porción, nutrición, pipeline 5.761, reranker general, grouping multi-text, specialist, decision policy, shadow, rollout, hardening, consistencia catálogo/índice.
 
-> Windows: NO usar `uvicorn app.main:app` directo (ProactorEventLoop rompe psycopg async); `run_dev.py` fuerza `SelectorEventLoop`.
+## 11. Scripts por fase
 
-## 21. Tests
-
-`tests/` (pytest, 72 tests):
-
-- Unidad: clasificador zero-shot (dedup espacial, scoring), porción (referencias), detector YOLO, segmentador, hybrid (NMS).
-- Integración local: `test_analyze.py` con fakes (sin modelos reales).
-- `test_zeroshot_real.py` — requiere CLIP real (descargado automáticamente).
-- Los benchmarks NO son tests (viven en `scripts/` + `benchmarks/`).
-- PostgreSQL NO se requiere para pytest (los tests de integración del backend viven en `coppAddresdBack/tests/CoppAddresd.IntegrationTests`).
-
-## 22. Health check
-
-```http
-GET /health
-```
-```json
-{"status":"healthy","service":"food-ai-service","version":"0.1.0","timestamp_utc":"…"}
-```
-
-`healthy` = el servicio responde. Los modelos se cargan en el lifespan (startup): si un modelo falla al cargar, el arranque lo registra (el servicio arranca con lo disponible). El backend expone `GET /api/v1/foodai/health` → `{backend, foodAI}` para el probe completo.
-
-## 23. Observability
-
-Log estructurado por análisis (sin imágenes, sin API keys, sin JWT, sin PII):
-
-```
-análisis_completo analysis_id=… foods_detected=N foods_classified=N foods_unknown=N
-food_instance_count=N used_dino_fallback=true detector_ms=… segmentation_ms=…
-classification_ms=… portion_ms=… total_ms=… status=completed
-```
-
-Backend (.NET): `nutrition_resumen analysis_id=… foods=… nutricion_ok=X/Y nutrition_items_total/available/unavailable/mapping_missing/… fallos=…`.
-
-## 24. Error handling
-
-| Situación | Respuesta |
-|---|---|
-| score < threshold | `unknown` → sin nutrición |
-| sin mapping nutricional | `nutritionStatus: "unavailable"` |
-| sin referencia de porción | `portion_unavailable` |
-| imagen inválida/vacía/grande | 400 / 413 (código + mensaje) |
-| food-ai caído | backend → 502 (`FoodAiException`) |
-| timeout (60 s) | backend → 502/504 controlado |
-| USDA import falla | el importador reporta error; el runtime no depende de la API |
-
-Nunca: hang infinito (timeouts), 500 sin contexto, información nutricional inventada.
-
-## 25. Current metrics
-
-| Métrica | Valor | Denominador |
+| Script | Fase | Propósito |
 |---|---|---|
-| E2E food-us (108 imágenes) | **59.3%** | imágenes con nutrición completa |
-| Classification food-us | 70.4% (76/108) | imágenes clasificadas correctas |
-| Food-101 (evaluación interna) | 89.4% top-1 | 3500 imágenes |
-| food-bench-v1 (fotos reales) | 47.0% top-1 | 247 imágenes |
-| USDA coverage | 35/38 (92.1%) | catálogo |
-| Portion coverage | 35/38 (92.1%) | catálogo |
-| Multi-food recall / precision | 56.5% / 52.0% | 23 instancias GT |
-| Duplicates multi-food | 1 | — |
-| DINO fallback food-us / v1 | 33.3% / 55.6% | imágenes |
-| Estabilidad secuencial | 100/100 | requests |
-| Concurrencia (semáforo) | 50×2, 50×4 OK | requests |
+| `f42_retrieval.py` | F42 | Embeddings CLIP del catálogo + índice + eval R@K |
+| `f43_rerank.py` / `f44_rerank.py` | F43–F44 | Canonical grouping + rerank specialist |
+| `f45_sweep.py` | F45 | Barrido de calibración del specialist (gate/threshold) |
+| `f46_server.py` / `f46_client.py` | F46 | Server sin reload + cliente multipart (shadow real) |
+| `f47_import_catalog.py` | F47 | Importador masivo (FNDDS + SR Legacy + OFF, cache reanudable) |
+| `f48_rerank.py` | F48 | Reranker general (features por canonical) |
+| `f49_recall.py` | F49 | K sweep + multi-query (vistas) |
+| `f50_multitext.py` | F50 | Índice multi-text (canonical + aliases) |
+| `f51_integration.py` | F51 | Benchmark del pipeline integrado |
+| `f52_nutrition.py` | F52/F54 | Descarga de nutrientes (tandas reanudables) |
+| `f56_rollout.py` | F56 | Rollout gradual por etapas (split determinista) |
 
-No mezclar denominadores: `food-us` (banco, 6 clases) ≠ `food-bench-v1` (fotos reales, 31 clases) ≠ `Food-101` (14 clases del catálogo).
-
-## 26. Limitations
-
-- Catálogo limitado a **38 clases** (ver §27).
-- `sandwich`, `soup`, `cereal` sin mapping nutricional defendible → `unavailable`.
-- CLIP confunde alimentos visualmente similares: fries/fried_chicken→rice (estructural, sin fix con crops/prompts), pancakes vs waffles (mejorado con candidatos descriptivos en F21-F22).
-- Multi-food recall 56.5% (instancias perdidas en platos complejos).
-- DINO fallback lento (10-17 s) en 33-56% de fotos reales; CPU-bound.
-- Porción = estimación heurística (sin escala física).
-- Benchmarks: food-bench-v1 con ruido residual (imágenes por título de Wikimedia); GT multi-food provisional (evidencia espacial, sin revisión visual completa).
-
-## 27. Por qué 38 alimentos NO es el límite del modelo
-
-**CLIP no está físicamente limitado a 38 alimentos.** CLIP conoce decenas de miles de conceptos. El catálogo contiene 38 clases porque **nosotros definimos esas 38** como las que la aplicación intenta mapear a nutrición.
-
-La diferencia:
-
-- "El modelo reconoce 38" — falso: el modelo es zero-shot y general.
-- "La aplicación soporta 38 clases" — verdadero: el catálogo + candidates + USDA mapping + porciones cubren 38.
-
-Crecer a 100/200+ alimentos = ampliar 4 piezas independientes:
+## 12. Estructura
 
 ```
-Food Catalog (entrada + candidates de texto)
-+ USDA mapping (import con la API + revisión)
-+ REFERENCE_GRAMS (porción)
-+ evaluación (dataset por clase)
+app/
+  api/          # routers: analyze, health (+ readiness, metrics)
+  core/         # config (flags), version
+  models/       # wrappers de modelos y lógica central
+    food_pipeline.py      # pipeline 5.761 (F51)
+    food_retrieval.py     # índice + retrieval
+    retrieval_rerank.py   # grouping multi-text + reranker general + specialist gate
+    nutrition_service.py  # lookup local de nutrición
+    decision.py           # política de confianza/fallback
+    specialist_router.py  # specialist DINO pizza/naan (F38)
+    specialist_shadow.py  # shadow del specialist (F39)
+    retrieval_shadow.py   # shadow del retrieval (F46)
+    zero_shot_classifier.py / detector_based_classifier.py / hybrid_detector.py ...
+    basic_portion_estimator.py / advanced_portion_estimator.py / depth_anything_estimator.py
+  schemas/      # Pydantic (analyze, health)
+catalog/          # foods.json + embeddings (catálogo e índice multi-text)
+nutrition/        # mappings.json + raw/ (nutrientes precomputados)
+benchmarks/       # reportes por fase + caches de features
+scripts/          # herramientas de fases (importadores, benchmarks, clientes)
+datasets/         # food-us, food-bench-v1, food101-subset (imágenes gitignoreadas)
+docs/             # documentación del proyecto
+tests/            # 160+ tests
 ```
 
-NO necesariamente entrenar/fine-tuning (no hay evidencia de que haga falta — los modelos pretrained genéricos perdieron contra CLIP en el A/B).
+## 13. Gotchas
 
-## 28. Roadmap
+- Windows: `run_dev.py` (SelectorEventLoop); los procesos `Start-Process` mueren al terminar el comando del shell → E2E completo en un solo comando.
+- Logs del servicio van a **STDERR** (no stdout).
+- El backend .NET nunca depende del schema interno; contrato en `docs/api.md`.
+- `appsettings.json` del backend está gitignoreado; los `.env` del servicio también. No subir modelos, datasets, embeddings grandes ni `.env` a git.
+- El API USDA tiene límite ~1.000 requests/día (retry/backoff/429); el Open Food Facts es intermitente (503/401) — siempre cache + reanudable.
+- Dataset `hamburger_011` (food-us) es `CORRUPT_FILE` conocido — no es error del pipeline.
+- El otro agente/sesión paralela puede mover ramas/archivos del repo — recuperar trabajo con `git log --all` / `git reflog`; los componentes F38–F40 viven en sus ramas feature (no en `carlos`).
 
-**CURRENT / PRODUCTION**: pipeline actual (F22-F23 validado: E2E 59.3%, estabilidad 100/100, semáforo de concurrencia). Demo frontend integrada (NutricionPage → backend → food-ai → USDA).
+## 14. Historial de fases (resumen)
 
-**FUTURE** (no implementado, sin orden de prioridad):
+- **F16–F22**: clasificación CLIP zero-shot, benchmark v1, catálogo 38 → USDA, candidates descriptivos, E2E 59.3 %, multi-instancia.
+- **F23**: PRODUCTION READY del legacy (concurrencia, semáforo, fallbacks).
+- **F25–F40**: investigación de especialistas (prototipos → confusion groups → DINO-base pizza/naan, threshold 0.75 — congelado).
+- **F41–F42**: catálogo masivo (1.451 → FNDDS), retrieval CLIP.
+- **F43–F44**: canonical grouping + specialist rerank (food-us 41.7 %).
+- **F45**: calibración final del specialist (gate top-3 + 0.75) — configuración congelada.
+- **F46**: shadow real del retrieval (invariancia verificada).
+- **F47**: catálogo 4× (5.761: FNDDS + SR Legacy + OFF), embeddings + índice.
+- **F48**: reranker general determinista (support + alias + specialist) — recupera el Top-1.
+- **F49**: recall expansion (K sweep; límite = representación, no pool).
+- **F50**: multi-text retrieval (canonical + aliases) — recall 90.7 % @500.
+- **F51**: pipeline integrado único (`food_pipeline.py`), R@1 food-us 56.5 %.
+- **F52–F54**: nutrición masiva (2.184 ready), shadow final (nuevo 56.1 % vs legacy 43.9 %).
+- **F55–F56**: active rollout + rollout gradual 0→100 % (nuevo gana en todas las etapas).
+- **F57**: hardening (readiness, metrics, RELEASE versioning, rollback por flag).
 
-1. Ampliación del catálogo a 100+ alimentos (proceso §27).
-2. Ampliación a 200+.
-3. Mejor clasificación de alimentos visualmente similares (fries/fried_chicken→rice).
-4. Mejor multi-food (recall/instancias).
-5. Mejor estimación de porción (Nutrition5k CC BY 4.0 con masa real, depth).
-6. Evaluar fine-tuning con dataset comercial/licenciado SOLO si hay evidencia de que aporta.
+## 15. Próximos pasos (independientes, sin investigación ML)
 
-## 29. Datasets
-
-| Dataset | Propósito | Tamaño | Licencia | Producción |
-|---|---|---|---|---|
-| `food-us-v0.1` | Benchmark histórico | 108 img / 6 clases | interna (banco) | NO (evaluación) |
-| `food-bench-v1` | Benchmark fotos reales | 248 / 31 clases | CC0/CC BY/CC BY-SA/PD (Commons) | NO (evaluación) |
-| `multi-food` | Benchmark multi-food | 16 / GT instancias | interna | NO (evaluación) |
-| `food101-subset` | **Evaluación interna** | 3500 / 14 clases | **NON-COMMERCIAL (ETH)** — nunca producción | NO |
-| `tests/assets` | Assets de tests | 3 imágenes | interna | NO |
-
-**Food-101: EVALUACIÓN INTERNA ÚNICAMENTE. NO usar en producción, no distribuir, no copiar al producto.**
-
-## 30. Licenses
-
-| Componente | Licencia | Uso comercial | Producción |
-|---|---|---|---|
-| YOLO11n (Ultralytics) | AGPL-3.0 | requiere consideración (AGPL) | candidato actual — evaluar para comercial |
-| Grounding DINO-tiny | Apache-2.0 | sí | sí |
-| CLIP ViT-B/32 (OpenAI) | MIT | sí | sí |
-| USDA FDC data | CC0 (public domain) | sí | sí |
-| Food-101 (ETH) | non-commercial research | NO | NO |
-| Nutrition5k (Google) | CC BY 4.0 | sí (atribución) | solo evaluación por ahora |
-
-> No afirmar licencias sin verificar en la fuente. La licencia AGPL de YOLO es una consideración comercial pendiente de decisión (alternativas: ONNX/otro detector con licencia permisiva).
-
-## 31. Troubleshooting
-
-- **food-ai no inicia**: verificar `.env`, `weights/` (yolo11n.pt, yolo11n-seg.pt), puerto 8010 libre (`Get-NetTCPConnection -LocalPort 8010`), y usar `run_dev.py` en Windows (SelectorEventLoop).
-- **CLIP no carga**: primera vez descarga de Hugging Face (requiere red); verificar `HF_TOKEN` si hay rate limits.
-- **DINO falla**: primera vez descarga del modelo; en CPU es lento (10-17 s) — no es error.
-- **USDA import falla**: `FOODAI_USDA_API_KEY` vacía o inválida; el script reporta exactamente el error (401/429/red).
-- **PostgreSQL falla**: el backend no arranca el seeder; verificar el servicio y `ConnectionStrings:DefaultConnection`.
-- **Frontend 502**: el gateway (5080) o el API (5122) caídos — levantar la cadena completa (gateway requiere build previo: `dotnet build src/Services/CoppAddresd.Gateway`).
-- **Análisis tarda demasiado**: DINO fallback (10-17 s) — esperar; el timeout del frontend es 60 s.
-- **nutrition unavailable**: el alimento se identificó pero no tiene mapping USDA (sandwich/soup/cereal u otros).
-- **unknown**: el score CLIP < 0.20 — foto difícil o alimento fuera del catálogo.
-
-## 32. Deployment
-
-**Se despliega**: food-ai-service (FastAPI, 1 worker por réplica) + backend .NET (API) + PostgreSQL (schema `foodai.` seeder).
-
-**No se despliega**: Food-101, DINOv3/BEiT, depth como masa absoluta, cap 1/clase, el JSON de import como runtime.
-
-Variables: las de §17 (la API key USDA solo para import, nunca en runtime).
-
-Checklist:
-
-1. `dotnet build` del backend + seeder (35 alimentos).
-2. Levantar food-ai (`run_dev.py` o uvicorn) con `FOOD_AI_*` del §17.
-3. `GET /api/v1/foodai/health` → `{backend: healthy, foodAI: healthy}`.
-4. Humo: `POST /api/v1/foodai/analyze` con pizza → 228.76 kcal con rangos.
-5. 1 worker por réplica CPU (inferencia serializada); escalar réplicas para throughput.
-6. Monitorear: WS del food-ai (~1.3 GB), latencia DINO (10-17 s en 33-56% de requests), logs `análisis_completo`.
-
-## 33. Architecture diagrams
-
-Ver diagramas en §3 (general), §4 (pipeline IA), §6 (USDA import), §11 (frontend), y:
-
-**Flujo nutricional**:
-
-```mermaid
-flowchart LR
-    ID[canonical food] --> AL[alias] --> PG[(PostgreSQL foodai.*)]
-    PG --> PROV[DatabaseNutritionProvider] --> CALC[NutritionCalculator .NET]
-    PORT[Porción estimada g] --> CALC
-    CALC --> RESP[foods + summary + rangos + source]
-```
-
-**Multi-food**:
-
-```mermaid
-flowchart LR
-    IMG[Imagen] --> REG[Región 1] & REG2[Región 2]
-    REG --> F1[food + nutrition] ; REG2 --> F2[food + nutrition]
-    F1 & F2 --> SUM[summary = SUM instancias válidas]
-```
-
-**Error/unavailable**:
-
-```mermaid
-flowchart LR
-    A[Región] --> CLIP2[CLIP]
-    CLIP2 -->|score < 0.20| UNK[unknown]
-    CLIP2 -->|ok| MAP2[USDA mapping]
-    MAP2 -->|sin mapping| UNAV[unavailable]
-    MAP2 -->|sin porción| PORTU[portion_unavailable]
-    MAP2 -->|ok| AVAIL[available + rangos]
-```
-
-## 34. Glossary
-
-- **AI / ML**: sistemas que aprenden de datos para reconocer patrones (aquí: imágenes).
-- **Inference**: ejecutar un modelo entrenado sobre datos nuevos (una foto).
-- **Model**: red neuronal con pesos entrenados (YOLO, DINO, CLIP).
-- **YOLO**: detector de objetos en una sola pasada, rápido.
-- **Bounding box**: rectángulo que enmarca un objeto detectado (x, y, ancho, alto).
-- **Segmentation (mask)**: máscara binaria que marca los píxeles del objeto.
-- **Grounding DINO**: detector open-vocabulary (detecta lo que el texto describa).
-- **Open vocabulary**: detecta/clasifica clases NO vistas en entrenamiento vía texto.
-- **CLIP**: modelo que alinea imágenes y texto en un espacio común.
-- **Embedding**: vector numérico que representa el significado de una imagen/texto.
-- **Zero-shot**: clasificar clases nunca entrenadas, solo describiéndolas.
-- **Prompt**: texto que describe la clase ("a photo of pizza").
-- **Candidate**: cada prompt/clase candidata del catálogo.
-- **Score**: similitud entre la imagen y el candidato (0-1 aprox.).
-- **Threshold**: mínimo de score para aceptar una clase (0.20).
-- **Confidence**: score de confianza del clasificador/detector.
-- **Dataset**: colección de imágenes etiquetadas para evaluar.
-- **Benchmark**: evaluación estandarizada con métricas.
-- **USDA / FDC**: base nutricional oficial de EE. UU. (FoodData Central).
-- **FDC ID**: identificador único de un alimento en USDA.
-- **Nutrition mapping**: equivalencia clase visual → alimento USDA con valores.
-- **Portion estimation**: estimación de gramos de una porción (heurística).
-- **NMS**: Non-Maximum Suppression — elimina cajas duplicadas del mismo objeto.
-- **IoU**: intersección sobre unión de dos cajas (mide solape).
-- **Fallback**: alternativa cuando el componente principal falla (DINO si YOLO no detecta).
-- **E2E**: end-to-end — flujo completo desde la foto hasta la respuesta nutricional.
-
----
-
-*Documentación generada en la FASE 24 (estado real verificado contra el código). Los reportes detallados por fase viven en `docs/roadmap.md` y `docs/` por tema.*
+1. Completar las ~3.577 descargas de nutrición (tandas diarias USDA).
+2. Corregir casos de baja confianza basándose en errores reales.
+3. Añadir alimentos o escalar a 10K/100K **solo si el producto lo necesita** (operación de catálogo + embeddings, sin reentrenar).

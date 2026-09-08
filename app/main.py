@@ -2,7 +2,7 @@ import asyncio
 import logging
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 
 from app.api.analyze import router as analyze_router
 from app.api.health import router as health_router
@@ -98,20 +98,62 @@ async def lifespan(app: FastAPI):
     app.state.settings = settings
     # FASE 23: serializa la inferencia CPU (torch concurrente con DINO crashea).
     app.state.inference_semaphore = asyncio.Semaphore(1)
-    # F39: shadow specialist (default off; jamás cambia la respuesta).
-    from app.models.specialist_shadow import SpecialistShadow  # noqa: PLC0415
 
-    app.state.specialist_shadow = SpecialistShadow(
-        enabled=settings.specialist_shadow_enabled,
-        threshold=settings.specialist_threshold,
-        groups=tuple(g.strip() for g in settings.specialist_groups.split(",")),
+    # FASE 51: pipeline único 5.761 alimentos (retrieval multi-text +
+    # grouping + reranker F48 + specialist DINO). Flag: retrieval_enabled
+    # (respuesta = pipeline) o retrieval_shadow_enabled (telemetría sin
+    # tocar la respuesta). Default false -> legacy exacto.
+    app.state.food_pipeline = None
+    app.state.nutrition_service = None
+    app.state.metrics = {
+        "total_requests": 0, "successful_requests": 0, "failed_requests": 0,
+        "new_pipeline_used": 0, "legacy_fallback": 0,
+        "fallback_pipeline_error": 0, "fallback_low_confidence": 0,
+        "nutrition_ready": 0, "nutrition_unavailable": 0, "nutrition_errors": 0,
+        "specialist_calls": 0, "portion_available": 0, "portion_unavailable": 0,
+    }
+    # F57: versión del pipeline en startup (observabilidad).
+    app.state.logger.info(
+        "RELEASE: pipeline=f57 catalog=5761 retrieval=multitext-v1 "
+        "reranker=general-v1 specialist=dino-base-pizza-naan-v1 "
+        "nutrition=mapping-v1 index=multitext-7498"
     )
     app.state.logger.info(
-        "SPECIALIST CONFIG: enabled=%s threshold=%s groups=%s model=%s available=%s",
-        settings.specialist_shadow_enabled, settings.specialist_threshold,
-        settings.specialist_groups, "dino_base",
-        app.state.specialist_shadow.available(),
+        "RETRIEVAL CONFIG: enabled=%s shadow=%s catalog_size=%s specialist_model=dino_base "
+        "specialist_threshold=0.75 specialist_gate_topk=3 specialist_groups=pizza,naan",
+        settings.retrieval_enabled, settings.retrieval_shadow_enabled,
+        "5761" if settings.retrieval_enabled or settings.retrieval_shadow_enabled else "n/a",
     )
+    if settings.nutrition_enabled or settings.nutrition_shadow_enabled:
+        from app.models.nutrition_service import NutritionService  # noqa: PLC0415
+
+        app.state.nutrition_service = NutritionService(enabled=True)
+        app.state.logger.info(
+            "nutrition service listo: %d mappings",
+            len(app.state.nutrition_service.index),
+        )
+    if settings.retrieval_enabled or settings.retrieval_shadow_enabled:
+        from app.models.food_pipeline import FoodPipeline  # noqa: PLC0415
+        from app.models.zero_shot_classifier import ZeroShotFoodClassifier  # noqa: PLC0415
+
+        if not isinstance(classifier, ZeroShotFoodClassifier):
+            clip = ZeroShotFoodClassifier(
+                model_name=settings.clip_model,
+                device=settings.clip_device,
+                threshold=settings.clip_threshold,
+                prompt_template=settings.clip_prompt_template,
+                crop_padding=settings.clip_crop_padding,
+            )
+            clip.load()
+            pipeline_clf = clip
+        else:
+            pipeline_clf = classifier
+        app.state.food_pipeline = FoodPipeline(clf=pipeline_clf, enabled=True)
+        app.state.logger.info(
+            "pipeline F51 listo: available=%s índice=%s",
+            app.state.food_pipeline.available(),
+            app.state.food_pipeline.index.shape if app.state.food_pipeline.index is not None else None,
+        )
     yield
 
 
@@ -122,6 +164,12 @@ def create_app() -> FastAPI:
         description="Servicio de IA de FoodAI: detección, segmentación, clasificación, porción y nutrición.",
         lifespan=lifespan,
     )
+    @app.get("/metrics")
+    def metrics_endpoint(request: Request) -> dict:
+        """Métricas agregadas en memoria (F57): requests, pipeline,
+        fallbacks, nutrition, specialist. Cero coste de red."""
+        return dict(getattr(request.app.state, "metrics", {}))
+
     app.include_router(health_router)
     app.include_router(analyze_router)
     return app

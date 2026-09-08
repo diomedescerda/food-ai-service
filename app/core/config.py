@@ -1,4 +1,4 @@
-﻿from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
@@ -65,6 +65,25 @@ class Settings(BaseSettings):
 
     # Directorio para guardar imÃ¡genes de debug (bbox + labels). VacÃ­o = off.
     debug_images_dir: str = ""
+
+    # === Retrieval masivo (FASE 42): catÃ¡logo 1.451 FNDDS ===
+    # enabled=true reemplazarÃ­a el legacy (NO activado). shadow=true ejecuta
+    # el pipeline completo sin tocar la respuesta (telemetrÃ­a).
+    retrieval_enabled: bool = False
+    retrieval_shadow_enabled: bool = False
+    retrieval_top_k: int = 50
+
+    # === Nutrición (FASE 52): lookup local precomputado ===
+    # enabled=true usaría la nutrición mapeada (NO activado). shadow=true
+    # registra la telemetría de nutrición sin cambiar la respuesta.
+    nutrition_enabled: bool = False
+    nutrition_shadow_enabled: bool = False
+
+    # === Confianza/fallback (FASE 53): política de decisión ===
+    # confidence_enabled=false: la decisión nunca rechaza por confianza
+    # (el mecanismo queda preparado, sin activar).
+    confidence_enabled: bool = False
+    min_visual_confidence: float = 0.20
 
 
 settings = Settings()

@@ -403,3 +403,92 @@ Orden obligatorio: cada fase termina con tests + docs + commit. No avanzar con f
 - [x] Rerank con legacy (0.75+0.25): SIN cambio (correlación CLIP — el legacy y el retrieval comparten el embedding)
 - [x] Cuello: retrieval textual (el mismo del F26); el R@1 38.9% requiere el specialist DINO selectivo (F38: 74.1% con hybrid)
 - [x] DECISIÓN: grouping aprobado; el rerank estructural = integrar el specialist DINO al ranking del retrieval
+
+## FASE 45 — Calibración final + congelación ✅ (2026-08-31)
+- [x] Sweep 3x3 (gate top-3/5/10 x th 0.65/0.70/0.75): config final Top-3 + 0.75 — regr 42 -> 22 (-48%), R@1 41.7 conservado, F101 -0.2
+- [x] Regresiones explícitas: 17, TODAS lasagna/nachos -> pizza (conf 0.75-0.82) — categoría única
+- [x] Config congelada: SPECIALIST_MODEL=dino_base GROUPS=pizza,naan THRESHOLD=0.75 GATE_TOPK=3 GATE_CONF=0.40 ENABLED=false
+- [x] app/models/retrieval_rerank.py (regla pura) + 9 tests (84/84)
+- [x] NOTA: SpecialistRouter/Shadow en feature/f38 (rama ajena) — traer para F46
+
+## FASE 46 — Shadow Real del Retrieval + Specialist ✅ (2026-09-03)
+- [x] SpecialistRouter/Shadow recuperados de feature/f38 (la rama carlos no los tenía)
+- [x] RetrievalShadow (retrieval+grouping+rerank) + startup log RETRIEVAL CONFIG + flag retrieval_shadow_enabled=false
+- [x] food-us por API real: 108 peticiones, telemetría 48 líneas: canonical hit@1 33.3%, reranked 34.3%, spec 14.8%, fallback 0, lat p50 98ms
+- [x] Invariancia: pizza_001 OFF vs ON -> pizza 0.9075 idéntico (hook post-response)
+- [x] Concurrencia 4 simultáneos: 200x4, 0 crashes; fallbacks verificados (DINO unavailable + retrieval error + DetectorBased real)
+- [x] 5 tests shadow (89/89) — DECISIÓN: APPROVE F46 READY TO SCALE CATALOG
+
+## FASE 47 — Escalado del catálogo (4x, sin reentrenar) ⚠️ PARCIAL (2026-09-04)
+- [x] Catálogo 1.451 -> 5.761 canónicos (9.067 entries, 1.737 aliases): FNDDS completo + SR Legacy (list API paginado) + OFF (cache incremental por query; OFF inestable 503/401)
+- [x] 1.451 preservados (foods_legacy_1451.json + cross-check legacy + naan restaurado como alias)
+- [x] Embeddings 5.761x512 x3 + índice numpy (build ~5s, RAM ~12MB, matmul ~2ms)
+- [x] R@K degradación esperada: food-us 38.9 -> 10.2 (espacio 4x; documentado para F48 — NO reducir catálogo)
+- [x] 8 tests (97/97): count, unicidad, aliases, cobertura, rebuild, backcompat, smoke, fuentes
+- [ ] 10k estricto NO alcanzado: política no-variantes limita a ~5.8k reales — nivel variante u OFF estable = decisión F48
+
+## FASE 48 — General Reranker para 5.761 ✅ APPROVE (2026-09-04)
+- [x] Reranker determinista (retrieval + support + alias_count + specialist DINO): food-us 10.2 -> 38.9 (recupera el nivel del 1.451), v1 8.7 -> 21.0, Food-101 9.5 -> 34.2 (superado) — sin entrenar
+- [x] Alias_count (proxy del canónico genérico) = señal clave; support aporta poco; specialist +0.9 (regla F45 intacta)
+- [x] MRR 0.185 -> 0.458, med_rank 6 -> 1, prom 43/dem 4 (food-us); buckets: A=46% (GT fuera del Top-50 — recall, no ranking)
+- [x] app/models/retrieval_rerank.py: rerank_general (puro) + 7 tests (104/104)
+- [x] DECISIÓN: APPROVE — el ranking escala con el catálogo; el cuello restante = recall del retrieval (bucket A)
+
+## FASE 49 — Recall Expansion ⚠️ REQUIRES BETTER REPRESENTATION (2026-09-04)
+- [x] K sweep: R@200 food-us 73.1 (+19.4), v1 45.6, food101 60.1; bucket A 46 -> 27%
+- [x] F49-A top-200: food-us 43.5 (+4.6) pero v1 16.5 / food101 19.9 (REGRESIÓN — el reranker F48 calibrado para top-50 no escala al pool-200)
+- [x] F49-B multi-query (4 vistas): sin ganancia (vistas del mismo CLIP correlacionan); el multi no supera el single
+- [x] A4 (>500): 26-44% GT fuera — el límite = representación CLIP textual, no el pool
+- [x] fuse_views en retrieval_rerank + 6 tests (110/110)
+- [x] DECISIÓN: REQUIRES BETTER RETRIEVAL REPRESENTATION — NO escalar a 10k; siguiente: aliases como prompts del índice (sin entrenar)
+
+## FASE 50 — Multi-Text Retrieval (canonical + aliases) ✅ APPROVE (2026-09-04)
+- [x] Índice 7.498 textos (canonical + aliases) x3 templates = 22.494 embeddings (15MB RAM, +25%)
+- [x] Recall: food-us R@500 74.1 -> 90.7; bucket A500 26% -> 9%; R@50 +22; 356 rescates por alias (ejemplos: french fries <- potato french fries school)
+- [x] Aggregación max > top-2mean; R@1 retrieval solo: 38.0 food-us (= F48 completo)
+- [x] group_text_matches en retrieval_rerank + 7 tests (117/117)
+- [x] DECISIÓN: APPROVE — el recall soporta el F51 (segmentación + reranker) y el F52 (10k)
+
+## FASE 51 — Integración Final del Pipeline 5.761 ✅ APPROVE (2026-09-04)
+- [x] app/models/food_pipeline.py: multi-text retrieval -> grouping -> reranker F48 -> specialist DINO (F45) -> canonical; fallback seguro
+- [x] Fix calibración: support=1+aliases, alias=min(20) — el reranker F48 (calibrado 1.451) degradaba con el v4 (31.5 -> 56.5 food-us)
+- [x] Integración API: flags retrieval_enabled/shadow_enabled (default false, legacy exact); shadow telemetría pipeline_f51
+- [x] R@1 integrado: food-us 56.5 (vs F50 38.0), v1 21.8, food101 27.1; invariancia pizza 0.9075 off==on; concurrencia 4x200; smoke ✓
+- [x] 7 tests pipeline (124/124) — DECISIÓN: APPROVE READY FOR NUTRITION
+
+## FASE 52 — Nutrition Mapping Masivo ⚠️ PARTIAL (2026-09-04)
+- [x] 96% de los 5.761 con fdc_id reales (USDA FNDDS/SR + OFF); 1.184 con nutrientes hoy (límite diario FDC 1000 — reanudable, 0 errores)
+- [x] NutritionService: lookup local (cero red), per-100g, unidades explícitas, NUTRITION_READY/UNAVAILABLE, confianza por fuente (0.95 USDA / 0.85 OFF)
+- [x] Golden foods validados (pizza 292, rice 119, fries 185 kcal/100g); muestra 50: 38 correct/7 acceptable/5 unavailable/0 ambiguous
+- [x] Flags nutrition_enabled/shadow_enabled=false + shadow hook + 10 tests (134/134)
+- [x] DECISIÓN: PARTIAL SUCCESS — el límite diario del USDA pospone el 100% (~4 días de tandas); pipeline funcional
+
+## FASE 53 — Confidence + Fallback ✅ APPROVE (2026-09-04)
+- [x] DecisionPolicy: NEW_RESULT_READY/NUTRITION_UNAVAILABLE/LOW_CONFIDENCE/LEGACY_FALLBACK; identificación vs nutrición INDEPENDIENTES (no revierte identificación por falta de nutrientes)
+- [x] Confianzas separadas (visual 0.298 runtime / nutrition 0.95 USDA / portion externa); flags confidence_enabled=false + min_visual_confidence=0.20
+- [x] Shadow de decisión runtime: pizza -> NEW_RESULT_READY + nutrición real (292 kcal); golden cases A-E en tests
+- [x] 8 tests (142/142) — DECISIÓN: APPROVE READY FOR FINAL SHADOW
+
+## FASE 54 — Nutrition Coverage + Shadow Final ✅ APPROVE (2026-09-04)
+- [x] Nutrition: 1.184 -> 2.184 (37.9%, USDA 2.000 + OFF 184, 0 errores, 0 NaN/negativos, tandas reanudables)
+- [x] Shadow final food-us (107 por API): new 56.1% vs legacy 43.9% (+12.2); A=44 B=3 C=16 D=44; nutrition READY 91.6% runtime
+- [x] Invariancia OFF==ON (pizza 0.9075); concurrencia 4x200; muestra 50: 41 correct/9 acceptable
+- [x] DECISIÓN: APPROVE READY FOR ACTIVE ROLLOUT
+
+## FASE 55 — Active Rollout Controlado ✅ APPROVE (2026-09-04)
+- [x] Fix crop del active (CLIP del pipeline, no DetectorBased): 38.9 -> 47.7% bruto / 70.8% sobre detectados (> legacy 65.3%)
+- [x] Confidence del active = retrieval score real (no 0.5 fijo); fallback/rollback por flag probados (legacy exacto)
+- [x] 108 requests controlados, 0 crashes, contract intacto, nutrition 37.9% (tandas independientes)
+- [x] 6 tests (148/148) — DECISIÓN: APPROVE READY FOR GRADUAL PRODUCTION
+
+## FASE 56 — Rollout Gradual Real ✅ APPROVE (2026-09-04)
+- [x] 5 etapas (0/10/25/50/100%): el nuevo supera al legacy en TODAS (10%: 70.0 vs 43.3; 100%: 47.7% = 70.8% detectados); 0 fallos del pipeline; 1 error = imagen corrupta del dataset
+- [x] Latencia estable p50 ~2.2-2.4s; rollback por flag (etapa 0% = rollback ejecutado); nutrition 37.9% independiente
+- [x] scripts/f56_rollout.py (split determinista por hash) + 4 tests (152/152)
+- [x] DECISIÓN: APPROVE FULL PRODUCTION ROLLOUT — siguiente: F57 hardening + monitoring
+
+## FASE 57 — Hardening + Monitoring ✅ APPROVE (2026-09-04)
+- [x] RELEASE versionado (f57/5761/multitext-v1/reranker-v1/specialist-v1/nutrition-v1) en startup
+- [x] /health/readiness (runtime: ready, index/clip/dino/nutrition True) + /metrics (contadores por request, runtime verificado)
+- [x] Consistencia catálogo 5761 == índice 7498; fallback reasons separados; rollback por flag documentado; nutrition 37.9% observable
+- [x] 8 tests (160/160) — DECISIÓN: APPROVE PRODUCTION HARDENED — sistema operable, observable, reversible
