@@ -1,0 +1,151 @@
+name: Deploy FoodAI Service
+
+on:
+  push:
+    branches: [dev]
+    paths:
+      - "**"
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+concurrency:
+  group: deploy-foodai-dev
+  cancel-in-progress: false
+
+env:
+  AWS_REGION: us-east-2
+  ECR_REGISTRY: 933629770820.dkr.ecr.us-east-2.amazonaws.com
+  ECR_REPOSITORY: cooppadresd-foodai
+  ECS_CLUSTER: cooppadresd-cluster
+  ECS_SERVICE: cooppadresd-foodai
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias de test
+        run: |
+          pip install --upgrade pip
+          pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+          pip install -r requirements.txt pytest pytest-asyncio httpx ruff
+
+      - name: Lint (ruff)
+        run: ruff check .
+
+      - name: Tests (pytest)
+        run: pytest -q
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::933629770820:role/cooppadresd-gha-foodai
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build imagen (${{ github.sha }})
+        timeout-minutes: 45
+        run: |
+          docker build \
+            -t "${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }}" \
+            -t "${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:latest" \
+            .
+
+      - name: Push ECR
+        run: |
+          docker push "${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }}"
+          docker push "${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:latest"
+
+      - name: Registrar nueva Task Definition (imagen SHA)
+        id: taskdef
+        shell: bash
+        run: |
+          TASK_DEF_JSON=$(aws ecs describe-task-definition --task-definition "${{ env.ECS_SERVICE }}" --region "${{ env.AWS_REGION }}" --query "taskDefinition" --output json)
+          NEW_IMAGE="${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }}"
+          NEW_TASK_DEF_JSON=$(echo "$TASK_DEF_JSON" | jq --arg img "$NEW_IMAGE" '
+            .containerDefinitions[0].image = $img |
+            del(.status, .compatibilities, .taskDefinitionArn, .revision, .registeredAt, .registeredBy, .requiresAttributes)
+          ')
+          REGISTERED=$(aws ecs register-task-definition --cli-input-json "$NEW_TASK_DEF_JSON" --region "${{ env.AWS_REGION }}")
+          echo "arn=$(echo "$REGISTERED" | jq -r '.taskDefinition.taskDefinitionArn')" >> "$GITHUB_OUTPUT"
+
+      - name: Actualizar ECS Service
+        run: |
+          aws ecs update-service \
+            --cluster "${{ env.ECS_CLUSTER }}" \
+            --service "${{ env.ECS_SERVICE }}" \
+            --task-definition "${{ steps.taskdef.outputs.arn }}" \
+            --region "${{ env.AWS_REGION }}"
+
+      - name: Esperar rollout COMPLETED (polling 15s)
+        timeout-minutes: 30
+        shell: bash
+        run: |
+          SERVICE="${{ env.ECS_SERVICE }}"
+          TD_ARN="${{ steps.taskdef.outputs.arn }}"
+          DEADLINE=$((SECONDS + 1800))
+
+          while true; do
+            DEP=$(aws ecs describe-services \
+              --cluster "${{ env.ECS_CLUSTER }}" \
+              --services "$SERVICE" \
+              --region "${{ env.AWS_REGION }}" \
+              --query "services[0].deployments[?taskDefinition=='$TD_ARN'] | [0]" \
+              --output json)
+
+            STATE=$(echo "$DEP" | jq -r '.rolloutState // "MISSING"')
+            RUNNING=$(echo "$DEP" | jq -r '.runningCount // "?"')
+            DESIRED=$(echo "$DEP" | jq -r '.desiredCount // "?"')
+
+            echo "[$(date -u +%H:%M:%S)] rollout=$STATE running=$RUNNING desired=$DESIRED"
+
+            if [ "$STATE" = "COMPLETED" ] && [ "$RUNNING" = "$DESIRED" ]; then
+              echo "Deployment estable: rollout=$STATE running=$RUNNING desired=$DESIRED"
+              exit 0
+            fi
+
+            if [ "$STATE" = "FAILED" ]; then
+              echo "::error::Rollout FAILED: el deployment de $SERVICE no pudo completarse"
+              exit 1
+            fi
+
+            if [ "$SECONDS" -ge "$DEADLINE" ]; then
+              echo "::error::Timeout 30 min: rollout=$STATE running=$RUNNING desired=$DESIRED"
+              exit 1
+            fi
+
+            sleep 15
+          done
+
+      - name: Diagnóstico en fallo
+        if: failure()
+        shell: bash
+        run: |
+          TASKS=$(aws ecs list-tasks \
+            --cluster "${{ env.ECS_CLUSTER }}" \
+            --service-name "${{ env.ECS_SERVICE }}" \
+            --region "${{ env.AWS_REGION }}" --query "taskArns" --output text)
+          for T in $TASKS; do
+            aws ecs describe-tasks \
+              --cluster "${{ env.ECS_CLUSTER }}" \
+              --tasks "$T" --region "${{ env.AWS_REGION }}" \
+              --query "tasks[0].{Status:lastStatus,Stop:stoppedReason,Containers:containers[*].{Name:name,Exit:exitCode,Reason:reason}}" \
+              --output json
+          done
