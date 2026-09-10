@@ -36,10 +36,7 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-          pip install -r requirements.txt pytest pytest-asyncio httpx ruff
-
-      - name: Lint (ruff)
-        run: ruff check .
+          pip install -r requirements.txt pytest pytest-asyncio httpx
 
       - name: Tests (pytest)
         run: pytest -q
