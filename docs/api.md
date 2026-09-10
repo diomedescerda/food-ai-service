@@ -2,25 +2,26 @@
 
 ## Estado FASE 9 — Food Analysis / User Feedback
 
-| Método | Ruta | Descripción | Auth |
-|---|---|---|---|
-| GET | `/api/v1/foodai/health` (backend) | Probe backend → FoodAI Service | pública |
-| POST | `/api/v1/foodai/analyze` (backend) | Ingesta + pipeline completo + nutrición + persistencia del análisis | pública (persiste userId si hay JWT) |
-| GET | `/api/v1/foodai/nutrition/{foodKey}` (backend) | Nutrición por 100 g | pública |
-| GET | `/api/v1/foodai/analyses/{analysisId}` (backend) | Recupera análisis persistido (items + snapshot + feedbacks) | [Authorize] + ownership |
-| POST | `/api/v1/foodai/analyses/{analysisId}/feedback` (backend) | Corrección del usuario (FOOD_WRONG/PORTION_WRONG/DETECTION_WRONG/MISSING_FOOD/OTHER) | [Authorize] + ownership |
+| Método | Ruta                                                      | Descripción                                                                          | Auth                                 |
+| ------ | --------------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------ |
+| GET    | `/api/v1/foodai/health` (backend)                         | Probe backend → FoodAI Service                                                       | pública                              |
+| POST   | `/api/v1/foodai/analyze` (backend)                        | Ingesta + pipeline completo + nutrición + persistencia del análisis                  | pública (persiste userId si hay JWT) |
+| GET    | `/api/v1/foodai/nutrition/{foodKey}` (backend)            | Nutrición por 100 g                                                                  | pública                              |
+| GET    | `/api/v1/foodai/analyses/{analysisId}` (backend)          | Recupera análisis persistido (items + snapshot + feedbacks)                          | [Authorize] + ownership              |
+| POST   | `/api/v1/foodai/analyses/{analysisId}/feedback` (backend) | Corrección del usuario (FOOD_WRONG/PORTION_WRONG/DETECTION_WRONG/MISSING_FOOD/OTHER) | [Authorize] + ownership              |
 
-| Método | Ruta | Descripción | Auth |
-|---|---|---|---|
-| GET | `/api/v1/foodai/health` (backend) | Probe backend → FoodAI Service: `{backend, foodAI, detail}` | pública |
-| POST | `/api/v1/foodai/analyze` (backend) | Ingesta + detección + segmentación + clasificación: multipart `image` → `{analysisId, status, modelVersion, segModelVersion, classifierVersion, inferenceTimeMs, foods[]}` | pública |
-| GET | `/api/v1/foodai/nutrition/{foodKey}` (backend) | Nutrición por 100 g (alias YOLO o nombre canónico) — BD USDA FDC, sin IA | pública |
-| GET | `/health` (food-ai-service, puerto 8010) | Salud del servicio + estado del modelo | pública |
-| POST | `/analyze` (food-ai-service, puerto 8010) | Contrato interno backend → Python (multipart `image` + `analysis_id`) | canal interno futuro |
+| Método | Ruta                                           | Descripción                                                                                                                                                                | Auth                 |
+| ------ | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- |
+| GET    | `/api/v1/foodai/health` (backend)              | Probe backend → FoodAI Service: `{backend, foodAI, detail}`                                                                                                                | pública              |
+| POST   | `/api/v1/foodai/analyze` (backend)             | Ingesta + detección + segmentación + clasificación: multipart `image` → `{analysisId, status, modelVersion, segModelVersion, classifierVersion, inferenceTimeMs, foods[]}` | pública              |
+| GET    | `/api/v1/foodai/nutrition/{foodKey}` (backend) | Nutrición por 100 g (alias YOLO o nombre canónico) — BD USDA FDC, sin IA                                                                                                   | pública              |
+| GET    | `/health` (food-ai-service, puerto 8010)       | Salud del servicio + estado del modelo                                                                                                                                     | pública              |
+| POST   | `/analyze` (food-ai-service, puerto 8010)      | Contrato interno backend → Python (multipart `image` + `analysis_id`)                                                                                                      | canal interno futuro |
 
 ### Respuestas
 
 `POST /api/v1/foodai/analyze` (multipart `image=<archivo>`):
+
 ```json
 {
   "analysisId": "d7637c16-80a0-4947-b63e-833de226012b",
@@ -35,18 +36,56 @@
       "confidence": 0.9253,
       "boundingBox": { "x": 7, "y": 14, "width": 318, "height": 216 },
       "segmentation": { "mask": "<base64 PNG>", "areaPixels": 44970 },
-      "portion": { "portionSize": "large", "estimatedGrams": 128, "minGrams": 118, "maxGrams": 160, "confidence": 0.55, "method": "basic_reference" },
-      "nutrition": { "calories": 340.48, "protein": 14.58, "carbohydrates": 42.66, "fat": 13.31, "fiber": 2.94, "sugar": 4.61, "sodium": 765.44 },
-      "nutritionRange": { "min": { "calories": 313.88 }, "max": { "calories": 425.60 } },
+      "portion": {
+        "portionSize": "large",
+        "estimatedGrams": 128,
+        "minGrams": 118,
+        "maxGrams": 160,
+        "confidence": 0.55,
+        "method": "basic_reference"
+      },
+      "nutrition": {
+        "calories": 340.48,
+        "protein": 14.58,
+        "carbohydrates": 42.66,
+        "fat": 13.31,
+        "fiber": 2.94,
+        "sugar": 4.61,
+        "sodium": 765.44
+      },
+      "nutritionRange": {
+        "min": { "calories": 313.88 },
+        "max": { "calories": 425.6 }
+      },
       "nutritionStatus": "available",
       "source": "USDA FoodData Central",
       "sourceVersion": "2026-08-27"
     }
   ],
-  "summary": { "calories": 340.48, "protein": 14.58, "carbohydrates": 42.66, "fat": 13.31, "fiber": 2.94, "sugar": 4.61, "sodium": 765.44 },
-  "summaryRange": { "min": { "calories": 313.88 }, "max": { "calories": 425.60 } }
+  "summary": {
+    "calories": 340.48,
+    "protein": 14.58,
+    "carbohydrates": 42.66,
+    "fat": 13.31,
+    "fiber": 2.94,
+    "sugar": 4.61,
+    "sodium": 765.44
+  },
+  "summaryRange": {
+    "min": { "calories": 313.88 },
+    "max": { "calories": 425.6 }
+  },
+  "intake": {
+    "calories": 340.48,
+    "proteinG": 14.58,
+    "carbsG": 42.66,
+    "fatG": 13.31,
+    "fiberG": 2.94
+  }
 }
 ```
+
+`intake` = totales listos para registrar como ingesta (`calories/proteinG/carbsG/fatG/fiberG`); `null` cuando ningún alimento tiene nutrición disponible (el cliente distingue "sin datos" de "ceros"). `GET /api/v1/foodai/analyses/{id}` devuelve el mismo objeto.
 
 ⚠️ `estimatedGrams` y la nutrición derivada son ESTIMACIONES, no mediciones.
 
@@ -57,6 +96,7 @@
 `POST /analyze` persiste el análisis (schema `foodai.`): items con snapshot nutricional + versiones de modelo + máscara en object storage (`maskKey`), nunca base64 en PG. Idempotente por analysisId.
 
 `POST /api/v1/foodai/analyses/{id}/feedback`:
+
 ```json
 {
   "itemIndex": 0,
@@ -65,9 +105,11 @@
   "note": "era más"
 }
 ```
+
 → `201` con `originalGrams: 128, correctedGrams: 200` (el original nunca se sobrescribe). `401` sin token; `404` para análisis ajenos (ownership).
 
 `GET /health` (food-ai-service):
+
 ```json
 {
   "status": "healthy",
@@ -102,12 +144,14 @@ El backend es el único que habla con el Food AI Service. Los schemas internos d
 ### Contrato de análisis (FASE 3, implementado)
 
 Request (backend → Python, multipart):
+
 ```
 image       → archivo de imagen
 analysis_id → UUID
 ```
 
 Response:
+
 ```json
 {
   "analysis_id": "uuid",
@@ -131,6 +175,7 @@ Errores Python (400): `{"detail": {"success": false, "error": {"code": "INVALID_
 ### Contrato futuro (FASE 3+)
 
 Response con detección:
+
 ```json
 {
   "analysisId": "uuid",
@@ -141,20 +186,34 @@ Response con detección:
       "confidence": 0.94,
       "estimatedGrams": 180,
       "portionConfidence": 0.68,
-      "nutrition": { "calories": 234, "carbohydrates": 50.4, "protein": 4.86, "fat": 0.54 }
+      "nutrition": {
+        "calories": 234,
+        "carbohydrates": 50.4,
+        "protein": 4.86,
+        "fat": 0.54
+      }
     }
   ],
-  "totals": { "calories": 234, "carbohydrates": 50.4, "protein": 4.86, "fat": 0.54 }
+  "totals": {
+    "calories": 234,
+    "carbohydrates": 50.4,
+    "protein": 4.86,
+    "fat": 0.54
+  }
 }
 ```
 
 ### Errores
 
 Respuestas consistentes, nunca errores internos sin procesar:
+
 ```json
 {
   "success": false,
-  "error": { "code": "INVALID_IMAGE", "message": "The uploaded image is not supported." }
+  "error": {
+    "code": "INVALID_IMAGE",
+    "message": "The uploaded image is not supported."
+  }
 }
 ```
 

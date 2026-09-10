@@ -1,8 +1,19 @@
 """Contrato de detección/segmentación: fixture de imagen y app con fakes."""
 
+import os
 import sys
 from io import BytesIO
 from pathlib import Path
+
+# Aislamiento: varios tests afirman los DEFAULTS de fábrica de los flags.
+# Un .env local de QA (pipeline 5.761 activo) no debe filtrarse a la suite:
+# pydantic-settings prioriza variables de entorno reales sobre el .env.
+for _key, _value in {
+    "FOOD_AI_RETRIEVAL_ENABLED": "false",
+    "FOOD_AI_NUTRITION_ENABLED": "false",
+    "FOOD_AI_DETECTOR_TYPE": "yolo",
+}.items():
+    os.environ.setdefault(_key, _value)
 
 import pytest
 from PIL import Image
