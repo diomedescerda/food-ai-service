@@ -48,17 +48,51 @@ def test_large():
 
 
 def test_unknown_sin_referencia():
-    est = _estimate("sandwich", 200_000)
-    assert est.portion_size == "unknown"
-    assert est.estimated_grams is None
-    assert est.min_grams is None
-    assert est.max_grams is None
-    assert est.confidence == 0.0
-    assert est.method == "unavailable"
+    # Banda 5.761: sin referencia exacta ni palabra clave → genérica 100 g
+    # (siempre entrega gramos; la UI advierte que son estimaciones).
+    est = _estimate("plato_misterioso_xyz", 200_000)
+    assert est.portion_size == "medium"
+    assert est.estimated_grams == 100
+    assert est.min_grams <= est.estimated_grams <= est.max_grams
+    assert est.confidence == 0.35
+    assert est.method == "basic_generic"
+
+
+def test_keyword_canonico_nuevo():
+    # Canónicos del pipeline 5.761 resuelven por palabra clave USDA.
+    est = _estimate("beans_yellow_mature_seeds_raw", 200_000)
+    assert est.estimated_grams == 90
+    assert est.method == "basic_keyword"
+    assert est.confidence == 0.45
+
+    est = _estimate("chicken", 200_000)
+    assert est.estimated_grams == 120
+    assert est.method == "basic_keyword"
+
+    est = _estimate("peanuts", 200_000)
+    assert est.estimated_grams == 30
+    assert est.method == "basic_keyword"
+
+
+def test_referencia_exacta_mantiene_confianza():
+    est = _estimate("banana", 200_000)
+    assert est.estimated_grams == 118
+    assert est.method == "basic_reference"
+    assert est.confidence == 0.55
 
 
 def test_rango_min_estimated_max():
-    for name in ("banana", "apple", "orange", "pizza", "hot dog", "donut", "cake", "carrot", "broccoli"):
+    for name in (
+        "banana",
+        "apple",
+        "orange",
+        "pizza",
+        "hot dog",
+        "donut",
+        "cake",
+        "carrot",
+        "broccoli",
+    ):
         for area in (10_000, 200_000, 400_000):
             est = _estimate(name, area)
             assert est.min_grams is not None
