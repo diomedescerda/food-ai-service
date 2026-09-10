@@ -23,6 +23,8 @@ env:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      PYTHONHASHSEED: "0"
     steps:
       - uses: actions/checkout@v4
 
