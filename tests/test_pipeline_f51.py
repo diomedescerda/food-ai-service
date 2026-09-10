@@ -23,7 +23,12 @@ class MockClf:
 
 @pytest.fixture(scope="module")
 def pipeline():
-    return FoodPipeline(clf=MockClf(), enabled=True)
+    p = FoodPipeline(clf=MockClf(), enabled=True)
+    if p._dino is None:
+        # DINO fake: el checkpoint .pt no se trackea en git, los tests de gate
+        # solo necesitan _dino presente (el predict se monkeyparchea).
+        p._dino = object()
+    return p
 
 
 def test_pipeline_ordering_y_estructura(pipeline, monkeypatch) -> None:
