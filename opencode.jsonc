@@ -1,0 +1,72 @@
+{
+  // food-ai-service (FastAPI + CLIP/DINO, venv+pip, puerto 8010) — project config.
+  // Contratos: food-ai-service/docs/api.md. NUNCA puerto 8000 (ese es ai-service).
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "README.md",
+    "docs/api.md",
+    "../AGENTS.md",
+    "../LEARNINGS.md",
+    "../.agents/rules/*.md",
+  ],
+  "skills": {
+    "paths": ["../.agents/skills"],
+  },
+  "permission": {
+    "skill": {
+      "*": "allow",
+    },
+    "bash": {
+      ".venv/bin/python -m pytest*": "allow",
+      ".venv/bin/python run_dev.py*": "allow",
+      ".venv\\Scripts\\python*": "allow",
+      "pip install*": "ask",
+    },
+    "lsp": "allow",
+  },
+  "agent": {
+    "coppaddresd": {
+      "description": "Agente principal food-ai-service: FastAPI + visión, skills-first",
+      "mode": "primary",
+      "prompt": "Eres el agente principal de food-ai-service (Python, FastAPI + CLIP/DINO, venv+pip, puerto 8010, NUNCA 8000). Aplica .agents/rules/*.md: carga fastapi-python + pydantic (+ machine-learning para modelos) con skill() ANTES de codificar; contrato en docs/api.md (multipart image+analysis_id); verifica con .venv/bin/python -m pytest. Responde en el idioma del usuario; docs en español.",
+      "permission": {
+        "skill": {
+          "*": "allow",
+        },
+      },
+    },
+    "reviewer": {
+      "description": "Revisor food-ai sin editar",
+      "mode": "subagent",
+      "prompt": "Revisor Python/visión senior. Analiza sin editar: contratos multipart, pesos de modelos, health/readiness/metrics, tests. Cita archivo:línea.",
+      "permission": {
+        "edit": "deny",
+      },
+    },
+  },
+  "subagent_depth": 2,
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "reserved": 15000,
+  },
+  "lsp": {
+    "pyright": {
+      "command": ["pyright-langserver", "--stdio"],
+      "extensions": [".py"],
+    },
+  },
+  "mcp": {
+    "codegraph": {
+      "type": "local",
+      "command": ["codegraph", "serve", "--mcp"],
+      "enabled": true,
+    },
+  },
+  "formatter": {
+    "ruff": {
+      "command": ["ruff", "format", "$FILE"],
+      "extensions": [".py", ".pyi"],
+    },
+  },
+}
