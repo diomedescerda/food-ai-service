@@ -35,6 +35,11 @@
         },
       },
     },
+    "design-expert": {
+      "description": "Diseñador UX/UI senior para piezas visibles (docs, métricas)",
+      "mode": "subagent",
+      "prompt": "Diseñador UX/UI senior. Carga design-taste-frontend + impeccable antes de codificar. Bans anti-slop, WCAG 2.2 AA.",
+    },
     "reviewer": {
       "description": "Revisor food-ai sin editar",
       "mode": "subagent",
