@@ -10,13 +10,13 @@ estimación aproximada, explícitamente comunicada como tal.
 
 **Evidencia insuficiente / NO recomendado actualmente para gramos:**
 
-| Métrica | Valor |
-|---|---|
-| Depth load (única vez) | 13.2 s |
-| Depth inference (por imagen) | 756–863 ms |
-| Basic portion | ~0 ms |
+| Métrica                                       | Valor                                    |
+| --------------------------------------------- | ---------------------------------------- |
+| Depth load (única vez)                        | 13.2 s                                   |
+| Depth inference (por imagen)                  | 756–863 ms                               |
+| Basic portion                                 | ~0 ms                                    |
 | Señal del depth (contraste alimento vs fondo) | banana 0.770 · apple 0.747 · pizza 0.119 |
-| Gramos producidos por Advanced | NINGUNO (sin escala física) |
+| Gramos producidos por Advanced                | NINGUNO (sin escala física)              |
 
 El depth map funciona y discrimina profundidad relativa real (banana/apple
 significativamente más cercanos que el fondo), pero **la profundidad monocular
@@ -35,10 +35,14 @@ con ground truth.
 
 ```
 1. Referencia: gramos de UNA porción doméstica típica del alimento (USDA FDC)
-2. Tamaño visual: área relativa de la máscara (mask_area / image_area)
+2. Banda 5.761: canónicos nuevos resuelven por palabra clave curada (misma
+   fuente); sin match → referencia genérica 100 g (`basic_generic`, conf 0.35).
+   El análisis siempre entrega gramos y calorías cuando hay detección.
+3. Tamaño visual: área relativa de la máscara (mask_area / image_area)
    fallback: área del bbox si no hay máscara
-3. Gramos: estimated = referencia × factor(tamaño); rango [min, max]
-4. Confidence: 0.55 fija (heurística visual simple); UNKNOWN → 0
+4. Gramos: estimated = referencia × factor(tamaño); rango [min, max]
+5. Confidence: 0.55 exacta, 0.45 palabra clave, 0.35 genérica (heurística
+   visual simple); UNKNOWN solo sin área (sin píxeles, sin geometría)
 ```
 
 Paso 2 **no** afirma que píxeles = gramos: el área relativa solo discrimina
@@ -46,39 +50,42 @@ small/medium/large (sin escala física).
 
 ## Referencias (USDA FoodData Central, medidas domésticas)
 
-| Alias | 1 porción doméstica | Gramos |
-|---|---|---|
-| banana | 1 banana mediana (7"-7⅞") | 118 |
-| apple | 1 manzana mediana | 182 |
-| orange | 1 naranja mediana | 131 |
-| broccoli | 1 taza cruda picada | 91 |
-| carrot | 1 zanahoria mediana | 61 |
-| pizza | 1 rebanada (⅛ de pizza 12") | 107 |
-| hot dog | 1 frankfurter | 57 |
-| donut | 1 dona | 60 |
-| cake | 1 rebanada (1/12 de pastel) | 95 |
+| Alias    | 1 porción doméstica         | Gramos |
+| -------- | --------------------------- | ------ |
+| banana   | 1 banana mediana (7"-7⅞")   | 118    |
+| apple    | 1 manzana mediana           | 182    |
+| orange   | 1 naranja mediana           | 131    |
+| broccoli | 1 taza cruda picada         | 91     |
+| carrot   | 1 zanahoria mediana         | 61     |
+| pizza    | 1 rebanada (⅛ de pizza 12") | 107    |
+| hot dog  | 1 frankfurter               | 57     |
+| donut    | 1 dona                      | 60     |
+| cake     | 1 rebanada (1/12 de pastel) | 95     |
 
-Sin referencia (p. ej. sandwich) → **UNKNOWN**, nunca se inventa un número.
+Sin referencia exacta se prueba palabra clave (`KEYWORD_GRAMS` en
+`basic_portion_estimator.py`: chicken→120, pork→140, beans→90, nuts→30,
+potato→150, etc.); último recurso → genérica 100 g. Nunca se devuelve
+"0 g": el backend además normaliza porciones degeneradas a `null`.
 
 ## Tamaños y gramos
 
-| Tamaño | Criterio visual (área relativa) | Factor | Rango |
-|---|---|---|---|
-| small | ≤ 0.12 | ×0.8 | [0.6, 0.9] × ref |
-| medium | 0.12–0.30 | ×1.0 | [0.8, 1.2] × ref |
-| large | ≥ 0.30 | ×1.2 | [1.1, 1.5] × ref |
-| unknown | sin referencia o sin área | — | — |
+| Tamaño  | Criterio visual (área relativa) | Factor | Rango            |
+| ------- | ------------------------------- | ------ | ---------------- |
+| small   | ≤ 0.12                          | ×0.8   | [0.6, 0.9] × ref |
+| medium  | 0.12–0.30                       | ×1.0   | [0.8, 1.2] × ref |
+| large   | ≥ 0.30                          | ×1.2   | [1.1, 1.5] × ref |
+| unknown | sin referencia o sin área       | —      | —                |
 
 Confidence 0.55 (heurística básica; no se combina con la confianza de
 detección). La estimación añade ~0 ms de latencia (sin modelo).
 
 ## Resultado real (assets de prueba)
 
-| Imagen | Área relativa | Tamaño | Estimated | Rango |
-|---|---|---|---|---|
-| pizza (330×247) | 0.55 | large | 128 g | 118–160 g |
-| banana (330×291) | 0.26 | medium | 118 g | 94–142 g |
-| apple (330×299) | 0.31 | large | 218 g | 200–273 g |
+| Imagen           | Área relativa | Tamaño | Estimated | Rango     |
+| ---------------- | ------------- | ------ | --------- | --------- |
+| pizza (330×247)  | 0.55          | large  | 128 g     | 118–160 g |
+| banana (330×291) | 0.26          | medium | 118 g     | 94–142 g  |
+| apple (330×299)  | 0.31          | large  | 218 g     | 200–273 g |
 
 ## Limitaciones
 
