@@ -9,51 +9,43 @@
     "../LEARNINGS.md",
     "../.agents/rules/*.md",
   ],
-  "skills": {
-    "paths": ["../.agents/skills"],
-  },
-  "permission": {
-    "skill": {
-      "*": "allow",
-    },
-    "bash": {
-      ".venv/bin/python -m pytest*": "allow",
-      ".venv/bin/python run_dev.py*": "allow",
-      ".venv\\Scripts\\python*": "allow",
-      "pip install*": "ask",
-    },
-    "lsp": "allow",
-  },
-  "agent": {
+  "skills": ["../.agents/skills"],
+  "permissions": [
+    { "action": "skill", "resource": "*", "effect": "allow" },
+    { "action": "shell", "resource": ".venv/bin/python -m pytest*", "effect": "allow" },
+    { "action": "shell", "resource": ".venv/bin/python run_dev.py*", "effect": "allow" },
+    { "action": "shell", "resource": ".venv\\Scripts\\python*", "effect": "allow" },
+    { "action": "shell", "resource": "pip install*", "effect": "ask" },
+  ],
+  "agents": {
     "coppaddresd": {
       "description": "Agente principal food-ai-service: FastAPI + visión, skills-first",
       "mode": "primary",
-      "prompt": "Eres el agente principal de food-ai-service (Python, FastAPI + CLIP/DINO, venv+pip, puerto 8010, NUNCA 8000). Aplica .agents/rules/*.md: carga fastapi-python + pydantic (+ machine-learning para modelos) con skill() ANTES de codificar; contrato en docs/api.md (multipart image+analysis_id); verifica con .venv/bin/python -m pytest. Responde en el idioma del usuario; docs en español.",
-      "permission": {
-        "skill": {
-          "*": "allow",
-        },
-      },
+      "system": "Eres el agente principal de food-ai-service (Python, FastAPI + CLIP/DINO, venv+pip, puerto 8010, NUNCA 8000). Aplica .agents/rules/*.md: carga fastapi-python + pydantic (+ machine-learning para modelos) con skill() ANTES de codificar; contrato en docs/api.md (multipart image+analysis_id); verifica con .venv/bin/python -m pytest. Responde en el idioma del usuario; docs en español.",
+      "permissions": [
+        { "action": "skill", "resource": "*", "effect": "allow" },
+      ],
     },
     "design-expert": {
       "description": "Diseñador UX/UI senior para piezas visibles (docs, métricas)",
       "mode": "subagent",
-      "prompt": "Diseñador UX/UI senior. Carga design-taste-frontend + impeccable antes de codificar. Bans anti-slop, WCAG 2.2 AA.",
+      "system": "Diseñador UX/UI senior. Carga design-taste-frontend + impeccable antes de codificar. Bans anti-slop, WCAG 2.2 AA.",
     },
     "reviewer": {
       "description": "Revisor food-ai sin editar",
       "mode": "subagent",
-      "prompt": "Revisor Python/visión senior. Analiza sin editar: contratos multipart, pesos de modelos, health/readiness/metrics, tests. Cita archivo:línea.",
-      "permission": {
-        "edit": "deny",
-      },
+      "system": "Revisor Python/visión senior. Analiza sin editar: contratos multipart, pesos de modelos, health/readiness/metrics, tests. Cita archivo:línea.",
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" },
+      ],
     },
   },
-  "subagent_depth": 2,
+  "experimental": {
+    "subagent_depth": 2,
+  },
   "compaction": {
     "auto": true,
-    "prune": true,
-    "reserved": 15000,
+    "buffer": 15000,
   },
   "lsp": {
     "pyright": {
@@ -62,10 +54,11 @@
     },
   },
   "mcp": {
-    "codegraph": {
-      "type": "local",
-      "command": ["codegraph", "serve", "--mcp"],
-      "enabled": true,
+    "servers": {
+      "codegraph": {
+        "type": "local",
+        "command": ["codegraph", "serve", "--mcp"],
+      },
     },
   },
   "formatter": {
