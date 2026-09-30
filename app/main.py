@@ -28,11 +28,17 @@ async def lifespan(app: FastAPI):
     if settings.detector_type == "hybrid":
         detector = HybridFoodDetector(
             yolo=YoloFoodDetector(settings),
-            dino=GroundingDinoDetector(settings.dino_model, settings.dino_prompt, settings.dino_threshold),
+            dino=GroundingDinoDetector(
+                settings.dino_model, settings.dino_prompt, settings.dino_threshold
+            ),
         )
-        app.state.logger.info("Detector híbrido: YOLO + DINO (fallback open-vocabulary)")
+        app.state.logger.info(
+            "Detector híbrido: YOLO + DINO (fallback open-vocabulary)"
+        )
     elif settings.detector_type == "dino":
-        detector = GroundingDinoDetector(settings.dino_model, settings.dino_prompt, settings.dino_threshold)
+        detector = GroundingDinoDetector(
+            settings.dino_model, settings.dino_prompt, settings.dino_threshold
+        )
         app.state.logger.info("Detector DINO (open-vocabulary)")
     else:
         detector = YoloFoodDetector(settings)
@@ -71,25 +77,33 @@ async def lifespan(app: FastAPI):
         classifier.load()
         app.state.logger.info(
             "Clasificador zero-shot cargado: version=%s, threshold=%s, catálogo=%d candidatos",
-            classifier.model_version, settings.clip_threshold, len(classifier._candidates),
+            classifier.model_version,
+            settings.clip_threshold,
+            len(classifier._candidates),
         )
     else:
         classifier = DetectorBasedClassifier(detector)
-        app.state.logger.info("Clasificador cargado: version=%s", classifier.model_version)
+        app.state.logger.info(
+            "Clasificador cargado: version=%s", classifier.model_version
+        )
     app.state.classifier = classifier
 
     # Estimador de porción: basic (referencia) o advanced (depth).
     app.state.depth_estimator = None
     if settings.portion_method == "advanced":
         if settings.depth_enabled:
-            depth = DepthAnythingEstimator(settings.depth_model_path, settings.depth_device)
+            depth = DepthAnythingEstimator(
+                settings.depth_model_path, settings.depth_device
+            )
             depth.load()
             app.state.depth_estimator = depth
             app.state.logger.info(
                 "Estimador de profundidad cargado: version=%s (carga única)",
                 depth.model_version,
             )
-        app.state.portion_estimator = AdvancedPortionEstimator(app.state.depth_estimator)
+        app.state.portion_estimator = AdvancedPortionEstimator(
+            app.state.depth_estimator
+        )
         app.state.logger.info("Estimador de porción cargado: advanced_depth_relative")
     else:
         app.state.portion_estimator = BasicPortionEstimator()
@@ -106,11 +120,19 @@ async def lifespan(app: FastAPI):
     app.state.food_pipeline = None
     app.state.nutrition_service = None
     app.state.metrics = {
-        "total_requests": 0, "successful_requests": 0, "failed_requests": 0,
-        "new_pipeline_used": 0, "legacy_fallback": 0,
-        "fallback_pipeline_error": 0, "fallback_low_confidence": 0,
-        "nutrition_ready": 0, "nutrition_unavailable": 0, "nutrition_errors": 0,
-        "specialist_calls": 0, "portion_available": 0, "portion_unavailable": 0,
+        "total_requests": 0,
+        "successful_requests": 0,
+        "failed_requests": 0,
+        "new_pipeline_used": 0,
+        "legacy_fallback": 0,
+        "fallback_pipeline_error": 0,
+        "fallback_low_confidence": 0,
+        "nutrition_ready": 0,
+        "nutrition_unavailable": 0,
+        "nutrition_errors": 0,
+        "specialist_calls": 0,
+        "portion_available": 0,
+        "portion_unavailable": 0,
     }
     # F57: versión del pipeline en startup (observabilidad).
     app.state.logger.info(
@@ -121,8 +143,11 @@ async def lifespan(app: FastAPI):
     app.state.logger.info(
         "RETRIEVAL CONFIG: enabled=%s shadow=%s catalog_size=%s specialist_model=dino_base "
         "specialist_threshold=0.75 specialist_gate_topk=3 specialist_groups=pizza,naan",
-        settings.retrieval_enabled, settings.retrieval_shadow_enabled,
-        "5761" if settings.retrieval_enabled or settings.retrieval_shadow_enabled else "n/a",
+        settings.retrieval_enabled,
+        settings.retrieval_shadow_enabled,
+        "5761"
+        if settings.retrieval_enabled or settings.retrieval_shadow_enabled
+        else "n/a",
     )
     if settings.nutrition_enabled or settings.nutrition_shadow_enabled:
         from app.models.nutrition_service import NutritionService  # noqa: PLC0415
@@ -134,7 +159,11 @@ async def lifespan(app: FastAPI):
         )
     if settings.retrieval_enabled or settings.retrieval_shadow_enabled:
         from app.models.food_pipeline import FoodPipeline  # noqa: PLC0415
-        from app.models.zero_shot_classifier import ZeroShotFoodClassifier  # noqa: PLC0415
+
+        # ZeroShotFoodClassifier ya está importado a nivel de módulo: un
+        # import local adicional lo declararía local en TODA esta función y
+        # rompería el bloque classifier_type == "zero_shot" (UnboundLocalError
+        # al arrancar con zero_shot + retrieval activos a la vez).
 
         if not isinstance(classifier, ZeroShotFoodClassifier):
             clip = ZeroShotFoodClassifier(
@@ -152,7 +181,9 @@ async def lifespan(app: FastAPI):
         app.state.logger.info(
             "pipeline F51 listo: available=%s índice=%s",
             app.state.food_pipeline.available(),
-            app.state.food_pipeline.index.shape if app.state.food_pipeline.index is not None else None,
+            app.state.food_pipeline.index.shape
+            if app.state.food_pipeline.index is not None
+            else None,
         )
     yield
 
@@ -164,6 +195,7 @@ def create_app() -> FastAPI:
         description="Servicio de IA de FoodAI: detección, segmentación, clasificación, porción y nutrición.",
         lifespan=lifespan,
     )
+
     @app.get("/metrics")
     def metrics_endpoint(request: Request) -> dict:
         """Métricas agregadas en memoria (F57): requests, pipeline,
