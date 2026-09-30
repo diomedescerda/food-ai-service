@@ -22,7 +22,26 @@ RUN python -c "from ultralytics import YOLO; \
     YOLO('https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt'); \
     YOLO('https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-seg.pt')"
 
+# Pre-bake de los modelos HuggingFace del runtime (CLIP zero-shot, Grounding
+# DINO del detector híbrido y DINOv2 del pipeline F51). Sin esto, el primer
+# arranque del task descarga ~1.8 GB en caliente y puede exceder el grace
+# period de ECS (150 s) → task unhealthy en loop.
+RUN python -c "from transformers import CLIPModel, CLIPProcessor; \
+    CLIPModel.from_pretrained('openai/clip-vit-base-patch32'); \
+    CLIPProcessor.from_pretrained('openai/clip-vit-base-patch32')"
+RUN python -c "from transformers import AutoModelForZeroShotObjectDetection, AutoProcessor; \
+    AutoModelForZeroShotObjectDetection.from_pretrained('IDEA-Research/grounding-dino-tiny'); \
+    AutoProcessor.from_pretrained('IDEA-Research/grounding-dino-tiny')"
+RUN python -c "from transformers import AutoModel, AutoImageProcessor; \
+    AutoModel.from_pretrained('facebook/dinov2-base'); \
+    AutoImageProcessor.from_pretrained('facebook/dinov2-base')"
+
 COPY app/ app/
+# Catálogo 5.761 alimentos + embeddings multi-text (pipeline F51) y mapping
+# nutricional precomputado (NutritionService). Requeridos por
+# FOOD_AI_RETRIEVAL_ENABLED/FOOD_AI_NUTRITION_ENABLED en producción.
+COPY catalog/ catalog/
+COPY nutrition/ nutrition/
 
 EXPOSE 8000
 

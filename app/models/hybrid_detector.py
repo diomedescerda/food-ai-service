@@ -16,17 +16,23 @@ UNKNOWN_CLASS = "unknown"
 
 
 class GroundingDinoDetector(IFoodDetector):
-    def __init__(self, model_name: str, prompt: str = "food on a plate", threshold: float = 0.15):
+    def __init__(
+        self, model_name: str, prompt: str = "food on a plate", threshold: float = 0.15
+    ):
         self._model_name = model_name
         self._prompt = prompt
         self._threshold = threshold
+        # Umbral de coincidencia de tokens del prompt (post-proceso DINO).
+        self._text_threshold = 0.25
         self._model = None
         self._processor = None
 
     def load(self) -> None:
         from transformers import AutoModelForZeroShotObjectDetection, AutoProcessor
 
-        self._model = AutoModelForZeroShotObjectDetection.from_pretrained(self._model_name)
+        self._model = AutoModelForZeroShotObjectDetection.from_pretrained(
+            self._model_name
+        )
         self._processor = AutoProcessor.from_pretrained(self._model_name)
 
     @property
@@ -44,26 +50,40 @@ class GroundingDinoDetector(IFoodDetector):
 
     def detect(self, image: Image.Image) -> list[Detection]:
         if self._model is None:
-            raise RuntimeError("Detector DINO no cargado: llamar a load() en el startup.")
+            raise RuntimeError(
+                "Detector DINO no cargado: llamar a load() en el startup."
+            )
 
         inputs = self._processor(images=image, text=self._prompt, return_tensors="pt")
         with torch.no_grad():
             out = self._model(**inputs)
         target_sizes = torch.tensor([[image.size[1], image.size[0]]])
+        # transformers >= 4.45 exige input_ids y text_threshold de forma
+        # explícita (antes el prompt era string opcional y se usaba el default
+        # 0.3): pasarlos siempre mantiene la llamada estable entre versiones.
         results = self._processor.post_process_grounded_object_detection(
-            out, threshold=self._threshold, target_sizes=target_sizes)[0]
+            out,
+            inputs.input_ids,
+            threshold=self._threshold,
+            text_threshold=self._text_threshold,
+            target_sizes=target_sizes,
+        )[0]
 
         detections = []
         for box, score in zip(results["boxes"].tolist(), results["scores"].tolist()):
             x1, y1, x2, y2 = box
-            detections.append(Detection(
-                name=UNKNOWN_CLASS,
-                confidence=round(float(score), 4),
-                bounding_box=BoundingBox(
-                    x=int(x1), y=int(y1),
-                    width=int(x2 - x1), height=int(y2 - y1),
-                ),
-            ))
+            detections.append(
+                Detection(
+                    name=UNKNOWN_CLASS,
+                    confidence=round(float(score), 4),
+                    bounding_box=BoundingBox(
+                        x=int(x1),
+                        y=int(y1),
+                        width=int(x2 - x1),
+                        height=int(y2 - y1),
+                    ),
+                )
+            )
         return detections
 
 
@@ -108,7 +128,9 @@ class HybridFoodDetector(IFoodDetector):
         return nms_regions(regions)
 
 
-def nms_regions(detections: list[Detection], iou_threshold: float = 0.5) -> list[Detection]:
+def nms_regions(
+    detections: list[Detection], iou_threshold: float = 0.5
+) -> list[Detection]:
     """NMS simple por IoU (FASE 15): elimina regiones muy solapadas de DINO
     (el mismo alimento detectado en regiones casi idénticas → doble conteo)."""
     if len(detections) <= 1:
@@ -117,11 +139,20 @@ def nms_regions(detections: list[Detection], iou_threshold: float = 0.5) -> list
     def _iou(a: Detection, b: Detection) -> float:
         x1 = max(a.bounding_box.x, b.bounding_box.x)
         y1 = max(a.bounding_box.y, b.bounding_box.y)
-        x2 = min(a.bounding_box.x + a.bounding_box.width, b.bounding_box.x + b.bounding_box.width)
-        y2 = min(a.bounding_box.y + a.bounding_box.height, b.bounding_box.y + b.bounding_box.height)
+        x2 = min(
+            a.bounding_box.x + a.bounding_box.width,
+            b.bounding_box.x + b.bounding_box.width,
+        )
+        y2 = min(
+            a.bounding_box.y + a.bounding_box.height,
+            b.bounding_box.y + b.bounding_box.height,
+        )
         inter = max(0, x2 - x1) * max(0, y2 - y1)
-        union = (a.bounding_box.width * a.bounding_box.height
-                 + b.bounding_box.width * b.bounding_box.height - inter)
+        union = (
+            a.bounding_box.width * a.bounding_box.height
+            + b.bounding_box.width * b.bounding_box.height
+            - inter
+        )
         return inter / union if union > 0 else 0.0
 
     ordered = sorted(detections, key=lambda d: -d.confidence)

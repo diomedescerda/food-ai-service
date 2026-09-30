@@ -1,5 +1,7 @@
 # FoodAI Service
 
+> **Contexto compartido del workspace**: lee `../.coppadresd-context/` (estado actual, arquitectura, decisiones, ítems abiertos, runbook) ANTES de modificar código. Última verificación: 2026-09-30. Consumido SOLO por `coppAddresdBack` (FoodAiController); prod verificado healthy 2026-09-30. Setup en este README; contrato API en `docs/api.md`.
+
 Servicio de IA de análisis de alimentos del ecosistema CoppAddresd: detección, clasificación (reconocimiento de **5.761 alimentos**), estimación de porción y nutrición. Python 3.11+ / FastAPI / CLIP + DINO.
 
 **Estado actual: FASE 57 — PRODUCTION HARDENED.** El sistema está desplegado y operando con el pipeline de 5.761 alimentos como resultado principal (activado por flag), con legacy como red de seguridad, monitoreo operativo (health/readiness/metrics) y rollback por flag.
@@ -44,6 +46,7 @@ python -m venv .venv
 ```
 
 **Modelos** (primera vez):
+
 ```bash
 mkdir weights
 curl -L -o weights/yolo11n.pt https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt
@@ -57,26 +60,26 @@ curl -L -o weights/yolo11n-seg.pt https://github.com/ultralytics/assets/releases
 
 Todas en `.env` (o variables de entorno). **Defaults = legacy puro** (producción segura):
 
-| Flag | Default | Efecto |
-|---|---|---|
-| `FOOD_AI_RETRIEVAL_ENABLED` | `false` | `true` → la respuesta usa el pipeline 5.761 (active mode) |
+| Flag                               | Default | Efecto                                                                        |
+| ---------------------------------- | ------- | ----------------------------------------------------------------------------- |
+| `FOOD_AI_RETRIEVAL_ENABLED`        | `false` | `true` → la respuesta usa el pipeline 5.761 (active mode)                     |
 | `FOOD_AI_RETRIEVAL_SHADOW_ENABLED` | `false` | `true` → ejecuta el pipeline en shadow (telemetría, respuesta legacy intacta) |
-| `FOOD_AI_NUTRITION_ENABLED` | `false` | `true` → nutrición mapeada en la respuesta |
-| `FOOD_AI_NUTRITION_SHADOW_ENABLED` | `false` | `true` → shadow de nutrición (log, sin tocar la respuesta) |
-| `FOOD_AI_CONFIDENCE_ENABLED` | `false` | `true` → el threshold de confianza visual puede rechazar (LOW_CONFIDENCE) |
-| `FOOD_AI_MIN_VISUAL_CONFIDENCE` | `0.20` | umbral usado solo si CONFIDENCE_ENABLED=true |
-| `FOODAI_USDA_API_KEY` | — | API key USDA FoodData Central (descargas de nutrición, nunca imprimir) |
+| `FOOD_AI_NUTRITION_ENABLED`        | `false` | `true` → nutrición mapeada en la respuesta                                    |
+| `FOOD_AI_NUTRITION_SHADOW_ENABLED` | `false` | `true` → shadow de nutrición (log, sin tocar la respuesta)                    |
+| `FOOD_AI_CONFIDENCE_ENABLED`       | `false` | `true` → el threshold de confianza visual puede rechazar (LOW_CONFIDENCE)     |
+| `FOOD_AI_MIN_VISUAL_CONFIDENCE`    | `0.20`  | umbral usado solo si CONFIDENCE_ENABLED=true                                  |
+| `FOODAI_USDA_API_KEY`              | —       | API key USDA FoodData Central (descargas de nutrición, nunca imprimir)        |
 
 **Rollback**: `FOOD_AI_RETRIEVAL_ENABLED=false` → legacy exacto, sin redeploy.
 
 ## 4. Endpoints
 
-| Endpoint | Descripción |
-|---|---|
-| `POST /analyze` | Análisis completo (multipart: `analysis_id`, `image`) |
-| `GET /health` | Liveness: detector/segmenter/classifier + pipeline + nutrition |
-| `GET /health/readiness` | Readiness: catalog_size, index/clip/dino/nutrition loaded, pipeline_version |
-| `GET /metrics` | Métricas agregadas en memoria (requests, pipeline, fallbacks, nutrition, specialist) |
+| Endpoint                | Descripción                                                                          |
+| ----------------------- | ------------------------------------------------------------------------------------ |
+| `POST /analyze`         | Análisis completo (multipart: `analysis_id`, `image`)                                |
+| `GET /health`           | Liveness: detector/segmenter/classifier + pipeline + nutrition                       |
+| `GET /health/readiness` | Readiness: catalog_size, index/clip/dino/nutrition loaded, pipeline_version          |
+| `GET /metrics`          | Métricas agregadas en memoria (requests, pipeline, fallbacks, nutrition, specialist) |
 
 `GET /api/v1/foodai/health` (backend): el backend .NET lo consume vía `IFoodAiClient` (`BaseUrl=http://localhost:8010`).
 
@@ -106,6 +109,7 @@ Estados de decisión (`app/models/decision.py`):
 `NEW_RESULT_READY` · `NEW_RESULT_NUTRITION_UNAVAILABLE` · `NEW_RESULT_LOW_CONFIDENCE` · `LEGACY_FALLBACK`
 
 Reglas clave:
+
 - La **identificación y la nutrición son independientes**: un alimento identificado sin nutrientes NO se convierte en unknown.
 - Fallback reasons observables: `pipeline_error` / `nutrition_unavailable` / `low_visual_confidence` / `nutrition_error`.
 - Cualquier excepción del pipeline experimental → legacy, sin romper el request.
@@ -116,19 +120,20 @@ Reglas clave:
 SPECIALIST_MODEL=dino_base · SPECIALIST_GROUPS=pizza,naan
 SPECIALIST_THRESHOLD=0.75 · SPECIALIST_GATE_TOPK=3 · SPECIALIST_GATE_CONF=0.40
 ```
+
 No crear nuevos especialistas sin evidencia independiente. El DINO se ejecuta solo cuando el gate se abre (conf legacy < 0.40 + pizza/naan en top-3 del legacy).
 
 ## 9. Benchmark (resultados medidos)
 
-| Fase | Métrica | Resultado |
-|---|---|---|
-| F48 reranker (catálogo 1.451) | food-us R@1 | 38.9 % |
-| F50 multi-text retrieval | food-us R@50 / R@500 | 75.9 % / 90.7 % |
-| F51 pipeline integrado | food-us R@1 | 56.5 % |
-| F54 shadow runtime (107) | nuevo vs legacy | **56.1 % vs 43.9 %** (+12.2, ratio corr/regr 5.3:1) |
-| F55 active (sobre detectados) | nuevo vs legacy | **70.8 % vs 65.3 %** |
-| F56 rollout gradual | nuevo vs legacy por etapa | nuevo gana en todas (10 %: 70.0 vs 43.3) |
-| F57 runtime | p50 / p95 | ~2.2–2.4 s / ~2.4 s |
+| Fase                          | Métrica                   | Resultado                                           |
+| ----------------------------- | ------------------------- | --------------------------------------------------- |
+| F48 reranker (catálogo 1.451) | food-us R@1               | 38.9 %                                              |
+| F50 multi-text retrieval      | food-us R@50 / R@500      | 75.9 % / 90.7 %                                     |
+| F51 pipeline integrado        | food-us R@1               | 56.5 %                                              |
+| F54 shadow runtime (107)      | nuevo vs legacy           | **56.1 % vs 43.9 %** (+12.2, ratio corr/regr 5.3:1) |
+| F55 active (sobre detectados) | nuevo vs legacy           | **70.8 % vs 65.3 %**                                |
+| F56 rollout gradual           | nuevo vs legacy por etapa | nuevo gana en todas (10 %: 70.0 vs 43.3)            |
+| F57 runtime                   | p50 / p95                 | ~2.2–2.4 s / ~2.4 s                                 |
 
 Reportes por fase en `benchmarks/f{41..57}/reports/`.
 
@@ -137,23 +142,24 @@ Reportes por fase en `benchmarks/f{41..57}/reports/`.
 ```bash
 .\.venv\Scripts\python -m pytest        # 160+ tests, sin API keys (modelos fake/mocks)
 ```
+
 Cubren: clasificación, detección, porción, nutrición, pipeline 5.761, reranker general, grouping multi-text, specialist, decision policy, shadow, rollout, hardening, consistencia catálogo/índice.
 
 ## 11. Scripts por fase
 
-| Script | Fase | Propósito |
-|---|---|---|
-| `f42_retrieval.py` | F42 | Embeddings CLIP del catálogo + índice + eval R@K |
-| `f43_rerank.py` / `f44_rerank.py` | F43–F44 | Canonical grouping + rerank specialist |
-| `f45_sweep.py` | F45 | Barrido de calibración del specialist (gate/threshold) |
-| `f46_server.py` / `f46_client.py` | F46 | Server sin reload + cliente multipart (shadow real) |
-| `f47_import_catalog.py` | F47 | Importador masivo (FNDDS + SR Legacy + OFF, cache reanudable) |
-| `f48_rerank.py` | F48 | Reranker general (features por canonical) |
-| `f49_recall.py` | F49 | K sweep + multi-query (vistas) |
-| `f50_multitext.py` | F50 | Índice multi-text (canonical + aliases) |
-| `f51_integration.py` | F51 | Benchmark del pipeline integrado |
-| `f52_nutrition.py` | F52/F54 | Descarga de nutrientes (tandas reanudables) |
-| `f56_rollout.py` | F56 | Rollout gradual por etapas (split determinista) |
+| Script                            | Fase    | Propósito                                                     |
+| --------------------------------- | ------- | ------------------------------------------------------------- |
+| `f42_retrieval.py`                | F42     | Embeddings CLIP del catálogo + índice + eval R@K              |
+| `f43_rerank.py` / `f44_rerank.py` | F43–F44 | Canonical grouping + rerank specialist                        |
+| `f45_sweep.py`                    | F45     | Barrido de calibración del specialist (gate/threshold)        |
+| `f46_server.py` / `f46_client.py` | F46     | Server sin reload + cliente multipart (shadow real)           |
+| `f47_import_catalog.py`           | F47     | Importador masivo (FNDDS + SR Legacy + OFF, cache reanudable) |
+| `f48_rerank.py`                   | F48     | Reranker general (features por canonical)                     |
+| `f49_recall.py`                   | F49     | K sweep + multi-query (vistas)                                |
+| `f50_multitext.py`                | F50     | Índice multi-text (canonical + aliases)                       |
+| `f51_integration.py`              | F51     | Benchmark del pipeline integrado                              |
+| `f52_nutrition.py`                | F52/F54 | Descarga de nutrientes (tandas reanudables)                   |
+| `f56_rollout.py`                  | F56     | Rollout gradual por etapas (split determinista)               |
 
 ## 12. Estructura
 
