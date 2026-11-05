@@ -76,10 +76,29 @@ jobs:
         run: |
           TASK_DEF_JSON=$(aws ecs describe-task-definition --task-definition "${{ env.ECS_SERVICE }}" --region "${{ env.AWS_REGION }}" --query "taskDefinition" --output json)
           NEW_IMAGE="${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }}"
-          NEW_TASK_DEF_JSON=$(echo "$TASK_DEF_JSON" | jq --arg img "$NEW_IMAGE" '
+          # Motor LLM-visión (change foodai-motor-llm-vision): proveedor activo y modelos.
+          # El circuit breaker ya vive en la app (3 fallos / 300 s, defaults del Settings).
+          # Rollback sin redeploy: cambiar FOOD_AI_PROVIDER=legacy en la task def.
+          EXTRA_ENV='[{"name":"FOOD_AI_PROVIDER","value":"llm"},{"name":"FOOD_AI_LLM_PROVIDER","value":"anthropic"},{"name":"FOOD_AI_LLM_MODEL","value":"claude-haiku-4-5-20251001"},{"name":"FOOD_AI_LLM_MODEL_OPENAI","value":"gpt-4o-mini"}]'
+          # Las keys reutilizan el secret de ai-service (mismas credenciales del proveedor);
+          # el rol de ejecución ya las lee para cooppadresd-ai en este mismo patrón.
+          EXTRA_SECRETS='[{"name":"FOOD_AI_LLM_API_KEY","valueFrom":"arn:aws:secretsmanager:us-east-2:933629770820:secret:cooppadresd/ai-i55L3X:ANTHROPIC_API_KEY::"},{"name":"FOOD_AI_LLM_API_KEY_OPENAI","valueFrom":"arn:aws:secretsmanager:us-east-2:933629770820:secret:cooppadresd/ai-i55L3X:OPENAI_API_KEY::"}]'
+          # Merge declarativo (patrón de deploy-backend.yml): preserva env/secrets previos,
+          # reemplaza por nombre y evita choque env vs secret. Sin comments dentro del jq.
+          NEW_TASK_DEF_JSON=$(echo "$TASK_DEF_JSON" | jq --arg img "$NEW_IMAGE" --argjson envs "$EXTRA_ENV" --argjson secs "$EXTRA_SECRETS" '
             .containerDefinitions[0].image = $img |
-            del(.status, .compatibilities, .taskDefinitionArn, .revision, .registeredAt, .registeredBy, .requiresAttributes)
+            del(.status, .compatibilities, .taskDefinitionArn, .revision, .registeredAt, .registeredBy, .requiresAttributes) |
+            .containerDefinitions[0].environment =
+              ((.containerDefinitions[0].environment // []) as $cur |
+               (.containerDefinitions[0].secrets // []) as $cursec |
+               [$cur[] | select(. as $e | ([$envs[].name] | index($e.name)) | not)] +
+               [$envs[] | select(. as $e | ([$cursec[].name] | index($e.name)) | not)]) |
+            .containerDefinitions[0].secrets =
+              ((.containerDefinitions[0].secrets // []) as $cur |
+               [$cur[] | select(. as $e | ([$secs[].name] | index($e.name)) | not)] + $secs)
           ')
+          echo "envs finales: $(echo "$NEW_TASK_DEF_JSON" | jq -r '[.containerDefinitions[0].environment[]?.name] | join(",")')"
+          echo "secrets finales: $(echo "$NEW_TASK_DEF_JSON" | jq -r '[.containerDefinitions[0].secrets[]?.name] | join(",")')"
           REGISTERED=$(aws ecs register-task-definition --cli-input-json "$NEW_TASK_DEF_JSON" --region "${{ env.AWS_REGION }}")
           echo "arn=$(echo "$REGISTERED" | jq -r '.taskDefinition.taskDefinitionArn')" >> "$GITHUB_OUTPUT"
 
