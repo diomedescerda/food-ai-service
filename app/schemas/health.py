@@ -23,6 +23,8 @@ class HealthResponse(BaseModel):
 
 class ReadinessResponse(BaseModel):
     status: str
+    provider: str = "legacy"
+    llm_circuit_breakers: dict = {}
     catalog_size: int
     index_loaded: bool
     clip_loaded: bool

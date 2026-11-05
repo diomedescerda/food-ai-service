@@ -1,4 +1,6 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic import Field, SecretStr
+from typing import Literal
 
 
 class Settings(BaseSettings):
@@ -12,6 +14,18 @@ class Settings(BaseSettings):
 
     # Puerto del dev server (run_dev.py). El contenedor usa 8000 interno.
     service_port: int = 8010
+
+    # Proveedor de visión; legacy mantiene el comportamiento previo.
+    provider: Literal["legacy", "llm"] = "legacy"
+    llm_provider: Literal["anthropic", "openai"] = "anthropic"
+    llm_model: str = ""
+    llm_api_key: SecretStr = SecretStr("")
+    llm_api_key_openai: SecretStr = SecretStr("")
+    llm_model_openai: str = "gpt-4o"
+    llm_circuit_failure_threshold: int = Field(default=3, ge=1)
+    llm_circuit_open_seconds: float = Field(default=300, gt=0)
+    llm_timeout_seconds: float = Field(default=30, gt=0, le=30)
+    llm_retries: int = Field(default=1, ge=0, le=1)
 
     # === Modelo de detecciÃ³n ===
     model_path: str = "weights/yolo11n.pt"

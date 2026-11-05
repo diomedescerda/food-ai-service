@@ -4,6 +4,7 @@ from fastapi import APIRouter, Request
 
 from app.core.config import settings
 from app.schemas.health import HealthModel, HealthResponse, ReadinessResponse
+from app.models.llm_food_analyzer import llm_availability
 
 router = APIRouter()
 
@@ -92,6 +93,8 @@ def readiness(request: Request) -> ReadinessResponse:
         and classifier is not None and classifier.is_loaded
     )
     return ReadinessResponse(
+        provider=getattr(request.app.state, "settings", settings).provider,
+        llm_circuit_breakers=llm_availability(request.app.state),
         status="ready" if mandatory_ok else "not_ready",
         catalog_size=5761,
         index_loaded=index_loaded,

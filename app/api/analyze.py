@@ -1,4 +1,5 @@
 import os
+import logging
 import time
 from io import BytesIO
 from uuid import UUID
@@ -93,6 +94,30 @@ async def analyze(
         pil_image = Image.open(BytesIO(await image.read())).convert("RGB")
     except Exception:
         raise _error("CORRUPT_FILE", "No fue posible decodificar la imagen.")
+
+    if request.app.state.settings.provider == "llm":
+        from app.models.llm_food_analyzer import LlmAnalyzerChain
+
+        metrics = getattr(request.app.state, "metrics", None)
+        if metrics is not None:
+            metrics["llm_calls"] = metrics.get("llm_calls", 0) + 1
+        try:
+            chain = getattr(request.app.state, "llm_analyzer_chain", None)
+            if chain is None:
+                logger = getattr(request.app.state, "logger", None) or logging.getLogger(__name__)
+                chain = LlmAnalyzerChain(request.app.state.settings, logger)
+                request.app.state.llm_analyzer_chain = chain
+            result = await chain.analyze(pil_image, analysis_id)
+            if metrics is not None:
+                for key in ("total_requests", "successful_requests"):
+                    metrics[key] = metrics.get(key, 0) + 1
+            return result
+        except Exception as exc:
+            # Solo el tipo: errores HTTP pueden incluir datos del proveedor.
+            logger = getattr(request.app.state, "logger", None) or logging.getLogger(__name__)
+            logger.warning("Fallo LLM (%s); fallback al pipeline legacy", type(exc).__name__)
+            if metrics is not None:
+                metrics["llm_fallbacks"] = metrics.get("llm_fallbacks", 0) + 1
 
     detector = _get_detector(request)
     segmenter = getattr(request.app.state, "segmenter", None)
@@ -358,6 +383,7 @@ async def _run_pipeline(
         pass
 
     return AnalyzeResponse(
+        provider="legacy",
         analysis_id=analysis_id,
         status="completed",
         model_version=detector.model_version,

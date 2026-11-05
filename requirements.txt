@@ -4,6 +4,7 @@ pydantic>=2.10
 pydantic-settings>=2.7
 python-multipart>=0.0.20
 pillow>=11.0
+httpx>=0.28,<1
 ultralytics>=8.4
 # CLIP zero-shot + Grounding DINO (detector híbrido) + DINOv2 (pipeline F51).
 # >= 4.45: post_process_grounded_object_detection exige input_ids explícito.

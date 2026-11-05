@@ -6,6 +6,14 @@ Servicio de IA de análisis de alimentos del ecosistema CoppAddresd: detección,
 
 **Estado actual: FASE 57 — PRODUCTION HARDENED.** El sistema está desplegado y operando con el pipeline de 5.761 alimentos como resultado principal (activado por flag), con legacy como red de seguridad, monitoreo operativo (health/readiness/metrics) y rollback por flag.
 
+**Motor LLM opcional (local, pendiente de despliegue):** `FOOD_AI_PROVIDER=llm`
+habilita Anthropic → OpenAI (si existe clave de backup) → pipeline actual.
+Nombres es/en de cualquier cocina, porciones y cinco nutrientes aproximados por
+100 g; el backend prioriza USDA y solo usa estimaciones etiquetadas si falta la
+entrada. Circuit breaker por proveedor (3 fallos, 300 s), estado y contadores en
+readiness/metrics. Defaults, claves por entorno, timeouts y contrato completo en
+[`docs/api.md`](docs/api.md). Rollback: `FOOD_AI_PROVIDER=legacy` + reiniciar tarea.
+
 ---
 
 ## 1. Pipeline de reconocimiento (F51+)

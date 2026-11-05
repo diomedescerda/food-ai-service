@@ -120,6 +120,8 @@ async def lifespan(app: FastAPI):
     app.state.food_pipeline = None
     app.state.nutrition_service = None
     app.state.metrics = {
+        "llm_calls": 0,
+        "llm_fallbacks": 0,
         "total_requests": 0,
         "successful_requests": 0,
         "failed_requests": 0,
@@ -200,7 +202,12 @@ def create_app() -> FastAPI:
     def metrics_endpoint(request: Request) -> dict:
         """Métricas agregadas en memoria (F57): requests, pipeline,
         fallbacks, nutrition, specialist. Cero coste de red."""
-        return dict(getattr(request.app.state, "metrics", {}))
+        from app.models.llm_food_analyzer import llm_availability
+        return {
+            **dict(getattr(request.app.state, "metrics", {})),
+            "provider": getattr(request.app.state, "settings", settings).provider,
+            "llm_circuit_breakers": llm_availability(request.app.state),
+        }
 
     app.include_router(health_router)
     app.include_router(analyze_router)

@@ -1,4 +1,13 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict, Field
+
+
+class EstimatedNutrients(BaseModel):
+    model_config = ConfigDict(extra="forbid", strict=True)
+    calories: float = Field(ge=0, le=1000)
+    protein_g: float = Field(ge=0, le=100)
+    carbs_g: float = Field(ge=0, le=100)
+    fat_g: float = Field(ge=0, le=100)
+    fiber_g: float = Field(ge=0, le=100)
 
 
 class BoundingBox(BaseModel):
@@ -24,6 +33,9 @@ class PortionEstimate(BaseModel):
 
 class DetectedFood(BaseModel):
     name: str
+    nutrition_query: str | None = None
+    name_en: str | None = None
+    estimated_nutrients_per_100g: EstimatedNutrients | None = None
     confidence: float
     bounding_box: BoundingBox
     segmentation: Segmentation | None = None
@@ -32,6 +44,7 @@ class DetectedFood(BaseModel):
 
 class AnalyzeResponse(BaseModel):
     analysis_id: str
+    provider: str | None = None
     status: str
     model_version: str
     seg_model_version: str

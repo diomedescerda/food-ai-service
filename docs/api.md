@@ -1,5 +1,94 @@
 # API — Food AI
 
+## Motor LLM de visión (opcional, bilingüe)
+
+`FOOD_AI_PROVIDER=legacy|llm` selecciona el motor (default `legacy`). El motor
+LLM reconoce alimentos de cualquier cocina mundial y estima cinco nutrientes
+por 100 g. Estas aproximaciones solo se usan si USDA no tiene entrada.
+`FOOD_AI_LLM_PROVIDER=anthropic|openai` (default `anthropic`) usa respectivamente
+`claude-sonnet-4-6` o `gpt-4o`. `FOOD_AI_LLM_MODEL` configura el principal y
+`FOOD_AI_LLM_MODEL_OPENAI` el backup. La cadena por defecto es Anthropic
+(`FOOD_AI_LLM_API_KEY`) → OpenAI (si existe `FOOD_AI_LLM_API_KEY_OPENAI`) → legacy.
+Las claves llegan exclusivamente por el entorno. `FOOD_AI_LLM_PROVIDER=openai`
+permite elegir OpenAI directamente (acepta la clave específica o la principal).
+
+`POST /analyze` conserva su multipart y añade campos opcionales:
+
+```json
+{
+  "analysis_id": "uuid",
+  "provider": "llm",
+  "status": "completed",
+  "foods": [{
+    "name": "Sushi de salmón",
+    "name_en": "Salmon sushi",
+    "nutrition_query": "salmon sushi",
+    "estimated_nutrients_per_100g": {
+      "calories": 150, "protein_g": 10, "carbs_g": 20, "fat_g": 3, "fiber_g": 1
+    },
+    "confidence": 0.86,
+    "bounding_box": {"x": 0, "y": 0, "width": 0, "height": 0},
+    "segmentation": null,
+    "portion": {
+      "portion_size": "unknown",
+      "estimated_grams": 200,
+      "min_grams": 150,
+      "max_grams": 250,
+      "confidence": 0.7,
+      "method": "llm_estimate"
+    }
+  }]
+}
+```
+
+El ejemplo omite los campos de versión/tiempo existentes, que se conservan.
+La caja vacía significa **sin localización** (no es una medición); no hay máscara.
+El prompt usa `name_es` y `name_en`; el adaptador publica `name_es` como `name`.
+El backend expone `nameEn`, `nutritionQuery` y `provider`; consulta USDA con
+`nutritionQuery ?? name`. USDA siempre tiene prioridad (`nutritionSource: "usda"`).
+Sin coincidencia, escala las estimaciones por los gramos y devuelve
+`nutritionSource: "llm_estimate"`, `source: "llm_estimate"`, estado `available`.
+Totales, rangos e intake suman ambas fuentes. Los cinco valores principales
+siempre están presentes en un resultado LLM válido. Azúcar/sodio no se solicitan
+al LLM y quedan desconocidos (`null`), incluso en totales mixtos; no se inventan
+ceros. El origen se conserva en el snapshot existente sin migración de BD.
+Legacy sin datos mantiene `unavailable` y edición manual con campos vacíos,
+placeholder `—`; no existe modo demo ni nutrientes sintéticos de relleno.
+La app usa `nameEn` en inglés cuando existe y conserva `name` como fallback.
+
+Imagen JPEG en memoria, lado mayor ≤1568 px, sin persistir ni registrar imagen o
+clave. Timeout total por proveedor de 30 s (`FOOD_AI_LLM_TIMEOUT_SECONDS`, máximo 30);
+un único reintento con backoff de 0.5 s ante 429/5xx (`FOOD_AI_LLM_RETRIES=1`).
+Timeout, JSON inválido, rechazo o credencial ausente producen WARN y fallback
+al siguiente nivel; `provider` refleja el motor que produjo la respuesta.
+Si el legacy tampoco está disponible, se conserva el error explícito 503 actual.
+Una imagen sin comida devuelve `foods: []` con `provider: "llm"`, sin fallback.
+
+`GET /health/readiness` y `GET /metrics` incluyen el proveedor configurado.
+Métricas en memoria: `llm_calls` (análisis intentados, incluye credencial ausente)
+y `llm_fallbacks` (fallos derivados a legacy). Se reinician con el proceso.
+`llm_circuit_breakers` detalla por proveedor `state` (`closed|open|half_open`),
+fallos consecutivos, segundos restantes, llamadas/fallos y saltos. Tras
+`FOOD_AI_LLM_CIRCUIT_FAILURE_THRESHOLD=3` fallos se omite ese proveedor durante
+`FOOD_AI_LLM_CIRCUIT_OPEN_SECONDS=300` segundos. Al expirar se permite una única
+prueba: éxito cierra y fallo reabre el circuito. Cada worker mantiene su estado.
+Readiness sigue comprobando los modelos locales necesarios para el fallback;
+no valida la credencial remota.
+
+Para probar localmente, inyectar la clave real fuera del historial de comandos,
+exportar `FOOD_AI_PROVIDER=llm` y ejecutar `.venv\Scripts\python run_dev.py`
+(8010, Windows). Enviar `image` + `analysis_id` UUID a `/analyze` o usar el backend.
+Rollback: `FOOD_AI_PROVIDER=legacy` y reiniciar el proceso/tarea para recargar
+el entorno; no necesita cambiar código ni reconstruir la imagen.
+Backend/app tienen un presupuesto default de 120 s para ambos LLM + fallback.
+Si una configuración existente sobrescribe el backend con un límite menor,
+ajustar `FoodAi__TimeoutSeconds=120`. La prueba real 4.1 valida además gateway y
+device. Un fallo total conserva el error explícito y el acceso al registro manual;
+no se garantiza análisis automático si todos los motores están indisponibles.
+
+Contratos consultados: [Messages de Anthropic](https://platform.claude.com/docs/en/api/http/messages)
+y [Chat Completions de OpenAI](https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create).
+
 ## Estado FASE 9 — Food Analysis / User Feedback
 
 | Método | Ruta                                                      | Descripción                                                                          | Auth                                 |
