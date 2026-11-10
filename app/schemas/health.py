@@ -19,12 +19,14 @@ class HealthResponse(BaseModel):
     depth_model: HealthModel | None = None
     pipeline: HealthModel | None = None
     nutrition: HealthModel | None = None
+    capabilities: dict = {}
 
 
 class ReadinessResponse(BaseModel):
     status: str
     provider: str = "legacy"
     llm_circuit_breakers: dict = {}
+    capabilities: dict = {}
     catalog_size: int
     index_loaded: bool
     clip_loaded: bool

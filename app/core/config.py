@@ -26,6 +26,11 @@ class Settings(BaseSettings):
     llm_circuit_open_seconds: float = Field(default=300, gt=0)
     llm_timeout_seconds: float = Field(default=30, gt=0, le=30)
     llm_retries: int = Field(default=1, ge=0, le=1)
+    # Empty preserves legacy /analyze callers. Internal explanation always
+    # requires a configured key; share it only with the trusted backend.
+    internal_service_key: SecretStr = SecretStr("")
+    explain_llm_enabled: bool = False
+    explain_timeout_seconds: float = Field(default=3, gt=0, le=8)
 
     # === Modelo de detecciÃ³n ===
     model_path: str = "weights/yolo11n.pt"

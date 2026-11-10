@@ -14,6 +14,16 @@ entrada. Circuit breaker por proveedor (3 fallos, 300 s), estado y contadores en
 readiness/metrics. Defaults, claves por entorno, timeouts y contrato completo en
 [`docs/api.md`](docs/api.md). Rollback: `FOOD_AI_PROVIDER=legacy` + reiniciar tarea.
 
+La explicación del plan usa `POST /internal/foodai/explain`: recibe únicamente
+objetivos aprobados, diferencias calculadas y datos confirmados del backend.
+Genera frases con referencias a esa evidencia, en español o inglés. La selección
+LLM es opcional y acotada; las frases y los números siempre los valida el servidor.
+Por defecto la explicación es determinista (`FOOD_AI_EXPLAIN_LLM_ENABLED=false`)
+y su procedencia lo declara; el selector LLM solo actúa si se habilita y configura.
+Contrato, permisos de despliegue y pruebas en [`docs/explanation.md`](docs/explanation.md).
+El análisis limita imágenes a 10 MiB, 8192 píxeles por lado y 24 millones de
+píxeles decodificados; normaliza EXIF antes de inferencia.
+
 ---
 
 ## 1. Pipeline de reconocimiento (F51+)
@@ -85,6 +95,7 @@ Todas en `.env` (o variables de entorno). **Defaults = legacy puro** (producció
 | Endpoint                | Descripción                                                                          |
 | ----------------------- | ------------------------------------------------------------------------------------ |
 | `POST /analyze`         | Análisis completo (multipart: `analysis_id`, `image`)                                |
+| `POST /internal/foodai/explain` | Explicación fundamentada del plan aprobado (solo backend autenticado) |
 | `GET /health`           | Liveness: detector/segmenter/classifier + pipeline + nutrition                       |
 | `GET /health/readiness` | Readiness: catalog_size, index/clip/dino/nutrition loaded, pipeline_version          |
 | `GET /metrics`          | Métricas agregadas en memoria (requests, pipeline, fallbacks, nutrition, specialist) |

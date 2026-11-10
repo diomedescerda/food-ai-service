@@ -7,22 +7,24 @@ from fastapi import FastAPI, Request
 from app.api.analyze import router as analyze_router
 from app.api.health import router as health_router
 from app.core.config import settings
-from app.models.advanced_portion_estimator import AdvancedPortionEstimator
-from app.models.base import IFoodDetector
-from app.models.basic_portion_estimator import BasicPortionEstimator
-from app.models.depth_anything_estimator import DepthAnythingEstimator
-from app.models.detector_based_classifier import DetectorBasedClassifier
-from app.models.hybrid_detector import GroundingDinoDetector, HybridFoodDetector
-from app.models.yolo_food_detector import YoloFoodDetector
-from app.models.yolo_food_segmenter import YoloFoodSegmenter
-from app.models.zero_shot_classifier import ZeroShotFoodClassifier
-from app.services.portion_geometry import PortionGeometryEstimator
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Ciclo de vida: carga detector, segmentador, clasificador y estimadores
     UNA vez al arrancar (nunca por request)."""
+    # Keep heavyweight model imports at the production startup boundary.
+    from app.models.advanced_portion_estimator import AdvancedPortionEstimator
+    from app.models.base import IFoodDetector
+    from app.models.basic_portion_estimator import BasicPortionEstimator
+    from app.models.depth_anything_estimator import DepthAnythingEstimator
+    from app.models.detector_based_classifier import DetectorBasedClassifier
+    from app.models.hybrid_detector import GroundingDinoDetector, HybridFoodDetector
+    from app.models.yolo_food_detector import YoloFoodDetector
+    from app.models.yolo_food_segmenter import YoloFoodSegmenter
+    from app.models.zero_shot_classifier import ZeroShotFoodClassifier
+
+    settings = app.state.settings
     app.state.logger = logging.getLogger("uvicorn.error")
     detector: IFoodDetector
     if settings.detector_type == "hybrid":
@@ -190,13 +192,27 @@ async def lifespan(app: FastAPI):
     yield
 
 
-def create_app() -> FastAPI:
+@asynccontextmanager
+async def supplied_runtime_lifespan(app: FastAPI):
+    """Explicit dependency injection for local integration, never an env flag."""
+    yield
+
+
+def create_app(*, config=None, runtime: dict | None = None) -> FastAPI:
+    config = config or settings
     app = FastAPI(
-        title=settings.api_title,
-        version=settings.api_version,
+        title=config.api_title,
+        version=config.api_version,
         description="Servicio de IA de FoodAI: detección, segmentación, clasificación, porción y nutrición.",
-        lifespan=lifespan,
+        lifespan=lifespan if runtime is None else supplied_runtime_lifespan,
     )
+    app.state.settings = config
+    if runtime is not None:
+        app.state.logger = logging.getLogger("uvicorn.error")
+        app.state.metrics = {}
+        app.state.inference_semaphore = asyncio.Semaphore(1)
+        for name, value in runtime.items():
+            setattr(app.state, name, value)
 
     @app.get("/metrics")
     def metrics_endpoint(request: Request) -> dict:
@@ -211,6 +227,8 @@ def create_app() -> FastAPI:
 
     app.include_router(health_router)
     app.include_router(analyze_router)
+    from app.api.explain import router as explain_router
+    app.include_router(explain_router)
     return app
 
 

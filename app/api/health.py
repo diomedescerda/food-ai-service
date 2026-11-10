@@ -4,7 +4,7 @@ from fastapi import APIRouter, Request
 
 from app.core.config import settings
 from app.schemas.health import HealthModel, HealthResponse, ReadinessResponse
-from app.models.llm_food_analyzer import llm_availability
+from app.models.llm_food_analyzer import llm_availability, configured_capabilities
 
 router = APIRouter()
 
@@ -64,7 +64,7 @@ def health(request: Request) -> HealthResponse:
     return HealthResponse(
         status="healthy" if healthy else "degraded",
         service=SERVICE_NAME,
-        version=settings.api_version,
+        version=getattr(request.app.state, "settings", settings).api_version,
         timestamp_utc=datetime.now(timezone.utc),
         model=model,
         segmentation_model=seg_model,
@@ -72,6 +72,7 @@ def health(request: Request) -> HealthResponse:
         depth_model=depth_model,
         pipeline=pipeline_model,
         nutrition=nutrition_model,
+        capabilities=configured_capabilities(request.app.state),
     )
 
 
@@ -95,6 +96,7 @@ def readiness(request: Request) -> ReadinessResponse:
     return ReadinessResponse(
         provider=getattr(request.app.state, "settings", settings).provider,
         llm_circuit_breakers=llm_availability(request.app.state),
+        capabilities=configured_capabilities(request.app.state),
         status="ready" if mandatory_ok else "not_ready",
         catalog_size=5761,
         index_loaded=index_loaded,

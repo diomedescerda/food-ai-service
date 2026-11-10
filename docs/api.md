@@ -1,5 +1,8 @@
 # API — Food AI
 
+Contrato interno de explicación fundamentada, autenticación, límites decodificados,
+metadatos de confianza y permisos operativos: [`explanation.md`](explanation.md).
+
 ## Motor LLM de visión (opcional, bilingüe)
 
 `FOOD_AI_PROVIDER=legacy|llm` selecciona el motor (default `legacy`). El motor

@@ -1,16 +1,20 @@
 import os
 import logging
 import time
+import warnings
 from io import BytesIO
 from uuid import UUID
 
-from fastapi import APIRouter, File, Form, HTTPException, Request, UploadFile
-from PIL import Image
+from fastapi import APIRouter, Depends, File, Form, HTTPException, Request, UploadFile
+from PIL import Image, ImageOps
+
+from app.core.auth import require_service_key
 
 from app.models.base import IFoodDetector
 from app.models.detection import Detection
 from app.schemas.analyze import (
     AnalyzeResponse,
+    AnalysisProvenance,
     BoundingBox,
     DetectedFood,
     PortionEstimate,
@@ -22,6 +26,8 @@ router = APIRouter()
 ALLOWED_CONTENT_TYPES = {"image/jpeg", "image/png", "image/webp"}
 ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
 MAX_IMAGE_SIZE_BYTES = 10 * 1024 * 1024
+MAX_IMAGE_DIMENSION = 8192
+MAX_IMAGE_PIXELS = 24_000_000
 
 # Firmas mágicas: JPEG (FF D8 FF), PNG (89 50 4E 47), WEBP ("RIFF" .... "WEBP")
 MAGIC_BYTES = {
@@ -42,7 +48,7 @@ def _has_valid_magic(content_type: str, head: bytes) -> bool:
     expected = MAGIC_BYTES.get(content_type)
     if expected is None:
         return False
-    return head.startswith(expected)
+    return head.startswith(expected) and (content_type != "image/webp" or head[8:12] == b"WEBP")
 
 
 def _get_detector(request: Request) -> IFoodDetector:
@@ -58,7 +64,7 @@ def _get_detector(request: Request) -> IFoodDetector:
     return detector
 
 
-@router.post("/analyze", response_model=AnalyzeResponse, tags=["analyze"])
+@router.post("/analyze", response_model=AnalyzeResponse, tags=["analyze"], dependencies=[Depends(require_service_key)])
 async def analyze(
     request: Request,
     analysis_id: str = Form(...),
@@ -90,11 +96,31 @@ async def analyze(
     if not _has_valid_magic(content_type, head):
         raise _error("CORRUPT_FILE", "El archivo no es una imagen válida.")
 
+    data = await image.read(MAX_IMAGE_SIZE_BYTES + 1)
+    if len(data) > MAX_IMAGE_SIZE_BYTES:
+        raise _error("IMAGE_TOO_LARGE", "La imagen supera el tamaño máximo.")
     try:
-        pil_image = Image.open(BytesIO(await image.read())).convert("RGB")
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", Image.DecompressionBombWarning)
+            with Image.open(BytesIO(data)) as decoded:
+                width, height = decoded.size
+                if width > MAX_IMAGE_DIMENSION or height > MAX_IMAGE_DIMENSION or width * height > MAX_IMAGE_PIXELS:
+                    raise _error("IMAGE_DIMENSIONS_EXCEEDED", "La imagen excede 8192 píxeles por lado o 24 millones de píxeles.")
+                expected_format = {"image/jpeg": "JPEG", "image/png": "PNG", "image/webp": "WEBP"}[content_type]
+                if decoded.format != expected_format or getattr(decoded, "n_frames", 1) != 1:
+                    raise _error("INVALID_IMAGE", "Se requiere una imagen estática con formato consistente.")
+                # Normalize orientation before every inference boundary. RGB
+                # conversion and metadata removal happen only after limits.
+                pil_image = ImageOps.exif_transpose(decoded).convert("RGB")
+                pil_image.info.clear()
+    except HTTPException:
+        raise
+    except (Image.DecompressionBombError, Image.DecompressionBombWarning):
+        raise _error("IMAGE_DIMENSIONS_EXCEEDED", "La imagen excede los límites de píxeles decodificados.")
     except Exception:
         raise _error("CORRUPT_FILE", "No fue posible decodificar la imagen.")
 
+    attempted_vendors = []
     if request.app.state.settings.provider == "llm":
         from app.models.llm_food_analyzer import LlmAnalyzerChain
 
@@ -105,7 +131,7 @@ async def analyze(
             chain = getattr(request.app.state, "llm_analyzer_chain", None)
             if chain is None:
                 logger = getattr(request.app.state, "logger", None) or logging.getLogger(__name__)
-                chain = LlmAnalyzerChain(request.app.state.settings, logger)
+                chain = LlmAnalyzerChain(request.app.state.settings, logger, client_factory=getattr(request.app.state, "llm_http_client_factory", None))
                 request.app.state.llm_analyzer_chain = chain
             result = await chain.analyze(pil_image, analysis_id)
             if metrics is not None:
@@ -113,6 +139,7 @@ async def analyze(
                     metrics[key] = metrics.get(key, 0) + 1
             return result
         except Exception as exc:
+            attempted_vendors = getattr(exc, "attempted_vendors", [])
             # Solo el tipo: errores HTTP pueden incluir datos del proveedor.
             logger = getattr(request.app.state, "logger", None) or logging.getLogger(__name__)
             logger.warning("Fallo LLM (%s); fallback al pipeline legacy", type(exc).__name__)
@@ -130,8 +157,13 @@ async def analyze(
     if semaphore is not None:
         await semaphore.acquire()
     try:
-        return await _run_pipeline(request, detector, segmenter, classifier, pil_image,
-                                   analysis_id, image.content_type or "", image.filename or "")
+        result = await _run_pipeline(request, detector, segmenter, classifier, pil_image,
+                                     analysis_id, image.content_type or "", image.filename or "")
+        if request.app.state.settings.provider == "llm":
+            result.provenance.fallback_used = True
+            result.provenance.fallback_reason = "llm_providers_unavailable"
+            result.provenance.attempted_vendors = attempted_vendors
+        return result
     finally:
         if semaphore is not None:
             semaphore.release()
@@ -384,6 +416,8 @@ async def _run_pipeline(
 
     return AnalyzeResponse(
         provider="legacy",
+        food_detected=bool(detections),
+        provenance=AnalysisProvenance(provider="legacy", vendor="local", model=detector.model_version),
         analysis_id=analysis_id,
         status="completed",
         model_version=detector.model_version,

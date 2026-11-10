@@ -29,6 +29,9 @@ class PortionEstimate(BaseModel):
     max_grams: int | None
     confidence: float
     method: str
+    estimate_kind: str = "visual_estimate"
+    confidence_kind: str = "heuristic_score"
+    requires_confirmation: bool = True
 
 
 class DetectedFood(BaseModel):
@@ -37,9 +40,22 @@ class DetectedFood(BaseModel):
     name_en: str | None = None
     estimated_nutrients_per_100g: EstimatedNutrients | None = None
     confidence: float
+    confidence_kind: str = "model_score"
+    confidence_source: str = "detector_or_classifier"
     bounding_box: BoundingBox
     segmentation: Segmentation | None = None
     portion: PortionEstimate | None = None
+
+
+class AnalysisProvenance(BaseModel):
+    provider: str
+    vendor: str
+    model: str
+    schema_version: str = "foodai-analysis-v2"
+    prompt_version: str | None = None
+    fallback_used: bool = False
+    fallback_reason: str | None = None
+    attempted_vendors: list[str] = Field(default_factory=list)
 
 
 class AnalyzeResponse(BaseModel):
@@ -51,6 +67,8 @@ class AnalyzeResponse(BaseModel):
     classifier_version: str = "detector-based-v1"
     inference_time_ms: int
     foods: list[DetectedFood]
+    food_detected: bool | None = None
+    provenance: AnalysisProvenance | None = None
 
 
 class ErrorDetail(BaseModel):
